@@ -108,25 +108,25 @@ Tabel 4.4 menyajikan statistik deskriptif dari keenam korpus pada skema represen
 
 Untuk membedah struktur gramatikal dan kepadatan entitas antardataset, diterapkan pengukuran deskriptif berbasis Persamaan 4.1 hingga Persamaan 4.5:
 
-\[
+$$
 \overline{L}=\frac{T}{S}\tag{4.1}
-\]
+$$
 
-\[
+$$
 \overline{E}=\frac{E}{S}\tag{4.2}
-\]
+$$
 
-\[
+$$
 D_{token}=\frac{T_e}{T}\times 100\%\tag{4.3}
-\]
+$$
 
-\[
+$$
 D_{span}=\frac{E}{T}\times 100\tag{4.4}
-\]
+$$
 
-\[
+$$
 P_c=\frac{E_c}{E}\times 100\%\tag{4.5}
-\]
+$$
 
 di mana:
 - $\overline{L}$: Rata-rata jumlah token per kalimat.
