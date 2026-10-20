@@ -109,23 +109,23 @@ Tabel 4.4 menyajikan statistik deskriptif dari keenam korpus pada skema represen
 Untuk membedah struktur gramatikal dan kepadatan entitas antardataset, diterapkan pengukuran deskriptif berbasis Persamaan 4.1 hingga Persamaan 4.5:
 
 $$
-\overline{L}=\frac{T}{S}\tag{4.1}
+\overline{L} = \frac{T}{S} \qquad (4.1)
 $$
 
 $$
-\overline{E}=\frac{E}{S}\tag{4.2}
+\overline{E} = \frac{E}{S} \qquad (4.2)
 $$
 
 $$
-D_{token}=\frac{T_e}{T}\times 100\%\tag{4.3}
+D_{\text{token}} = \frac{T_e}{T} \times 100\text{ % } \qquad (4.3)
 $$
 
 $$
-D_{span}=\frac{E}{T}\times 100\tag{4.4}
+D_{\text{span}} = \frac{E}{T} \times 100 \qquad (4.4)
 $$
 
 $$
-P_c=\frac{E_c}{E}\times 100\%\tag{4.5}
+P_c = \frac{E_c}{E} \times 100\text{ % } \qquad (4.5)
 $$
 
 di mana:
