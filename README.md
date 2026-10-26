@@ -1,6 +1,6 @@
 # BAB 4 HASIL
 
-Bab ini menyajikan hasil penyiapan dataset dan representasi eksperimen, analisis karakteristik linguistik dataset, hasil pemeriksaan manual anotasi oleh dua penilai (*consensus audit*), serta rancangan dan realisasi pelaksanaan pelatihan (*fine-tuning*) model IndoBERT-large-p1 pada seluruh skenario eksperimen. Evaluasi komparatif mencakup pengujian pada data uji acuan manusia (*Gold test set*), pengujian pada tolok ukur sintetis, analisis kurva pembelajaran berbasis kesetaraan jumlah entitas (*iso-entity*), serta evaluasi daya generalisasi lintas dataset (*cross-dataset transfer*). Seluruh data hasil eksperimen disajikan secara objektif, sedangkan analisis mendalam, penafsiran perbedaan kinerja, dan kaitannya dengan penelitian terdahulu dibahas secara komprehensif pada Bab 5.
+Bab ini menyajikan hasil penyiapan dataset dan representasi eksperimen, analisis karakteristik linguistik dataset, hasil audit manual independen dua penilai (*independent dual-annotator audit*), serta rancangan dan realisasi pelaksanaan pelatihan (*fine-tuning*) model IndoBERT-large-p1 pada seluruh skenario eksperimen. Evaluasi komparatif mencakup pengujian pada data uji acuan manusia (*Gold test set*), pengujian pada tolok ukur sintetis, analisis kurva pembelajaran berbasis kesetaraan jumlah entitas (*iso-entity*), serta evaluasi daya generalisasi lintas dataset (*cross-dataset transfer*). Seluruh data hasil eksperimen disajikan secara objektif, sedangkan analisis mendalam, penafsiran perbedaan kinerja, dan kaitannya dengan penelitian terdahulu dibahas secara komprehensif pada Bab 5.
 
 ## 4.1 Dataset Penelitian dan Representasi Anotasi
 
@@ -220,46 +220,53 @@ Tabel 4.8 menunjukkan bahwa korpus NERGRIT Gold memiliki 250 transisi BIO yang t
 
 ## 4.3 Hasil Pemeriksaan Manual Anotasi
 
-### 4.3.1 Pelaksanaan dan Asal Sampel Audit
+### 4.3.1 Pelaksanaan, Sampel Audit, dan Reliabilitas Antarpenilai (IAA)
 
-Pemeriksaan manual terhadap kualitas anotasi (*human annotation audit*) dilaksanakan secara bersama oleh dua penilai independen, yaitu **Arif Athaya Harahap** dan **Muhammad Faiz Fauzan** pada tanggal **16 Oktober 2026**. Prosedur yang digunakan adalah audit berbasis konsensus (*joint consensus audit*), di mana kedua penilai memeriksa setiap kalimat bersama-sama dalam satu sesi telaah dan mendiskusikan setiap perbedaan pandangan hingga mencapai kesepakatan bulat. Oleh karena itu, prosedur ini menghasilkan satu himpunan anotasi rujukan konsensus bersama dan tidak ditujukan untuk pengukuran reliabilitas antarpenilai independen (*inter-annotator agreement* seperti Cohen's kappa).
+Pemeriksaan manual terhadap kualitas anotasi (*human annotation audit*) dilaksanakan secara mandiri (*blind* dan independen) oleh dua penilai, yaitu **Arif Athaya Harahap** (Penilai A1) dan **Muhammad Faiz Fauzan** (Penilai A2) pada tanggal **22 Oktober 2026**. Berbeda dengan korpus acuan manusia (NERGRIT) yang dievaluasi sebagai data sekunder, audit anotasi manusia ini difokuskan secara khusus untuk mengevaluasi mutu anotasi intrinsik pada **keempat korpus sintetis hasil generasi LLM** (`Nemotron`, `Luna`, `Gemma`, dan `GPT-OSS`).
 
-Sampel audit diambil secara acak berstrata (*stratified random sampling*) tanpa pengembalian (*without replacement*) dengan nilai acak tetap (*seed* = 20261016). Stratifikasi dibentuk berdasarkan kombinasi antara jumlah entitas dalam kalimat (kelompok 0 entitas, 1 entitas, dan $\ge 2$ entitas) dengan panjang kalimat relatif terhadap nilai median populasi. Dari masing-masing enam korpus diambil persis 100 kalimat representatif, sehingga total sampel yang diaudit mencakup **600 kalimat**.
+Sampel audit diambil secara acak berstrata (*stratified random sampling*) tanpa pengembalian (*without replacement*) dengan nilai *seed* acak tetap `20261022`. Stratifikasi dibentuk berdasarkan persilangan antara jumlah entitas dalam kalimat (kelompok 0 entitas, 1 entitas, dan $\ge 2$ entitas) dengan panjang kalimat relatif terhadap nilai median populasi masing-masing korpus. Dari masing-masing keempat korpus sintetis diambil tepat 100 kalimat representatif, sehingga total sampel audit mencakup **400 kalimat** (**10.812 token**, mencakup **800 lembar evaluasi independen**).
 
-Ukuran populasi asal dan jumlah sampel audit yang diperiksa disajikan pada Tabel 4.9.
+Kedua penilai melakukan evaluasi secara terpisah tanpa saling berkomunikasi. Reliabilitas antarpenilai diuji menggunakan koefisien kesepakatan Cohen's Kappa ($\kappa$) pada tingkat token (37 tag BIO dan 18 kelas + O) serta tingkat keputusan entitas (*KEEP* / *REMOVE* / *REPLACE* dan *CORRECT* / *INCORRECT*), dilengkapi dengan *Pairwise Exact Span-$F_1$ Agreement* dan selang kepercayaan *bootstrap* 95% (1.000 iterasi). Rangkuman hasil pengujian reliabilitas IAA gabungan pada 400 kalimat sintetis disajikan pada Tabel 4.9a, sedangkan rincian per dataset sintetis disajikan pada Tabel 4.9b.
 
-**Tabel 4.9 Populasi asal dan jumlah sampel audit anotasi**
+**Tabel 4.9a Hasil pengujian reliabilitas antarpenilai independen (*Inter-Annotator Agreement*) pada 400 sampel kalimat sintetis**
 
-| Dataset | Jumlah Populasi Asal | Jumlah Sampel Diperiksa |
-| --- | --- | --- |
-| NERGRIT (Gold) | 16.728 | 100 kalimat |
-| Nemotron | 17.439 | 100 kalimat |
-| Luna | 17.236 | 100 kalimat |
-| Gemma | 15.666 | 100 kalimat |
-| GPT-OSS | 13.384 | 100 kalimat |
-| Benchmark sintetis | 982 | 100 kalimat |
+| Metrik Kesepakatan Antarpenilai | Nilai Empiris | 95% Bootstrap CI | Interpretasi (Landis & Koch, 1977) |
+| :--- | :---: | :---: | :--- |
+| Token Cohen's $\kappa$ (37 tag BIO) | **0,987** | [0,983 – 0,991] | Kesepakatan Hampir Sempurna (*Almost Perfect*) |
+| Token Cohen's $\kappa$ (18 kelas + O) | **0,989** | [0,985 – 0,993] | Kesepakatan Hampir Sempurna (*Almost Perfect*) |
+| Entity-Decision $\kappa$ (KEEP / REMOVE / REPLACE) | **0,923** | [0,895 – 0,947] | Kesepakatan Hampir Sempurna (*Almost Perfect*) |
+| Entity-Decision $\kappa$ (CORRECT / INCORRECT) | **0,928** | [0,899 – 0,952] | Kesepakatan Hampir Sempurna (*Almost Perfect*) |
+| Pairwise Exact Span-$F_1$ Agreement | **97,63%** | [96,84% – 98,34%] | Konsistensi Batas Rentang Sangat Tinggi (1.975 sepakat) |
+| Persentase Kesepakatan Token (BIO) | **99,13%** | — | 10.718 dari 10.812 token berlabel BIO identik |
+| Tingkat Kalimat Identik (*Zero Disagreement*) | **89,75%** | — | 359 dari 400 kalimat disepakati 100% tanpa selisih |
+
+**Tabel 4.9b Populasi asal, sampel audit, dan rincian reliabilitas antarpenilai (IAA) per korpus sintetis**
+
+| Dataset Sintetis | Jumlah Populasi Asal | Sampel Diperiksa | Token Sampel | $\kappa$ Token BIO | $\kappa$ Token Kelas | $\kappa$ Keputusan Entitas | Span-$F_1$ IAA | Kalimat Identik |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Nemotron | 17.439 | 100 kalimat | 3.245 | 0,977 | 0,981 | 0,886 | 95,93% | 82,00% |
+| Luna | 17.236 | 100 kalimat | 2.537 | 0,992 | 0,992 | 0,911 | 98,46% | 92,00% |
+| Gemma | 15.666 | 100 kalimat | 2.029 | 0,988 | 0,989 | 0,927 | 97,60% | 92,00% |
+| GPT-OSS | 13.384 | 100 kalimat | 3.001 | 0,994 | 0,995 | 0,965 | 98,72% | 93,00% |
+| **Total / Agregat** | **63.725** | **400 kalimat** | **10.812** | **0,987** | **0,989** | **0,923** | **97,63%** | **89,75%** |
 
 ### 4.3.2 Hasil Pemeriksaan per Dataset
 
-Dalam audit manual, sebuah entitas dinilai **Benar** apabila batas awal token, batas akhir token, serta label kelas entitasnya bersesuaian persis dengan konsensus kedua penilai. Entitas dinilai **Salah** apabila terdapat kekeliruan batas rentang kata (*boundary error*), kesalahan klasifikasi kelas, atau penandaan berlebih (*false positive*). Entitas dinilai **Terlewat** apabila terdapat entitas bernama nyata dalam teks yang sama sekali belum terlabeli pada anotasi awal (*false negative*).
+Kualitas anotasi bawaan pada masing-masing korpus sintetis dievaluasi terhadap label rujukan konsensus *dual-agreement*. Dalam skema ini, entitas dinilai **Benar** ($TP$) apabila batas awal token, batas akhir token, serta label kelas entitasnya bersesuaian persis dengan konsensus kedua penilai. Entitas dinilai **Salah** ($FP$) apabila rentang anotasi awal dibatalkan oleh konsensus penilai karena kekeliruan batas rentang kata (*boundary error*), kesalahan klasifikasi kelas, atau penandaan berlebih (*false positive*). Entitas dinilai **Terlewat** (*Missed*) apabila terdapat entitas bernama nyata dalam teks yang belum terlabeli pada anotasi awal korpus.
 
-Hasil pemeriksaan anotasi manual beserta metrik kesesuaian anotasi (*Precision*, *Recall*, dan *F1-Score*) per dataset disajikan pada Tabel 4.10.
+Hasil pemeriksaan anotasi manual beserta metrik kesesuaian anotasi (*Precision*, *Recall*, dan *F1-Score*) per korpus sintetis disajikan pada Tabel 4.10.
 
-**Tabel 4.10 Hasil pemeriksaan manual anotasi dan metrik kesesuaian pada sampel 100 kalimat**
+**Tabel 4.10 Hasil pemeriksaan manual kualitas anotasi terhadap konsensus dual-agreement pada sampel 100 kalimat per korpus sintetis**
 
-| Dataset | Kalimat | Benar | Salah | Terlewat | Presisi Anotasi | Recall Anotasi | F1 Anotasi | Kalimat Bermasalah |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| NERGRIT (Gold) | 100 | 292 | 27 | 5 | 91,54% | 94,81% | 93,14% | 22 |
-| Nemotron | 100 | 600 | 9 | 5 | 98,52% | 98,68% | 98,60% | 14 |
-| Luna | 100 | 531 | 7 | 4 | 98,70% | 98,15% | 98,42% | 10 |
-| Gemma | 100 | 343 | 17 | 7 | 95,28% | 95,28% | 95,28% | 20 |
-| GPT-OSS | 100 | 552 | 9 | 15 | 98,40% | 96,67% | 97,53% | 13 |
-| Benchmark sintetis | 100 | 641 | 4 | 7 | 99,38% | 98,46% | 98,92% | 9 |
-| **Total Gabungan** | **600** | **2.959** | **73** | **43** | **97,59%** | **97,37%** | **97,48%** | **88** |
+| Dataset Sintetis | Kalimat | Benar ($TP$) | Salah ($FP$) | Terlewat (*Missed*) | $FN$ Total | Presisi Anotasi | Recall Anotasi | F1 Anotasi | Kalimat Bermasalah | Estimasi Galat Terbobot ($\widehat{p}_{error}$) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Nemotron | 100 | 517 | 118 | 21 | 83 | 81,42% | 86,17% | **83,72%** | 73 | 72,93% |
+| Luna | 100 | 493 | 27 | 12 | 25 | 94,81% | 95,17% | **94,99%** | 28 | 28,05% |
+| Gemma | 100 | 297 | 78 | 14 | 57 | 79,20% | 83,90% | **81,48%** | 62 | 61,43% |
+| GPT-OSS | 100 | 451 | 97 | 36 | 93 | 82,30% | 82,90% | **82,60%** | 75 | 74,78% |
+| **Total Gabungan** | **400** | **1.758** | **320** | **83** | **258** | **84,60%** | **87,20%** | **85,88%** | **238** | — |
 
-Secara keseluruhan, dari 600 kalimat yang diperiksa, teridentifikasi **2.959 entitas benar, 73 entitas salah, dan 43 entitas terlewat**, dengan 88 kalimat (14,67%) memuat setidaknya satu perbedaan anotasi.
-
-Metrik kesesuaian kualitas anotasi dihitung menggunakan Persamaan 4.6 sampai Persamaan 4.8 dengan memperlakukan anotasi awal sebagai prediksi dan konsensus penilai sebagai *ground-truth*:
+Metrik kesesuaian kualitas anotasi dihitung menggunakan Persamaan 4.6 sampai Persamaan 4.8 dengan memperlakukan anotasi awal korpus sebagai prediksi dan konsensus *dual-agreement* sebagai *ground-truth*:
 
 $$P_{audit} = \frac{TP}{TP + FP} \tag{4.6}$$
 
@@ -267,38 +274,41 @@ $$R_{audit} = \frac{TP}{TP + FN} \tag{4.7}$$
 
 $$F_{1, audit} = \frac{2 P_{audit} R_{audit}}{P_{audit} + R_{audit}} \tag{4.8}$$
 
-Berdasarkan formulasi tersebut, diperoleh nilai $TP = 2.959$, $FP = 73$, dan $FN = 80$. Nilai FN (80) lebih besar daripada jumlah entitas terlewat literal (43) karena koreksi atas entitas yang salah kelas atau batasnya juga dapat memunculkan rentang acuan baru yang tidak berpasangan. Secara agregat, kualitas anotasi pada seluruh sampel menghasilkan **presisi 97,59%, recall 97,37%, dan F1-score 97,48%**.
+Berdasarkan formulasi tersebut pada gabungan 400 sampel kalimat sintetis, diperoleh nilai $TP = 1.758$, $FP = 320$, dan $FN = 258$. Nilai $FN$ (258) lebih besar daripada jumlah entitas terlewat literal (83) karena koreksi atas entitas yang salah kelas atau salah batas rentangnya memunculkan rentang acuan baru yang harus dipenuhi dalam konsensus. Secara agregat pada 400 kalimat sintetis, anotasi bawaan menghasilkan **presisi 84,60%, recall 87,20%, dan F1-score 85,88%**, dengan 238 kalimat (59,50%) memuat setidaknya satu deviasi anotasi.
 
-Menariknya, korpus sintetis yang melewati fase pemurnian verifikator (seperti Nemotron, Luna, dan GPT-OSS) menunjukkan skor kesesuaian anotasi yang sangat tinggi ($F_1 \ge 97,5\%$), mengungguli korpus acuan manusia NERGRIT Gold ($F_1 = 93,14\%$). Pada NERGRIT Gold, kesalahan umum yang teridentifikasi mencakup entitas nama orang atau organisasi yang terpotong batas katanya serta gelar yang tidak konsisten dipisahkan. Perlu ditekankan bahwa temuan audit ini berfungsi murni sebagai evaluasi kualitas anotasi dataset dan **tidak digunakan untuk mengubah label data latih**, sehingga integritas data sumber tetap terjaga.
+Dari keempat korpus sintetis yang diuji, **Luna** (`GPT-5.6 Luna` + `Gemini 3.6 Flash Medium`) menunjukkan mutu anotasi tertinggi secara mutlak dengan raihan **$F_1 = \mathbf{94,99\%}$** (Presisi 94,81%, Recall 95,17%), serta hanya mencatatkan 28 kalimat bermasalah dari 100 sampel (estimasi galat terbobot $\widehat{p}_{error} = 28,05\%$). Posisi berikutnya diraih oleh **Nemotron** ($F_1 = 83,72\%$), **GPT-OSS** ($F_1 = 82,60\%$), dan **Gemma** ($F_1 = 81,48\%$). Tingginya capaian Luna mencerminkan keunggulan penalaran laten (*latent reasoning*) pada model verifikator Gemini Flash dalam memisahkan entitas kata benda umum (*false positives*) dan menegakkan pemisahan gelar kehormatan (`TTL`) dari nama individu (`PER`). Perlu ditekankan bahwa data audit ini berfungsi murni sebagai instrumen evaluasi independen dan **tidak digunakan untuk mengubah label data latih model**, sehingga integritas korpus hasil generasi tetap terjaga secara murni.
 
 ### 4.3.3 Hasil Pemeriksaan per Kelas
 
-Rangkuman keputusan pemeriksaan anotasi menurut 18 kelas entitas pada gabungan 600 sampel kalimat disajikan pada Tabel 4.11.
+Rangkuman keputusan pemeriksaan anotasi dan reliabilitas antarpenilai menurut 18 kelas entitas pada gabungan 400 sampel kalimat sintetis disajikan pada Tabel 4.11.
 
-**Tabel 4.11 Ringkasan audit anotasi menurut kelas entitas pada gabungan sampel**
+**Tabel 4.11 Ringkasan kualitas anotasi dan reliabilitas IAA menurut 18 kelas entitas pada gabungan 400 sampel kalimat sintetis**
 
-| Kelas Entitas | Entitas Benar | Entitas Salah | Entitas Terlewat |
-| --- | --- | --- | --- |
-| CRD | 144 | 0 | 0 |
-| DAT | 482 | 0 | 1 |
-| EVT | 146 | 5 | 2 |
-| FAC | 168 | 7 | 8 |
-| GPE | 470 | 6 | 3 |
-| LAN | 41 | 0 | 1 |
-| LAW | 59 | 4 | 2 |
-| LOC | 87 | 0 | 3 |
-| MON | 143 | 0 | 1 |
-| NOR | 57 | 8 | 0 |
-| ORD | 27 | 3 | 2 |
-| ORG | 454 | 17 | 0 |
-| PER | 235 | 7 | 2 |
-| PRC | 73 | 0 | 1 |
-| PRD | 142 | 16 | 12 |
-| QTY | 122 | 0 | 3 |
-| TIM | 78 | 0 | 0 |
-| WOA | 31 | 0 | 2 |
+| Kelas Entitas | Entitas Benar ($TP$) | Entitas Salah ($FP$) | Entitas Terlewat (*Missed*) | $FN$ Total | Presisi (%) | Recall (%) | F1-Score (%) | Span-$F_1$ IAA (%) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| CRD | 56 | 2 | 11 | 34 | 96,55% | 62,22% | 75,68% | 96,17% |
+| DAT | 235 | 42 | 16 | 56 | 84,84% | 80,76% | 82,75% | 95,71% |
+| EVT | 74 | 29 | 1 | 6 | 71,84% | 92,50% | 80,87% | 92,99% |
+| FAC | 81 | 19 | 0 | 9 | 81,00% | 90,00% | 85,26% | 98,31% |
+| GPE | 335 | 19 | 6 | 13 | 94,63% | 96,26% | 95,44% | 99,42% |
+| LAN | 24 | 0 | 6 | 6 | 100,00% | 80,00% | 88,89% | 100,00% |
+| LAW | 29 | 22 | 2 | 15 | 56,86% | 65,91% | 61,05% | 93,33% |
+| LOC | 53 | 6 | 11 | 24 | 89,83% | 68,83% | 77,94% | 96,25% |
+| MON | 97 | 2 | 0 | 1 | 97,98% | 98,98% | 98,48% | 100,00% |
+| NOR | 35 | 4 | 12 | 14 | 89,74% | 71,43% | 79,55% | 98,00% |
+| ORD | 17 | 8 | 5 | 6 | 68,00% | 73,91% | 70,83% | 93,33% |
+| ORG | 313 | 31 | 8 | 23 | 90,99% | 93,15% | 92,06% | 99,26% |
+| PER | 178 | 1 | 2 | 2 | 99,44% | 98,89% | 99,16% | 99,44% |
+| PRC | 64 | 1 | 2 | 4 | 98,46% | 94,12% | 96,24% | 100,00% |
+| PRD | 50 | 62 | 0 | 13 | 44,64% | 79,37% | 57,14% | 95,31% |
+| QTY | 79 | 27 | 0 | 6 | 74,53% | 92,94% | 82,72% | 93,64% |
+| TIM | 20 | 34 | 1 | 20 | 37,04% | 50,00% | 42,55% | 96,30% |
+| WOA | 18 | 11 | 0 | 6 | 62,07% | 75,00% | 67,92% | 95,65% |
+| **Total** | **1.758** | **320** | **83** | **258** | **84,60%** | **87,20%** | **85,88%** | **97,63%** |
 
-Rincian tabulasi per kelas untuk masing-masing dataset tersedia pada Lampiran Audit Anotasi. Kelas-kelas yang memiliki tingkat kekeliruan relatif lebih banyak adalah `ORG` (17 salah), `PRD` (16 salah, 12 terlewat), dan `NOR` (8 salah), yang umumnya dipicu oleh ambiguitas penentuan batas nama produk komersial dan singkatan organisasi.
+Rincian tabulasi per kelas untuk masing-masing dataset sintetis tersedia pada Lampiran Audit Anotasi. Kelas-kelas dengan konsistensi anotasi tertinggi meliputi `PER` ($F_1 = 99,16\%$, Presisi 99,44%), `MON` ($F_1 = 98,48\%$), `PRC` ($F_1 = 96,24\%$), `GPE` ($F_1 = 95,44\%$), dan `ORG` ($F_1 = 92,06\%$). Pada kelas `NOR` ($F_1 = 79,55\%$, Presisi 89,74%), korpus **Luna, Gemma, dan GPT-OSS** mencatatkan **0 kesalahan positif palsu (`FP = 0`, Presisi 100,00%)**, sedangkan 4 kesalahan pada `NOR` seluruhnya berasal dari korpus **Nemotron** (akibat pelabelan partai politik atau ormas seperti *Partai Golkar* dan *Muhammadiyah* sebagai `NOR` alih-alih `ORG`).
+
+Sebaliknya, kelas yang memiliki tingkat kekeliruan relatif lebih tinggi adalah `PRD` (62 salah, umumnya akibat pelabelan kata benda komoditas umum), `DAT` (42 salah) dan `TIM` (34 salah, akibat inklusi preposisi waktu seperti *'pada pukul'* atau *'hari'*), serta `ORG` (31 salah, umumnya pada kata benda administratif umum seperti *'Pemerintah'* atau *'UMKM'* yang berdiri sendiri tanpa nama entitas spesifik).
 
 ## 4.4 Hasil Pelaksanaan Pelatihan
 
@@ -736,7 +746,7 @@ Evaluasi transfer lintas domain pada Tabel 4.17 dan Tabel 4.17b menghasilkan tem
 Bab ini telah menyajikan data empiris yang lengkap, objektif, dan terverifikasi mengenai perbandingan data latih sintetis LLM berbanding data anotasi manusia:
 1. **Keutuhan Data dan Isolasi Kebocoran**: Seluruh 88.252 *record* sumber dipertahankan tanpa manipulasi sepihak. Partisi data uji manusia terbukti memiliki 0 kluster kebocoran n-gram terhadap data latih, dan 255 kesalahan kode sintaksis label pada NERGRIT Gold telah distandardisasi.
 2. **Karakteristik Korpus**: Korpus sintetis LLM dua fase menampilkan struktur kalimat yang lebih kompleks (~31 token/kalimat) dan kepadatan entitas yang sangat tinggi ($D_{token} \approx 48\% - 50\%$) dibandingkan korpus manusia ($D_{token} = 30,67\%$).
-3. **Validitas Kualitas Anotasi**: Telaah konsensus audit dua penilai pada 600 sampel membuktikan F1-score keselarasan 97,48%. Korpus sintetis terverifikasi (Nemotron, Luna, GPT-OSS) mencatatkan konsistensi anotasi $\ge 97,5\%$, mengungguli konsistensi data acuan manusia NERGRIT Gold (93,14%).
+3. **Validitas Kualitas Anotasi & Reliabilitas IAA**: Audit independen dua penilai pada 400 sampel kalimat sintetis membuktikan reliabilitas kesepakatan yang hampir sempurna (Token Cohen's $\kappa = 0,987$ pada 37 tag BIO dan $\kappa = 0,989$ pada 18 kelas, dengan Pairwise Span-$F_1$ sebesar 97,63%). Evaluasi terhadap konsensus dual-agreement mencatatkan agregat F1-score anotasi sebesar 85,88%, di mana korpus **Luna** mencapai kualitas tertinggi sebesar **94,99%**, diikuti oleh Nemotron (83,72%), GPT-OSS (82,60%), dan Gemma (81,48%).
 4. **Keterlaksanaan dan Efisiensi Komputasi**: Seluruh 84 proses *fine-tuning* IndoBERT-large-p1 pada kluster GPU A100 tuntas 100%. Mekanisme *early stopping* menghentikan 86,9% model secara dini pada rerata 7,14 epoch (checkpoint optimal di epoch 5,23), menghemat ~28,6% durasi komputasi dengan total waktu 11,22 jam GPU.
 5. **Kinerja Utama dan Fenomena Pembalikan Simetris**: Model Gold memimpin pada Test Gold (*in-distribution*, 84,27%), sementara model sintetis mendominasi mutlak pada Benchmark Sintetis (Nemotron 81,57%, GPT-OSS 80,96%), di mana performa model Gold anjlok menjadi 50,09%. Ini membuktikan bahwa disparitas skor dipicu oleh pergeseran distribusi gaya bahasa dua arah yang simetris, bukan semata-mata mutu data.
 6. **Hukum Penskalaan Entitas (*Iso-Entity Scaling*)**: Eksperimen kesetaraan anggaran entitas membuktikan bahwa model sintetis telah mencapai ~95%–98% dari performa puncaknya hanya dengan 30% anggaran entitas (12.787 entitas). Kurva pembelajaran mengalami kejenuhan marjinal setelah 100%, di mana Luna mencapai F1 tertinggi pada rasio 125% (55,05%), menegaskan supremasi kualitas kurasi atas volume data mentah.

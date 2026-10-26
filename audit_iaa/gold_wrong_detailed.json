@@ -1,0 +1,3200 @@
+{
+  "summary": {
+    "label_confusion": 34,
+    "spurious_removal": 29,
+    "boundary_error": 39
+  },
+  "classified_errors": {
+    "label_confusion": [
+      {
+        "sample_id": "D01-002",
+        "orig_text": "Batik Air",
+        "orig_label": "PRD",
+        "cons_label": "ORG",
+        "sentence": "Setelah ditangkap , Hasnil langsung diboyong ke Medan dengan menggunakan maskapai Batik Air ."
+      },
+      {
+        "sample_id": "D01-007",
+        "orig_text": "UNESCO",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Solo - Pemerintah berencana mengajukan gamelan menjadi warisan budaya dunia ke organisasi pendidikan dan kebudayaan PBB , UNESCO . Gamelan diajukan sebagai warisan budaya tak benda ."
+      },
+      {
+        "sample_id": "D01-009",
+        "orig_text": "Polres Sumedang",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Akhir tahun 2017 ini , Polres Sumedang merekap data kecelakaan maupun pelanggaran lalu lintas yang terjadi selama setahun ke belakang ."
+      },
+      {
+        "sample_id": "D01-024",
+        "orig_text": "20 hari",
+        "orig_label": "QTY",
+        "cons_label": "DAT",
+        "sentence": "Untuk dua jenis tindakan yang dilakukan di dalam operasi yang berjalan selama 20 hari itu , terjadi penurunan angka penindakan sebesar 64 persen jika dibandingkan dengan operasi yang sama digelar pada tahun sebelumnya ."
+      },
+      {
+        "sample_id": "D01-027",
+        "orig_text": "Direktorat Lalu Lintas",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Jajaran Direktorat Lalu Lintas juga kerap menggelar kampanye dan razia kendaraan lalu lintas untuk sekaligus mengingatkan pengendara meningkatkan keselamatan berlalu lintas termasuk ketertiban administrasi kendaraan ."
+      },
+      {
+        "sample_id": "D01-036",
+        "orig_text": "Pemerintah Indonesia",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Pemerintah Indonesia , kata Susi , telah mengidentifikasi prioritas pengelolaan perikanan tuna yang berfokus pada data produksi tuna ."
+      },
+      {
+        "sample_id": "D01-037",
+        "orig_text": "Dishub",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Dari hasil olah TKP dan penelitian Labfor , Forensik dan Dishub ditemukan fakta mekanisme rem yang tidak bekerja maksimal ."
+      },
+      {
+        "sample_id": "D01-039",
+        "orig_text": "Timur Tengah",
+        "orig_label": "GPE",
+        "cons_label": "LOC",
+        "sentence": "Menurut Haley , negara - negara di Timur Tengah tersebut tidak memberikan bantuan kepada Badan Bantuan dan Pekerjaan PBB ( UNRWA ) , yang membantu para pengungsi Palestina ."
+      },
+      {
+        "sample_id": "D01-039",
+        "orig_text": "Badan Bantuan dan Pekerjaan PBB",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Menurut Haley , negara - negara di Timur Tengah tersebut tidak memberikan bantuan kepada Badan Bantuan dan Pekerjaan PBB ( UNRWA ) , yang membantu para pengungsi Palestina ."
+      },
+      {
+        "sample_id": "D01-039",
+        "orig_text": "UNRWA",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Menurut Haley , negara - negara di Timur Tengah tersebut tidak memberikan bantuan kepada Badan Bantuan dan Pekerjaan PBB ( UNRWA ) , yang membantu para pengungsi Palestina ."
+      },
+      {
+        "sample_id": "D01-039",
+        "orig_text": "Palestina",
+        "orig_label": "GPE",
+        "cons_label": "NOR",
+        "sentence": "Menurut Haley , negara - negara di Timur Tengah tersebut tidak memberikan bantuan kepada Badan Bantuan dan Pekerjaan PBB ( UNRWA ) , yang membantu para pengungsi Palestina ."
+      },
+      {
+        "sample_id": "D01-040",
+        "orig_text": "PKS",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Bahkan Tifatul memberikan ancaman , PKS akan meninggalkan koalisi jika kadernya tidak dipilih sebagai cawapres . \" Kalau mau jalan sendiri ya , go . Kami nggak masalah , \" ungkapnya ."
+      },
+      {
+        "sample_id": "D01-041",
+        "orig_text": "FBI",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Setelah dilakukan penyelidikan , Menteri Luar Negeri Qatar Sheikh Mohammed bin Abdulrahman al - Thani mengungkapkan FBI telah mengonfirmasi adanya tindak peretasan dan penanaman berita palsu di kantor berita Qatar ."
+      },
+      {
+        "sample_id": "D01-043",
+        "orig_text": "ketiga",
+        "orig_label": "ORD",
+        "cons_label": "CRD",
+        "sentence": "Menurut Manap , ketiga napi  teroris itu kerap dikunjungi keluarganya . Bahkan anak Ridwan membesuk setiap hari pada  jam  kunjungan ."
+      },
+      {
+        "sample_id": "D01-045",
+        "orig_text": "179",
+        "orig_label": "QTY",
+        "cons_label": "CRD",
+        "sentence": "Sedangkan untuk kendaraan roda dua berjumlah 1 . 904 unit , kendaraan roda empat sebanyak 2 . 918 unit , bus 179 , dan truk 87 unit ."
+      },
+      {
+        "sample_id": "D01-050",
+        "orig_text": "Komite Keselamatan Lalu Lintas Nasional",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Alasan utama untuk kecelakaan , menurut Komite Keselamatan Lalu Lintas Nasional , adalah mengemudi dalam keadaan mabuk , ngebut dan mengemudi tanpa helm atau di jalur yang salah ."
+      },
+      {
+        "sample_id": "D01-054",
+        "orig_text": "Partai Garuda",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Strategi Partai Garuda pada Pileg 2019 , Tidur di Rumah Masyarakat"
+      },
+      {
+        "sample_id": "D01-055",
+        "orig_text": "Tanah Abang",
+        "orig_label": "LOC",
+        "cons_label": "GPE",
+        "sentence": "Jakarta - Gubernur DKI Jakarta Anies Baswedan kembali berbeda pendapat dengan polisi . Setelah sebelumnya terkait Tanah Abang , kali ini beda pendapat terkait perobohan jembatan penyeberangan orang ( JPO ) yang ada di kawasan Thamrin , Jakarta Pusat ."
+      },
+      {
+        "sample_id": "D01-061",
+        "orig_text": "10 tahun",
+        "orig_label": "QTY",
+        "cons_label": "DAT",
+        "sentence": "Dalam tanggapannya atas vonis 10 tahun penjara yang dijatuhkan pengadilan , Sharif menyebut dakwaan korupsi yang dijeratkan kepada dirinya sebagai konspirasi dari kekuatan militer yang kuat dan menguasai Pakistan beberapa dekade terakhir ."
+      },
+      {
+        "sample_id": "D01-062",
+        "orig_text": "Baitul Maqdis",
+        "orig_label": "LOC",
+        "cons_label": "GPE",
+        "sentence": "Karena Yerusalem kota suci beberapa agama , sementara banyak umat beragama dari Indonesia yang juga ingin ke Baitul Maqdis , \" ujar Lukman di Kompleks Istana Kepresidenan , Jakarta Pusat , Rabu ( 30 / 5 / 2018 ) ."
+      },
+      {
+        "sample_id": "D01-062",
+        "orig_text": "Kompleks Istana Kepresidenan",
+        "orig_label": "LOC",
+        "cons_label": "FAC",
+        "sentence": "Karena Yerusalem kota suci beberapa agama , sementara banyak umat beragama dari Indonesia yang juga ingin ke Baitul Maqdis , \" ujar Lukman di Kompleks Istana Kepresidenan , Jakarta Pusat , Rabu ( 30 / 5 / 2018 ) ."
+      },
+      {
+        "sample_id": "D01-067",
+        "orig_text": "pemerintah provinsi DKI Jakarta",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Dasrul pun mendorong agar pemerintah provinsi DKI Jakarta juga membuat peraturan tersebut untuk sepeda motor ."
+      },
+      {
+        "sample_id": "D01-068",
+        "orig_text": "Jalan Kertanegara",
+        "orig_label": "LOC",
+        "cons_label": "FAC",
+        "sentence": "‚Äù Hasyim mengatakan akan ada deklarasi calon wakil presiden pendamping Prabowo di kediamannya , Jalan Kertanegara , Kebayoran Baru , Jakarta Selatan , hari ini ."
+      },
+      {
+        "sample_id": "D01-068",
+        "orig_text": "Kebayoran Baru",
+        "orig_label": "LOC",
+        "cons_label": "GPE",
+        "sentence": "‚Äù Hasyim mengatakan akan ada deklarasi calon wakil presiden pendamping Prabowo di kediamannya , Jalan Kertanegara , Kebayoran Baru , Jakarta Selatan , hari ini ."
+      },
+      {
+        "sample_id": "D01-070",
+        "orig_text": "Pemkab Simalungun",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Di situ persoalannya , \" kata Abyadi usai menyerahkan LAHP kepada Pemkab Simalungun di Kantor Pusat Ombudsman Republik Indonesia , Jakarta , Selasa ( 7 / 8 ) ."
+      },
+      {
+        "sample_id": "D01-070",
+        "orig_text": "Kantor Pusat Ombudsman Republik Indonesia",
+        "orig_label": "LOC",
+        "cons_label": "FAC",
+        "sentence": "Di situ persoalannya , \" kata Abyadi usai menyerahkan LAHP kepada Pemkab Simalungun di Kantor Pusat Ombudsman Republik Indonesia , Jakarta , Selasa ( 7 / 8 ) ."
+      },
+      {
+        "sample_id": "D01-073",
+        "orig_text": "Johannistal",
+        "orig_label": "LOC",
+        "cons_label": "GPE",
+        "sentence": "Pada tahun 1912 , Fokker kembali ke Jerman dan menetap di Johannistal , Berlin ."
+      },
+      {
+        "sample_id": "D01-075",
+        "orig_text": "LTA",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "16 : 14 : LTA dan SMRT memperbarui jumlah orang yang terluka menjadi 28 orang ."
+      },
+      {
+        "sample_id": "D01-079",
+        "orig_text": "Tol Sidoarjo",
+        "orig_label": "PRD",
+        "cons_label": "FAC",
+        "sentence": "Sempat Ditutup 2 , 5 Jam , Tol Sidoarjo yang Diancam Bom Dibuka Foto : istimewa"
+      },
+      {
+        "sample_id": "D01-091",
+        "orig_text": "pasar Senen",
+        "orig_label": "LOC",
+        "cons_label": "FAC",
+        "sentence": "Pedagang memilah telur ayam di pasar Senen . Jakarta . ( CNN Indonesia / Adhi Wicaksono )"
+      },
+      {
+        "sample_id": "D01-092",
+        "orig_text": "Badan Komunikasi Dewan Pimpinan Pusat Partai Gerindra",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Johan menyampaikan hal itu menanggapi penyataan anggota Badan Komunikasi Dewan Pimpinan Pusat Partai Gerindra Andre Rosiade ."
+      },
+      {
+        "sample_id": "D01-093",
+        "orig_text": "Komisi Pemilihan Umum",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "JawaPos . com - Komisi Pemilihan Umum ( KPU ) Kota Semarang angkat bicara terkait masuknya nama Menteri Dalam Negeri ( Mendagri ) Tjahjo Kumolo dalam daftar pemilih tetap ( DPT ) Pilgub Jateng 2018 di Kota Semarang . Menurut Lembaga Penyelenggara Pemilu itu , nama sang pria yang juga Politisi PDIP itu masih termasuk sebagai warga Kota Lunpia ."
+      },
+      {
+        "sample_id": "D01-093",
+        "orig_text": "KPU",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "JawaPos . com - Komisi Pemilihan Umum ( KPU ) Kota Semarang angkat bicara terkait masuknya nama Menteri Dalam Negeri ( Mendagri ) Tjahjo Kumolo dalam daftar pemilih tetap ( DPT ) Pilgub Jateng 2018 di Kota Semarang . Menurut Lembaga Penyelenggara Pemilu itu , nama sang pria yang juga Politisi PDIP itu masih termasuk sebagai warga Kota Lunpia ."
+      },
+      {
+        "sample_id": "D01-096",
+        "orig_text": "Pemkot Batam",
+        "orig_label": "NOR",
+        "cons_label": "ORG",
+        "sentence": "Namun ia juga menyampaikan , salah satu faktor yang membuat angka kecelakaan menurun , berkat upaya Pemkot Batam yang melakukan pelebaran jalan ."
+      }
+    ],
+    "spurious_removal": [
+      {
+        "sample_id": "D01-004",
+        "orig_text": "parang",
+        "orig_label": "PRD",
+        "sentence": "\" Saat melarikan diri tersebut korban dibacok oleh tersangka dari belakang dengan menggunakan parang , \" ucapnya ."
+      },
+      {
+        "sample_id": "D01-007",
+        "orig_text": "Pemerintah",
+        "orig_label": "NOR",
+        "sentence": "Solo - Pemerintah berencana mengajukan gamelan menjadi warisan budaya dunia ke organisasi pendidikan dan kebudayaan PBB , UNESCO . Gamelan diajukan sebagai warisan budaya tak benda ."
+      },
+      {
+        "sample_id": "D01-007",
+        "orig_text": "gamelan",
+        "orig_label": "PRD",
+        "sentence": "Solo - Pemerintah berencana mengajukan gamelan menjadi warisan budaya dunia ke organisasi pendidikan dan kebudayaan PBB , UNESCO . Gamelan diajukan sebagai warisan budaya tak benda ."
+      },
+      {
+        "sample_id": "D01-007",
+        "orig_text": "Gamelan",
+        "orig_label": "PRD",
+        "sentence": "Solo - Pemerintah berencana mengajukan gamelan menjadi warisan budaya dunia ke organisasi pendidikan dan kebudayaan PBB , UNESCO . Gamelan diajukan sebagai warisan budaya tak benda ."
+      },
+      {
+        "sample_id": "D01-010",
+        "orig_text": "kereta  api  bandara",
+        "orig_label": "PRD",
+        "sentence": "Dia  mengatakan penggunaan  kereta  api  bandara sangat  efisien mengurai kemacetan . Jakarta , contohnya , untuk ke bandara bisa menghabiskan waktu  hingga  tiga  jam , dan bisa dipangkas dengan  adanya  kereta  bandara . \" Akan efisien ,  apalagi ini tiketnya murah  sekali , cuma Rp 10 . 000 ,  murah ini , \"  ujarnya ."
+      },
+      {
+        "sample_id": "D01-010",
+        "orig_text": "kereta ",
+        "orig_label": "PRD",
+        "sentence": "Dia  mengatakan penggunaan  kereta  api  bandara sangat  efisien mengurai kemacetan . Jakarta , contohnya , untuk ke bandara bisa menghabiskan waktu  hingga  tiga  jam , dan bisa dipangkas dengan  adanya  kereta  bandara . \" Akan efisien ,  apalagi ini tiketnya murah  sekali , cuma Rp 10 . 000 ,  murah ini , \"  ujarnya ."
+      },
+      {
+        "sample_id": "D01-010",
+        "orig_text": "bandara",
+        "orig_label": "PRD",
+        "sentence": "Dia  mengatakan penggunaan  kereta  api  bandara sangat  efisien mengurai kemacetan . Jakarta , contohnya , untuk ke bandara bisa menghabiskan waktu  hingga  tiga  jam , dan bisa dipangkas dengan  adanya  kereta  bandara . \" Akan efisien ,  apalagi ini tiketnya murah  sekali , cuma Rp 10 . 000 ,  murah ini , \"  ujarnya ."
+      },
+      {
+        "sample_id": "D01-020",
+        "orig_text": "Toko Retail",
+        "orig_label": "PRD",
+        "sentence": "Ia menilai perlunya upaya untuk meningkatkan jumlah PKP ( Pengusaha Kena Pajak ) Toko Retail sehingga jumlah peserta tax refund semakin banyak di Tanah Air ."
+      },
+      {
+        "sample_id": "D01-020",
+        "orig_text": "tax refund",
+        "orig_label": "PRD",
+        "sentence": "Ia menilai perlunya upaya untuk meningkatkan jumlah PKP ( Pengusaha Kena Pajak ) Toko Retail sehingga jumlah peserta tax refund semakin banyak di Tanah Air ."
+      },
+      {
+        "sample_id": "D01-021",
+        "orig_text": "2018",
+        "orig_label": "DAT",
+        "sentence": "\" Sampai akhir 2018 nanti , Tol Trans - Jawa sudah bisa tersambung tidak hanya sampai Surabaya ."
+      },
+      {
+        "sample_id": "D01-023",
+        "orig_text": "Manager Jasa Marga Traffic Officer",
+        "orig_label": "ORG",
+        "sentence": "Manager Jasa Marga Traffic Officer , Hervian menyebut hingga Minggu pukul 05 . 00 WIB pagi tadi telah terjadi kepadatan kendaraan di ruas jalan tol Jakarta - Cikampek ."
+      },
+      {
+        "sample_id": "D01-037",
+        "orig_text": "rem",
+        "orig_label": "PRD",
+        "sentence": "Dari hasil olah TKP dan penelitian Labfor , Forensik dan Dishub ditemukan fakta mekanisme rem yang tidak bekerja maksimal ."
+      },
+      {
+        "sample_id": "D01-044",
+        "orig_text": "Polisi",
+        "orig_label": "NOR",
+        "sentence": "Polisi masih memburu inisial AR . \\ \\"
+      },
+      {
+        "sample_id": "D01-046",
+        "orig_text": "Dokar",
+        "orig_label": "PRD",
+        "sentence": "ÔªøYuk , Nikmati Liburan dengan Naik Dokar Keliling Kota Denpasar"
+      },
+      {
+        "sample_id": "D01-055",
+        "orig_text": "polisi",
+        "orig_label": "NOR",
+        "sentence": "Jakarta - Gubernur DKI Jakarta Anies Baswedan kembali berbeda pendapat dengan polisi . Setelah sebelumnya terkait Tanah Abang , kali ini beda pendapat terkait perobohan jembatan penyeberangan orang ( JPO ) yang ada di kawasan Thamrin , Jakarta Pusat ."
+      },
+      {
+        "sample_id": "D01-059",
+        "orig_text": "penerbangan lampion",
+        "orig_label": "EVT",
+        "sentence": "Acara yang dinamakan water lantern itu merupakan pengganti penerbangan lampion , sebagaimana yang dilakukan pada Festival Banjir Kanal Barat tahun - tahun sebelumnya ."
+      },
+      {
+        "sample_id": "D01-067",
+        "orig_text": "sepeda motor",
+        "orig_label": "PRD",
+        "sentence": "Dasrul pun mendorong agar pemerintah provinsi DKI Jakarta juga membuat peraturan tersebut untuk sepeda motor ."
+      },
+      {
+        "sample_id": "D01-069",
+        "orig_text": "dollar Singapore",
+        "orig_label": "MON",
+        "sentence": "Kapolsek Kebon Jeruk Kompol Marbun mengatakan , pelaku mencuri uang tunai Rp 3 . 040 . 000 , sebuah amplop berisi uang tunai Rp 1 juta , amplop berisi uang dollar Singapore sebanyak 200 lembar , dan 3 . 000 lembar uang Yen ."
+      },
+      {
+        "sample_id": "D01-069",
+        "orig_text": "Yen",
+        "orig_label": "MON",
+        "sentence": "Kapolsek Kebon Jeruk Kompol Marbun mengatakan , pelaku mencuri uang tunai Rp 3 . 040 . 000 , sebuah amplop berisi uang tunai Rp 1 juta , amplop berisi uang dollar Singapore sebanyak 200 lembar , dan 3 . 000 lembar uang Yen ."
+      },
+      {
+        "sample_id": "D01-070",
+        "orig_text": "LAHP",
+        "orig_label": "PRD",
+        "sentence": "Di situ persoalannya , \" kata Abyadi usai menyerahkan LAHP kepada Pemkab Simalungun di Kantor Pusat Ombudsman Republik Indonesia , Jakarta , Selasa ( 7 / 8 ) ."
+      },
+      {
+        "sample_id": "D01-074",
+        "orig_text": "Rapat Umum Pemegang Saham Tahunan",
+        "orig_label": "EVT",
+        "sentence": "Jakarta - PT Blue Bird Tbk ( BIRD ) hari ini menggelar Rapat Umum Pemegang Saham Tahunan ( RUPST ) ."
+      },
+      {
+        "sample_id": "D01-074",
+        "orig_text": "RUPST",
+        "orig_label": "EVT",
+        "sentence": "Jakarta - PT Blue Bird Tbk ( BIRD ) hari ini menggelar Rapat Umum Pemegang Saham Tahunan ( RUPST ) ."
+      },
+      {
+        "sample_id": "D01-083",
+        "orig_text": "Kereta",
+        "orig_label": "PRD",
+        "sentence": "\" Kereta ini kemudian sampai di stasiun Joo Koon tanpa fitur tersebut , \" ungkap Chua ."
+      },
+      {
+        "sample_id": "D01-089",
+        "orig_text": "Euro",
+        "orig_label": "MON",
+        "sentence": "TEMPO , Presiden Turki , Recep Tayyip Erdogan , meminta warga Turki untuk  menukar tabungan mata uang asing Euro atau Dolar AS ke mata uang negara , Lira ."
+      },
+      {
+        "sample_id": "D01-089",
+        "orig_text": "Lira",
+        "orig_label": "MON",
+        "sentence": "TEMPO , Presiden Turki , Recep Tayyip Erdogan , meminta warga Turki untuk  menukar tabungan mata uang asing Euro atau Dolar AS ke mata uang negara , Lira ."
+      },
+      {
+        "sample_id": "D01-091",
+        "orig_text": "telur ayam",
+        "orig_label": "PRD",
+        "sentence": "Pedagang memilah telur ayam di pasar Senen . Jakarta . ( CNN Indonesia / Adhi Wicaksono )"
+      },
+      {
+        "sample_id": "D01-093",
+        "orig_text": "Menteri Dalam Negeri",
+        "orig_label": "NOR",
+        "sentence": "JawaPos . com - Komisi Pemilihan Umum ( KPU ) Kota Semarang angkat bicara terkait masuknya nama Menteri Dalam Negeri ( Mendagri ) Tjahjo Kumolo dalam daftar pemilih tetap ( DPT ) Pilgub Jateng 2018 di Kota Semarang . Menurut Lembaga Penyelenggara Pemilu itu , nama sang pria yang juga Politisi PDIP itu masih termasuk sebagai warga Kota Lunpia ."
+      },
+      {
+        "sample_id": "D01-093",
+        "orig_text": "Mendagri",
+        "orig_label": "NOR",
+        "sentence": "JawaPos . com - Komisi Pemilihan Umum ( KPU ) Kota Semarang angkat bicara terkait masuknya nama Menteri Dalam Negeri ( Mendagri ) Tjahjo Kumolo dalam daftar pemilih tetap ( DPT ) Pilgub Jateng 2018 di Kota Semarang . Menurut Lembaga Penyelenggara Pemilu itu , nama sang pria yang juga Politisi PDIP itu masih termasuk sebagai warga Kota Lunpia ."
+      },
+      {
+        "sample_id": "D01-093",
+        "orig_text": "Lembaga Penyelenggara Pemilu",
+        "orig_label": "NOR",
+        "sentence": "JawaPos . com - Komisi Pemilihan Umum ( KPU ) Kota Semarang angkat bicara terkait masuknya nama Menteri Dalam Negeri ( Mendagri ) Tjahjo Kumolo dalam daftar pemilih tetap ( DPT ) Pilgub Jateng 2018 di Kota Semarang . Menurut Lembaga Penyelenggara Pemilu itu , nama sang pria yang juga Politisi PDIP itu masih termasuk sebagai warga Kota Lunpia ."
+      }
+    ],
+    "boundary_error": [
+      {
+        "sample_id": "D01-005",
+        "orig_text": "20",
+        "orig_label": "CRD",
+        "cons_text": "20 hingga 30 tahun",
+        "cons_label": "QTY",
+        "sentence": "Dia memaparkan korban kecelakaan masih didominasi oleh masyarakat usia produktif , yakni 20 hingga 30 tahun ."
+      },
+      {
+        "sample_id": "D01-005",
+        "orig_text": "30 tahun",
+        "orig_label": "QTY",
+        "cons_text": "20 hingga 30 tahun",
+        "cons_label": "QTY",
+        "sentence": "Dia memaparkan korban kecelakaan masih didominasi oleh masyarakat usia produktif , yakni 20 hingga 30 tahun ."
+      },
+      {
+        "sample_id": "D01-007",
+        "orig_text": "organisasi pendidikan dan kebudayaan PBB",
+        "orig_label": "NOR",
+        "cons_text": "PBB",
+        "cons_label": "ORG",
+        "sentence": "Solo - Pemerintah berencana mengajukan gamelan menjadi warisan budaya dunia ke organisasi pendidikan dan kebudayaan PBB , UNESCO . Gamelan diajukan sebagai warisan budaya tak benda ."
+      },
+      {
+        "sample_id": "D01-008",
+        "orig_text": "pemerintah Malaysia",
+        "orig_label": "NOR",
+        "cons_text": "Malaysia",
+        "cons_label": "GPE",
+        "sentence": "Menurut pemerintah Malaysia , kapal Equanimity dibeli dengan uang yang dikorupsi dari 1 MDB , perusahaan investasi negara yang diterpa skandal korupsi yang melibatkan mantan Perdana Menteri Nadjib Razak ."
+      },
+      {
+        "sample_id": "D01-008",
+        "orig_text": "kapal Equanimity",
+        "orig_label": "PRD",
+        "cons_text": "Equanimity",
+        "cons_label": "PRD",
+        "sentence": "Menurut pemerintah Malaysia , kapal Equanimity dibeli dengan uang yang dikorupsi dari 1 MDB , perusahaan investasi negara yang diterpa skandal korupsi yang melibatkan mantan Perdana Menteri Nadjib Razak ."
+      },
+      {
+        "sample_id": "D01-009",
+        "orig_text": "2017",
+        "orig_label": "DAT",
+        "cons_text": "Akhir tahun 2017 ini",
+        "cons_label": "DAT",
+        "sentence": "Akhir tahun 2017 ini , Polres Sumedang merekap data kecelakaan maupun pelanggaran lalu lintas yang terjadi selama setahun ke belakang ."
+      },
+      {
+        "sample_id": "D01-011",
+        "orig_text": "04 : 00 GMT",
+        "orig_label": "TIM",
+        "cons_text": "pukul 04 : 00 GMT",
+        "cons_label": "TIM",
+        "sentence": "Tarif AS pada impor China senilai 34 miliar USD telah berlaku sejak Jumat ( 6 / 7 ) pukul 04 : 00 GMT ."
+      },
+      {
+        "sample_id": "D01-016",
+        "orig_text": "21 . 30 WIB",
+        "orig_label": "TIM",
+        "cons_text": "pukul 21 . 30 WIB",
+        "cons_label": "TIM",
+        "sentence": "Rumah di Kampung Utan Bahagia , Cengkareng , Jakarta Barat , itu digerebek pada Selasa ( 15 / 5 ) pukul 21 . 30 WIB ."
+      },
+      {
+        "sample_id": "D01-023",
+        "orig_text": "05 . 00 WIB",
+        "orig_label": "TIM",
+        "cons_text": "pukul 05 . 00 WIB pagi tadi",
+        "cons_label": "TIM",
+        "sentence": "Manager Jasa Marga Traffic Officer , Hervian menyebut hingga Minggu pukul 05 . 00 WIB pagi tadi telah terjadi kepadatan kendaraan di ruas jalan tol Jakarta - Cikampek ."
+      },
+      {
+        "sample_id": "D01-025",
+        "orig_text": "Gubernur Sumatera Barat",
+        "orig_label": "NOR",
+        "cons_text": "Sumatera Barat",
+        "cons_label": "GPE",
+        "sentence": "Ancol Minangkabau Festival juga rencananya akan dihadiri Gubernur Sumatera Barat Irwan Prayitno ."
+      },
+      {
+        "sample_id": "D01-033",
+        "orig_text": "Top Destination Dunia 2017",
+        "orig_label": "EVT",
+        "cons_text": "2017",
+        "cons_label": "DAT",
+        "sentence": "Tak ketinggalan , Indonesia juga berpartisipasi dalam The Indian Ocean Tuna Commission ( IOTC ) , The Western and Central Pacific Fisheries Commission ( WCPFC ) , The Commission for the Conservation of Southern Bluefin Tuna ( CCSBT ) dan Inter - American Tropical Tuna Commission ( IATTC ) . Dinobatkan Sebagai Top Destination Dunia 2017 , Tahun Ini Bali Tak Masuk Deretan Pantai Terbaik Dunia"
+      },
+      {
+        "sample_id": "D01-041",
+        "orig_text": "Menteri Luar Negeri Qatar",
+        "orig_label": "NOR",
+        "cons_text": "Qatar",
+        "cons_label": "GPE",
+        "sentence": "Setelah dilakukan penyelidikan , Menteri Luar Negeri Qatar Sheikh Mohammed bin Abdulrahman al - Thani mengungkapkan FBI telah mengonfirmasi adanya tindak peretasan dan penanaman berita palsu di kantor berita Qatar ."
+      },
+      {
+        "sample_id": "D01-041",
+        "orig_text": "Sheikh Mohammed bin Abdulrahman al - Thani",
+        "orig_label": "PER",
+        "cons_text": "Mohammed bin Abdulrahman al - Thani",
+        "cons_label": "PER",
+        "sentence": "Setelah dilakukan penyelidikan , Menteri Luar Negeri Qatar Sheikh Mohammed bin Abdulrahman al - Thani mengungkapkan FBI telah mengonfirmasi adanya tindak peretasan dan penanaman berita palsu di kantor berita Qatar ."
+      },
+      {
+        "sample_id": "D01-045",
+        "orig_text": "1 . 904 unit",
+        "orig_label": "QTY",
+        "cons_text": "1 . 904",
+        "cons_label": "CRD",
+        "sentence": "Sedangkan untuk kendaraan roda dua berjumlah 1 . 904 unit , kendaraan roda empat sebanyak 2 . 918 unit , bus 179 , dan truk 87 unit ."
+      },
+      {
+        "sample_id": "D01-045",
+        "orig_text": "2 . 918 unit",
+        "orig_label": "QTY",
+        "cons_text": "2 . 918",
+        "cons_label": "CRD",
+        "sentence": "Sedangkan untuk kendaraan roda dua berjumlah 1 . 904 unit , kendaraan roda empat sebanyak 2 . 918 unit , bus 179 , dan truk 87 unit ."
+      },
+      {
+        "sample_id": "D01-045",
+        "orig_text": "87 unit",
+        "orig_label": "QTY",
+        "cons_text": "87",
+        "cons_label": "CRD",
+        "sentence": "Sedangkan untuk kendaraan roda dua berjumlah 1 . 904 unit , kendaraan roda empat sebanyak 2 . 918 unit , bus 179 , dan truk 87 unit ."
+      },
+      {
+        "sample_id": "D01-047",
+        "orig_text": "Ketua Dewan Kehormatan PAN",
+        "orig_label": "NOR",
+        "cons_text": "Dewan Kehormatan PAN",
+        "cons_label": "ORG",
+        "sentence": "REPUBLIKA , Pengamat politik dari Universitas Indonesia  Arbi Sanit menilai , pertemuan antara Ketua Dewan Kehormatan PAN Amien Rais dan Ketua Umum Partai Gerindra Prabowo Subianto dengan Habib Rizieq Shihab di Makkah , belum tentu dapat menggiring suara masyarakat Islam ."
+      },
+      {
+        "sample_id": "D01-047",
+        "orig_text": "Ketua Umum Partai Gerindra",
+        "orig_label": "NOR",
+        "cons_text": "Partai Gerindra",
+        "cons_label": "ORG",
+        "sentence": "REPUBLIKA , Pengamat politik dari Universitas Indonesia  Arbi Sanit menilai , pertemuan antara Ketua Dewan Kehormatan PAN Amien Rais dan Ketua Umum Partai Gerindra Prabowo Subianto dengan Habib Rizieq Shihab di Makkah , belum tentu dapat menggiring suara masyarakat Islam ."
+      },
+      {
+        "sample_id": "D01-047",
+        "orig_text": "Habib Rizieq Shihab",
+        "orig_label": "PER",
+        "cons_text": "Rizieq Shihab",
+        "cons_label": "PER",
+        "sentence": "REPUBLIKA , Pengamat politik dari Universitas Indonesia  Arbi Sanit menilai , pertemuan antara Ketua Dewan Kehormatan PAN Amien Rais dan Ketua Umum Partai Gerindra Prabowo Subianto dengan Habib Rizieq Shihab di Makkah , belum tentu dapat menggiring suara masyarakat Islam ."
+      },
+      {
+        "sample_id": "D01-055",
+        "orig_text": "Gubernur DKI Jakarta",
+        "orig_label": "NOR",
+        "cons_text": "DKI Jakarta",
+        "cons_label": "GPE",
+        "sentence": "Jakarta - Gubernur DKI Jakarta Anies Baswedan kembali berbeda pendapat dengan polisi . Setelah sebelumnya terkait Tanah Abang , kali ini beda pendapat terkait perobohan jembatan penyeberangan orang ( JPO ) yang ada di kawasan Thamrin , Jakarta Pusat ."
+      },
+      {
+        "sample_id": "D01-058",
+        "orig_text": "2015",
+        "orig_label": "DAT",
+        "cons_text": "tahun 2015",
+        "cons_label": "DAT",
+        "sentence": "Peningkatan ini mencerminkan kenaikan 2 , 5 persen dalam jumlah total korban jiwa ( dari 319 orang pada tahun 2015 menjadi 327 orang pada tahun 2016 ) dan kenaikan 17 persen dalam perkiraan jumlah total cedera serius ( dari 3 . 775 orang pada tahun 2015 menjadi 4 . 410 orang pada tahun 2016 ) ."
+      },
+      {
+        "sample_id": "D01-058",
+        "orig_text": "2016",
+        "orig_label": "DAT",
+        "cons_text": "tahun 2016",
+        "cons_label": "DAT",
+        "sentence": "Peningkatan ini mencerminkan kenaikan 2 , 5 persen dalam jumlah total korban jiwa ( dari 319 orang pada tahun 2015 menjadi 327 orang pada tahun 2016 ) dan kenaikan 17 persen dalam perkiraan jumlah total cedera serius ( dari 3 . 775 orang pada tahun 2015 menjadi 4 . 410 orang pada tahun 2016 ) ."
+      },
+      {
+        "sample_id": "D01-058",
+        "orig_text": "2015",
+        "orig_label": "DAT",
+        "cons_text": "tahun 2015",
+        "cons_label": "DAT",
+        "sentence": "Peningkatan ini mencerminkan kenaikan 2 , 5 persen dalam jumlah total korban jiwa ( dari 319 orang pada tahun 2015 menjadi 327 orang pada tahun 2016 ) dan kenaikan 17 persen dalam perkiraan jumlah total cedera serius ( dari 3 . 775 orang pada tahun 2015 menjadi 4 . 410 orang pada tahun 2016 ) ."
+      },
+      {
+        "sample_id": "D01-058",
+        "orig_text": "2016",
+        "orig_label": "DAT",
+        "cons_text": "tahun 2016",
+        "cons_label": "DAT",
+        "sentence": "Peningkatan ini mencerminkan kenaikan 2 , 5 persen dalam jumlah total korban jiwa ( dari 319 orang pada tahun 2015 menjadi 327 orang pada tahun 2016 ) dan kenaikan 17 persen dalam perkiraan jumlah total cedera serius ( dari 3 . 775 orang pada tahun 2015 menjadi 4 . 410 orang pada tahun 2016 ) ."
+      },
+      {
+        "sample_id": "D01-066",
+        "orig_text": "dr . Ulul Albab , SpOG",
+        "orig_label": "PER",
+        "cons_text": "Ulul Albab",
+        "cons_label": "PER",
+        "sentence": "Perwakilan Ikatan Dokter Indonesia ( IDI ) dr . Ulul Albab , SpOG mengungkapkan saat tidur , tubuh kita mengalami metabolisme basal , yaitu organ tubuh seperti jantung , otak , pankreas , dan sistem pencernaan tetap bekerja menjalankan fungsi - fungsinya ."
+      },
+      {
+        "sample_id": "D01-069",
+        "orig_text": "Kapolsek Kebon Jeruk",
+        "orig_label": "NOR",
+        "cons_text": "Kebon Jeruk",
+        "cons_label": "GPE",
+        "sentence": "Kapolsek Kebon Jeruk Kompol Marbun mengatakan , pelaku mencuri uang tunai Rp 3 . 040 . 000 , sebuah amplop berisi uang tunai Rp 1 juta , amplop berisi uang dollar Singapore sebanyak 200 lembar , dan 3 . 000 lembar uang Yen ."
+      },
+      {
+        "sample_id": "D01-069",
+        "orig_text": "Kompol Marbun",
+        "orig_label": "PER",
+        "cons_text": "Marbun",
+        "cons_label": "PER",
+        "sentence": "Kapolsek Kebon Jeruk Kompol Marbun mengatakan , pelaku mencuri uang tunai Rp 3 . 040 . 000 , sebuah amplop berisi uang tunai Rp 1 juta , amplop berisi uang dollar Singapore sebanyak 200 lembar , dan 3 . 000 lembar uang Yen ."
+      },
+      {
+        "sample_id": "D01-072",
+        "orig_text": "Sekretaris Jenderal Partai Gerindra",
+        "orig_label": "NOR",
+        "cons_text": "Partai Gerindra",
+        "cons_label": "ORG",
+        "sentence": "TEMPO , Sekretaris Jenderal Partai Gerindra Ahmad Muzani menyebut ada dua nama yang menjadi kandidat calon wakil presiden atau cawapres Prabowo Subianto di Pemilihan Presiden atau Pilpres 2019 ."
+      },
+      {
+        "sample_id": "D01-073",
+        "orig_text": "1912",
+        "orig_label": "DAT",
+        "cons_text": "tahun 1912",
+        "cons_label": "DAT",
+        "sentence": "Pada tahun 1912 , Fokker kembali ke Jerman dan menetap di Johannistal , Berlin ."
+      },
+      {
+        "sample_id": "D01-081",
+        "orig_text": "Ketua Umum PAN",
+        "orig_label": "NOR",
+        "cons_text": "PAN",
+        "cons_label": "ORG",
+        "sentence": "Keesokan harinya , sinyal koalisi semakin kuat setelah Ketua Umum PAN Zulkifli Hasan bertandang ke rumah SBY ."
+      },
+      {
+        "sample_id": "D01-085",
+        "orig_text": "Marketing Communication Royal entul Park",
+        "orig_label": "ORG",
+        "cons_text": "Royal entul Park",
+        "cons_label": "ORG",
+        "sentence": "Marketing Communication Royal entul Park Annisa Rizky Fadlillah mengatakan , ada sebanyak 58 menu masakan khas nusantara yang disajikan di tempat ini . \""
+      },
+      {
+        "sample_id": "D01-085",
+        "orig_text": "58 menu",
+        "orig_label": "QTY",
+        "cons_text": "58",
+        "cons_label": "CRD",
+        "sentence": "Marketing Communication Royal entul Park Annisa Rizky Fadlillah mengatakan , ada sebanyak 58 menu masakan khas nusantara yang disajikan di tempat ini . \""
+      },
+      {
+        "sample_id": "D01-089",
+        "orig_text": "Presiden Turki",
+        "orig_label": "NOR",
+        "cons_text": "Turki",
+        "cons_label": "GPE",
+        "sentence": "TEMPO , Presiden Turki , Recep Tayyip Erdogan , meminta warga Turki untuk  menukar tabungan mata uang asing Euro atau Dolar AS ke mata uang negara , Lira ."
+      },
+      {
+        "sample_id": "D01-089",
+        "orig_text": "Turki",
+        "orig_label": "GPE",
+        "cons_text": "warga Turki",
+        "cons_label": "NOR",
+        "sentence": "TEMPO , Presiden Turki , Recep Tayyip Erdogan , meminta warga Turki untuk  menukar tabungan mata uang asing Euro atau Dolar AS ke mata uang negara , Lira ."
+      },
+      {
+        "sample_id": "D01-089",
+        "orig_text": "Dolar AS",
+        "orig_label": "MON",
+        "cons_text": "AS",
+        "cons_label": "GPE",
+        "sentence": "TEMPO , Presiden Turki , Recep Tayyip Erdogan , meminta warga Turki untuk  menukar tabungan mata uang asing Euro atau Dolar AS ke mata uang negara , Lira ."
+      },
+      {
+        "sample_id": "D01-090",
+        "orig_text": "Gubernur DKI Jakarta",
+        "orig_label": "NOR",
+        "cons_text": "DKI Jakarta",
+        "cons_label": "GPE",
+        "sentence": "\" Dan satu lagi langkah - langkah terobosan dalam rangka meningkatkan sektor pariwisata yang bisa mendatangkan devisa secara cepat ini juga sama penting , \" mantan Gubernur DKI Jakarta itu ."
+      },
+      {
+        "sample_id": "D01-093",
+        "orig_text": "Politisi PDIP",
+        "orig_label": "NOR",
+        "cons_text": "PDIP",
+        "cons_label": "ORG",
+        "sentence": "JawaPos . com - Komisi Pemilihan Umum ( KPU ) Kota Semarang angkat bicara terkait masuknya nama Menteri Dalam Negeri ( Mendagri ) Tjahjo Kumolo dalam daftar pemilih tetap ( DPT ) Pilgub Jateng 2018 di Kota Semarang . Menurut Lembaga Penyelenggara Pemilu itu , nama sang pria yang juga Politisi PDIP itu masih termasuk sebagai warga Kota Lunpia ."
+      },
+      {
+        "sample_id": "D01-098",
+        "orig_text": "Kedua remaja 16 tahun",
+        "orig_label": "QTY",
+        "cons_text": "Kedua",
+        "cons_label": "CRD",
+        "sentence": "Kedua remaja 16 tahun itu tinggal di Gang Mandala Tuban , dekat Pantai jerman ."
+      },
+      {
+        "sample_id": "D01-098",
+        "orig_text": "Gang Mandala Tuban",
+        "orig_label": "LOC",
+        "cons_text": "Gang Mandala",
+        "cons_label": "FAC",
+        "sentence": "Kedua remaja 16 tahun itu tinggal di Gang Mandala Tuban , dekat Pantai jerman ."
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "sample_id": "D01-002",
+      "sentence": "Setelah ditangkap , Hasnil langsung diboyong ke Medan dengan menggunakan maskapai Batik Air .",
+      "wrong_orig": [
+        [
+          11,
+          13,
+          "PRD",
+          "Batik Air"
+        ]
+      ],
+      "missing_cons": [
+        [
+          11,
+          13,
+          "ORG",
+          "Batik Air"
+        ]
+      ],
+      "correct": [
+        [
+          3,
+          4,
+          "PER",
+          "Hasnil"
+        ],
+        [
+          7,
+          8,
+          "GPE",
+          "Medan"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-004",
+      "sentence": "\" Saat melarikan diri tersebut korban dibacok oleh tersangka dari belakang dengan menggunakan parang , \" ucapnya .",
+      "wrong_orig": [
+        [
+          13,
+          14,
+          "PRD",
+          "parang"
+        ]
+      ],
+      "missing_cons": [],
+      "correct": []
+    },
+    {
+      "sample_id": "D01-005",
+      "sentence": "Dia memaparkan korban kecelakaan masih didominasi oleh masyarakat usia produktif , yakni 20 hingga 30 tahun .",
+      "wrong_orig": [
+        [
+          12,
+          13,
+          "CRD",
+          "20"
+        ],
+        [
+          14,
+          16,
+          "QTY",
+          "30 tahun"
+        ]
+      ],
+      "missing_cons": [
+        [
+          12,
+          16,
+          "QTY",
+          "20 hingga 30 tahun"
+        ]
+      ],
+      "correct": []
+    },
+    {
+      "sample_id": "D01-007",
+      "sentence": "Solo - Pemerintah berencana mengajukan gamelan menjadi warisan budaya dunia ke organisasi pendidikan dan kebudayaan PBB , UNESCO . Gamelan diajukan sebagai warisan budaya tak benda .",
+      "wrong_orig": [
+        [
+          2,
+          3,
+          "NOR",
+          "Pemerintah"
+        ],
+        [
+          5,
+          6,
+          "PRD",
+          "gamelan"
+        ],
+        [
+          11,
+          16,
+          "NOR",
+          "organisasi pendidikan dan kebudayaan PBB"
+        ],
+        [
+          17,
+          18,
+          "NOR",
+          "UNESCO"
+        ],
+        [
+          19,
+          20,
+          "PRD",
+          "Gamelan"
+        ]
+      ],
+      "missing_cons": [
+        [
+          15,
+          16,
+          "ORG",
+          "PBB"
+        ],
+        [
+          17,
+          18,
+          "ORG",
+          "UNESCO"
+        ]
+      ],
+      "correct": [
+        [
+          0,
+          1,
+          "GPE",
+          "Solo"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-008",
+      "sentence": "Menurut pemerintah Malaysia , kapal Equanimity dibeli dengan uang yang dikorupsi dari 1 MDB , perusahaan investasi negara yang diterpa skandal korupsi yang melibatkan mantan Perdana Menteri Nadjib Razak .",
+      "wrong_orig": [
+        [
+          1,
+          3,
+          "NOR",
+          "pemerintah Malaysia"
+        ],
+        [
+          4,
+          6,
+          "PRD",
+          "kapal Equanimity"
+        ]
+      ],
+      "missing_cons": [
+        [
+          2,
+          3,
+          "GPE",
+          "Malaysia"
+        ],
+        [
+          5,
+          6,
+          "PRD",
+          "Equanimity"
+        ]
+      ],
+      "correct": [
+        [
+          12,
+          14,
+          "ORG",
+          "1 MDB"
+        ],
+        [
+          27,
+          29,
+          "PER",
+          "Nadjib Razak"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-009",
+      "sentence": "Akhir tahun 2017 ini , Polres Sumedang merekap data kecelakaan maupun pelanggaran lalu lintas yang terjadi selama setahun ke belakang .",
+      "wrong_orig": [
+        [
+          2,
+          3,
+          "DAT",
+          "2017"
+        ],
+        [
+          5,
+          7,
+          "NOR",
+          "Polres Sumedang"
+        ]
+      ],
+      "missing_cons": [
+        [
+          0,
+          4,
+          "DAT",
+          "Akhir tahun 2017 ini"
+        ],
+        [
+          5,
+          7,
+          "ORG",
+          "Polres Sumedang"
+        ]
+      ],
+      "correct": [
+        [
+          17,
+          18,
+          "QTY",
+          "setahun"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-010",
+      "sentence": "Dia  mengatakan penggunaan  kereta  api  bandara sangat  efisien mengurai kemacetan . Jakarta , contohnya , untuk ke bandara bisa menghabiskan waktu  hingga  tiga  jam , dan bisa dipangkas dengan  adanya  kereta  bandara . \" Akan efisien ,  apalagi ini tiketnya murah  sekali , cuma Rp 10 . 000 ,  murah ini , \"  ujarnya .",
+      "wrong_orig": [
+        [
+          3,
+          6,
+          "PRD",
+          "kereta  api  bandara"
+        ],
+        [
+          30,
+          31,
+          "PRD",
+          "kereta "
+        ],
+        [
+          31,
+          32,
+          "PRD",
+          "bandara"
+        ]
+      ],
+      "missing_cons": [],
+      "correct": [
+        [
+          11,
+          12,
+          "GPE",
+          "Jakarta"
+        ],
+        [
+          22,
+          24,
+          "QTY",
+          "tiga  jam"
+        ],
+        [
+          44,
+          48,
+          "MON",
+          "Rp 10 . 000"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-011",
+      "sentence": "Tarif AS pada impor China senilai 34 miliar USD telah berlaku sejak Jumat ( 6 / 7 ) pukul 04 : 00 GMT .",
+      "wrong_orig": [
+        [
+          19,
+          23,
+          "TIM",
+          "04 : 00 GMT"
+        ]
+      ],
+      "missing_cons": [
+        [
+          18,
+          23,
+          "TIM",
+          "pukul 04 : 00 GMT"
+        ]
+      ],
+      "correct": [
+        [
+          1,
+          2,
+          "GPE",
+          "AS"
+        ],
+        [
+          4,
+          5,
+          "GPE",
+          "China"
+        ],
+        [
+          6,
+          9,
+          "MON",
+          "34 miliar USD"
+        ],
+        [
+          12,
+          18,
+          "DAT",
+          "Jumat ( 6 / 7 )"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-013",
+      "sentence": "Aplikasi itu bisa didapatkan secara gratis dengan men - download di Playstore . Uniknya , aplikasi ini juga bisa digunakan untuk mengatur kumpulan audio Alquran hingga ambience light .",
+      "wrong_orig": [],
+      "missing_cons": [
+        [
+          11,
+          12,
+          "PRD",
+          "Playstore"
+        ],
+        [
+          24,
+          25,
+          "WOA",
+          "Alquran"
+        ]
+      ],
+      "correct": []
+    },
+    {
+      "sample_id": "D01-016",
+      "sentence": "Rumah di Kampung Utan Bahagia , Cengkareng , Jakarta Barat , itu digerebek pada Selasa ( 15 / 5 ) pukul 21 . 30 WIB .",
+      "wrong_orig": [
+        [
+          21,
+          25,
+          "TIM",
+          "21 . 30 WIB"
+        ]
+      ],
+      "missing_cons": [
+        [
+          20,
+          25,
+          "TIM",
+          "pukul 21 . 30 WIB"
+        ]
+      ],
+      "correct": [
+        [
+          2,
+          5,
+          "LOC",
+          "Kampung Utan Bahagia"
+        ],
+        [
+          6,
+          7,
+          "GPE",
+          "Cengkareng"
+        ],
+        [
+          8,
+          10,
+          "GPE",
+          "Jakarta Barat"
+        ],
+        [
+          14,
+          20,
+          "DAT",
+          "Selasa ( 15 / 5 )"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-020",
+      "sentence": "Ia menilai perlunya upaya untuk meningkatkan jumlah PKP ( Pengusaha Kena Pajak ) Toko Retail sehingga jumlah peserta tax refund semakin banyak di Tanah Air .",
+      "wrong_orig": [
+        [
+          13,
+          15,
+          "PRD",
+          "Toko Retail"
+        ],
+        [
+          18,
+          20,
+          "PRD",
+          "tax refund"
+        ]
+      ],
+      "missing_cons": [
+        [
+          23,
+          25,
+          "GPE",
+          "Tanah Air"
+        ]
+      ],
+      "correct": []
+    },
+    {
+      "sample_id": "D01-021",
+      "sentence": "\" Sampai akhir 2018 nanti , Tol Trans - Jawa sudah bisa tersambung tidak hanya sampai Surabaya .",
+      "wrong_orig": [
+        [
+          3,
+          4,
+          "DAT",
+          "2018"
+        ]
+      ],
+      "missing_cons": [],
+      "correct": [
+        [
+          6,
+          10,
+          "FAC",
+          "Tol Trans - Jawa"
+        ],
+        [
+          16,
+          17,
+          "GPE",
+          "Surabaya"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-023",
+      "sentence": "Manager Jasa Marga Traffic Officer , Hervian menyebut hingga Minggu pukul 05 . 00 WIB pagi tadi telah terjadi kepadatan kendaraan di ruas jalan tol Jakarta - Cikampek .",
+      "wrong_orig": [
+        [
+          0,
+          5,
+          "ORG",
+          "Manager Jasa Marga Traffic Officer"
+        ],
+        [
+          11,
+          15,
+          "TIM",
+          "05 . 00 WIB"
+        ]
+      ],
+      "missing_cons": [
+        [
+          10,
+          17,
+          "TIM",
+          "pukul 05 . 00 WIB pagi tadi"
+        ]
+      ],
+      "correct": [
+        [
+          6,
+          7,
+          "PER",
+          "Hervian"
+        ],
+        [
+          9,
+          10,
+          "DAT",
+          "Minggu"
+        ],
+        [
+          23,
+          28,
+          "FAC",
+          "jalan tol Jakarta - Cikampek"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-024",
+      "sentence": "Untuk dua jenis tindakan yang dilakukan di dalam operasi yang berjalan selama 20 hari itu , terjadi penurunan angka penindakan sebesar 64 persen jika dibandingkan dengan operasi yang sama digelar pada tahun sebelumnya .",
+      "wrong_orig": [
+        [
+          12,
+          14,
+          "QTY",
+          "20 hari"
+        ]
+      ],
+      "missing_cons": [
+        [
+          12,
+          14,
+          "DAT",
+          "20 hari"
+        ],
+        [
+          31,
+          33,
+          "DAT",
+          "tahun sebelumnya"
+        ]
+      ],
+      "correct": [
+        [
+          1,
+          2,
+          "CRD",
+          "dua"
+        ],
+        [
+          21,
+          23,
+          "PRC",
+          "64 persen"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-025",
+      "sentence": "Ancol Minangkabau Festival juga rencananya akan dihadiri Gubernur Sumatera Barat Irwan Prayitno .",
+      "wrong_orig": [
+        [
+          7,
+          10,
+          "NOR",
+          "Gubernur Sumatera Barat"
+        ]
+      ],
+      "missing_cons": [
+        [
+          8,
+          10,
+          "GPE",
+          "Sumatera Barat"
+        ]
+      ],
+      "correct": [
+        [
+          0,
+          3,
+          "EVT",
+          "Ancol Minangkabau Festival"
+        ],
+        [
+          10,
+          12,
+          "PER",
+          "Irwan Prayitno"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-027",
+      "sentence": "Jajaran Direktorat Lalu Lintas juga kerap menggelar kampanye dan razia kendaraan lalu lintas untuk sekaligus mengingatkan pengendara meningkatkan keselamatan berlalu lintas termasuk ketertiban administrasi kendaraan .",
+      "wrong_orig": [
+        [
+          1,
+          4,
+          "NOR",
+          "Direktorat Lalu Lintas"
+        ]
+      ],
+      "missing_cons": [
+        [
+          1,
+          4,
+          "ORG",
+          "Direktorat Lalu Lintas"
+        ]
+      ],
+      "correct": []
+    },
+    {
+      "sample_id": "D01-033",
+      "sentence": "Tak ketinggalan , Indonesia juga berpartisipasi dalam The Indian Ocean Tuna Commission ( IOTC ) , The Western and Central Pacific Fisheries Commission ( WCPFC ) , The Commission for the Conservation of Southern Bluefin Tuna ( CCSBT ) dan Inter - American Tropical Tuna Commission ( IATTC ) . Dinobatkan Sebagai Top Destination Dunia 2017 , Tahun Ini Bali Tak Masuk Deretan Pantai Terbaik Dunia",
+      "wrong_orig": [
+        [
+          52,
+          56,
+          "EVT",
+          "Top Destination Dunia 2017"
+        ]
+      ],
+      "missing_cons": [
+        [
+          55,
+          56,
+          "DAT",
+          "2017"
+        ],
+        [
+          57,
+          59,
+          "DAT",
+          "Tahun Ini"
+        ]
+      ],
+      "correct": [
+        [
+          3,
+          4,
+          "GPE",
+          "Indonesia"
+        ],
+        [
+          7,
+          12,
+          "ORG",
+          "The Indian Ocean Tuna Commission"
+        ],
+        [
+          13,
+          14,
+          "ORG",
+          "IOTC"
+        ],
+        [
+          16,
+          23,
+          "ORG",
+          "The Western and Central Pacific Fisheries Commission"
+        ],
+        [
+          24,
+          25,
+          "ORG",
+          "WCPFC"
+        ],
+        [
+          27,
+          36,
+          "ORG",
+          "The Commission for the Conservation of Southern Bluefin Tuna"
+        ],
+        [
+          37,
+          38,
+          "ORG",
+          "CCSBT"
+        ],
+        [
+          40,
+          46,
+          "ORG",
+          "Inter - American Tropical Tuna Commission"
+        ],
+        [
+          47,
+          48,
+          "ORG",
+          "IATTC"
+        ],
+        [
+          59,
+          60,
+          "GPE",
+          "Bali"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-036",
+      "sentence": "Pemerintah Indonesia , kata Susi , telah mengidentifikasi prioritas pengelolaan perikanan tuna yang berfokus pada data produksi tuna .",
+      "wrong_orig": [
+        [
+          0,
+          2,
+          "NOR",
+          "Pemerintah Indonesia"
+        ]
+      ],
+      "missing_cons": [
+        [
+          0,
+          2,
+          "ORG",
+          "Pemerintah Indonesia"
+        ]
+      ],
+      "correct": [
+        [
+          4,
+          5,
+          "PER",
+          "Susi"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-037",
+      "sentence": "Dari hasil olah TKP dan penelitian Labfor , Forensik dan Dishub ditemukan fakta mekanisme rem yang tidak bekerja maksimal .",
+      "wrong_orig": [
+        [
+          10,
+          11,
+          "NOR",
+          "Dishub"
+        ],
+        [
+          14,
+          15,
+          "PRD",
+          "rem"
+        ]
+      ],
+      "missing_cons": [
+        [
+          10,
+          11,
+          "ORG",
+          "Dishub"
+        ]
+      ],
+      "correct": [
+        [
+          6,
+          7,
+          "ORG",
+          "Labfor"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-039",
+      "sentence": "Menurut Haley , negara - negara di Timur Tengah tersebut tidak memberikan bantuan kepada Badan Bantuan dan Pekerjaan PBB ( UNRWA ) , yang membantu para pengungsi Palestina .",
+      "wrong_orig": [
+        [
+          7,
+          9,
+          "GPE",
+          "Timur Tengah"
+        ],
+        [
+          14,
+          19,
+          "NOR",
+          "Badan Bantuan dan Pekerjaan PBB"
+        ],
+        [
+          20,
+          21,
+          "NOR",
+          "UNRWA"
+        ],
+        [
+          27,
+          28,
+          "GPE",
+          "Palestina"
+        ]
+      ],
+      "missing_cons": [
+        [
+          7,
+          9,
+          "LOC",
+          "Timur Tengah"
+        ],
+        [
+          14,
+          19,
+          "ORG",
+          "Badan Bantuan dan Pekerjaan PBB"
+        ],
+        [
+          20,
+          21,
+          "ORG",
+          "UNRWA"
+        ],
+        [
+          27,
+          28,
+          "NOR",
+          "Palestina"
+        ]
+      ],
+      "correct": [
+        [
+          1,
+          2,
+          "PER",
+          "Haley"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-040",
+      "sentence": "Bahkan Tifatul memberikan ancaman , PKS akan meninggalkan koalisi jika kadernya tidak dipilih sebagai cawapres . \" Kalau mau jalan sendiri ya , go . Kami nggak masalah , \" ungkapnya .",
+      "wrong_orig": [
+        [
+          5,
+          6,
+          "NOR",
+          "PKS"
+        ]
+      ],
+      "missing_cons": [
+        [
+          5,
+          6,
+          "ORG",
+          "PKS"
+        ]
+      ],
+      "correct": [
+        [
+          1,
+          2,
+          "PER",
+          "Tifatul"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-041",
+      "sentence": "Setelah dilakukan penyelidikan , Menteri Luar Negeri Qatar Sheikh Mohammed bin Abdulrahman al - Thani mengungkapkan FBI telah mengonfirmasi adanya tindak peretasan dan penanaman berita palsu di kantor berita Qatar .",
+      "wrong_orig": [
+        [
+          4,
+          8,
+          "NOR",
+          "Menteri Luar Negeri Qatar"
+        ],
+        [
+          8,
+          15,
+          "PER",
+          "Sheikh Mohammed bin Abdulrahman al - Thani"
+        ],
+        [
+          16,
+          17,
+          "NOR",
+          "FBI"
+        ]
+      ],
+      "missing_cons": [
+        [
+          7,
+          8,
+          "GPE",
+          "Qatar"
+        ],
+        [
+          9,
+          15,
+          "PER",
+          "Mohammed bin Abdulrahman al - Thani"
+        ],
+        [
+          16,
+          17,
+          "ORG",
+          "FBI"
+        ]
+      ],
+      "correct": [
+        [
+          29,
+          30,
+          "GPE",
+          "Qatar"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-043",
+      "sentence": "Menurut Manap , ketiga napi  teroris itu kerap dikunjungi keluarganya . Bahkan anak Ridwan membesuk setiap hari pada  jam  kunjungan .",
+      "wrong_orig": [
+        [
+          3,
+          4,
+          "ORD",
+          "ketiga"
+        ]
+      ],
+      "missing_cons": [
+        [
+          3,
+          4,
+          "CRD",
+          "ketiga"
+        ]
+      ],
+      "correct": [
+        [
+          1,
+          2,
+          "PER",
+          "Manap"
+        ],
+        [
+          13,
+          14,
+          "PER",
+          "Ridwan"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-044",
+      "sentence": "Polisi masih memburu inisial AR . \\ \\",
+      "wrong_orig": [
+        [
+          0,
+          1,
+          "NOR",
+          "Polisi"
+        ]
+      ],
+      "missing_cons": [],
+      "correct": [
+        [
+          4,
+          5,
+          "PER",
+          "AR"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-045",
+      "sentence": "Sedangkan untuk kendaraan roda dua berjumlah 1 . 904 unit , kendaraan roda empat sebanyak 2 . 918 unit , bus 179 , dan truk 87 unit .",
+      "wrong_orig": [
+        [
+          6,
+          10,
+          "QTY",
+          "1 . 904 unit"
+        ],
+        [
+          15,
+          19,
+          "QTY",
+          "2 . 918 unit"
+        ],
+        [
+          21,
+          22,
+          "QTY",
+          "179"
+        ],
+        [
+          25,
+          27,
+          "QTY",
+          "87 unit"
+        ]
+      ],
+      "missing_cons": [
+        [
+          6,
+          9,
+          "CRD",
+          "1 . 904"
+        ],
+        [
+          15,
+          18,
+          "CRD",
+          "2 . 918"
+        ],
+        [
+          21,
+          22,
+          "CRD",
+          "179"
+        ],
+        [
+          25,
+          26,
+          "CRD",
+          "87"
+        ]
+      ],
+      "correct": [
+        [
+          4,
+          5,
+          "CRD",
+          "dua"
+        ],
+        [
+          13,
+          14,
+          "CRD",
+          "empat"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-046",
+      "sentence": "ÔªøYuk , Nikmati Liburan dengan Naik Dokar Keliling Kota Denpasar",
+      "wrong_orig": [
+        [
+          6,
+          7,
+          "PRD",
+          "Dokar"
+        ]
+      ],
+      "missing_cons": [],
+      "correct": [
+        [
+          8,
+          10,
+          "GPE",
+          "Kota Denpasar"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-047",
+      "sentence": "REPUBLIKA , Pengamat politik dari Universitas Indonesia  Arbi Sanit menilai , pertemuan antara Ketua Dewan Kehormatan PAN Amien Rais dan Ketua Umum Partai Gerindra Prabowo Subianto dengan Habib Rizieq Shihab di Makkah , belum tentu dapat menggiring suara masyarakat Islam .",
+      "wrong_orig": [
+        [
+          13,
+          17,
+          "NOR",
+          "Ketua Dewan Kehormatan PAN"
+        ],
+        [
+          20,
+          24,
+          "NOR",
+          "Ketua Umum Partai Gerindra"
+        ],
+        [
+          27,
+          30,
+          "PER",
+          "Habib Rizieq Shihab"
+        ]
+      ],
+      "missing_cons": [
+        [
+          14,
+          17,
+          "ORG",
+          "Dewan Kehormatan PAN"
+        ],
+        [
+          22,
+          24,
+          "ORG",
+          "Partai Gerindra"
+        ],
+        [
+          28,
+          30,
+          "PER",
+          "Rizieq Shihab"
+        ],
+        [
+          38,
+          40,
+          "NOR",
+          "masyarakat Islam"
+        ]
+      ],
+      "correct": [
+        [
+          0,
+          1,
+          "ORG",
+          "REPUBLIKA"
+        ],
+        [
+          5,
+          7,
+          "ORG",
+          "Universitas Indonesia "
+        ],
+        [
+          7,
+          9,
+          "PER",
+          "Arbi Sanit"
+        ],
+        [
+          17,
+          19,
+          "PER",
+          "Amien Rais"
+        ],
+        [
+          24,
+          26,
+          "PER",
+          "Prabowo Subianto"
+        ],
+        [
+          31,
+          32,
+          "GPE",
+          "Makkah"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-050",
+      "sentence": "Alasan utama untuk kecelakaan , menurut Komite Keselamatan Lalu Lintas Nasional , adalah mengemudi dalam keadaan mabuk , ngebut dan mengemudi tanpa helm atau di jalur yang salah .",
+      "wrong_orig": [
+        [
+          6,
+          11,
+          "NOR",
+          "Komite Keselamatan Lalu Lintas Nasional"
+        ]
+      ],
+      "missing_cons": [
+        [
+          6,
+          11,
+          "ORG",
+          "Komite Keselamatan Lalu Lintas Nasional"
+        ]
+      ],
+      "correct": []
+    },
+    {
+      "sample_id": "D01-054",
+      "sentence": "Strategi Partai Garuda pada Pileg 2019 , Tidur di Rumah Masyarakat",
+      "wrong_orig": [
+        [
+          1,
+          3,
+          "NOR",
+          "Partai Garuda"
+        ]
+      ],
+      "missing_cons": [
+        [
+          1,
+          3,
+          "ORG",
+          "Partai Garuda"
+        ]
+      ],
+      "correct": [
+        [
+          4,
+          6,
+          "EVT",
+          "Pileg 2019"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-055",
+      "sentence": "Jakarta - Gubernur DKI Jakarta Anies Baswedan kembali berbeda pendapat dengan polisi . Setelah sebelumnya terkait Tanah Abang , kali ini beda pendapat terkait perobohan jembatan penyeberangan orang ( JPO ) yang ada di kawasan Thamrin , Jakarta Pusat .",
+      "wrong_orig": [
+        [
+          2,
+          5,
+          "NOR",
+          "Gubernur DKI Jakarta"
+        ],
+        [
+          11,
+          12,
+          "NOR",
+          "polisi"
+        ],
+        [
+          16,
+          18,
+          "LOC",
+          "Tanah Abang"
+        ]
+      ],
+      "missing_cons": [
+        [
+          3,
+          5,
+          "GPE",
+          "DKI Jakarta"
+        ],
+        [
+          16,
+          18,
+          "GPE",
+          "Tanah Abang"
+        ]
+      ],
+      "correct": [
+        [
+          0,
+          1,
+          "GPE",
+          "Jakarta"
+        ],
+        [
+          5,
+          7,
+          "PER",
+          "Anies Baswedan"
+        ],
+        [
+          35,
+          36,
+          "LOC",
+          "Thamrin"
+        ],
+        [
+          37,
+          39,
+          "GPE",
+          "Jakarta Pusat"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-057",
+      "sentence": "Di tahun ini hanya ada 297 kasus kecelakaan lalu lintas dengan 13 orang yang meninggal dunia ( MD ) .",
+      "wrong_orig": [],
+      "missing_cons": [
+        [
+          1,
+          3,
+          "DAT",
+          "tahun ini"
+        ]
+      ],
+      "correct": [
+        [
+          5,
+          6,
+          "CRD",
+          "297"
+        ],
+        [
+          11,
+          12,
+          "CRD",
+          "13"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-058",
+      "sentence": "Peningkatan ini mencerminkan kenaikan 2 , 5 persen dalam jumlah total korban jiwa ( dari 319 orang pada tahun 2015 menjadi 327 orang pada tahun 2016 ) dan kenaikan 17 persen dalam perkiraan jumlah total cedera serius ( dari 3 . 775 orang pada tahun 2015 menjadi 4 . 410 orang pada tahun 2016 ) .",
+      "wrong_orig": [
+        [
+          19,
+          20,
+          "DAT",
+          "2015"
+        ],
+        [
+          25,
+          26,
+          "DAT",
+          "2016"
+        ],
+        [
+          45,
+          46,
+          "DAT",
+          "2015"
+        ],
+        [
+          53,
+          54,
+          "DAT",
+          "2016"
+        ]
+      ],
+      "missing_cons": [
+        [
+          18,
+          20,
+          "DAT",
+          "tahun 2015"
+        ],
+        [
+          24,
+          26,
+          "DAT",
+          "tahun 2016"
+        ],
+        [
+          44,
+          46,
+          "DAT",
+          "tahun 2015"
+        ],
+        [
+          52,
+          54,
+          "DAT",
+          "tahun 2016"
+        ]
+      ],
+      "correct": [
+        [
+          4,
+          8,
+          "PRC",
+          "2 , 5 persen"
+        ],
+        [
+          15,
+          16,
+          "CRD",
+          "319"
+        ],
+        [
+          21,
+          22,
+          "CRD",
+          "327"
+        ],
+        [
+          29,
+          31,
+          "PRC",
+          "17 persen"
+        ],
+        [
+          39,
+          42,
+          "CRD",
+          "3 . 775"
+        ],
+        [
+          47,
+          50,
+          "CRD",
+          "4 . 410"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-059",
+      "sentence": "Acara yang dinamakan water lantern itu merupakan pengganti penerbangan lampion , sebagaimana yang dilakukan pada Festival Banjir Kanal Barat tahun - tahun sebelumnya .",
+      "wrong_orig": [
+        [
+          8,
+          10,
+          "EVT",
+          "penerbangan lampion"
+        ]
+      ],
+      "missing_cons": [],
+      "correct": [
+        [
+          3,
+          5,
+          "EVT",
+          "water lantern"
+        ],
+        [
+          15,
+          19,
+          "EVT",
+          "Festival Banjir Kanal Barat"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-061",
+      "sentence": "Dalam tanggapannya atas vonis 10 tahun penjara yang dijatuhkan pengadilan , Sharif menyebut dakwaan korupsi yang dijeratkan kepada dirinya sebagai konspirasi dari kekuatan militer yang kuat dan menguasai Pakistan beberapa dekade terakhir .",
+      "wrong_orig": [
+        [
+          4,
+          6,
+          "QTY",
+          "10 tahun"
+        ]
+      ],
+      "missing_cons": [
+        [
+          4,
+          6,
+          "DAT",
+          "10 tahun"
+        ],
+        [
+          29,
+          32,
+          "DAT",
+          "beberapa dekade terakhir"
+        ]
+      ],
+      "correct": [
+        [
+          11,
+          12,
+          "PER",
+          "Sharif"
+        ],
+        [
+          28,
+          29,
+          "GPE",
+          "Pakistan"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-062",
+      "sentence": "Karena Yerusalem kota suci beberapa agama , sementara banyak umat beragama dari Indonesia yang juga ingin ke Baitul Maqdis , \" ujar Lukman di Kompleks Istana Kepresidenan , Jakarta Pusat , Rabu ( 30 / 5 / 2018 ) .",
+      "wrong_orig": [
+        [
+          17,
+          19,
+          "LOC",
+          "Baitul Maqdis"
+        ],
+        [
+          24,
+          27,
+          "LOC",
+          "Kompleks Istana Kepresidenan"
+        ]
+      ],
+      "missing_cons": [
+        [
+          17,
+          19,
+          "GPE",
+          "Baitul Maqdis"
+        ],
+        [
+          24,
+          27,
+          "FAC",
+          "Kompleks Istana Kepresidenan"
+        ]
+      ],
+      "correct": [
+        [
+          1,
+          2,
+          "GPE",
+          "Yerusalem"
+        ],
+        [
+          12,
+          13,
+          "GPE",
+          "Indonesia"
+        ],
+        [
+          22,
+          23,
+          "PER",
+          "Lukman"
+        ],
+        [
+          28,
+          30,
+          "GPE",
+          "Jakarta Pusat"
+        ],
+        [
+          31,
+          39,
+          "DAT",
+          "Rabu ( 30 / 5 / 2018 )"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-063",
+      "sentence": "\" Hari ini kami perintahkan menghadap , \" katanya .",
+      "wrong_orig": [],
+      "missing_cons": [
+        [
+          1,
+          3,
+          "DAT",
+          "Hari ini"
+        ]
+      ],
+      "correct": []
+    },
+    {
+      "sample_id": "D01-066",
+      "sentence": "Perwakilan Ikatan Dokter Indonesia ( IDI ) dr . Ulul Albab , SpOG mengungkapkan saat tidur , tubuh kita mengalami metabolisme basal , yaitu organ tubuh seperti jantung , otak , pankreas , dan sistem pencernaan tetap bekerja menjalankan fungsi - fungsinya .",
+      "wrong_orig": [
+        [
+          7,
+          13,
+          "PER",
+          "dr . Ulul Albab , SpOG"
+        ]
+      ],
+      "missing_cons": [
+        [
+          9,
+          11,
+          "PER",
+          "Ulul Albab"
+        ]
+      ],
+      "correct": [
+        [
+          1,
+          4,
+          "ORG",
+          "Ikatan Dokter Indonesia"
+        ],
+        [
+          5,
+          6,
+          "ORG",
+          "IDI"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-067",
+      "sentence": "Dasrul pun mendorong agar pemerintah provinsi DKI Jakarta juga membuat peraturan tersebut untuk sepeda motor .",
+      "wrong_orig": [
+        [
+          4,
+          8,
+          "NOR",
+          "pemerintah provinsi DKI Jakarta"
+        ],
+        [
+          13,
+          15,
+          "PRD",
+          "sepeda motor"
+        ]
+      ],
+      "missing_cons": [
+        [
+          4,
+          8,
+          "ORG",
+          "pemerintah provinsi DKI Jakarta"
+        ]
+      ],
+      "correct": [
+        [
+          0,
+          1,
+          "PER",
+          "Dasrul"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-068",
+      "sentence": "‚Äù Hasyim mengatakan akan ada deklarasi calon wakil presiden pendamping Prabowo di kediamannya , Jalan Kertanegara , Kebayoran Baru , Jakarta Selatan , hari ini .",
+      "wrong_orig": [
+        [
+          14,
+          16,
+          "LOC",
+          "Jalan Kertanegara"
+        ],
+        [
+          17,
+          19,
+          "LOC",
+          "Kebayoran Baru"
+        ]
+      ],
+      "missing_cons": [
+        [
+          14,
+          16,
+          "FAC",
+          "Jalan Kertanegara"
+        ],
+        [
+          17,
+          19,
+          "GPE",
+          "Kebayoran Baru"
+        ],
+        [
+          23,
+          25,
+          "DAT",
+          "hari ini"
+        ]
+      ],
+      "correct": [
+        [
+          1,
+          2,
+          "PER",
+          "Hasyim"
+        ],
+        [
+          10,
+          11,
+          "PER",
+          "Prabowo"
+        ],
+        [
+          20,
+          22,
+          "GPE",
+          "Jakarta Selatan"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-069",
+      "sentence": "Kapolsek Kebon Jeruk Kompol Marbun mengatakan , pelaku mencuri uang tunai Rp 3 . 040 . 000 , sebuah amplop berisi uang tunai Rp 1 juta , amplop berisi uang dollar Singapore sebanyak 200 lembar , dan 3 . 000 lembar uang Yen .",
+      "wrong_orig": [
+        [
+          0,
+          3,
+          "NOR",
+          "Kapolsek Kebon Jeruk"
+        ],
+        [
+          3,
+          5,
+          "PER",
+          "Kompol Marbun"
+        ],
+        [
+          30,
+          32,
+          "MON",
+          "dollar Singapore"
+        ],
+        [
+          42,
+          43,
+          "MON",
+          "Yen"
+        ]
+      ],
+      "missing_cons": [
+        [
+          1,
+          3,
+          "GPE",
+          "Kebon Jeruk"
+        ],
+        [
+          4,
+          5,
+          "PER",
+          "Marbun"
+        ]
+      ],
+      "correct": [
+        [
+          11,
+          17,
+          "MON",
+          "Rp 3 . 040 . 000"
+        ],
+        [
+          23,
+          26,
+          "MON",
+          "Rp 1 juta"
+        ],
+        [
+          33,
+          34,
+          "CRD",
+          "200"
+        ],
+        [
+          37,
+          40,
+          "CRD",
+          "3 . 000"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-070",
+      "sentence": "Di situ persoalannya , \" kata Abyadi usai menyerahkan LAHP kepada Pemkab Simalungun di Kantor Pusat Ombudsman Republik Indonesia , Jakarta , Selasa ( 7 / 8 ) .",
+      "wrong_orig": [
+        [
+          9,
+          10,
+          "PRD",
+          "LAHP"
+        ],
+        [
+          11,
+          13,
+          "NOR",
+          "Pemkab Simalungun"
+        ],
+        [
+          14,
+          19,
+          "LOC",
+          "Kantor Pusat Ombudsman Republik Indonesia"
+        ]
+      ],
+      "missing_cons": [
+        [
+          11,
+          13,
+          "ORG",
+          "Pemkab Simalungun"
+        ],
+        [
+          14,
+          19,
+          "FAC",
+          "Kantor Pusat Ombudsman Republik Indonesia"
+        ]
+      ],
+      "correct": [
+        [
+          6,
+          7,
+          "PER",
+          "Abyadi"
+        ],
+        [
+          20,
+          21,
+          "GPE",
+          "Jakarta"
+        ],
+        [
+          22,
+          28,
+          "DAT",
+          "Selasa ( 7 / 8 )"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-072",
+      "sentence": "TEMPO , Sekretaris Jenderal Partai Gerindra Ahmad Muzani menyebut ada dua nama yang menjadi kandidat calon wakil presiden atau cawapres Prabowo Subianto di Pemilihan Presiden atau Pilpres 2019 .",
+      "wrong_orig": [
+        [
+          2,
+          6,
+          "NOR",
+          "Sekretaris Jenderal Partai Gerindra"
+        ]
+      ],
+      "missing_cons": [
+        [
+          4,
+          6,
+          "ORG",
+          "Partai Gerindra"
+        ]
+      ],
+      "correct": [
+        [
+          0,
+          1,
+          "ORG",
+          "TEMPO"
+        ],
+        [
+          6,
+          8,
+          "PER",
+          "Ahmad Muzani"
+        ],
+        [
+          10,
+          11,
+          "CRD",
+          "dua"
+        ],
+        [
+          20,
+          22,
+          "PER",
+          "Prabowo Subianto"
+        ],
+        [
+          23,
+          25,
+          "EVT",
+          "Pemilihan Presiden"
+        ],
+        [
+          26,
+          28,
+          "EVT",
+          "Pilpres 2019"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-073",
+      "sentence": "Pada tahun 1912 , Fokker kembali ke Jerman dan menetap di Johannistal , Berlin .",
+      "wrong_orig": [
+        [
+          2,
+          3,
+          "DAT",
+          "1912"
+        ],
+        [
+          11,
+          12,
+          "LOC",
+          "Johannistal"
+        ]
+      ],
+      "missing_cons": [
+        [
+          1,
+          3,
+          "DAT",
+          "tahun 1912"
+        ],
+        [
+          11,
+          12,
+          "GPE",
+          "Johannistal"
+        ]
+      ],
+      "correct": [
+        [
+          4,
+          5,
+          "PER",
+          "Fokker"
+        ],
+        [
+          7,
+          8,
+          "GPE",
+          "Jerman"
+        ],
+        [
+          13,
+          14,
+          "GPE",
+          "Berlin"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-074",
+      "sentence": "Jakarta - PT Blue Bird Tbk ( BIRD ) hari ini menggelar Rapat Umum Pemegang Saham Tahunan ( RUPST ) .",
+      "wrong_orig": [
+        [
+          12,
+          17,
+          "EVT",
+          "Rapat Umum Pemegang Saham Tahunan"
+        ],
+        [
+          18,
+          19,
+          "EVT",
+          "RUPST"
+        ]
+      ],
+      "missing_cons": [
+        [
+          9,
+          11,
+          "DAT",
+          "hari ini"
+        ]
+      ],
+      "correct": [
+        [
+          0,
+          1,
+          "GPE",
+          "Jakarta"
+        ],
+        [
+          2,
+          6,
+          "ORG",
+          "PT Blue Bird Tbk"
+        ],
+        [
+          7,
+          8,
+          "ORG",
+          "BIRD"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-075",
+      "sentence": "16 : 14 : LTA dan SMRT memperbarui jumlah orang yang terluka menjadi 28 orang .",
+      "wrong_orig": [
+        [
+          4,
+          5,
+          "NOR",
+          "LTA"
+        ]
+      ],
+      "missing_cons": [
+        [
+          4,
+          5,
+          "ORG",
+          "LTA"
+        ]
+      ],
+      "correct": [
+        [
+          0,
+          3,
+          "TIM",
+          "16 : 14"
+        ],
+        [
+          6,
+          7,
+          "ORG",
+          "SMRT"
+        ],
+        [
+          13,
+          14,
+          "CRD",
+          "28"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-079",
+      "sentence": "Sempat Ditutup 2 , 5 Jam , Tol Sidoarjo yang Diancam Bom Dibuka Foto : istimewa",
+      "wrong_orig": [
+        [
+          7,
+          9,
+          "PRD",
+          "Tol Sidoarjo"
+        ]
+      ],
+      "missing_cons": [
+        [
+          7,
+          9,
+          "FAC",
+          "Tol Sidoarjo"
+        ]
+      ],
+      "correct": [
+        [
+          2,
+          6,
+          "QTY",
+          "2 , 5 Jam"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-081",
+      "sentence": "Keesokan harinya , sinyal koalisi semakin kuat setelah Ketua Umum PAN Zulkifli Hasan bertandang ke rumah SBY .",
+      "wrong_orig": [
+        [
+          8,
+          11,
+          "NOR",
+          "Ketua Umum PAN"
+        ]
+      ],
+      "missing_cons": [
+        [
+          0,
+          2,
+          "DAT",
+          "Keesokan harinya"
+        ],
+        [
+          10,
+          11,
+          "ORG",
+          "PAN"
+        ]
+      ],
+      "correct": [
+        [
+          11,
+          13,
+          "PER",
+          "Zulkifli Hasan"
+        ],
+        [
+          16,
+          17,
+          "PER",
+          "SBY"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-083",
+      "sentence": "\" Kereta ini kemudian sampai di stasiun Joo Koon tanpa fitur tersebut , \" ungkap Chua .",
+      "wrong_orig": [
+        [
+          1,
+          2,
+          "PRD",
+          "Kereta"
+        ]
+      ],
+      "missing_cons": [],
+      "correct": [
+        [
+          6,
+          9,
+          "FAC",
+          "stasiun Joo Koon"
+        ],
+        [
+          15,
+          16,
+          "PER",
+          "Chua"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-085",
+      "sentence": "Marketing Communication Royal entul Park Annisa Rizky Fadlillah mengatakan , ada sebanyak 58 menu masakan khas nusantara yang disajikan di tempat ini . \"",
+      "wrong_orig": [
+        [
+          0,
+          5,
+          "ORG",
+          "Marketing Communication Royal entul Park"
+        ],
+        [
+          12,
+          14,
+          "QTY",
+          "58 menu"
+        ]
+      ],
+      "missing_cons": [
+        [
+          2,
+          5,
+          "ORG",
+          "Royal entul Park"
+        ],
+        [
+          12,
+          13,
+          "CRD",
+          "58"
+        ],
+        [
+          16,
+          17,
+          "LOC",
+          "nusantara"
+        ]
+      ],
+      "correct": [
+        [
+          5,
+          8,
+          "PER",
+          "Annisa Rizky Fadlillah"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-088",
+      "sentence": "Pada arus mudik tahun ini dari 9 kejadian , jumlah korban meninggal dunia tidak ada , lalu luka berat 4 jiwa , dan luka ringan sebanyak 8 jiwa dengan kerugian material senilai Rp 8 , 5 juta .",
+      "wrong_orig": [],
+      "missing_cons": [
+        [
+          3,
+          5,
+          "DAT",
+          "tahun ini"
+        ]
+      ],
+      "correct": [
+        [
+          6,
+          7,
+          "CRD",
+          "9"
+        ],
+        [
+          19,
+          20,
+          "CRD",
+          "4"
+        ],
+        [
+          26,
+          27,
+          "CRD",
+          "8"
+        ],
+        [
+          32,
+          37,
+          "MON",
+          "Rp 8 , 5 juta"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-089",
+      "sentence": "TEMPO , Presiden Turki , Recep Tayyip Erdogan , meminta warga Turki untuk  menukar tabungan mata uang asing Euro atau Dolar AS ke mata uang negara , Lira .",
+      "wrong_orig": [
+        [
+          2,
+          4,
+          "NOR",
+          "Presiden Turki"
+        ],
+        [
+          11,
+          12,
+          "GPE",
+          "Turki"
+        ],
+        [
+          18,
+          19,
+          "MON",
+          "Euro"
+        ],
+        [
+          20,
+          22,
+          "MON",
+          "Dolar AS"
+        ],
+        [
+          27,
+          28,
+          "MON",
+          "Lira"
+        ]
+      ],
+      "missing_cons": [
+        [
+          3,
+          4,
+          "GPE",
+          "Turki"
+        ],
+        [
+          10,
+          12,
+          "NOR",
+          "warga Turki"
+        ],
+        [
+          21,
+          22,
+          "GPE",
+          "AS"
+        ]
+      ],
+      "correct": [
+        [
+          0,
+          1,
+          "ORG",
+          "TEMPO"
+        ],
+        [
+          5,
+          8,
+          "PER",
+          "Recep Tayyip Erdogan"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-090",
+      "sentence": "\" Dan satu lagi langkah - langkah terobosan dalam rangka meningkatkan sektor pariwisata yang bisa mendatangkan devisa secara cepat ini juga sama penting , \" mantan Gubernur DKI Jakarta itu .",
+      "wrong_orig": [
+        [
+          26,
+          29,
+          "NOR",
+          "Gubernur DKI Jakarta"
+        ]
+      ],
+      "missing_cons": [
+        [
+          27,
+          29,
+          "GPE",
+          "DKI Jakarta"
+        ]
+      ],
+      "correct": [
+        [
+          2,
+          3,
+          "CRD",
+          "satu"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-091",
+      "sentence": "Pedagang memilah telur ayam di pasar Senen . Jakarta . ( CNN Indonesia / Adhi Wicaksono )",
+      "wrong_orig": [
+        [
+          2,
+          4,
+          "PRD",
+          "telur ayam"
+        ],
+        [
+          5,
+          7,
+          "LOC",
+          "pasar Senen"
+        ]
+      ],
+      "missing_cons": [
+        [
+          5,
+          7,
+          "FAC",
+          "pasar Senen"
+        ]
+      ],
+      "correct": [
+        [
+          8,
+          9,
+          "GPE",
+          "Jakarta"
+        ],
+        [
+          11,
+          13,
+          "ORG",
+          "CNN Indonesia"
+        ],
+        [
+          14,
+          16,
+          "PER",
+          "Adhi Wicaksono"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-092",
+      "sentence": "Johan menyampaikan hal itu menanggapi penyataan anggota Badan Komunikasi Dewan Pimpinan Pusat Partai Gerindra Andre Rosiade .",
+      "wrong_orig": [
+        [
+          7,
+          14,
+          "NOR",
+          "Badan Komunikasi Dewan Pimpinan Pusat Partai Gerindra"
+        ]
+      ],
+      "missing_cons": [
+        [
+          7,
+          14,
+          "ORG",
+          "Badan Komunikasi Dewan Pimpinan Pusat Partai Gerindra"
+        ]
+      ],
+      "correct": [
+        [
+          0,
+          1,
+          "PER",
+          "Johan"
+        ],
+        [
+          14,
+          16,
+          "PER",
+          "Andre Rosiade"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-093",
+      "sentence": "JawaPos . com - Komisi Pemilihan Umum ( KPU ) Kota Semarang angkat bicara terkait masuknya nama Menteri Dalam Negeri ( Mendagri ) Tjahjo Kumolo dalam daftar pemilih tetap ( DPT ) Pilgub Jateng 2018 di Kota Semarang . Menurut Lembaga Penyelenggara Pemilu itu , nama sang pria yang juga Politisi PDIP itu masih termasuk sebagai warga Kota Lunpia .",
+      "wrong_orig": [
+        [
+          4,
+          7,
+          "NOR",
+          "Komisi Pemilihan Umum"
+        ],
+        [
+          8,
+          9,
+          "NOR",
+          "KPU"
+        ],
+        [
+          17,
+          20,
+          "NOR",
+          "Menteri Dalam Negeri"
+        ],
+        [
+          21,
+          22,
+          "NOR",
+          "Mendagri"
+        ],
+        [
+          40,
+          43,
+          "NOR",
+          "Lembaga Penyelenggara Pemilu"
+        ],
+        [
+          50,
+          52,
+          "NOR",
+          "Politisi PDIP"
+        ]
+      ],
+      "missing_cons": [
+        [
+          4,
+          7,
+          "ORG",
+          "Komisi Pemilihan Umum"
+        ],
+        [
+          8,
+          9,
+          "ORG",
+          "KPU"
+        ],
+        [
+          51,
+          52,
+          "ORG",
+          "PDIP"
+        ]
+      ],
+      "correct": [
+        [
+          0,
+          3,
+          "ORG",
+          "JawaPos . com"
+        ],
+        [
+          10,
+          12,
+          "GPE",
+          "Kota Semarang"
+        ],
+        [
+          23,
+          25,
+          "PER",
+          "Tjahjo Kumolo"
+        ],
+        [
+          32,
+          35,
+          "EVT",
+          "Pilgub Jateng 2018"
+        ],
+        [
+          36,
+          38,
+          "GPE",
+          "Kota Semarang"
+        ],
+        [
+          57,
+          59,
+          "GPE",
+          "Kota Lunpia"
+        ]
+      ]
+    },
+    {
+      "sample_id": "D01-096",
+      "sentence": "Namun ia juga menyampaikan , salah satu faktor yang membuat angka kecelakaan menurun , berkat upaya Pemkot Batam yang melakukan pelebaran jalan .",
+      "wrong_orig": [
+        [
+          16,
+          18,
+          "NOR",
+          "Pemkot Batam"
+        ]
+      ],
+      "missing_cons": [
+        [
+          16,
+          18,
+          "ORG",
+          "Pemkot Batam"
+        ]
+      ],
+      "correct": []
+    },
+    {
+      "sample_id": "D01-098",
+      "sentence": "Kedua remaja 16 tahun itu tinggal di Gang Mandala Tuban , dekat Pantai jerman .",
+      "wrong_orig": [
+        [
+          0,
+          4,
+          "QTY",
+          "Kedua remaja 16 tahun"
+        ],
+        [
+          7,
+          10,
+          "LOC",
+          "Gang Mandala Tuban"
+        ]
+      ],
+      "missing_cons": [
+        [
+          0,
+          1,
+          "CRD",
+          "Kedua"
+        ],
+        [
+          2,
+          4,
+          "DAT",
+          "16 tahun"
+        ],
+        [
+          7,
+          9,
+          "FAC",
+          "Gang Mandala"
+        ],
+        [
+          9,
+          10,
+          "GPE",
+          "Tuban"
+        ]
+      ],
+      "correct": [
+        [
+          12,
+          14,
+          "LOC",
+          "Pantai jerman"
+        ]
+      ]
+    }
+  ]
+}

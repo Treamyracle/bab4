@@ -1,0 +1,800 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "method": "independent_dual_annotator_llm_audit",
+  "annotators": {
+    "A1": {
+      "model": "cx/gpt-6.1-sol"
+    },
+    "A2": {
+      "model": "cx/gpt-6-astra"
+    }
+  },
+  "independent_annotation": true,
+  "inter_annotator_agreement_available": true,
+  "consensus_rule": "dual_agreement: original span overturned only if both annotators reject it; new/replacement span added only if both annotators propose the identical span",
+  "sample_manifest_hash": "0b3c67c2e299e0e1818b89d6516cd7042d18ca9157e2fe97a7e3c9736bbb076b",
+  "sampling_seed": 20261022,
+  "samples_compared": 600,
+  "bootstrap_iterations": 1000,
+  "response_normalizations": 0,
+  "iaa_total": {
+    "sentences": 600,
+    "tokens": 16234,
+    "token_bio_percent_agreement": 0.991868917087594,
+    "token_bio_kappa": 0.9879277417468041,
+    "token_type_percent_agreement": 0.9932856966859677,
+    "token_type_kappa": 0.9899101880918738,
+    "spans_annotator_1": 2971,
+    "spans_annotator_2": 2969,
+    "spans_agreed": 2905,
+    "span_f1_agreement": 0.9781144781144782,
+    "original_entities_judged": 3028,
+    "entity_decision_percent_agreement_3class": 0.9801849405548216,
+    "entity_decision_kappa_3class": 0.9315216678439049,
+    "entity_decision_kappa_binary": 0.9355409941017439,
+    "entity_decision_exact_agreement": 0.9775429326287979,
+    "sentence_identical_rate": 0.9083333333333333,
+    "sentence_error_kappa": 0.9521094640820981,
+    "ci95": {
+      "token_bio_kappa": [
+        0.9843954029612093,
+        0.9912716304588003
+      ],
+      "token_type_kappa": [
+        0.9867849425538087,
+        0.9927626817805604
+      ],
+      "span_f1_agreement": [
+        0.9717076456719435,
+        0.9838945827232797
+      ],
+      "entity_decision_kappa_3class": [
+        0.9090375439949133,
+        0.9520016874963875
+      ],
+      "entity_decision_kappa_binary": [
+        0.9121568637177416,
+        0.9550516990460937
+      ]
+    }
+  },
+  "iaa_per_dataset": [
+    {
+      "dataset_code": "D01",
+      "dataset": "gold",
+      "sentences": 100,
+      "tokens": 2324,
+      "token_bio_percent_agreement": 0.9858003442340791,
+      "token_bio_kappa": 0.969384150034112,
+      "token_type_percent_agreement": 0.9888123924268503,
+      "token_type_kappa": 0.9756662150864311,
+      "spans_annotator_1": 304,
+      "spans_annotator_2": 306,
+      "spans_agreed": 291,
+      "span_f1_agreement": 0.9540983606557377,
+      "original_entities_judged": 315,
+      "entity_decision_percent_agreement_3class": 0.9650793650793651,
+      "entity_decision_kappa_3class": 0.929239503349126,
+      "entity_decision_kappa_binary": 0.9292834051724138,
+      "entity_decision_exact_agreement": 0.9587301587301588,
+      "sentence_identical_rate": 0.89,
+      "sentence_error_kappa": 0.9795417348608838,
+      "ci95": {
+        "token_bio_kappa": [
+          0.9501315766776747,
+          0.9862527566566164
+        ],
+        "token_type_kappa": [
+          0.9585906539485692,
+          0.9891686404708971
+        ],
+        "span_f1_agreement": [
+          0.9282814614343707,
+          0.9789983844911146
+        ],
+        "entity_decision_kappa_3class": [
+          0.8765737874097008,
+          0.9715015343676902
+        ],
+        "entity_decision_kappa_binary": [
+          0.8720014008054631,
+          0.975425776415817
+        ]
+      }
+    },
+    {
+      "dataset_code": "D02",
+      "dataset": "nemotron",
+      "sentences": 100,
+      "tokens": 3245,
+      "token_bio_percent_agreement": 0.9842835130970724,
+      "token_bio_kappa": 0.9773031485804096,
+      "token_type_percent_agreement": 0.9873651771956856,
+      "token_type_kappa": 0.9814939975288235,
+      "spans_annotator_1": 603,
+      "spans_annotator_2": 600,
+      "spans_agreed": 577,
+      "span_f1_agreement": 0.9592684954280964,
+      "original_entities_judged": 635,
+      "entity_decision_percent_agreement_3class": 0.9606299212598425,
+      "entity_decision_kappa_3class": 0.8860446920155911,
+      "entity_decision_kappa_binary": 0.8885429306226487,
+      "entity_decision_exact_agreement": 0.9590551181102362,
+      "sentence_identical_rate": 0.82,
+      "sentence_error_kappa": 0.9210526315789473,
+      "ci95": {
+        "token_bio_kappa": [
+          0.9655170037879692,
+          0.9868545047861509
+        ],
+        "token_type_kappa": [
+          0.9707865372666324,
+          0.9898874117558837
+        ],
+        "span_f1_agreement": [
+          0.9387402933563417,
+          0.9771986970684039
+        ],
+        "entity_decision_kappa_3class": [
+          0.8203997413523783,
+          0.9370008289364613
+        ],
+        "entity_decision_kappa_binary": [
+          0.8218340144776557,
+          0.9414488144787915
+        ]
+      }
+    },
+    {
+      "dataset_code": "D03",
+      "dataset": "luna",
+      "sentences": 100,
+      "tokens": 2537,
+      "token_bio_percent_agreement": 0.9940875049270792,
+      "token_bio_kappa": 0.9915759102245051,
+      "token_type_percent_agreement": 0.994481671265274,
+      "token_type_kappa": 0.9920194330557429,
+      "spans_annotator_1": 521,
+      "spans_annotator_2": 521,
+      "spans_agreed": 513,
+      "span_f1_agreement": 0.9846449136276392,
+      "original_entities_judged": 520,
+      "entity_decision_percent_agreement_3class": 0.9903846153846154,
+      "entity_decision_kappa_3class": 0.9114169874961674,
+      "entity_decision_kappa_binary": 0.9101713653952462,
+      "entity_decision_exact_agreement": 0.9846153846153847,
+      "sentence_identical_rate": 0.92,
+      "sentence_error_kappa": 0.9048072346501665,
+      "ci95": {
+        "token_bio_kappa": [
+          0.9848053610217915,
+          0.9967312453661822
+        ],
+        "token_type_kappa": [
+          0.9856806519716234,
+          0.9971427662220801
+        ],
+        "span_f1_agreement": [
+          0.9727626459143969,
+          0.9941176470588236
+        ],
+        "entity_decision_kappa_3class": [
+          0.8145743520490318,
+          0.9779449478543341
+        ],
+        "entity_decision_kappa_binary": [
+          0.8135877542461737,
+          0.9777086573354069
+        ]
+      }
+    },
+    {
+      "dataset_code": "D04",
+      "dataset": "gemma",
+      "sentences": 100,
+      "tokens": 2029,
+      "token_bio_percent_agreement": 0.9926071956628881,
+      "token_bio_kappa": 0.9879151475396297,
+      "token_type_percent_agreement": 0.9931000492853622,
+      "token_type_kappa": 0.9886239259590028,
+      "spans_annotator_1": 355,
+      "spans_annotator_2": 354,
+      "spans_agreed": 346,
+      "span_f1_agreement": 0.9760225669957687,
+      "original_entities_judged": 375,
+      "entity_decision_percent_agreement_3class": 0.9733333333333334,
+      "entity_decision_kappa_3class": 0.9269646508910314,
+      "entity_decision_kappa_binary": 0.9375910131058873,
+      "entity_decision_exact_agreement": 0.9706666666666667,
+      "sentence_identical_rate": 0.92,
+      "sentence_error_kappa": 0.9570999570999571,
+      "ci95": {
+        "token_bio_kappa": [
+          0.9794640179794177,
+          0.9951773608223503
+        ],
+        "token_type_kappa": [
+          0.9803737698997864,
+          0.9952952368230147
+        ],
+        "span_f1_agreement": [
+          0.95952023988006,
+          0.99039780521262
+        ],
+        "entity_decision_kappa_3class": [
+          0.8779009822187651,
+          0.9744716274337512
+        ],
+        "entity_decision_kappa_binary": [
+          0.888631761643043,
+          0.9773527931555109
+        ]
+      }
+    },
+    {
+      "dataset_code": "D05",
+      "dataset": "gpt_oss",
+      "sentences": 100,
+      "tokens": 3001,
+      "token_bio_percent_agreement": 0.9956681106297901,
+      "token_bio_kappa": 0.9939381292339323,
+      "token_type_percent_agreement": 0.9966677774075309,
+      "token_type_kappa": 0.9952730740848375,
+      "spans_annotator_1": 546,
+      "spans_annotator_2": 546,
+      "spans_agreed": 539,
+      "span_f1_agreement": 0.9871794871794872,
+      "original_entities_judged": 548,
+      "entity_decision_percent_agreement_3class": 0.9890510948905109,
+      "entity_decision_kappa_3class": 0.9650186716032043,
+      "entity_decision_kappa_binary": 0.9693004078339983,
+      "entity_decision_exact_agreement": 0.9872262773722628,
+      "sentence_identical_rate": 0.93,
+      "sentence_error_kappa": 0.9451754385964912,
+      "ci95": {
+        "token_bio_kappa": [
+          0.9887825780719365,
+          0.9981243703360654
+        ],
+        "token_type_kappa": [
+          0.9910393341207757,
+          0.9985877808315226
+        ],
+        "span_f1_agreement": [
+          0.9764492753623188,
+          0.9959758551307847
+        ],
+        "entity_decision_kappa_3class": [
+          0.9317990154739259,
+          0.9891373801916933
+        ],
+        "entity_decision_kappa_binary": [
+          0.9374434769127413,
+          0.9938772133046501
+        ]
+      }
+    },
+    {
+      "dataset_code": "D06",
+      "dataset": "benchmark",
+      "sentences": 100,
+      "tokens": 3098,
+      "token_bio_percent_agreement": 0.9983860555196902,
+      "token_bio_kappa": 0.9978460736662275,
+      "token_type_percent_agreement": 0.9987088444157521,
+      "token_type_kappa": 0.9982463062329718,
+      "spans_annotator_1": 642,
+      "spans_annotator_2": 642,
+      "spans_agreed": 639,
+      "span_f1_agreement": 0.9953271028037384,
+      "original_entities_judged": 635,
+      "entity_decision_percent_agreement_3class": 0.9952755905511811,
+      "entity_decision_kappa_3class": 0.9703418856644662,
+      "entity_decision_kappa_binary": 0.9698933227973132,
+      "entity_decision_exact_agreement": 0.9952755905511811,
+      "sentence_identical_rate": 0.97,
+      "sentence_error_kappa": 0.9598554797270172,
+      "ci95": {
+        "token_bio_kappa": [
+          0.9950029027218712,
+          1.0
+        ],
+        "token_type_kappa": [
+          0.9959238457941134,
+          1.0
+        ],
+        "span_f1_agreement": [
+          0.9894578313253012,
+          1.0
+        ],
+        "entity_decision_kappa_3class": [
+          0.9321739130434785,
+          1.0
+        ],
+        "entity_decision_kappa_binary": [
+          0.9313024557040723,
+          1.0
+        ]
+      }
+    }
+  ],
+  "iaa_per_class": [
+    {
+      "entity_class": "CRD",
+      "spans_annotator_1": 181,
+      "spans_annotator_2": 176,
+      "spans_agreed": 175,
+      "span_f1_agreement": 0.9803921568627451
+    },
+    {
+      "entity_class": "DAT",
+      "spans_annotator_1": 491,
+      "spans_annotator_2": 495,
+      "spans_agreed": 473,
+      "span_f1_agreement": 0.9594320486815415
+    },
+    {
+      "entity_class": "EVT",
+      "spans_annotator_1": 113,
+      "spans_annotator_2": 111,
+      "spans_agreed": 106,
+      "span_f1_agreement": 0.9464285714285714
+    },
+    {
+      "entity_class": "FAC",
+      "spans_annotator_1": 155,
+      "spans_annotator_2": 154,
+      "spans_agreed": 153,
+      "span_f1_agreement": 0.9902912621359223
+    },
+    {
+      "entity_class": "GPE",
+      "spans_annotator_1": 495,
+      "spans_annotator_2": 494,
+      "spans_agreed": 491,
+      "span_f1_agreement": 0.9929221435793731
+    },
+    {
+      "entity_class": "LAN",
+      "spans_annotator_1": 38,
+      "spans_annotator_2": 38,
+      "spans_agreed": 38,
+      "span_f1_agreement": 1.0
+    },
+    {
+      "entity_class": "LAW",
+      "spans_annotator_1": 58,
+      "spans_annotator_2": 60,
+      "spans_agreed": 56,
+      "span_f1_agreement": 0.9491525423728814
+    },
+    {
+      "entity_class": "LOC",
+      "spans_annotator_1": 97,
+      "spans_annotator_2": 100,
+      "spans_agreed": 95,
+      "span_f1_agreement": 0.9644670050761421
+    },
+    {
+      "entity_class": "MON",
+      "spans_annotator_1": 130,
+      "spans_annotator_2": 130,
+      "spans_agreed": 130,
+      "span_f1_agreement": 1.0
+    },
+    {
+      "entity_class": "NOR",
+      "spans_annotator_1": 55,
+      "spans_annotator_2": 55,
+      "spans_agreed": 54,
+      "span_f1_agreement": 0.9818181818181818
+    },
+    {
+      "entity_class": "ORD",
+      "spans_annotator_1": 27,
+      "spans_annotator_2": 28,
+      "spans_agreed": 26,
+      "span_f1_agreement": 0.9454545454545454
+    },
+    {
+      "entity_class": "ORG",
+      "spans_annotator_1": 477,
+      "spans_annotator_2": 480,
+      "spans_agreed": 471,
+      "span_f1_agreement": 0.9843260188087775
+    },
+    {
+      "entity_class": "PER",
+      "spans_annotator_1": 253,
+      "spans_annotator_2": 253,
+      "spans_agreed": 252,
+      "span_f1_agreement": 0.9960474308300395
+    },
+    {
+      "entity_class": "PRC",
+      "spans_annotator_1": 84,
+      "spans_annotator_2": 84,
+      "spans_agreed": 84,
+      "span_f1_agreement": 1.0
+    },
+    {
+      "entity_class": "PRD",
+      "spans_annotator_1": 99,
+      "spans_annotator_2": 97,
+      "spans_agreed": 94,
+      "span_f1_agreement": 0.9591836734693877
+    },
+    {
+      "entity_class": "QTY",
+      "spans_annotator_1": 106,
+      "spans_annotator_2": 103,
+      "spans_agreed": 98,
+      "span_f1_agreement": 0.937799043062201
+    },
+    {
+      "entity_class": "TIM",
+      "spans_annotator_1": 80,
+      "spans_annotator_2": 81,
+      "spans_agreed": 79,
+      "span_f1_agreement": 0.9813664596273292
+    },
+    {
+      "entity_class": "WOA",
+      "spans_annotator_1": 32,
+      "spans_annotator_2": 30,
+      "spans_agreed": 30,
+      "span_f1_agreement": 0.967741935483871
+    }
+  ],
+  "consensus_quality_total": {
+    "sentences": 600,
+    "right": 2553,
+    "wrong": 475,
+    "missing": 107,
+    "tp": 2553,
+    "fp": 475,
+    "fn": 406,
+    "precision": 0.8431307793923382,
+    "recall": 0.8627914836093274,
+    "f1": 0.8528478369801236,
+    "sentences_with_error": 341,
+    "raw_sentence_error_rate": 0.5683333333333334
+  },
+  "consensus_quality_per_dataset": [
+    {
+      "dataset_code": "D01",
+      "dataset": "gold",
+      "sentences": 100,
+      "right": 213,
+      "wrong": 102,
+      "missing": 14,
+      "tp": 213,
+      "fp": 102,
+      "fn": 88,
+      "precision": 0.6761904761904762,
+      "recall": 0.707641196013289,
+      "f1": 0.6915584415584416,
+      "sentences_with_error": 57,
+      "raw_sentence_error_rate": 0.57,
+      "weighted_sentence_error_rate": 0.5900302253488763
+    },
+    {
+      "dataset_code": "D02",
+      "dataset": "nemotron",
+      "sentences": 100,
+      "right": 517,
+      "wrong": 118,
+      "missing": 21,
+      "tp": 517,
+      "fp": 118,
+      "fn": 83,
+      "precision": 0.8141732283464567,
+      "recall": 0.8616666666666667,
+      "f1": 0.8372469635627531,
+      "sentences_with_error": 73,
+      "raw_sentence_error_rate": 0.73,
+      "weighted_sentence_error_rate": 0.7292566312295459
+    },
+    {
+      "dataset_code": "D03",
+      "dataset": "luna",
+      "sentences": 100,
+      "right": 493,
+      "wrong": 27,
+      "missing": 12,
+      "tp": 493,
+      "fp": 27,
+      "fn": 25,
+      "precision": 0.948076923076923,
+      "recall": 0.9517374517374517,
+      "f1": 0.9499036608863198,
+      "sentences_with_error": 28,
+      "raw_sentence_error_rate": 0.28,
+      "weighted_sentence_error_rate": 0.28045077803558516
+    },
+    {
+      "dataset_code": "D04",
+      "dataset": "gemma",
+      "sentences": 100,
+      "right": 297,
+      "wrong": 78,
+      "missing": 14,
+      "tp": 297,
+      "fp": 78,
+      "fn": 57,
+      "precision": 0.792,
+      "recall": 0.8389830508474576,
+      "f1": 0.8148148148148148,
+      "sentences_with_error": 62,
+      "raw_sentence_error_rate": 0.62,
+      "weighted_sentence_error_rate": 0.614260820534046
+    },
+    {
+      "dataset_code": "D05",
+      "dataset": "gpt_oss",
+      "sentences": 100,
+      "right": 451,
+      "wrong": 97,
+      "missing": 36,
+      "tp": 451,
+      "fp": 97,
+      "fn": 93,
+      "precision": 0.822992700729927,
+      "recall": 0.8290441176470589,
+      "f1": 0.826007326007326,
+      "sentences_with_error": 75,
+      "raw_sentence_error_rate": 0.75,
+      "weighted_sentence_error_rate": 0.7477606183473313
+    },
+    {
+      "dataset_code": "D06",
+      "dataset": "benchmark",
+      "sentences": 100,
+      "right": 582,
+      "wrong": 53,
+      "missing": 10,
+      "tp": 582,
+      "fp": 53,
+      "fn": 60,
+      "precision": 0.9165354330708662,
+      "recall": 0.9065420560747663,
+      "f1": 0.9115113547376664,
+      "sentences_with_error": 46,
+      "raw_sentence_error_rate": 0.46,
+      "weighted_sentence_error_rate": 0.45990454674558234
+    }
+  ],
+  "annotator_quality_per_dataset": [
+    {
+      "annotator": "A1",
+      "model": "cx/gpt-6.1-sol",
+      "dataset_code": "D01",
+      "dataset": "gold",
+      "sentences": 100,
+      "right": 212,
+      "wrong": 103,
+      "missing": 14,
+      "tp": 212,
+      "fp": 103,
+      "fn": 92,
+      "precision": 0.6730158730158731,
+      "recall": 0.6973684210526315,
+      "f1": 0.6849757673667205,
+      "sentences_with_error": 57,
+      "raw_sentence_error_rate": 0.57,
+      "weighted_sentence_error_rate": 0.5900302253488763
+    },
+    {
+      "annotator": "A2",
+      "model": "cx/gpt-6-astra",
+      "dataset_code": "D01",
+      "dataset": "gold",
+      "sentences": 100,
+      "right": 204,
+      "wrong": 111,
+      "missing": 15,
+      "tp": 204,
+      "fp": 111,
+      "fn": 102,
+      "precision": 0.6476190476190476,
+      "recall": 0.6666666666666666,
+      "f1": 0.6570048309178744,
+      "sentences_with_error": 58,
+      "raw_sentence_error_rate": 0.58,
+      "weighted_sentence_error_rate": 0.6009069656273209
+    },
+    {
+      "annotator": "A1",
+      "model": "cx/gpt-6.1-sol",
+      "dataset_code": "D02",
+      "dataset": "nemotron",
+      "sentences": 100,
+      "right": 513,
+      "wrong": 122,
+      "missing": 23,
+      "tp": 513,
+      "fp": 122,
+      "fn": 90,
+      "precision": 0.8078740157480315,
+      "recall": 0.8507462686567164,
+      "f1": 0.8287560581583199,
+      "sentences_with_error": 74,
+      "raw_sentence_error_rate": 0.74,
+      "weighted_sentence_error_rate": 0.7391825686583198
+    },
+    {
+      "annotator": "A2",
+      "model": "cx/gpt-6-astra",
+      "dataset_code": "D02",
+      "dataset": "nemotron",
+      "sentences": 100,
+      "right": 498,
+      "wrong": 137,
+      "missing": 23,
+      "tp": 498,
+      "fp": 137,
+      "fn": 102,
+      "precision": 0.784251968503937,
+      "recall": 0.83,
+      "f1": 0.8064777327935223,
+      "sentences_with_error": 75,
+      "raw_sentence_error_rate": 0.75,
+      "weighted_sentence_error_rate": 0.7493828119064496
+    },
+    {
+      "annotator": "A1",
+      "model": "cx/gpt-6.1-sol",
+      "dataset_code": "D03",
+      "dataset": "luna",
+      "sentences": 100,
+      "right": 492,
+      "wrong": 28,
+      "missing": 12,
+      "tp": 492,
+      "fp": 28,
+      "fn": 29,
+      "precision": 0.9461538461538461,
+      "recall": 0.944337811900192,
+      "f1": 0.9452449567723343,
+      "sentences_with_error": 29,
+      "raw_sentence_error_rate": 0.29,
+      "weighted_sentence_error_rate": 0.2903956046822714
+    },
+    {
+      "annotator": "A2",
+      "model": "cx/gpt-6-astra",
+      "dataset_code": "D03",
+      "dataset": "luna",
+      "sentences": 100,
+      "right": 489,
+      "wrong": 31,
+      "missing": 12,
+      "tp": 489,
+      "fp": 31,
+      "fn": 32,
+      "precision": 0.9403846153846154,
+      "recall": 0.9385796545105566,
+      "f1": 0.9394812680115274,
+      "sentences_with_error": 31,
+      "raw_sentence_error_rate": 0.31,
+      "weighted_sentence_error_rate": 0.31040264808907736
+    },
+    {
+      "annotator": "A1",
+      "model": "cx/gpt-6.1-sol",
+      "dataset_code": "D04",
+      "dataset": "gemma",
+      "sentences": 100,
+      "right": 296,
+      "wrong": 79,
+      "missing": 14,
+      "tp": 296,
+      "fp": 79,
+      "fn": 59,
+      "precision": 0.7893333333333333,
+      "recall": 0.8338028169014085,
+      "f1": 0.810958904109589,
+      "sentences_with_error": 63,
+      "raw_sentence_error_rate": 0.63,
+      "weighted_sentence_error_rate": 0.6245137470494906
+    },
+    {
+      "annotator": "A2",
+      "model": "cx/gpt-6-astra",
+      "dataset_code": "D04",
+      "dataset": "gemma",
+      "sentences": 100,
+      "right": 290,
+      "wrong": 85,
+      "missing": 14,
+      "tp": 290,
+      "fp": 85,
+      "fn": 64,
+      "precision": 0.7733333333333333,
+      "recall": 0.8192090395480226,
+      "f1": 0.7956104252400549,
+      "sentences_with_error": 63,
+      "raw_sentence_error_rate": 0.63,
+      "weighted_sentence_error_rate": 0.6246812050175405
+    },
+    {
+      "annotator": "A1",
+      "model": "cx/gpt-6.1-sol",
+      "dataset_code": "D05",
+      "dataset": "gpt_oss",
+      "sentences": 100,
+      "right": 449,
+      "wrong": 99,
+      "missing": 36,
+      "tp": 449,
+      "fp": 99,
+      "fn": 97,
+      "precision": 0.8193430656934306,
+      "recall": 0.8223443223443223,
+      "f1": 0.8208409506398537,
+      "sentences_with_error": 76,
+      "raw_sentence_error_rate": 0.76,
+      "weighted_sentence_error_rate": 0.7583253331474071
+    },
+    {
+      "annotator": "A2",
+      "model": "cx/gpt-6-astra",
+      "dataset_code": "D05",
+      "dataset": "gpt_oss",
+      "sentences": 100,
+      "right": 448,
+      "wrong": 100,
+      "missing": 36,
+      "tp": 448,
+      "fp": 100,
+      "fn": 98,
+      "precision": 0.8175182481751825,
+      "recall": 0.8205128205128205,
+      "f1": 0.8190127970749543,
+      "sentences_with_error": 76,
+      "raw_sentence_error_rate": 0.76,
+      "weighted_sentence_error_rate": 0.7583253331474071
+    },
+    {
+      "annotator": "A1",
+      "model": "cx/gpt-6.1-sol",
+      "dataset_code": "D06",
+      "dataset": "benchmark",
+      "sentences": 100,
+      "right": 581,
+      "wrong": 54,
+      "missing": 10,
+      "tp": 581,
+      "fp": 54,
+      "fn": 61,
+      "precision": 0.9149606299212598,
+      "recall": 0.9049844236760125,
+      "f1": 0.9099451840250588,
+      "sentences_with_error": 47,
+      "raw_sentence_error_rate": 0.47,
+      "weighted_sentence_error_rate": 0.47000622521224455
+    },
+    {
+      "annotator": "A2",
+      "model": "cx/gpt-6-astra",
+      "dataset_code": "D06",
+      "dataset": "benchmark",
+      "sentences": 100,
+      "right": 580,
+      "wrong": 55,
+      "missing": 10,
+      "tp": 580,
+      "fp": 55,
+      "fn": 62,
+      "precision": 0.9133858267716536,
+      "recall": 0.9034267912772586,
+      "f1": 0.9083790133124511,
+      "sentences_with_error": 47,
+      "raw_sentence_error_rate": 0.47,
+      "weighted_sentence_error_rate": 0.46979871813742374
+    }
+  ],
+  "interpretation_scale": "Landis & Koch (1977)",
+  "generated_at": "2026-10-23T15:46:33"
+}
