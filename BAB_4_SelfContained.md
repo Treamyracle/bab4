@@ -389,7 +389,7 @@ Seluruh 84 proses pelatihan berhasil diselesaikan tanpa kegagalan komputasi. Pen
 | Gemma | Pelatihan Penuh (Main) | 18 | 6,4 ± 1,6 | 1.964 | 7,6 m | 88,9% |
 | gpt | Iso-Entity | 21 | 7,3 ± 1,5 | 1.710 | 7,3 m | 90,5% |
 
-Rincian telemetri lengkap per-run dari seluruh 84 model fit didokumentasikan pada [Lampiran Eksperimen: Tabel L.1](file:///laporan/LAMPIRAN_EKSPERIMEN.md#l1-telemetri-eksekusi-pelatihan-seluruh-84-model-fit).
+Rincian telemetri lengkap per-run dari seluruh 84 model fit didokumentasikan pada [Lampiran Eksperimen: Tabel L.1](LAMPIRAN_EKSPERIMEN.md#l1-telemetri-eksekusi-pelatihan-seluruh-84-model-fit).
 
 ### 4.4.3 Kurva Pelatihan dan Validasi
 
