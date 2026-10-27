@@ -11,62 +11,65 @@
 
 ## 📑 Daftar Isi
 
-1. [Pendahuluan & Karakteristik Korpus NERGRIT](#1-pendahuluan--karakteristik-korpus-nergrit)
-   - 1.1 Profil dan Sejarah Singkat NERGRIT
-   - 1.2 Urgensi Pedoman Baku
-   - 1.3 Hubungan Taksonomi: NERGRIT (19 Tag) vs OntoNotes 5.0 (18 Tag)
-2. [Alur Kerja Anotasi & Protokol Penandaan BIO (Bagian 1)](#2-alur-kerja-anotasi--protokol-penandaan-bio)
-   - 2.1 Mekanika Skema Penandaan BIO
-   - 2.2 Aturan Validitas Transisi BIO (*Transition Integrity*)
-   - 2.3 Nuansa Tokenisasi Bahasa Indonesia & Tanda Baca Lepas
-3. [Taksonomi Semantik Komprehensif 19 Kelas Entitas (Bagian 2)](#3-taksonomi-semantik-komprehensif-19-kelas-entitas)
-   - 3.1 `PER` — Person (Orang)
-   - 3.2 `ORG` — Organization (Organisasi / Korporasi / Klub Olahraga)
-   - 3.3 `GPE` — Geo-Political Entity (Wilayah Geopolitik Administratif)
-   - 3.4 `LOC` — Location (Lokasi Non-Geopolitik / Bentang Alam / Jalan)
-   - 3.5 `FAC` — Facility (Fasilitas Infrastruktur Fisik Buatan)
-   - 3.6 `EVT` — Event (Peristiwa / Ajang / Bencana)
-   - 3.7 `WOA` — Work of Art (Karya Seni & Cipta Intelektual)
-   - 3.8 `LAW` — Law (Hukum / Perundang-Undangan / Traktat)
-   - 3.9 `PRD` — Product (Produk / Komoditas Fisik / Sarana Transportasi)
-   - 3.10 `LAN` — Language (Bahasa)
-   - 3.11 `DAT` — Date (Tanggal / Hari / Bulan / Tahun / Kalender)
-   - 3.12 `TIM` — Time (Waktu Jam / Pukul)
-   - 3.13 `MON` — Money (Nominal Moneter & Valuta)
-   - 3.14 `QTY` — Quantity (Kuantitas Fisik & Durasi Waktu)
-   - 3.15 `CRD` — Cardinal (Bilangan Kardinal Murni)
-   - 3.16 `ORD` — Ordinal (Bilangan Tingkat / Urutan)
-   - 3.17 `PRC` — Percent (Persentase & Kadar)
-   - 3.18 `NOR` — NORP (Organisasi Negara, Aparat, Parpol, & Demografi)
-   - 3.19 `REG` — Religion (Agama, Penganut, Hari Raya, & Ritual)
-4. [Kaidah Emas Penentuan Batas Rentang Entitas / *Golden Boundary Rules* (Bagian 3)](#4-kaidah-emas-penentuan-batas-rentang-entitas)
-   - 4.1 Eksklusi Preposisi Spasial & Temporal (99,99% Aturan Preposisi)
-   - 4.2 Perlakuan Gelar, Sapaan Kehormatan, dan Jabatan Formal
-   - 4.3 Tanda Kurung Tanggal Kepala Berita pada `DAT`
-   - 4.4 Inklusi Kata Benda Umum Huruf Kecil pada `PRD`
-   - 4.5 Klasifikasi Durasi Waktu Lampau/Jangka ke dalam `QTY`
-   - 4.6 Eksklusi Tanda Petik Ganda/Tunggal pada `WOA` dan `EVT`
-   - 4.7 Penanganan Tanda Hubung (*Hyphenation*) & Reduplikasi
-5. [Pohon Keputusan Disambiguasi Kasus Rawan Tertukar (Bagian 4)](#5-pohon-keputusan-disambiguasi-kasus-rawan-tertukar)
-   - 5.1 Pohon Keputusan: `NOR` vs `ORG`
-   - 5.2 Pohon Keputusan: `PRD` vs `ORG`
-   - 5.3 Pohon Keputusan: `FAC` vs `LOC` vs `GPE`
-   - 5.4 Pohon Keputusan Kelas Numerik: `CRD` vs `QTY` vs `MON` vs `PRC` vs `DAT` vs `TIM`
-   - 5.5 Pohon Keputusan: `REG` vs (`NOR`, `EVT`, `WOA`, `PER`, `FAC`, `O`)
-6. [Contoh Anotasi Berjalan Token-demi-Token (Bagian 5)](#6-contoh-anotasi-berjalan-token-demi-token)
-   - Kasus 1: Berita Politik & Pemerintahan
-   - Kasus 2: Berita Kriminalitas & Penegakan Hukum
-   - Kasus 3: Berita Ekonomi & Finansial
-   - Kasus 4: Berita Keagamaan & Hari Raya
-   - Kasus 5: Berita Olahraga Internasional
-7. [Daftar Uji Kualitas Anotator & 10 Jebakan Fatal (Bagian 6)](#7-daftar-uji-kualitas-anotator--10-jebakan-fatal)
-   - 7.1 Daftar Periksa Mandiri (*Self-Checklist*)
-   - 7.2 10 Kesalahan Fatal Anotasi (*Top 10 Annotation Pitfalls*)
-8. [Panduan Rekayasa Prompt LLM untuk Replikasi Batas NERGRIT](#8-panduan-rekayasa-prompt-llm-untuk-replikasi-batas-nergrit)
-   - 8.1 Spesifikasi Meta-Prompt Anotator
-   - 8.2 Format Output Terstruktur (JSON & CoNLL)
-   - 8.3 Few-Shot Examples In-Context
-9. [Matriks Perbandingan Taksonomi: NERGRIT vs OntoNotes 5.0 vs Skripsi](#9-matriks-perbandingan-taksonomi)
+- [1. Pendahuluan & Karakteristik Korpus NERGRIT](#1-pendahuluan-karakteristik-korpus-nergrit)
+  - [1.1 Profil dan Sejarah Singkat NERGRIT](#11-profil-dan-sejarah-singkat-nergrit)
+  - [1.2 Urgensi Pedoman Baku](#12-urgensi-pedoman-baku)
+  - [1.3 Hubungan Taksonomi: NERGRIT (19 Tag) vs OntoNotes 5.0 (18 Tag)](#13-hubungan-taksonomi-nergrit-19-tag-vs-ontonotes-50-18-tag)
+- [2. Alur Kerja Anotasi & Protokol Penandaan BIO](#2-alur-kerja-anotasi-protokol-penandaan-bio)
+  - [2.1 Mekanika Skema Penandaan BIO](#21-mekanika-skema-penandaan-bio)
+  - [2.2 Aturan Validitas Transisi BIO (*Transition Integrity*)](#22-aturan-validitas-transisi-bio-transition-integrity)
+  - [2.3 Nuansa Tokenisasi Bahasa Indonesia & Tanda Baca Lepas](#23-nuansa-tokenisasi-bahasa-indonesia-tanda-baca-lepas)
+- [3. Taksonomi Semantik Komprehensif 19 Kelas Entitas](#3-taksonomi-semantik-komprehensif-19-kelas-entitas)
+  - [3.1 PER — Person (Orang)](#31-per-person-orang)
+  - [3.2 ORG — Organization (Organisasi / Korporasi / Klub Olahraga)](#32-org-organization-organisasi-korporasi-klub-olahraga)
+  - [3.3 GPE — Geo-Political Entity (Wilayah Geopolitik Administratif)](#33-gpe-geo-political-entity-wilayah-geopolitik-administratif)
+  - [3.4 LOC — Location (Lokasi Non-Geopolitik / Bentang Alam / Jalan)](#34-loc-location-lokasi-non-geopolitik-bentang-alam-jalan)
+  - [3.5 FAC — Facility (Fasilitas Infrastruktur Fisik Buatan)](#35-fac-facility-fasilitas-infrastruktur-fisik-buatan)
+  - [3.6 EVT — Event (Peristiwa / Ajang / Bencana)](#36-evt-event-peristiwa-ajang-bencana)
+  - [3.7 WOA — Work of Art (Karya Seni & Cipta Intelektual)](#37-woa-work-of-art-karya-seni-cipta-intelektual)
+  - [3.8 LAW — Law (Hukum / Perundang-Undangan / Traktat)](#38-law-law-hukum-perundang-undangan-traktat)
+  - [3.9 PRD — Product (Produk / Komoditas Fisik / Sarana Transportasi)](#39-prd-product-produk-komoditas-fisik-sarana-transportasi)
+  - [3.10 LAN — Language (Bahasa)](#310-lan-language-bahasa)
+  - [3.11 DAT — Date (Tanggal / Hari / Bulan / Tahun / Kalender)](#311-dat-date-tanggal-hari-bulan-tahun-kalender)
+  - [3.12 TIM — Time (Waktu Jam / Pukul)](#312-tim-time-waktu-jam-pukul)
+  - [3.13 MON — Money (Nominal Moneter & Valuta)](#313-mon-money-nominal-moneter-valuta)
+  - [3.14 QTY — Quantity (Kuantitas Fisik & Durasi Waktu)](#314-qty-quantity-kuantitas-fisik-durasi-waktu)
+  - [3.15 CRD — Cardinal (Bilangan Kardinal Murni)](#315-crd-cardinal-bilangan-kardinal-murni)
+  - [3.16 ORD — Ordinal (Bilangan Tingkat / Urutan)](#316-ord-ordinal-bilangan-tingkat-urutan)
+  - [3.17 PRC — Percent (Persentase & Kadar)](#317-prc-percent-persentase-kadar)
+  - [3.18 NOR — NORP (Organisasi Negara, Aparat, Parpol, & Demografi)](#318-nor-norp-organisasi-negara-aparat-parpol-demografi)
+  - [3.19 REG — Religion (Agama, Penganut, Hari Raya, & Ritual)](#319-reg-religion-agama-penganut-hari-raya-ritual)
+- [4. Kaidah Emas Penentuan Batas Rentang Entitas](#4-kaidah-emas-penentuan-batas-rentang-entitas)
+  - [4.1 Eksklusi Preposisi Spasial & Temporal (99,99% Aturan Preposisi)](#41-eksklusi-preposisi-spasial-temporal-9999-aturan-preposisi)
+  - [4.2 Perlakuan Gelar, Sapaan Kehormatan, dan Jabatan Formal](#42-perlakuan-gelar-sapaan-kehormatan-dan-jabatan-formal)
+  - [4.3 Tanda Kurung Tanggal Kepala Berita pada DAT](#43-tanda-kurung-tanggal-kepala-berita-pada-dat)
+  - [4.4 Inklusi Kata Benda Umum Huruf Kecil pada PRD](#44-inklusi-kata-benda-umum-huruf-kecil-pada-prd)
+  - [4.5 Klasifikasi Durasi Waktu Lampau/Jangka ke dalam QTY](#45-klasifikasi-durasi-waktu-lampaujangka-ke-dalam-qty)
+  - [4.6 Eksklusi Tanda Petik Ganda/Tunggal pada WOA dan EVT](#46-eksklusi-tanda-petik-gandatunggal-pada-woa-dan-evt)
+  - [4.7 Penanganan Tanda Hubung (*Hyphenation*) & Reduplikasi](#47-penanganan-tanda-hubung-hyphenation-reduplikasi)
+- [5. Pohon Keputusan Disambiguasi Kasus Rawan Tertukar](#5-pohon-keputusan-disambiguasi-kasus-rawan-tertukar)
+  - [5.1 Pohon Keputusan: NOR vs ORG](#51-pohon-keputusan-nor-vs-org)
+  - [5.2 Pohon Keputusan: PRD vs ORG](#52-pohon-keputusan-prd-vs-org)
+  - [5.3 Pohon Keputusan: FAC vs LOC vs GPE](#53-pohon-keputusan-fac-vs-loc-vs-gpe)
+  - [5.4 Pohon Keputusan Kelas Numerik: CRD vs QTY vs MON vs PRC vs DAT vs TIM](#54-pohon-keputusan-kelas-numerik-crd-vs-qty-vs-mon-vs-prc-vs-dat-vs-tim)
+  - [5.5 Pohon Keputusan: REG vs (NOR, EVT, WOA, PER, FAC, O)](#55-pohon-keputusan-reg-vs-nor-evt-woa-per-fac-o)
+- [6. Contoh Anotasi Berjalan Token-demi-Token](#6-contoh-anotasi-berjalan-token-demi-token)
+  - [Kasus 1: Berita Politik & Pemerintahan](#kasus-1-berita-politik-pemerintahan)
+  - [Kasus 2: Berita Kriminalitas & Penegakan Hukum](#kasus-2-berita-kriminalitas-penegakan-hukum)
+  - [Kasus 3: Berita Ekonomi & Finansial](#kasus-3-berita-ekonomi-finansial)
+  - [Kasus 4: Berita Keagamaan & Hari Raya](#kasus-4-berita-keagamaan-hari-raya)
+  - [Kasus 5: Berita Olahraga Internasional](#kasus-5-berita-olahraga-internasional)
+  - [Kasus 6: Berita Hukum, Pengadilan, & Perundang-Undangan](#kasus-6-berita-hukum-pengadilan-perundang-undangan)
+  - [Kasus 7: Berita Fasilitas Transportasi & Infrastruktur](#kasus-7-berita-fasilitas-transportasi-infrastruktur)
+  - [Kasus 8: Berita Kebudayaan, Karya Seni, & Bahasa](#kasus-8-berita-kebudayaan-karya-seni-bahasa)
+- [7. Daftar Uji Kualitas Anotator & 10 Jebakan Fatal](#7-daftar-uji-kualitas-anotator-10-jebakan-fatal)
+  - [7.1 Daftar Periksa Mandiri (*Self-Checklist*)](#71-daftar-periksa-mandiri-self-checklist)
+  - [7.2 10 Kesalahan Fatal Anotasi (*Top 10 Annotation Pitfalls*)](#72-10-kesalahan-fatal-anotasi-top-10-annotation-pitfalls)
+- [8. Panduan Rekayasa Prompt LLM untuk Replikasi Batas NERGRIT](#8-panduan-rekayasa-prompt-llm-untuk-replikasi-batas-nergrit)
+  - [8.1 Spesifikasi Meta-Prompt Anotator](#81-spesifikasi-meta-prompt-anotator)
+  - [8.2 Format Output Terstruktur (JSON & CoNLL)](#82-format-output-terstruktur-json-conll)
+  - [8.3 Few-Shot Demonstrations in Prompt (Contoh Few-Shot LLM)](#83-few-shot-demonstrations-in-prompt-contoh-few-shot-llm)
+- [9. Matriks Perbandingan Taksonomi](#9-matriks-perbandingan-taksonomi)
 
 ---
 
@@ -909,20 +912,122 @@ Berikut adalah 5 contoh teks berita riil yang dianotasi token demi token secara 
 
 ---
 
+---
+
+### Kasus 6: Berita Hukum, Pengadilan, & Perundang-Undangan
+**Kalimat Masukan**:  
+`Majelis hakim Pengadilan Negeri Jakarta Pusat menjatuhkan vonis kepada 3 terdakwa pelanggar Undang - Undang Nomor 11 Tahun 2008 pada Kamis ( 18 / 5 ) .`
+
+| Indeks | Token | Label BIO | Kategori Entitas | Catatan & Justifikasi Batas |
+| :---: | :--- | :---: | :---: | :--- |
+| 1 | Majelis | **`O`** | - | Nomina umum peradilan. |
+| 2 | hakim | **`O`** | - | Nomina jabatan peradilan non-kenegaraan. |
+| 3 | Pengadilan | **`B-NOR`** | `NOR` | Badan peradilan yurisdiksi negara dilabeli `NOR`. |
+| 4 | Negeri | **`I-NOR`** | `NOR` | Kelanjutan nama tingkat peradilan. |
+| 5 | Jakarta | **`I-NOR`** | `NOR` | Wilayah yurisdiksi yang menyatu dalam nama institusi hukum. |
+| 6 | Pusat | **`I-NOR`** | `NOR` | Bagian akhir nama satuan pengadilan. |
+| 7 | menjatuhkan | **`O`** | - | Verba. |
+| 8 | vonis | **`O`** | - | Nomina proses hukum. |
+| 9 | kepada | **`O`** | - | Preposisi tujuan. |
+| 10 | 3 | **`B-CRD`** | `CRD` | Angka kardinal cacah murni tanpa satuan fisik/moneter. |
+| 11 | terdakwa | **`O`** | - | Nomina umum. |
+| 12 | pelanggar | **`O`** | - | Nomina. |
+| 13 | Undang | **`B-LAW`** | `LAW` | Awal nama dokumen perundang-undangan formal negara. |
+| 14 | - | **`I-LAW`** | `LAW` | Tanda hubung reduplikasi dokumen hukum wajib diserap. |
+| 15 | Undang | **`I-LAW`** | `LAW` | Kelanjutan reduplikasi nama undang-undang. |
+| 16 | Nomor | **`I-LAW`** | `LAW` | Kata penomoran regulasi resmi diserap. |
+| 17 | 11 | **`I-LAW`** | `LAW` | Angka nomor urut regulasi resmi diserap. |
+| 18 | Tahun | **`I-LAW`** | `LAW` | Kata penanda tahun legislasi diserap. |
+| 19 | 2008 | **`I-LAW`** | `LAW` | Angka tahun pengesahan legislasi diserap ke dalam `LAW`. |
+| 20 | pada | **`O`** | - | Preposisi temporal wajib dieksklusi (`O`). |
+| 21 | Kamis | **`B-DAT`** | `DAT` | Awal rentang tanggal kepala berita format kurung. |
+| 22 | ( | **`I-DAT`** | `DAT` | Tanda kurung buka diserap ke dalam `DAT`. |
+| 23 | 18 | **`I-DAT`** | `DAT` | Angka tanggal penanggalan. |
+| 24 | / | **`I-DAT`** | `DAT` | Garis miring pemisah kalender. |
+| 25 | 5 | **`I-DAT`** | `DAT` | Angka bulan. |
+| 26 | ) | **`I-DAT`** | `DAT` | Tanda kurung tutup diserap ke dalam `DAT`. |
+| 27 | . | **`O`** | - | Tanda titik akhir kalimat. |
+
+---
+
+### Kasus 7: Berita Fasilitas Transportasi & Infrastruktur
+**Kalimat Masukan**:  
+`Penerbangan pesawat Boeing 737 menuju Bandara Soekarno - Hatta ditunda hingga pukul 14 . 30 WIB karena cuaca buruk di Tangerang .`
+
+| Indeks | Token | Label BIO | Kategori Entitas | Catatan & Justifikasi Batas |
+| :---: | :--- | :---: | :---: | :--- |
+| 1 | Penerbangan | **`O`** | - | Nomina aktivitas. |
+| 2 | pesawat | **`B-PRD`** | `PRD` | Sarana kendaraan fisik udara huruf kecil dilabeli `PRD`. |
+| 3 | Boeing | **`I-PRD`** | `PRD` | Merek manufaktur wahana yang melekat pada produk. |
+| 4 | 737 | **`I-PRD`** | `PRD` | Nomor seri tipe komoditas transportasi fisik. |
+| 5 | menuju | **`O`** | - | Preposisi arah spasial wajib dieksklusi (`O`). |
+| 6 | Bandara | **`B-FAC`** | `FAC` | Fasilitas infrastruktur transportasi buatan manusia. |
+| 7 | Soekarno | **`I-FAC`** | `FAC` | Bagian dari nama fasilitas fisik bandara. |
+| 8 | - | **`I-FAC`** | `FAC` | Tanda hubung nama ganda fasilitas diserap ke `FAC`. |
+| 9 | Hatta | **`I-FAC`** | `FAC` | Kelanjutan nama fasilitas fisik bandara. |
+| 10 | ditunda | **`O`** | - | Verba pasif. |
+| 11 | hingga | **`O`** | - | Preposisi temporal batas waktu wajib dieksklusi (`O`). |
+| 12 | pukul | **`B-TIM`** | `TIM` | Kata pengantar titik penunjuk jam arloji harian. |
+| 13 | 14 | **`I-TIM`** | `TIM` | Angka penunjuk jam dalam siklus 24 jam. |
+| 14 | . | **`I-TIM`** | `TIM` | Tanda titik pemisah jam dan menit yang terpisah spasi. |
+| 15 | 30 | **`I-TIM`** | `TIM` | Angka penunjuk menit. |
+| 16 | WIB | **`I-TIM`** | `TIM` | Penanda zona waktu resmi Indonesia Barat diserap ke `TIM`. |
+| 17 | karena | **`O`** | - | Konjungsi kausal. |
+| 18 | cuaca | **`O`** | - | Nomina kondisi alam. |
+| 19 | buruk | **`O`** | - | Adjektiva. |
+| 20 | di | **`O`** | - | Preposisi spasial lokasi wajib dieksklusi (`O`). |
+| 21 | Tangerang | **`B-GPE`** | `GPE` | Wilayah kota administratif berpemerintahan. |
+| 22 | . | **`O`** | - | Tanda titik penutup kalimat. |
+
+---
+
+### Kasus 8: Berita Kebudayaan, Karya Seni, & Bahasa
+**Kalimat Masukan**:  
+`Penerbit Gramedia merilis 2 edisi novel " Laskar Pelangi " karangan Andrea Hirata dalam bahasa Indonesia dan bahasa Inggris .`
+
+| Indeks | Token | Label BIO | Kategori Entitas | Catatan & Justifikasi Batas |
+| :---: | :--- | :---: | :---: | :--- |
+| 1 | Penerbit | **`O`** | - | Nomina deskriptor peran usaha umum. |
+| 2 | Gramedia | **`B-ORG`** | `ORG` | Korporasi penerbitan swasta komersial berbadan hukum. |
+| 3 | merilis | **`O`** | - | Verba aktif. |
+| 4 | 2 | **`B-CRD`** | `CRD` | Angka bilangan cacah murni kuantitas edisi. |
+| 5 | edisi | **`O`** | - | Nomina umum. |
+| 6 | novel | **`O`** | - | Nomina format buku sastra. |
+| 7 | " | **`O`** | - | Tanda petik ganda pembuka WAJIB DIEKSKLUSI (`O`). |
+| 8 | Laskar | **`B-WOA`** | `WOA` | Awal judul karya cipta seni/sastra intelektual. |
+| 9 | Pelangi | **`I-WOA`** | `WOA` | Kelanjutan judul karya cipta sastra. |
+| 10 | " | **`O`** | - | Tanda petik ganda penutup WAJIB DIEKSKLUSI (`O`). |
+| 11 | karangan | **`O`** | - | Nomina relasional pengarang. |
+| 12 | Andrea | **`B-PER`** | `PER` | Nama depan pencipta individu manusia. |
+| 13 | Hirata | **`I-PER`** | `PER` | Nama belakang pencipta individu manusia. |
+| 14 | dalam | **`O`** | - | Preposisi medium wajib dieksklusi (`O`). |
+| 15 | bahasa | **`B-LAN`** | `LAN` | Prefiks kata jenis bahasa alami manusia. |
+| 16 | Indonesia | **`I-LAN`** | `LAN` | Nama bahasa alami manusia yang dituturkan. |
+| 17 | dan | **`O`** | - | Konjungsi koordinatif pemisah dua entitas bahasa. |
+| 18 | bahasa | **`B-LAN`** | `LAN` | Awal entitas bahasa kedua yang bersanding (`B-LAN`). |
+| 19 | Inggris | **`I-LAN`** | `LAN` | Nama bahasa alami manusia kedua. |
+| 20 | . | **`O`** | - | Tanda titik penutup kalimat. |
+
+---
+
 ## 7. Daftar Uji Kualitas Anotator & 10 Jebakan Fatal
 
 ### 7.1 Daftar Periksa Mandiri (*Self-Checklist*)
 Sebelum menyelesaikan sebuah set kalimat atau memvalidasi output model, setiap annotator wajib memverifikasi butir-butir pemeriksaan berikut:
 
-- [ ] **Uji Preposisi**: Pastikan tidak ada kata `di`, `ke`, `dari`, `pada`, `dalam`, atau `selama` yang berada di dalam span entitas (kecuali `ke` pada ordinal `ke - N`).
-- [ ] **Uji Sapaan & Jabatan**: Pastikan `Bapak`/`Ibu` berstatus `O`, gelar akademik/religi (`Dr.`, `KH`) diserap ke `PER`, dan jabatan politik/militer (`Presiden`, `Gubernur`, `Kapolri`) dilabeli `NOR`.
-- [ ] **Uji Lembaga Negara vs Korporasi**: Pastikan lembaga pemerintah (`DPR`, `KPK`, `Polri`, `KPU`) dan partai politik dilabeli `NOR`, bukan `ORG`. Pastikan `ORG` hanya digunakan untuk korporasi, media pers, dan klub olahraga.
-- [ ] **Uji Durasi Waktu**: Pastikan durasi lampau/jangka waktu (`dua tahun`, `24 jam`, `36 hari`, `30 menit`) dilabeli `QTY`, bukan `DAT` atau `TIM`.
-- [ ] **Uji Format Tanggal Berita**: Pastikan tanda kurung pada kepala berita `Hari ( DD / MM / YYYY )` ikut ditandai sebagai `I-DAT`.
-- [ ] **Uji Produk Huruf Kecil**: Pastikan kendaraan umum (`mobil`, `sepeda motor`, `truk`) dan komoditas (`sabu`, `beras`, `kopi`, `BBM`) diberi label `PRD`.
-- [ ] **Uji Integritas BIO**: Pastikan tidak ada token `I-TAG` liar yang muncul tanpa diawali `B-TAG` dari kelas yang sama.
-- [ ] **Uji Batas Tanda Petik**: Pastikan tanda petik (`"..."` atau `'...'`) di sekitar nama karya seni (`WOA`) atau ajang (`EVT`) berada di luar rentang entitas.
-- [ ] **Uji Entitas Agama**: Pastikan seluruh konsep keagamaan (agama, penganut, hari raya, kitab suci, tempat ibadah, ritual sholat/puasa, dan seruan doa) dilabeli `REG`.
+- [ ] **Uji Preposisi Spasial & Temporal**: Pastikan tidak ada kata `di`, `ke`, `dari`, `pada`, `dalam`, atau `selama` yang berada di dalam span entitas (satu-satunya pengecualian adalah `ke` sebagai prefiks ordinal `ke - N` pada `ORD`).
+- [ ] **Uji Sapaan Kekerabatan**: Pastikan kata sapaan umum seperti `Bapak`, `Ibu`, `Saudara`, `Tuan` berstatus `O` dan tidak masuk ke dalam `PER`.
+- [ ] **Uji Gelar Melekat vs Jabatan**: Pastikan gelar akademis/religi (`Dr.`, `KH`, `Habib`) diserap ke `PER` (`B-PER`), sedangkan jabatan politik/militer/kenegaraan (`Presiden`, `Gubernur`, `Kapolri`) dilabeli `NOR`.
+- [ ] **Uji Lembaga Negara vs Korporasi**: Pastikan lembaga eksekutif, yudikatif, legislatif, kepolisian, militer, dan parpol dilabeli `NOR`. Pastikan `ORG` hanya digunakan untuk korporasi komersial swasta/BUMN, portal media berita, dan klub olahraga.
+- [ ] **Uji Sarana & Komoditas Huruf Kecil**: Pastikan sarana transportasi huruf kecil (`mobil`, `sepeda motor`, `truk`, `pesawat`) serta komoditas perdagangan (`sabu`, `beras`, `kopi`, `BBM`) diberi label `PRD`.
+- [ ] **Uji Format Tanggal Berita**: Pastikan format penanggalan kepala berita berformat kurung `Hari ( DD / MM / YYYY )` ditandai sebagai **satu kesatuan utuh `DAT`** mencakup tanda kurung buka dan tutupnya.
+- [ ] **Uji Durasi Waktu**: Pastikan seluruh satuan rentang/durasi waktu lampau atau masa jangka (`dua tahun`, `24 jam`, `36 hari`, `30 menit`) dilabeli `QTY`, bukan `DAT` atau `TIM`.
+- [ ] **Uji Bilangan Cacah Murni vs Satuan**: Pastikan angka cacah tanpa satuan (`3 terdakwa`, `2 edisi`, `kedua`) dilabeli `CRD`, bukan `QTY` atau `ORD`.
+- [ ] **Uji Fasilitas Buatan vs Lokasi Terbuka**: Pastikan bangunan buatan manusia tertutup, bandara, stadion, dan terminal bus dilabeli `FAC`, sedangkan bentang alam alami dan nama jalan raya dilabeli `LOC`.
+- [ ] **Uji Tanda Petik Karya Seni & Ajang**: Pastikan tanda petik (`"..."` atau `'...'`) di sekitar nama karya cipta (`WOA`) atau ajang kegiatan (`EVT`) selalu berada di luar rentang (berstatus `O`).
+- [ ] **Uji Nama Bahasa Alami**: Pastikan nama bahasa alami manusia (`bahasa Indonesia`, `bahasa Arab`, `bahasa Inggris`) dilabeli `LAN`.
+- [ ] **Uji Entitas Keagamaan**: Pastikan seluruh konsep keagamaan (agama, penganut, hari raya, kitab suci, tempat ibadah, ritual sholat/puasa, dan seruan doa) dilabeli `REG`.
+- [ ] **Uji Integritas Transisi BIO**: Pastikan tidak ada token `I-TAG` liar yang muncul tanpa diawali `B-TAG` dari kelas yang sama, dan dua entitas bersebelahan sejenis diawali dengan `B-TAG` baru.
 
 ---
 
@@ -998,13 +1103,179 @@ Surabaya    B-GPE
 ```
 
 #### Format JSON Spans (*Recommended for Information Extraction Pipelines*):
+Dalam format JSON rentang (*span-based*), indeks token menggunakan penomoran berbasis 0 (*0-indexed*) dengan konvensi interval setengah terbuka (*half-open interval*) `[start_token, end_token)` di mana `end_token` bersifat eksklusif:
+
 ```json
 {
   "text": "Presiden Joko Widodo meninjau di Surabaya .",
+  "tokens": ["Presiden", "Joko", "Widodo", "meninjau", "di", "Surabaya", "."],
   "entities": [
     {"start_token": 0, "end_token": 1, "label": "NOR", "text": "Presiden"},
     {"start_token": 1, "end_token": 3, "label": "PER", "text": "Joko Widodo"},
-    {"start_token": 4, "end_token": 5, "label": "GPE", "text": "Surabaya"}
+    {"start_token": 5, "end_token": 6, "label": "GPE", "text": "Surabaya"}
+  ]
+}
+```
+> **Catatan Kritis Batas**: Perhatikan bahwa token ke-4 adalah preposisi `"di"` yang wajib berstatus `O`. Oleh sebab itu, rentang entitas `Surabaya` dimulai pada indeks token `5` hingga `6` (`[5, 6)`), bukan `4`!
+
+---
+
+### 8.3 Few-Shot Demonstrations in Prompt (Contoh Few-Shot LLM)
+
+Berikut adalah 3 contoh *in-context few-shot demonstrations* terstruktur yang siap disematkan ke dalam *system prompt* atau *few-shot context* untuk memandu LLM mereplikasi batas token BIO dan JSON span NERGRIT secara sempurna:
+
+#### Contoh Few-Shot 1: Politik, Gelar Jabatan, & Format Kurung Tanggal Kepala Berita
+**Teks Masukan**:
+```
+Gubernur DKI Jakarta Anies Baswedan meresmikan proyek pada Rabu ( 16 / 5 / 2018 ) .
+```
+**Luaran CoNLL**:
+```
+Gubernur       B-NOR
+DKI            I-NOR
+Jakarta        I-NOR
+Anies          B-PER
+Baswedan       I-PER
+meresmikan     O
+proyek         O
+pada           O
+Rabu           B-DAT
+(              I-DAT
+16             I-DAT
+/              I-DAT
+5              I-DAT
+/              I-DAT
+2018           I-DAT
+)              I-DAT
+.              O
+```
+**Luaran JSON Spans**:
+```json
+{
+  "text": "Gubernur DKI Jakarta Anies Baswedan meresmikan proyek pada Rabu ( 16 / 5 / 2018 ) .",
+  "tokens": ["Gubernur", "DKI", "Jakarta", "Anies", "Baswedan", "meresmikan", "proyek", "pada", "Rabu", "(", "16", "/", "5", "/", "2018", ")", "."],
+  "entities": [
+    {"start_token": 0, "end_token": 3, "label": "NOR", "text": "Gubernur DKI Jakarta"},
+    {"start_token": 3, "end_token": 5, "label": "PER", "text": "Anies Baswedan"},
+    {"start_token": 8, "end_token": 16, "label": "DAT", "text": "Rabu ( 16 / 5 / 2018 )"}
+  ]
+}
+```
+
+#### Contoh Few-Shot 2: Kriminalitas, Komoditas Huruf Kecil, Besaran Fisik, & Nama Jalan
+**Teks Masukan**:
+```
+Aparat Polresta Solo menyita sebuah mobil pikap dan 15 kg beras di Jalan Slamet Riyadi .
+```
+**Luaran CoNLL**:
+```
+Aparat         B-NOR
+Polresta       I-NOR
+Solo           I-NOR
+menyita        O
+sebuah         O
+mobil          B-PRD
+pikap          I-PRD
+dan            O
+15             B-QTY
+kg             I-QTY
+beras          B-PRD
+di             O
+Jalan          B-LOC
+Slamet         I-LOC
+Riyadi         I-LOC
+.              O
+```
+**Luaran JSON Spans**:
+```json
+{
+  "text": "Aparat Polresta Solo menyita sebuah mobil pikap dan 15 kg beras di Jalan Slamet Riyadi .",
+  "tokens": ["Aparat", "Polresta", "Solo", "menyita", "sebuah", "mobil", "pikap", "dan", "15", "kg", "beras", "di", "Jalan", "Slamet", "Riyadi", "."],
+  "entities": [
+    {"start_token": 0, "end_token": 3, "label": "NOR", "text": "Aparat Polresta Solo"},
+    {"start_token": 5, "end_token": 7, "label": "PRD", "text": "mobil pikap"},
+    {"start_token": 8, "end_token": 10, "label": "QTY", "text": "15 kg"},
+    {"start_token": 10, "end_token": 11, "label": "PRD", "text": "beras"},
+    {"start_token": 12, "end_token": 15, "label": "LOC", "text": "Jalan Slamet Riyadi"}
+  ]
+}
+```
+
+#### Contoh Few-Shot 3: Hukum, Fasilitas, Karya Seni, & Bahasa Alami
+**Teks Masukan**:
+```
+Penerbit meluncurkan novel " Bumi Manusia " karya Pramoedya Ananta Toer di Bandara Changi dalam bahasa Indonesia .
+```
+**Luaran CoNLL**:
+```
+Penerbit       O
+meluncurkan    O
+novel          O
+"              O
+Bumi           B-WOA
+Manusia        I-WOA
+"              O
+karya          O
+Pramoedya      B-PER
+Ananta         I-PER
+Toer           I-PER
+di             O
+Bandara        B-FAC
+Changi         I-FAC
+dalam          O
+bahasa         B-LAN
+Indonesia      I-LAN
+.              O
+```
+**Luaran JSON Spans**:
+```json
+{
+  "text": "Penerbit meluncurkan novel \" Bumi Manusia \" karya Pramoedya Ananta Toer di Bandara Changi dalam bahasa Indonesia .",
+  "tokens": [
+    "Penerbit",
+    "meluncurkan",
+    "novel",
+    "\"",
+    "Bumi",
+    "Manusia",
+    "\"",
+    "karya",
+    "Pramoedya",
+    "Ananta",
+    "Toer",
+    "di",
+    "Bandara",
+    "Changi",
+    "dalam",
+    "bahasa",
+    "Indonesia",
+    "."
+  ],
+  "entities": [
+    {
+      "start_token": 4,
+      "end_token": 6,
+      "label": "WOA",
+      "text": "Bumi Manusia"
+    },
+    {
+      "start_token": 8,
+      "end_token": 11,
+      "label": "PER",
+      "text": "Pramoedya Ananta Toer"
+    },
+    {
+      "start_token": 12,
+      "end_token": 14,
+      "label": "FAC",
+      "text": "Bandara Changi"
+    },
+    {
+      "start_token": 15,
+      "end_token": 17,
+      "label": "LAN",
+      "text": "bahasa Indonesia"
+    }
   ]
 }
 ```
