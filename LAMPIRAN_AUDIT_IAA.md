@@ -28,11 +28,11 @@ Pengujian statistik kesepakatan antarpenilai dihitung menggunakan metrik Cohen's
 
 | Metrik Kesepakatan Antarpenilai | Nilai Empiris | 95% Bootstrap CI | Interpretasi Ilmiah (Landis & Koch, 1977) |
 | :--- | :---: | :---: | :--- |
-| **Token Cohen's $\kappa$ (37 tag BIO)** | **0,987** | [0,983 – 0,991] | Kesepakatan Hampir Sempurna (*Almost Perfect Agreement*) |
-| **Token Cohen's $\kappa$ (18 kelas entitas + O)** | **0,989** | [0,985 – 0,993] | Kesepakatan Hampir Sempurna (*Almost Perfect Agreement*) |
-| **Entity-Decision $\kappa$ (KEEP / REMOVE / REPLACE)** | **0,923** | [0,895 – 0,947] | Kesepakatan Hampir Sempurna (*Almost Perfect Agreement*) |
-| **Entity-Decision $\kappa$ (CORRECT / INCORRECT)** | **0,928** | [0,899 – 0,952] | Kesepakatan Hampir Sempurna (*Almost Perfect Agreement*) |
-| **Pairwise Exact Span-$F_1$ Agreement** | **97,63%** | [96,84% – 98,34%] | Konsistensi Batas Rentang Sangat Tinggi (1.975 sepakat) |
+| **Token Cohen's κ (37 tag BIO)** | **0,987** | [0,983 – 0,991] | Kesepakatan Hampir Sempurna (*Almost Perfect Agreement*) |
+| **Token Cohen's κ (18 kelas entitas + O)** | **0,989** | [0,985 – 0,993] | Kesepakatan Hampir Sempurna (*Almost Perfect Agreement*) |
+| **Entity-Decision κ (KEEP / REMOVE / REPLACE)** | **0,923** | [0,895 – 0,947] | Kesepakatan Hampir Sempurna (*Almost Perfect Agreement*) |
+| **Entity-Decision κ (CORRECT / INCORRECT)** | **0,928** | [0,899 – 0,952] | Kesepakatan Hampir Sempurna (*Almost Perfect Agreement*) |
+| **Pairwise Exact Span-F₁ Agreement** | **97,63%** | [96,84% – 98,34%] | Konsistensi Batas Rentang Sangat Tinggi (1.975 sepakat) |
 | **Persentase Kesepakatan Token (BIO)** | **99,13%** | — | 10.718 dari 10.812 token berlabel BIO identik |
 | **Kalimat Identik Sempurna (*Zero Disagreement*)** | **89,75%** | — | 359 dari 400 kalimat disepakati 100% tanpa selisih |
 
@@ -40,7 +40,7 @@ Pengujian statistik kesepakatan antarpenilai dihitung menggunakan metrik Cohen's
 
 ## 3. Rincian IAA Berdasarkan Dataset Sintetis
 
-| Dataset Sintetis | Populasi Asal | Sampel | Token | $\kappa$ Token BIO | $\kappa$ Token Kelas | $\kappa$ Keputusan Entitas | Span-$F_1$ IAA | Persentase Kalimat Identik |
+| Dataset Sintetis | Populasi Asal | Sampel | Token | κ Token BIO | κ Token Kelas | κ Keputusan Entitas | Span-F₁ IAA | Persentase Kalimat Identik |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Nemotron | 17.439 | 100 | 3.245 | 0,977 | 0,981 | 0,886 | 95,93% | 82,00% |
 | Luna | 17.236 | 100 | 2.537 | 0,992 | 0,992 | 0,911 | 98,46% | 92,00% |
@@ -54,7 +54,7 @@ Pengujian statistik kesepakatan antarpenilai dihitung menggunakan metrik Cohen's
 
 Berdasarkan konsensus *dual-agreement*, dihitung metrik presisi, recall, dan $F_1$-score kualitas anotasi bawaan masing-masing dataset sintetis:
 
-| Dataset Sintetis | Kalimat | Benar ($TP$) | Salah ($FP$) | Terlewat (*Missed*) | $FN$ Total | Presisi Anotasi | Recall Anotasi | F1 Anotasi | Kalimat Bermasalah | Estimasi Galat Terbobot ($\widehat{p}_{error}$) |
+| Dataset Sintetis | Kalimat | Benar (TP) | Salah (FP) | Terlewat (Missed) | FN Total | Presisi Anotasi | Recall Anotasi | F1 Anotasi | Kalimat Bermasalah | Estimasi Galat Terbobot (p̂_error) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Nemotron | 100 | 517 | 118 | 21 | 83 | 81,42% | 86,17% | **83,72%** | 73 | 72,93% |
 | Luna | 100 | 493 | 27 | 12 | 25 | 94,81% | 95,17% | **94,99%** | 28 | 28,05% |

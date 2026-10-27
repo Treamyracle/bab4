@@ -4,7 +4,7 @@ Dokumentasi rincian hasil audit manual anotasi independen dua penilai (Arif Atha
 
 ## Ringkasan Gabungan (4 Korpus Sintetis — 400 Kalimat)
 
-| Kelas Entitas | Benar ($TP$) | Salah ($FP$) | Terlewat (*Missed*) | $FN$ Total | Presisi (%) | Recall (%) | F1-Score (%) | Span-$F_1$ IAA (%) |
+| Kelas Entitas | Benar (TP) | Salah (FP) | Terlewat (Missed) | FN Total | Presisi (%) | Recall (%) | F1-Score (%) | Span-F₁ IAA (%) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | CRD | 56 | 2 | 11 | 34 | 96,55% | 62,22% | 75,68% | 96,17% |
 | DAT | 235 | 42 | 16 | 56 | 84,84% | 80,76% | 82,75% | 95,71% |
@@ -28,7 +28,7 @@ Dokumentasi rincian hasil audit manual anotasi independen dua penilai (Arif Atha
 
 ## Nemotron
 
-| Kelas Entitas | Benar ($TP$) | Salah ($FP$) | Terlewat (*Missed*) | $FN$ Total | Presisi (%) | Recall (%) | F1-Score (%) |
+| Kelas Entitas | Benar (TP) | Salah (FP) | Terlewat (Missed) | FN Total | Presisi (%) | Recall (%) | F1-Score (%) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | CRD | 11 | 2 | 1 | 10 | 84,62% | 52,38% | 64,71% |
 | DAT | 100 | 21 | 4 | 21 | 82,64% | 82,64% | 82,64% |
@@ -52,7 +52,7 @@ Dokumentasi rincian hasil audit manual anotasi independen dua penilai (Arif Atha
 
 ## Luna
 
-| Kelas Entitas | Benar ($TP$) | Salah ($FP$) | Terlewat (*Missed*) | $FN$ Total | Presisi (%) | Recall (%) | F1-Score (%) |
+| Kelas Entitas | Benar (TP) | Salah (FP) | Terlewat (Missed) | FN Total | Presisi (%) | Recall (%) | F1-Score (%) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | CRD | 28 | 0 | 0 | 1 | 100,00% | 96,55% | 98,25% |
 | DAT | 45 | 5 | 0 | 4 | 90,00% | 91,84% | 90,91% |
@@ -76,7 +76,7 @@ Dokumentasi rincian hasil audit manual anotasi independen dua penilai (Arif Atha
 
 ## Gemma
 
-| Kelas Entitas | Benar ($TP$) | Salah ($FP$) | Terlewat (*Missed*) | $FN$ Total | Presisi (%) | Recall (%) | F1-Score (%) |
+| Kelas Entitas | Benar (TP) | Salah (FP) | Terlewat (Missed) | FN Total | Presisi (%) | Recall (%) | F1-Score (%) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | CRD | 7 | 0 | 6 | 9 | 100,00% | 43,75% | 60,87% |
 | DAT | 10 | 10 | 4 | 18 | 50,00% | 35,71% | 41,67% |
@@ -100,7 +100,7 @@ Dokumentasi rincian hasil audit manual anotasi independen dua penilai (Arif Atha
 
 ## GPT-OSS
 
-| Kelas Entitas | Benar ($TP$) | Salah ($FP$) | Terlewat (*Missed*) | $FN$ Total | Presisi (%) | Recall (%) | F1-Score (%) |
+| Kelas Entitas | Benar (TP) | Salah (FP) | Terlewat (Missed) | FN Total | Presisi (%) | Recall (%) | F1-Score (%) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | CRD | 10 | 0 | 4 | 14 | 100,00% | 41,67% | 58,82% |
 | DAT | 80 | 6 | 8 | 13 | 93,02% | 86,02% | 89,39% |

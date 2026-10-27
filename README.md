@@ -68,7 +68,7 @@ Label `REG` serta label gelar `TTL` (*Title*) tetap dipertahankan pada anotasi s
 
 ### 4.1.3 Pembagian Data dan Hasil Pemeriksaan Kebocoran
 
-Untuk menjamin perbandingan performa yang objektif dan adil, seluruh kalimat dari keenam korpus dikelompokkan secara global sebelum dilakukan penempatan partisi latih (*train*), validasi (*validation*), dan uji (*test*). Kalimat yang identik atau memiliki tingkat kemiripan tekstual yang sangat tinggi (diukur menggunakan koefisien *Jaccard similarity* karakter 5-gram dengan nilai ambang $\ge 0,90$ pada kalimat dengan panjang minimal 10 token) diisolasi ke dalam satu kelompok (*equivalence group*).
+Untuk menjamin perbandingan performa yang objektif dan adil, seluruh kalimat dari keenam korpus dikelompokkan secara global sebelum dilakukan penempatan partisi latih (*train*), validasi (*validation*), dan uji (*test*). Kalimat yang identik atau memiliki tingkat kemiripan tekstual yang sangat tinggi (diukur menggunakan koefisien *Jaccard similarity* karakter 5-gram dengan nilai ambang ≥ 0,90 pada kalimat dengan panjang minimal 10 token) diisolasi ke dalam satu kelompok (*equivalence group*).
 
 Setiap kelompok kalimat tersebut kemudian ditempatkan secara utuh ke dalam satu partisi dengan urutan prioritas: kelompok yang memuat kalimat uji dialokasikan ke partisi *test*, kelompok yang memuat kalimat validasi dialokasikan ke *validation*, dan sisanya dialokasikan ke partisi *train*. Strategi ini menjamin tidak ada kalimat yang sama atau sangat mirip yang terdistribusi ganda di antara partisi latih dan partisi evaluasi. Kelompok data sintetis yang tidak terikat dengan data uji dialokasikan ke dalam rasio 85% latih dan 15% validasi menggunakan *random seed* 42.
 
@@ -117,22 +117,22 @@ $$
 $$
 
 $$
-D_{\text{token}} = \frac{T_e}{T} \times 100\text{ % } \qquad (4.3)
+D_{\text{token}} = \frac{T_e}{T} \times 100\% \qquad (4.3)
 $$
 
 $$
-D_{\text{span}} = \frac{E}{T} \times 100 \qquad (4.4)
+D_{\text{span}} = \frac{E}{T} \times 100\% \qquad (4.4)
 $$
 
 $$
-P_c = \frac{E_c}{E} \times 100\text{ % } \qquad (4.5)
+P_c = \frac{E_c}{E} \times 100\% \qquad (4.5)
 $$
 
 di mana:
 - $\overline{L}$: Rata-rata jumlah token per kalimat.
 - $\overline{E}$: Rata-rata jumlah rentang entitas per kalimat.
-- $D_{token}$: Kepadatan token berentitas (persentase token teks yang menjadi bagian dari suatu entitas bernama).
-- $D_{span}$: Kepadatan rentang entitas per 100 token teks.
+- $D_{\text{token}}$: Kepadatan token berentitas (persentase token teks yang menjadi bagian dari suatu entitas bernama).
+- $D_{\text{span}}$: Kepadatan rentang entitas per 100 token teks.
 - $P_c$: Proporsi kemunculan entitas dari kelas $c$ terhadap total rentang entitas aktif.
 
 Rincian karakteristik pada partisi pelatihan (*training set*) yang digunakan dalam eksperimen *fine-tuning* disajikan pada Tabel 4.5.
@@ -147,7 +147,7 @@ Rincian karakteristik pada partisi pelatihan (*training set*) yang digunakan dal
 | Gemma | 14.819 | 300.878 | 55.775 | 20,30 | 3,76 | 37,98 | 18,54 |
 | GPT-OSS | 14.820 | 451.884 | 85.358 | 30,49 | 5,76 | 48,39 | 18,89 |
 
-Tabel 4.5 memperlihatkan perbedaan karakteristik yang nyata antara data acuan manusia dan data sintetis LLM. Korpus Nemotron dan GPT-OSS memiliki rata-rata panjang kalimat yang lebih panjang (~30–31 token/kalimat) dan kepadatan entitas yang sangat tinggi (~5,7–6,4 entitas/kalimat), dengan hampir setengah dari seluruh token teksnya ($D_{token} \approx 48\% - 50\%$) merupakan bagian dari entitas bernama. Sebaliknya, korpus acuan manusia (NERGRIT Gold) memiliki kepadatan entitas yang lebih rendah ($D_{token} = 30,67\%$) dengan rata-rata 3,42 entitas per kalimat.
+Tabel 4.5 memperlihatkan perbedaan karakteristik yang nyata antara data acuan manusia dan data sintetis LLM. Korpus Nemotron dan GPT-OSS memiliki rata-rata panjang kalimat yang lebih panjang (~30–31 token/kalimat) dan kepadatan entitas yang sangat tinggi (~5,7–6,4 entitas/kalimat), dengan hampir setengah dari seluruh token teksnya (D_token ≈ 48%–50%) merupakan bagian dari entitas bernama. Sebaliknya, korpus acuan manusia (NERGRIT Gold) memiliki kepadatan entitas yang lebih rendah (D_token = 30,67%) dengan rata-rata 3,42 entitas per kalimat.
 
 Distribusi kumulatif panjang kalimat dan jumlah entitas antar-korpus ditampilkan secara visual pada Gambar 4.1.
 
@@ -224,25 +224,25 @@ Tabel 4.8 menunjukkan bahwa korpus NERGRIT Gold memiliki 250 transisi BIO yang t
 
 Pemeriksaan manual terhadap kualitas anotasi (*human annotation audit*) dilaksanakan secara mandiri (*blind* dan independen) oleh dua penilai, yaitu **Arif Athaya Harahap** (Penilai A1) dan **Muhammad Faiz Fauzan** (Penilai A2) pada tanggal **22 Oktober 2026**. Berbeda dengan korpus acuan manusia (NERGRIT) yang dievaluasi sebagai data sekunder, audit anotasi manusia ini difokuskan secara khusus untuk mengevaluasi mutu anotasi intrinsik pada **keempat korpus sintetis hasil generasi LLM** (`Nemotron`, `Luna`, `Gemma`, dan `GPT-OSS`).
 
-Sampel audit diambil secara acak berstrata (*stratified random sampling*) tanpa pengembalian (*without replacement*) dengan nilai *seed* acak tetap `20261022`. Stratifikasi dibentuk berdasarkan persilangan antara jumlah entitas dalam kalimat (kelompok 0 entitas, 1 entitas, dan $\ge 2$ entitas) dengan panjang kalimat relatif terhadap nilai median populasi masing-masing korpus. Dari masing-masing keempat korpus sintetis diambil tepat 100 kalimat representatif, sehingga total sampel audit mencakup **400 kalimat** (**10.812 token**, mencakup **800 lembar evaluasi independen**).
+Sampel audit diambil secara acak berstrata (*stratified random sampling*) tanpa pengembalian (*without replacement*) dengan nilai *seed* acak tetap `20261022`. Stratifikasi dibentuk berdasarkan persilangan antara jumlah entitas dalam kalimat (kelompok 0 entitas, 1 entitas, dan ≥ 2 entitas) dengan panjang kalimat relatif terhadap nilai median populasi masing-masing korpus. Dari masing-masing keempat korpus sintetis diambil tepat 100 kalimat representatif, sehingga total sampel audit mencakup **400 kalimat** (**10.812 token**, mencakup **800 lembar evaluasi independen**).
 
-Kedua penilai melakukan evaluasi secara terpisah tanpa saling berkomunikasi. Reliabilitas antarpenilai diuji menggunakan koefisien kesepakatan Cohen's Kappa ($\kappa$) pada tingkat token (37 tag BIO dan 18 kelas + O) serta tingkat keputusan entitas (*KEEP* / *REMOVE* / *REPLACE* dan *CORRECT* / *INCORRECT*), dilengkapi dengan *Pairwise Exact Span-$F_1$ Agreement* dan selang kepercayaan *bootstrap* 95% (1.000 iterasi). Rangkuman hasil pengujian reliabilitas IAA gabungan pada 400 kalimat sintetis disajikan pada Tabel 4.9a, sedangkan rincian per dataset sintetis disajikan pada Tabel 4.9b.
+Kedua penilai melakukan evaluasi secara terpisah tanpa saling berkomunikasi. Reliabilitas antarpenilai diuji menggunakan koefisien kesepakatan Cohen's Kappa (κ) pada tingkat token (37 tag BIO dan 18 kelas + O) serta tingkat keputusan entitas (*KEEP* / *REMOVE* / *REPLACE* dan *CORRECT* / *INCORRECT*), dilengkapi dengan *Pairwise Exact Span-F₁ Agreement* dan selang kepercayaan *bootstrap* 95% (1.000 iterasi). Rangkuman hasil pengujian reliabilitas IAA gabungan pada 400 kalimat sintetis disajikan pada Tabel 4.9a, sedangkan rincian per dataset sintetis disajikan pada Tabel 4.9b.
 
 **Tabel 4.9a Hasil pengujian reliabilitas antarpenilai independen (*Inter-Annotator Agreement*) pada 400 sampel kalimat sintetis**
 
 | Metrik Kesepakatan Antarpenilai | Nilai Empiris | 95% Bootstrap CI | Interpretasi (Landis & Koch, 1977) |
 | :--- | :---: | :---: | :--- |
-| Token Cohen's $\kappa$ (37 tag BIO) | **0,987** | [0,983 – 0,991] | Kesepakatan Hampir Sempurna (*Almost Perfect*) |
-| Token Cohen's $\kappa$ (18 kelas + O) | **0,989** | [0,985 – 0,993] | Kesepakatan Hampir Sempurna (*Almost Perfect*) |
-| Entity-Decision $\kappa$ (KEEP / REMOVE / REPLACE) | **0,923** | [0,895 – 0,947] | Kesepakatan Hampir Sempurna (*Almost Perfect*) |
-| Entity-Decision $\kappa$ (CORRECT / INCORRECT) | **0,928** | [0,899 – 0,952] | Kesepakatan Hampir Sempurna (*Almost Perfect*) |
-| Pairwise Exact Span-$F_1$ Agreement | **97,63%** | [96,84% – 98,34%] | Konsistensi Batas Rentang Sangat Tinggi (1.975 sepakat) |
+| Token Cohen's κ (37 tag BIO) | **0,987** | [0,983 – 0,991] | Kesepakatan Hampir Sempurna (*Almost Perfect*) |
+| Token Cohen's κ (18 kelas + O) | **0,989** | [0,985 – 0,993] | Kesepakatan Hampir Sempurna (*Almost Perfect*) |
+| Entity-Decision κ (KEEP / REMOVE / REPLACE) | **0,923** | [0,895 – 0,947] | Kesepakatan Hampir Sempurna (*Almost Perfect*) |
+| Entity-Decision κ (CORRECT / INCORRECT) | **0,928** | [0,899 – 0,952] | Kesepakatan Hampir Sempurna (*Almost Perfect*) |
+| Pairwise Exact Span-F₁ Agreement | **97,63%** | [96,84% – 98,34%] | Konsistensi Batas Rentang Sangat Tinggi (1.975 sepakat) |
 | Persentase Kesepakatan Token (BIO) | **99,13%** | — | 10.718 dari 10.812 token berlabel BIO identik |
 | Tingkat Kalimat Identik (*Zero Disagreement*) | **89,75%** | — | 359 dari 400 kalimat disepakati 100% tanpa selisih |
 
 **Tabel 4.9b Populasi asal, sampel audit, dan rincian reliabilitas antarpenilai (IAA) per korpus sintetis**
 
-| Dataset Sintetis | Jumlah Populasi Asal | Sampel Diperiksa | Token Sampel | $\kappa$ Token BIO | $\kappa$ Token Kelas | $\kappa$ Keputusan Entitas | Span-$F_1$ IAA | Kalimat Identik |
+| Dataset Sintetis | Jumlah Populasi Asal | Sampel Diperiksa | Token Sampel | κ Token BIO | κ Token Kelas | κ Keputusan Entitas | Span-F₁ IAA | Kalimat Identik |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Nemotron | 17.439 | 100 kalimat | 3.245 | 0,977 | 0,981 | 0,886 | 95,93% | 82,00% |
 | Luna | 17.236 | 100 kalimat | 2.537 | 0,992 | 0,992 | 0,911 | 98,46% | 92,00% |
@@ -252,13 +252,13 @@ Kedua penilai melakukan evaluasi secara terpisah tanpa saling berkomunikasi. Rel
 
 ### 4.3.2 Hasil Pemeriksaan per Dataset
 
-Kualitas anotasi bawaan pada masing-masing korpus sintetis dievaluasi terhadap label rujukan konsensus *dual-agreement*. Dalam skema ini, entitas dinilai **Benar** ($TP$) apabila batas awal token, batas akhir token, serta label kelas entitasnya bersesuaian persis dengan konsensus kedua penilai. Entitas dinilai **Salah** ($FP$) apabila rentang anotasi awal dibatalkan oleh konsensus penilai karena kekeliruan batas rentang kata (*boundary error*), kesalahan klasifikasi kelas, atau penandaan berlebih (*false positive*). Entitas dinilai **Terlewat** (*Missed*) apabila terdapat entitas bernama nyata dalam teks yang belum terlabeli pada anotasi awal korpus.
+Kualitas anotasi bawaan pada masing-masing korpus sintetis dievaluasi terhadap label rujukan konsensus *dual-agreement*. Dalam skema ini, entitas dinilai **Benar** (TP) apabila batas awal token, batas akhir token, serta label kelas entitasnya bersesuaian persis dengan konsensus kedua penilai. Entitas dinilai **Salah** (FP) apabila rentang anotasi awal dibatalkan oleh konsensus penilai karena kekeliruan batas rentang kata (*boundary error*), kesalahan klasifikasi kelas, atau penandaan berlebih (*false positive*). Entitas dinilai **Terlewat** (*Missed*) apabila terdapat entitas bernama nyata dalam teks yang belum terlabeli pada anotasi awal korpus.
 
 Hasil pemeriksaan anotasi manual beserta metrik kesesuaian anotasi (*Precision*, *Recall*, dan *F1-Score*) per korpus sintetis disajikan pada Tabel 4.10.
 
 **Tabel 4.10 Hasil pemeriksaan manual kualitas anotasi terhadap konsensus dual-agreement pada sampel 100 kalimat per korpus sintetis**
 
-| Dataset Sintetis | Kalimat | Benar ($TP$) | Salah ($FP$) | Terlewat (*Missed*) | $FN$ Total | Presisi Anotasi | Recall Anotasi | F1 Anotasi | Kalimat Bermasalah | Estimasi Galat Terbobot ($\widehat{p}_{error}$) |
+| Dataset Sintetis | Kalimat | Benar (TP) | Salah (FP) | Terlewat (Missed) | FN Total | Presisi Anotasi | Recall Anotasi | F1 Anotasi | Kalimat Bermasalah | Estimasi Galat Terbobot (p̂_error) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Nemotron | 100 | 517 | 118 | 21 | 83 | 81,42% | 86,17% | **83,72%** | 73 | 72,93% |
 | Luna | 100 | 493 | 27 | 12 | 25 | 94,81% | 95,17% | **94,99%** | 28 | 28,05% |
@@ -268,15 +268,21 @@ Hasil pemeriksaan anotasi manual beserta metrik kesesuaian anotasi (*Precision*,
 
 Metrik kesesuaian kualitas anotasi dihitung menggunakan Persamaan 4.6 sampai Persamaan 4.8 dengan memperlakukan anotasi awal korpus sebagai prediksi dan konsensus *dual-agreement* sebagai *ground-truth*:
 
-$$P_{audit} = \frac{TP}{TP + FP} \tag{4.6}$$
+$$
+P_{\text{audit}} = \frac{TP}{TP + FP} \qquad (4.6)
+$$
 
-$$R_{audit} = \frac{TP}{TP + FN} \tag{4.7}$$
+$$
+R_{\text{audit}} = \frac{TP}{TP + FN} \qquad (4.7)
+$$
 
-$$F_{1, audit} = \frac{2 P_{audit} R_{audit}}{P_{audit} + R_{audit}} \tag{4.8}$$
+$$
+F_{1, \text{audit}} = \frac{2 \cdot P_{\text{audit}} \cdot R_{\text{audit}}}{P_{\text{audit}} + R_{\text{audit}}} \qquad (4.8)
+$$
 
-Berdasarkan formulasi tersebut pada gabungan 400 sampel kalimat sintetis, diperoleh nilai $TP = 1.758$, $FP = 320$, dan $FN = 258$. Nilai $FN$ (258) lebih besar daripada jumlah entitas terlewat literal (83) karena koreksi atas entitas yang salah kelas atau salah batas rentangnya memunculkan rentang acuan baru yang harus dipenuhi dalam konsensus. Secara agregat pada 400 kalimat sintetis, anotasi bawaan menghasilkan **presisi 84,60%, recall 87,20%, dan F1-score 85,88%**, dengan 238 kalimat (59,50%) memuat setidaknya satu deviasi anotasi.
+Berdasarkan formulasi tersebut pada gabungan 400 sampel kalimat sintetis, diperoleh nilai TP = 1.758, FP = 320, dan FN = 258. Nilai FN (258) lebih besar daripada jumlah entitas terlewat literal (83) karena koreksi atas entitas yang salah kelas atau salah batas rentangnya memunculkan rentang acuan baru yang harus dipenuhi dalam konsensus. Secara agregat pada 400 kalimat sintetis, anotasi bawaan menghasilkan **presisi 84,60%, recall 87,20%, dan F1-score 85,88%**, dengan 238 kalimat (59,50%) memuat setidaknya satu deviasi anotasi.
 
-Dari keempat korpus sintetis yang diuji, **Luna** (`GPT-5.6 Luna` + `Gemini 3.6 Flash Medium`) menunjukkan mutu anotasi tertinggi secara mutlak dengan raihan **$F_1 = \mathbf{94,99\%}$** (Presisi 94,81%, Recall 95,17%), serta hanya mencatatkan 28 kalimat bermasalah dari 100 sampel (estimasi galat terbobot $\widehat{p}_{error} = 28,05\%$). Posisi berikutnya diraih oleh **Nemotron** ($F_1 = 83,72\%$), **GPT-OSS** ($F_1 = 82,60\%$), dan **Gemma** ($F_1 = 81,48\%$). Tingginya capaian Luna mencerminkan keunggulan penalaran laten (*latent reasoning*) pada model verifikator Gemini Flash dalam memisahkan entitas kata benda umum (*false positives*) dan menegakkan pemisahan gelar kehormatan (`TTL`) dari nama individu (`PER`). Perlu ditekankan bahwa data audit ini berfungsi murni sebagai instrumen evaluasi independen dan **tidak digunakan untuk mengubah label data latih model**, sehingga integritas korpus hasil generasi tetap terjaga secara murni.
+Dari keempat korpus sintetis yang diuji, **Luna** (`GPT-5.6 Luna` + `Gemini 3.6 Flash Medium`) menunjukkan mutu anotasi tertinggi secara mutlak dengan raihan **F₁-Score = 94,99%** (Presisi 94,81%, Recall 95,17%), serta hanya mencatatkan 28 kalimat bermasalah dari 100 sampel (estimasi galat terbobot p̂_error = 28,05%). Posisi berikutnya diraih oleh **Nemotron** (F₁ = 83,72%), **GPT-OSS** (F₁ = 82,60%), dan **Gemma** (F₁ = 81,48%). Tingginya capaian Luna mencerminkan keunggulan penalaran laten (*latent reasoning*) pada model verifikator Gemini Flash dalam memisahkan entitas kata benda umum (*false positives*) dan menegakkan pemisahan gelar kehormatan (`TTL`) dari nama individu (`PER`). Perlu ditekankan bahwa data audit ini berfungsi murni sebagai instrumen evaluasi independen dan **tidak digunakan untuk mengubah label data latih model**, sehingga integritas korpus hasil generasi tetap terjaga secara murni.
 
 ### 4.3.3 Hasil Pemeriksaan per Kelas
 
@@ -284,7 +290,7 @@ Rangkuman keputusan pemeriksaan anotasi dan reliabilitas antarpenilai menurut 18
 
 **Tabel 4.11 Ringkasan kualitas anotasi dan reliabilitas IAA menurut 18 kelas entitas pada gabungan 400 sampel kalimat sintetis**
 
-| Kelas Entitas | Entitas Benar ($TP$) | Entitas Salah ($FP$) | Entitas Terlewat (*Missed*) | $FN$ Total | Presisi (%) | Recall (%) | F1-Score (%) | Span-$F_1$ IAA (%) |
+| Kelas Entitas | Entitas Benar (TP) | Entitas Salah (FP) | Entitas Terlewat (Missed) | FN Total | Presisi (%) | Recall (%) | F1-Score (%) | Span-F₁ IAA (%) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | CRD | 56 | 2 | 11 | 34 | 96,55% | 62,22% | 75,68% | 96,17% |
 | DAT | 235 | 42 | 16 | 56 | 84,84% | 80,76% | 82,75% | 95,71% |
@@ -306,7 +312,7 @@ Rangkuman keputusan pemeriksaan anotasi dan reliabilitas antarpenilai menurut 18
 | WOA | 18 | 11 | 0 | 6 | 62,07% | 75,00% | 67,92% | 95,65% |
 | **Total** | **1.758** | **320** | **83** | **258** | **84,60%** | **87,20%** | **85,88%** | **97,63%** |
 
-Rincian tabulasi per kelas untuk masing-masing dataset sintetis tersedia pada Lampiran Audit Anotasi. Kelas-kelas dengan konsistensi anotasi tertinggi meliputi `PER` ($F_1 = 99,16\%$, Presisi 99,44%), `MON` ($F_1 = 98,48\%$), `PRC` ($F_1 = 96,24\%$), `GPE` ($F_1 = 95,44\%$), dan `ORG` ($F_1 = 92,06\%$). Pada kelas `NOR` ($F_1 = 79,55\%$, Presisi 89,74%), korpus **Luna, Gemma, dan GPT-OSS** mencatatkan **0 kesalahan positif palsu (`FP = 0`, Presisi 100,00%)**, sedangkan 4 kesalahan pada `NOR` seluruhnya berasal dari korpus **Nemotron** (akibat pelabelan partai politik atau ormas seperti *Partai Golkar* dan *Muhammadiyah* sebagai `NOR` alih-alih `ORG`).
+Rincian tabulasi per kelas untuk masing-masing dataset sintetis tersedia pada Lampiran Audit Anotasi. Kelas-kelas dengan konsistensi anotasi tertinggi meliputi `PER` (F₁ = 99,16%, Presisi 99,44%), `MON` (F₁ = 98,48%), `PRC` (F₁ = 96,24%), `GPE` (F₁ = 95,44%), dan `ORG` (F₁ = 92,06%). Pada kelas `NOR` (F₁ = 79,55%, Presisi 89,74%), korpus **Luna, Gemma, dan GPT-OSS** mencatatkan **0 kesalahan positif palsu (`FP = 0`, Presisi 100,00%)**, sedangkan 4 kesalahan pada `NOR` seluruhnya berasal dari korpus **Nemotron** (akibat pelabelan partai politik atau ormas seperti *Partai Golkar* dan *Muhammadiyah* sebagai `NOR` alih-alih `ORG`).
 
 Sebaliknya, kelas yang memiliki tingkat kekeliruan relatif lebih tinggi adalah `PRD` (62 salah, umumnya akibat pelabelan kata benda komoditas umum), `DAT` (42 salah) dan `TIM` (34 salah, akibat inklusi preposisi waktu seperti *'pada pukul'* atau *'hari'*), serta `ORG` (31 salah, umumnya pada kata benda administratif umum seperti *'Pemerintah'* atau *'UMKM'* yang berdiri sendiri tanpa nama entitas spesifik).
 
@@ -322,8 +328,8 @@ Seluruh proses pelatihan *fine-tuning* model bahasa dilakukan pada infrastruktur
 |---|---|---|
 | Model Fondasi (*Backbone*) | `indobenchmark/indobert-large-p1` | 24 layer, hidden size 1024, 340M parameter (Wilie dkk., 2020) |
 | Profil Eksekusi Komputasi | `a100-bf16-b32-v2` | Mixed precision BF16, master weights FP32 |
-| Laju Pembelajaran (*Learning Rate*) | $2 \times 10^{-5}$ | Nilai baku optimal dan stabil untuk BERT-Large (Devlin dkk., 2019; Mosbach dkk., 2021) |
-| Algoritme Pengoptimal (*Optimizer*) | AdamW ($\beta_1=0,9; \beta_2=0,999; \varepsilon=10^{-8}$) | Pembobotan gradien adaptif dengan weight decay 0,01 |
+| Laju Pembelajaran (*Learning Rate*) | 2 × 10⁻⁵ | Nilai baku optimal dan stabil untuk BERT-Large (Devlin dkk., 2019; Mosbach dkk., 2021) |
+| Algoritme Pengoptimal (*Optimizer*) | AdamW (β₁ = 0,9; β₂ = 0,999; ε = 10⁻⁸) | Pembobotan gradien adaptif dengan weight decay 0,01 |
 | Kebijakan Penjadwal (*Scheduler*) | Linear warmup (rasio 10%) | Transisi laju pembelajaran bertahap |
 | Ukuran Batch Latih (*Train Batch*) | Microbatch 32 (Akumulasi 1) | Batch efektif 32 token sekuens |
 | Ukuran Batch Evaluasi (*Eval Batch*) | 64 | Akselerasi evaluasi validasi per epoch |
@@ -336,7 +342,7 @@ Seluruh proses pelatihan *fine-tuning* model bahasa dilakukan pada infrastruktur
 
 #### 4.4.1.1 Eksperimen Penentuan dan Optimasi Laju Pembelajaran (*Learning Rate*)
 
-Guna memberikan justifikasi empiris atas pemilihan parameter pelatihan serta memastikan stabilitas konvergensi model IndoBERT-Large-p1 (340 juta parameter), dilakukan eksperimen optimasi hiperparameter (*hyperparameter search*) terfokus pada laju pembelajaran (*learning rate*). Pengujian mengevaluasi empat kandidat laju pembelajaran yang direkomendasikan pada studi kestabilan fine-tuning transformer skala besar (Devlin dkk., 2019; Mosbach dkk., 2021) dan tolok ukur NLP Indonesia (Wilie dkk., 2020; Cahyawijaya dkk., 2023), yaitu $1 \times 10^{-5}$, $2 \times 10^{-5}$, $3 \times 10^{-5}$, dan $5 \times 10^{-5}$.
+Guna memberikan justifikasi empiris atas pemilihan parameter pelatihan serta memastikan stabilitas konvergensi model IndoBERT-Large-p1 (340 juta parameter), dilakukan eksperimen optimasi hiperparameter (*hyperparameter search*) terfokus pada laju pembelajaran (*learning rate*). Pengujian mengevaluasi empat kandidat laju pembelajaran yang direkomendasikan pada studi kestabilan fine-tuning transformer skala besar (Devlin dkk., 2019; Mosbach dkk., 2021) dan tolok ukur NLP Indonesia (Wilie dkk., 2020; Cahyawijaya dkk., 2023), yaitu 1 × 10⁻⁵, 2 × 10⁻⁵, 3 × 10⁻⁵, dan 5 × 10⁻⁵.
 
 Untuk mencegah kebocoran data (*zero test-set leakage*), seluruh proses penalaan dilakukan secara ketat hanya pada subset validasi (*validation split*) dari dua korpus acuan: korpus manusia **NERGRIT Gold** (12.465 kalimat latih, 2.543 validasi) sebagai *anchor baseline* dan korpus sintetis **Nemotron** (14.896 kalimat latih, 2.629 validasi) sebagai perwakilan data terdistilasi LLM. Seluruh parameter komputasi lainnya dikontrol seragam (optimizer AdamW dengan weight decay 0,01, penjadwal *linear warmup* 10%, ukuran batch efektif 32, presisi BF16, dan *early stopping* dengan *patience* 2).
 
@@ -344,30 +350,30 @@ Hasil pengujian performa validasi pada seluruh variasi laju pembelajaran disajik
 
 **Tabel 4.12a Hasil eksperimen optimasi laju pembelajaran (*learning rate*) pada data validasi**
 
-| Dataset | Laju Pembelajaran ($lr$) | Macro-F1 Validasi | Micro-F1 Validasi | Loss Validasi | Epoch Terbaik | Karakteristik Konvergensi |
+| Dataset | Laju Pembelajaran (lr) | Macro-F1 Validasi | Micro-F1 Validasi | Loss Validasi | Epoch Terbaik | Karakteristik Konvergensi |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| NERGRIT Gold | $1 \times 10^{-5}$ | 75,49% | 84,13% | 0,2310 | 10,0 | Konvergen lambat (mencapai batas 10 epoch) |
-| NERGRIT Gold | **$2 \times 10^{-5}$** | **75,38%** | **84,16%** | **0,2019** | **4,0** | **Pareto-Optimal** (Loss terendah & Micro-F1 puncak) |
-| NERGRIT Gold | $3 \times 10^{-5}$ | 75,57% | 84,11% | 0,2547 | 6,0 | Stabil, namun loss validasi naik (+26,2%) |
-| NERGRIT Gold | $5 \times 10^{-5}$ | 74,99% | 83,38% | 0,1959 | 3,0 | Instabilitas gradien (*overshooting*) |
-| Nemotron | $1 \times 10^{-5}$ | 78,98% | 84,55% | 0,2123 | 7,0 | Konvergen lambat (memerlukan 7 epoch) |
-| Nemotron | **$2 \times 10^{-5}$** | **78,57%** | **84,08%** | **0,2084** | **4,0** | **Pareto-Optimal** (Loss terendah & konvergensi cepat) |
-| Nemotron | $3 \times 10^{-5}$ | 78,71% | 84,15% | 0,2126 | 4,0 | Konvergen pada epoch 4, loss sedikit lebih tinggi |
-| Nemotron | $5 \times 10^{-5}$ | 78,17% | 83,98% | 0,2234 | 4,0 | Instabilitas gradien (*overshooting*) |
+| NERGRIT Gold | 1 × 10⁻⁵ | 75,49% | 84,13% | 0,2310 | 10,0 | Konvergen lambat (mencapai batas 10 epoch) |
+| NERGRIT Gold | **2 × 10⁻⁵** | **75,38%** | **84,16%** | **0,2019** | **4,0** | **Pareto-Optimal** (Loss terendah & Micro-F1 puncak) |
+| NERGRIT Gold | 3 × 10⁻⁵ | 75,57% | 84,11% | 0,2547 | 6,0 | Stabil, namun loss validasi naik (+26,2%) |
+| NERGRIT Gold | 5 × 10⁻⁵ | 74,99% | 83,38% | 0,1959 | 3,0 | Instabilitas gradien (*overshooting*) |
+| Nemotron | 1 × 10⁻⁵ | 78,98% | 84,55% | 0,2123 | 7,0 | Konvergen lambat (memerlukan 7 epoch) |
+| Nemotron | **2 × 10⁻⁵** | **78,57%** | **84,08%** | **0,2084** | **4,0** | **Pareto-Optimal** (Loss terendah & konvergensi cepat) |
+| Nemotron | 3 × 10⁻⁵ | 78,71% | 84,15% | 0,2126 | 4,0 | Konvergen pada epoch 4, loss sedikit lebih tinggi |
+| Nemotron | 5 × 10⁻⁵ | 78,17% | 83,98% | 0,2234 | 4,0 | Instabilitas gradien (*overshooting*) |
 
 ![Dinamika konvergensi Macro-F1 dan loss validasi](figures/fig_lr_tuning_curves.png)
 
 *Gambar 4.5a Kurva dinamika konvergensi Macro-F1 dan loss validasi lintas kandidat laju pembelajaran pada GPU NVIDIA A100*
 
 Berdasarkan hasil eksperimen empiris pada Tabel 4.12a dan visualisasi Gambar 4.5a, diperoleh temuan analisis sebagai berikut:
-1. **Stabilitas Plateau $[1 \times 10^{-5}, 3 \times 10^{-5}]$ vs Degradasi pada $5 \times 10^{-5}$**: Pada rentang laju pembelajaran $1 \times 10^{-5}$ hingga $3 \times 10^{-5}$, performa validasi Macro-F1 berada pada plateau yang sangat rapat (75,38%–75,57% pada Gold; 78,57%–78,98% pada Nemotron, dengan selisih marjinal $\le 0,41\%$). Sebaliknya, peningkatan ke $5 \times 10^{-5}$ memicu penurunan performa yang nyata pada kedua korpus (Macro-F1 turun ke 74,99% dan Micro-F1 anjlok ke 83,38% pada Gold; Macro-F1 turun ke 78,17% dan loss memburuk ke 0,2234 pada Nemotron). Temuan ini membuktikan secara empiris terjadinya osilasi atau ketidakstabilan gradien (*gradient overshooting*) pada arsitektur BERT-Large berkapasitas 340 juta parameter apabila laju pembelajaran melampaui batas kritis, selaras dengan pembuktian Mosbach dkk. (2021).
-2. **Efisiensi Waktu Konvergensi dan Kalibrasi Loss**: Laju pembelajaran $1 \times 10^{-5}$ memperlihatkan dinamika pembaruan bobot yang sangat lambat (*under-stepping*), memerlukan penuh 10 epoch pada Gold (2,5$\times$ lebih lama dari puncak $2 \times 10^{-5}$) dan 7 epoch pada Nemotron, dengan nilai *validation loss* akhir yang relatif tinggi (0,2310 pada Gold). Sementara itu, kandidat $3 \times 10^{-5}$ pada korpus Gold memicu kenaikan *validation loss* yang tajam hingga **0,2547** (+26,2% lebih tinggi dibanding **0,2019** pada $2 \times 10^{-5}$) serta skor Micro-F1 yang lebih rendah (84,11% vs 84,16%), mengindikasikan degradasi kalibrasi probabilitas prediksi (*loss inflation*) dan gejala awal *overfitting* pada entitas kelas mayoritas.
-3. **Justifikasi Pareto-Optimalitas $2 \times 10^{-5}$**: Nilai laju pembelajaran $lr = 2 \times 10^{-5}$ merupakan titik operasional terbaik (*Pareto-optimal*) karena:
+1. **Stabilitas Plateau [1 × 10⁻⁵, 3 × 10⁻⁵] vs Degradasi pada 5 × 10⁻⁵**: Pada rentang laju pembelajaran 1 × 10⁻⁵ hingga 3 × 10⁻⁵, performa validasi Macro-F1 berada pada plateau yang sangat rapat (75,38%–75,57% pada Gold; 78,57%–78,98% pada Nemotron, dengan selisih marjinal $\le 0,41\%$). Sebaliknya, peningkatan ke 5 × 10⁻⁵ memicu penurunan performa yang nyata pada kedua korpus (Macro-F1 turun ke 74,99% dan Micro-F1 anjlok ke 83,38% pada Gold; Macro-F1 turun ke 78,17% dan loss memburuk ke 0,2234 pada Nemotron). Temuan ini membuktikan secara empiris terjadinya osilasi atau ketidakstabilan gradien (*gradient overshooting*) pada arsitektur BERT-Large berkapasitas 340 juta parameter apabila laju pembelajaran melampaui batas kritis, selaras dengan pembuktian Mosbach dkk. (2021).
+2. **Efisiensi Waktu Konvergensi dan Kalibrasi Loss**: Laju pembelajaran 1 × 10⁻⁵ memperlihatkan dinamika pembaruan bobot yang sangat lambat (*under-stepping*), memerlukan penuh 10 epoch pada Gold (2,5× lebih lama dari puncak 2 × 10⁻⁵) dan 7 epoch pada Nemotron, dengan nilai *validation loss* akhir yang relatif tinggi (0,2310 pada Gold). Sementara itu, kandidat 3 × 10⁻⁵ pada korpus Gold memicu kenaikan *validation loss* yang tajam hingga **0,2547** (+26,2% lebih tinggi dibanding **0,2019** pada 2 × 10⁻⁵) serta skor Micro-F1 yang lebih rendah (84,11% vs 84,16%), mengindikasikan degradasi kalibrasi probabilitas prediksi (*loss inflation*) dan gejala awal *overfitting* pada entitas kelas mayoritas.
+3. **Justifikasi Pareto-Optimalitas 2 × 10⁻⁵**: Nilai laju pembelajaran lr = 2 × 10⁻⁵ merupakan titik operasional terbaik (*Pareto-optimal*) karena:
    - Mencapai **Micro-F1 tertinggi pada korpus acuan Gold (84,16%)**;
    - Menghasilkan **nilai loss validasi terendah di zona stabil pada kedua korpus** (0,2019 pada Gold dan 0,2084 pada Nemotron), menjamin kalibrasi tingkat kepercayaan model yang paling presisi;
    - Mencapai konvergensi puncak secara seragam pada **Epoch 4,0** baik untuk data manusia maupun sintetis, yang secara efektif menghemat sekitar 40% waktu komputasi GPU pada 84 variasi pelatihan skripsi tanpa mengorbankan kualitas generalisasi.
 
-Dengan demikian, nilai $lr = 2 \times 10^{-5}$ terjustifikasi secara kokoh—baik secara teoretis melalui literatur rujukan maupun secara empiris melalui uji coba independen—sebagai konfigurasi hiperparameter baku bersama (*shared optimal baseline*) untuk seluruh eksperimen utama pada bab ini.
+Dengan demikian, nilai lr = 2 × 10⁻⁵ terjustifikasi secara kokoh—baik secara teoretis melalui literatur rujukan maupun secara empiris melalui uji coba independen—sebagai konfigurasi hiperparameter baku bersama (*shared optimal baseline*) untuk seluruh eksperimen utama pada bab ini.
 
 
 
@@ -416,7 +422,7 @@ Kurva nilai fungsi kerugian (*loss*) dan metrik *Macro F1-Score* pada data valid
 *Gambar 4.5 Kurva fungsi kerugian dan Macro-F1 validasi model GPT-OSS (Seed 42)*
 
 Dinamika konvergensi yang teramati pada Gambar 4.1 sampai Gambar 4.5 memperlihatkan pola pembelajaran yang konsisten lintas arsitektur data:
-1. **Penurunan Nilai Loss**: Fungsi kerugian latih (*training loss*) turun secara tajam pada 2–3 epoch awal (dari kisaran 0,60–0,80 turun ke bawah 0,10), lalu melandai stabil hingga mendekati <0,03. Kurva kerugian validasi bergerak selaras tanpa indikasi lonjakan divergensi (*overfitting* parah), menegaskan efektivitas laju pembelajaran $2 \times 10^{-5}$ dengan jadwal *warmup* linier.
+1. **Penurunan Nilai Loss**: Fungsi kerugian latih (*training loss*) turun secara tajam pada 2–3 epoch awal (dari kisaran 0,60–0,80 turun ke bawah 0,10), lalu melandai stabil hingga mendekati <0,03. Kurva kerugian validasi bergerak selaras tanpa indikasi lonjakan divergensi (*overfitting* parah), menegaskan efektivitas laju pembelajaran 2 × 10⁻⁵ dengan jadwal *warmup* linier.
 2. **Titik Puncak Validasi Macro-F1**: Metrik Macro-F1 validasi mengalami peningkatan eksponensial pada epoch pertama dan kedua, kemudian mencapai titik optimal pada rentang epoch 4 hingga 7.
 3. **Aktivasi Early Stopping**: Pada korpus sintetis yang berukuran besar (seperti Nemotron dan GPT-OSS), model mencapai titik saturasi optimal lebih cepat (sekitar epoch 5–6) akibat kepadatan entitas yang tinggi per batch, sehingga mekanisme *early stopping* secara tepat menghentikan komputasi sebelum terjadinya pergeseran distribusi representasi bobot.
 
@@ -581,7 +587,7 @@ Telaah mendalam terhadap distribusi kinerja 18 kelas entitas mengungkap wawasan 
    - `NOR` (Kebangsaan, Agama, Suku, Politik): Model sintetis memperoleh F1 mendekati 0% pada Test Gold, namun meraih 37%–69% pada Benchmark Sintetis. Investigasi data membuktikan bahwa anotasi manusia pada NERGRIT memperlakukan kata sifat demografis secara sangat ketat, sedangkan LLM cenderung memperluas batas kata atau memasukkannya ke dalam konteks organisasi.
    - `LAN` (Bahasa): Memiliki support 0 pada partisi Test Gold manusia, sehingga bernilai 0% secara artifisial, namun pada Benchmark Sintetis kelas ini berhasil diekstraksi hingga 96%–98% F1 oleh model sintetis dan 85,87% oleh Gold.
    - `LOC` vs `GPE`: Model sintetis cenderung memprediksi lokasi fisik alamiah (`LOC`) sebagai entitas geopolitik (`GPE`), yang memicu penurunan skor *exact match* pada `LOC` (15%–29% F1 di Test Gold).
-3. **Stabilitas Lintas Seed**: Simpangan baku antar-tiga-seed bernilai sangat kecil ($SD \le 0,41\%$ pada Gold; $SD \le 1,70\%$ pada korpus sintetis), membuktikan bahwa proses *fine-tuning* IndoBERT-large pada profil komputasi A100 BF16 bersifat sangat stabil, bebas dari anomali keacakan inisialisasi bobot, dan sepenuhnya dapat direproduksi (*highly reproducible*).
+3. **Stabilitas Lintas Seed**: Simpangan baku antar-tiga-seed bernilai sangat kecil (SD ≤ 0,41% pada Gold; SD ≤ 1,70% pada korpus sintetis), membuktikan bahwa proses *fine-tuning* IndoBERT-large pada profil komputasi A100 BF16 bersifat sangat stabil, bebas dari anomali keacakan inisialisasi bobot, dan sepenuhnya dapat direproduksi (*highly reproducible*).
 
 ## 4.6 Hasil Eksperimen Kesetaraan Jumlah Entitas
 
@@ -745,8 +751,8 @@ Evaluasi transfer lintas domain pada Tabel 4.17 dan Tabel 4.17b menghasilkan tem
 
 Bab ini telah menyajikan data empiris yang lengkap, objektif, dan terverifikasi mengenai perbandingan data latih sintetis LLM berbanding data anotasi manusia:
 1. **Keutuhan Data dan Isolasi Kebocoran**: Seluruh 88.252 *record* sumber dipertahankan tanpa manipulasi sepihak. Partisi data uji manusia terbukti memiliki 0 kluster kebocoran n-gram terhadap data latih, dan 255 kesalahan kode sintaksis label pada NERGRIT Gold telah distandardisasi.
-2. **Karakteristik Korpus**: Korpus sintetis LLM dua fase menampilkan struktur kalimat yang lebih kompleks (~31 token/kalimat) dan kepadatan entitas yang sangat tinggi ($D_{token} \approx 48\% - 50\%$) dibandingkan korpus manusia ($D_{token} = 30,67\%$).
-3. **Validitas Kualitas Anotasi & Reliabilitas IAA**: Audit independen dua penilai pada 400 sampel kalimat sintetis membuktikan reliabilitas kesepakatan yang hampir sempurna (Token Cohen's $\kappa = 0,987$ pada 37 tag BIO dan $\kappa = 0,989$ pada 18 kelas, dengan Pairwise Span-$F_1$ sebesar 97,63%). Evaluasi terhadap konsensus dual-agreement mencatatkan agregat F1-score anotasi sebesar 85,88%, di mana korpus **Luna** mencapai kualitas tertinggi sebesar **94,99%**, diikuti oleh Nemotron (83,72%), GPT-OSS (82,60%), dan Gemma (81,48%).
+2. **Karakteristik Korpus**: Korpus sintetis LLM dua fase menampilkan struktur kalimat yang lebih kompleks (~31 token/kalimat) dan kepadatan entitas yang sangat tinggi (D_token ≈ 48%–50%) dibandingkan korpus manusia (D_token = 30,67%).
+3. **Validitas Kualitas Anotasi & Reliabilitas IAA**: Audit independen dua penilai pada 400 sampel kalimat sintetis membuktikan reliabilitas kesepakatan yang hampir sempurna (Token Cohen's κ = 0,987 pada 37 tag BIO dan κ = 0,989 pada 18 kelas, dengan Pairwise Span-F₁ sebesar 97,63%). Evaluasi terhadap konsensus dual-agreement mencatatkan agregat F1-score anotasi sebesar 85,88%, di mana korpus **Luna** mencapai kualitas tertinggi sebesar **94,99%**, diikuti oleh Nemotron (83,72%), GPT-OSS (82,60%), dan Gemma (81,48%).
 4. **Keterlaksanaan dan Efisiensi Komputasi**: Seluruh 84 proses *fine-tuning* IndoBERT-large-p1 pada kluster GPU A100 tuntas 100%. Mekanisme *early stopping* menghentikan 86,9% model secara dini pada rerata 7,14 epoch (checkpoint optimal di epoch 5,23), menghemat ~28,6% durasi komputasi dengan total waktu 11,22 jam GPU.
 5. **Kinerja Utama dan Fenomena Pembalikan Simetris**: Model Gold memimpin pada Test Gold (*in-distribution*, 84,27%), sementara model sintetis mendominasi mutlak pada Benchmark Sintetis (Nemotron 81,57%, GPT-OSS 80,96%), di mana performa model Gold anjlok menjadi 50,09%. Ini membuktikan bahwa disparitas skor dipicu oleh pergeseran distribusi gaya bahasa dua arah yang simetris, bukan semata-mata mutu data.
 6. **Hukum Penskalaan Entitas (*Iso-Entity Scaling*)**: Eksperimen kesetaraan anggaran entitas membuktikan bahwa model sintetis telah mencapai ~95%–98% dari performa puncaknya hanya dengan 30% anggaran entitas (12.787 entitas). Kurva pembelajaran mengalami kejenuhan marjinal setelah 100%, di mana Luna mencapai F1 tertinggi pada rasio 125% (55,05%), menegaskan supremasi kualitas kurasi atas volume data mentah.
