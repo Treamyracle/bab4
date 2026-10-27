@@ -133,7 +133,7 @@ di mana:
 - $\overline{E}$: Rata-rata jumlah rentang entitas per kalimat.
 - $D_{\text{token}}$: Kepadatan token berentitas (persentase token teks yang menjadi bagian dari suatu entitas bernama).
 - $D_{\text{span}}$: Kepadatan rentang entitas per 100 token teks.
-- $P_c$: Proporsi kemunculan entitas dari kelas $c$ terhadap total rentang entitas aktif.
+- $P_c$: Proporsi kemunculan entitas dari kelas c terhadap total rentang entitas aktif.
 
 Rincian karakteristik pada partisi pelatihan (*training set*) yang digunakan dalam eksperimen *fine-tuning* disajikan pada Tabel 4.5.
 
@@ -380,8 +380,8 @@ Dengan demikian, nilai lr = 2 × 10⁻⁵ terjustifikasi secara kokoh—baik sec
 ### 4.4.2 Realisasi Pelatihan Setiap Skenario
 
 Rancangan eksperimen komparatif mencakup **84 proses pelatihan (*model fits*) independen** yang terdistribusi ke dalam 3 variasi *random seed* (42, 123, dan 2026), meliputi:
-- **5 kondisi utama pelatihan penuh** (NERGRIT Gold, Nemotron, Luna, Gemma, dan GPT-OSS) $\times$ 3 seed = 15 fits.
-- **Rangkaian eksperimen *iso-entity*** pada 4 korpus sintetis dengan anggaran bertingkat (30%, 50%, 75%, 100%, 125%, 150%, dan Max) $\times$ 3 seed. Titik Max menggunakan kembali checkpoint kondisi utama yang bersesuaian setelah verifikasi kecocokan manifest, sedangkan target 150% pada Gemma tidak dapat dipenuhi karena volume entitas korpusnya lebih kecil dari target anggaran.
+- **5 kondisi utama pelatihan penuh** (NERGRIT Gold, Nemotron, Luna, Gemma, dan GPT-OSS) × 3 seed = 15 fits.
+- **Rangkaian eksperimen *iso-entity*** pada 4 korpus sintetis dengan anggaran bertingkat (30%, 50%, 75%, 100%, 125%, 150%, dan Max) × 3 seed. Titik Max menggunakan kembali checkpoint kondisi utama yang bersesuaian setelah verifikasi kecocokan manifest, sedangkan target 150% pada Gemma tidak dapat dipenuhi karena volume entitas korpusnya lebih kecil dari target anggaran.
 
 Seluruh 84 proses pelatihan berhasil diselesaikan tanpa kegagalan komputasi. Penerapan mekanisme *early stopping* dengan ambang kesabaran 2 epoch (*patience = 2*) terbukti sangat efektif: sebanyak **73 dari 84 model (86,9%) berhenti lebih awal** sebelum mencapai batas 10 epoch. Rerata epoch konvergensi berada pada **7,14 ± 1,61 epoch**, dengan rerata durasi pelatihan sebesar **481,0 detik (~8,0 menit) per fit**, dan total waktu komputasi GPU A100 terakumulasi sebesar **11,22 jam**. Penghentian dini ini menghemat sekitar 28,6% sumber daya komputasi GPU tanpa menurunkan performa generalisasi model.
 

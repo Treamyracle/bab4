@@ -24,7 +24,7 @@ Dokumen ini mendokumentasikan hasil pengujian reliabilitas anotasi independen (*
 
 ## 2. Hasil Koefisien Reliabilitas Inter-Annotator Agreement (IAA)
 
-Pengujian statistik kesepakatan antarpenilai dihitung menggunakan metrik Cohen's Kappa ($\kappa$) pada tingkat token BIO dan tingkat kelas entitas, serta Pairwise Exact Span-$F_1$ (dilengkapi 95% *bootstrap confidence interval*, 1.000 iterasi):
+Pengujian statistik kesepakatan antarpenilai dihitung menggunakan metrik Cohen's Kappa (κ) pada tingkat token BIO dan tingkat kelas entitas, serta Pairwise Exact Span-F₁ (dilengkapi 95% *bootstrap confidence interval*, 1.000 iterasi):
 
 | Metrik Kesepakatan Antarpenilai | Nilai Empiris | 95% Bootstrap CI | Interpretasi Ilmiah (Landis & Koch, 1977) |
 | :--- | :---: | :---: | :--- |
@@ -67,7 +67,7 @@ Berdasarkan konsensus *dual-agreement*, dihitung metrik presisi, recall, dan $F_
 ## 5. Analisis Temuan Kualitas Anotasi
 
 1. **Korpus Luna (`gpt_5_6_luna`) Meraih Kualitas Tertinggi Secara Mutlak**:
-   Dataset sintetis Luna mencapai $F_1 = \mathbf{94,99\%}$ dengan presisi $94,81\%$ dan recall $95,17\%$. Tingkat kesalahan kalimatnya sangat rendah, yaitu hanya 28 kalimat bermasalah dari 100 sampel (estimasi galat terbobot $\widehat{p}_{error} = 28,05\%$). Hal ini membuktikan keunggulan sinergi antara generator GPT-5.6 dan verifikator Gemini Flash dalam menyaring kata benda umum dan menjaga batas rentang entitas.
+   Dataset sintetis Luna mencapai F₁ = 94,99% dengan presisi 94,81% dan recall 95,17%. Tingkat kesalahan kalimatnya sangat rendah, yaitu hanya 28 kalimat bermasalah dari 100 sampel (estimasi galat terbobot p̂_error = 28,05%). Hal ini membuktikan keunggulan sinergi antara generator GPT-5.6 dan verifikator Gemini Flash dalam menyaring kata benda umum dan menjaga batas rentang entitas.
 2. **Karakteristik Kesalahan per Dataset**:
    - **Nemotron** ($F_1 = 83,72\%$): Menghasilkan recall yang solid (86,17%), namun presisi sedikit tertekan (81,42%) akibat 118 *false positives*, terutama pada kelas `PRD` (20 salah), `LAW` (12 salah), `TIM` (12 salah), serta 4 kesalahan pelabelan kelompok politik/ormas pada kelas `NOR`.
    - **GPT-OSS** ($F_1 = 82,60\%$): Menunjukkan performa berimbang antara presisi (82,30%) dan recall (82,90%), dengan 97 kesalahan anotasi yang mayoritas terkonsentrasi pada `PRD` (27 salah) dan `ORG` (10 salah).
@@ -75,4 +75,4 @@ Berdasarkan konsensus *dual-agreement*, dihitung metrik presisi, recall, dan $F_
 3. **Penyelarasan Taksonomi NOR Bebas False Positive**:
    Pada kelas `NOR`, korpus **Luna, Gemma, dan GPT-OSS** mencatatkan **0 kesalahan positif palsu (`FP = 0`, Presisi 100,00%)**, membuktikan keberhasilan instruksi prompt tanpa `REG` dalam mendefinisikan kelompok etnis, kebangsaan, dan penganut agama.
 4. **Validitas Metodologis Ilmiah**:
-   Nilai reliabilitas antarpenilai Cohen's $\kappa = 0,987$ (BIO) dan $\kappa = 0,989$ (kelas) serta Pairwise Span-$F_1 = 97,63\%$ membuktikan bahwa audit kualitas data sintetis pada penelitian ini memiliki konsistensi ilmiah yang sangat tinggi dan dapat dipertanggungjawabkan secara akademis.
+   Nilai reliabilitas antarpenilai Cohen's κ = 0,987 (BIO) dan κ = 0,989 (kelas) serta Pairwise Span-F₁ = 97,63% membuktikan bahwa audit kualitas data sintetis pada penelitian ini memiliki konsistensi ilmiah yang sangat tinggi dan dapat dipertanggungjawabkan secara akademis.

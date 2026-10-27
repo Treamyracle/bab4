@@ -459,7 +459,7 @@ $$</p>
 - $\overline{E}$: Rata-rata jumlah rentang entitas per kalimat.
 - $D_{\text{token}}$: Kepadatan token berentitas (persentase token teks yang menjadi bagian dari suatu entitas bernama).
 - $D_{\text{span}}$: Kepadatan rentang entitas per 100 token teks.
-- $P_c$: Proporsi kemunculan entitas dari kelas $c$ terhadap total rentang entitas aktif.</p>
+- $P_c$: Proporsi kemunculan entitas dari kelas c terhadap total rentang entitas aktif.</p>
 <p>Rincian karakteristik pada partisi pelatihan (<em>training set</em>) yang digunakan dalam eksperimen <em>fine-tuning</em> disajikan pada Tabel 4.5.</p>
 <p><strong>Tabel 4.5 Karakteristik partisi pelatihan model IndoBERT</strong></p>
 <table>
@@ -1502,8 +1502,8 @@ $$</p>
 <p>Dengan demikian, nilai lr = 2 × 10⁻⁵ terjustifikasi secara kokoh—baik secara teoretis melalui literatur rujukan maupun secara empiris melalui uji coba independen—sebagai konfigurasi hiperparameter baku bersama (<em>shared optimal baseline</em>) untuk seluruh eksperimen utama pada bab ini.</p>
 <h3>4.4.2 Realisasi Pelatihan Setiap Skenario</h3>
 <p>Rancangan eksperimen komparatif mencakup <strong>84 proses pelatihan (<em>model fits</em>) independen</strong> yang terdistribusi ke dalam 3 variasi <em>random seed</em> (42, 123, dan 2026), meliputi:
-- <strong>5 kondisi utama pelatihan penuh</strong> (NERGRIT Gold, Nemotron, Luna, Gemma, dan GPT-OSS) $\times$ 3 seed = 15 fits.
-- <strong>Rangkaian eksperimen <em>iso-entity</em></strong> pada 4 korpus sintetis dengan anggaran bertingkat (30%, 50%, 75%, 100%, 125%, 150%, dan Max) $\times$ 3 seed. Titik Max menggunakan kembali checkpoint kondisi utama yang bersesuaian setelah verifikasi kecocokan manifest, sedangkan target 150% pada Gemma tidak dapat dipenuhi karena volume entitas korpusnya lebih kecil dari target anggaran.</p>
+- <strong>5 kondisi utama pelatihan penuh</strong> (NERGRIT Gold, Nemotron, Luna, Gemma, dan GPT-OSS) × 3 seed = 15 fits.
+- <strong>Rangkaian eksperimen <em>iso-entity</em></strong> pada 4 korpus sintetis dengan anggaran bertingkat (30%, 50%, 75%, 100%, 125%, 150%, dan Max) × 3 seed. Titik Max menggunakan kembali checkpoint kondisi utama yang bersesuaian setelah verifikasi kecocokan manifest, sedangkan target 150% pada Gemma tidak dapat dipenuhi karena volume entitas korpusnya lebih kecil dari target anggaran.</p>
 <p>Seluruh 84 proses pelatihan berhasil diselesaikan tanpa kegagalan komputasi. Penerapan mekanisme <em>early stopping</em> dengan ambang kesabaran 2 epoch (<em>patience = 2</em>) terbukti sangat efektif: sebanyak <strong>73 dari 84 model (86,9%) berhenti lebih awal</strong> sebelum mencapai batas 10 epoch. Rerata epoch konvergensi berada pada <strong>7,14 ± 1,61 epoch</strong>, dengan rerata durasi pelatihan sebesar <strong>481,0 detik (~8,0 menit) per fit</strong>, dan total waktu komputasi GPU A100 terakumulasi sebesar <strong>11,22 jam</strong>. Penghentian dini ini menghemat sekitar 28,6% sumber daya komputasi GPU tanpa menurunkan performa generalisasi model.</p>
 <p><strong>Tabel 4.12b Rangkuman realisasi pelatihan model per korpus dan skenario</strong></p>
 <table>
