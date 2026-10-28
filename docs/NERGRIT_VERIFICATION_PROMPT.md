@@ -16,7 +16,7 @@
   - [Bagian A: Mandat & Integritas Teks Kalimat Asli](#bagian-a-mandat--integritas-teks-kalimat-asli)
   - [Bagian B: Taksonomi 18 Kelas Entitas Resmi NERGRIT](#bagian-b-taksonomi-18-kelas-entitas-resmi-nergrit)
   - [Bagian C: 10 Aturan Transformasi Wajib & Penyelarasan Batas](#bagian-c-10-aturan-transformasi-wajib--penyelarasan-batas)
-  - [Bagian D: Demonstrasi In-Context Few-Shot (Data Mentah -> Data Terverifikasi)](#bagian-d-demonstrasi-in-context-few-shot-data-mentah---data-terverifikasi)
+  - [Bagian D: Demonstrasi In-Context Few-Shot (Data Mentah → Data Terverifikasi)](#bagian-d-demonstrasi-in-context-few-shot-data-mentah---data-terverifikasi)
 - [3. Kode Python Siap Pakai: `build_correction_prompt(batch)`](#3-kode-python-siap-pakai-build_correction_promptbatch)
 - [4. Matriks Rujukan Silang Kaidah ke `docs/NERGRIT_ANNOTATION_GUIDELINES.md`](#4-matriks-rujukan-silang-kaidah-ke-docsnergrit_annotation_guidelinesmd)
 
@@ -113,7 +113,7 @@ HANYA 18 tipe entitas berikut yang VALID untuk luaran:
 10. LAN (Language): Nama bahasa alami manusia (bahasa Indonesia, bahasa Arab, bahasa Inggris, Latin). Kata jenis 'bahasa' diserap ke dalam rentang LAN.
 11. DAT (Date): Tanggal kalender, nama hari, nama bulan, angka tahun tunggal (2018, 15 Mei 2018, Senin, Januari), dan FORMAT KEPALA BERITA BERKURUNG: 'Hari ( DD / MM / YYYY )' atau 'Hari ( DD / MM )' sebagai SATU SPAN UTUH DAT termasuk tanda kurungnya (misal: 'Selasa ( 15 / 5 / 2018 )'). Kata bantu 'pada'/'tanggal'/'hari' di luar span.
 12. TIM (Time): Angka jam spesifik arloji dan penanda zona waktu (06 . 00 WIB, 10 . 30 Wita, 18 . 00 WIB, 17 : 00 WIB). Kata 'pukul', 'jam', 'sekira', 'sekitar' dan penanda diurnal ('pagi', 'siang', 'sore', 'malam') WAJIB DI EKSKLUSI (O).
-13. MON (Money): Nilai nominal moneter beserta simbol mata uang atau kata satuan nominalnya (Rp 40 Ribu, Rp 50 . 000, 100 triliun rupiah, US$ 50 juta, 10 dollar AS).
+13. MON (Money): Nilai nominal moneter beserta simbol mata uang atau kata satuan nominalnya (Rp 40 Ribu, Rp 50 . 000, 100 triliun rupiah, US→ 50 juta, 10 dollar AS).
 14. QTY (Quantity): Satuan ukuran fisik (panjang, berat, luas, volume, kecepatan) DAN SELURUH DURASI WAKTU LAMPAU/JANGKA: 'dua tahun', 'tiga bulan', '15 tahun', '24 jam', '30 menit', 'dua hari', 'dua minggu', 'setahun', 'seminggu', '36 hari', '500 kilometer', '10 ton', '3 liter'. Preposisi 'selama' di luar span.
 15. CRD (Cardinal): Bilangan cacah/kuantitas murni tanpa satuan fisik/waktu (satu, dua, tiga, 115, 1 . 000, 12, 50). Termasuk kata 'kedua' atau 'keduanya' saat bermakna kuantitas jamak (both / both of them).
 16. ORD (Ordinal): Bilangan urutan, ranking, tingkat juara, tahapan (pertama, terakhir, ketiga). Termasuk format 'ke-N' di mana awalan 'ke' dan tanda hubung wajib inklusif (ke - 4, ke - 12, ke 58).
@@ -148,10 +148,10 @@ BAGIAN C: 10 ATURAN TRANSFORMASI WAJIB (MEMPERBAIKI DATA MENTAH STAGE 1)
 
 3. EKSKLUSI PREPOSISI 99,99% (KAIDAH EMAS PREPOSISI):
    - Preposisi spasial dan temporal (di, ke, dari, pada, dalam, selama, sejak, hingga, sampai, menuju, oleh, tentang) DILARANG KERAS masuk ke dalam rentang entitas apa pun!
-   - Contoh salah: {"entity": "di Jakarta", "type": "GPE"} -> Koreksi: {"entity": "Jakarta", "type": "GPE"}
-   - Contoh salah: {"entity": "ke Bandung", "type": "GPE"} -> Koreksi: {"entity": "Bandung", "type": "GPE"}
-   - Contoh salah: {"entity": "pada hari Selasa", "type": "DAT"} -> Koreksi: {"entity": "Selasa", "type": "DAT"}
-   - Contoh salah: {"entity": "selama dua tahun", "type": "QTY"} -> Koreksi: {"entity": "dua tahun", "type": "QTY"}
+   - Contoh salah: {"entity": "di Jakarta", "type": "GPE"} → Koreksi: {"entity": "Jakarta", "type": "GPE"}
+   - Contoh salah: {"entity": "ke Bandung", "type": "GPE"} → Koreksi: {"entity": "Bandung", "type": "GPE"}
+   - Contoh salah: {"entity": "pada hari Selasa", "type": "DAT"} → Koreksi: {"entity": "Selasa", "type": "DAT"}
+   - Contoh salah: {"entity": "selama dua tahun", "type": "QTY"} → Koreksi: {"entity": "dua tahun", "type": "QTY"}
    - SATU-SATUNYA PENGECUALIAN: Awalan 'ke' pada bilangan bertingkat ORD (ke - 4, ke 58) wajib inklusif di dalam ORD.
 
 4. PENYELESAIAN NOR VS ORG:
@@ -172,11 +172,11 @@ BAGIAN C: 10 ATURAN TRANSFORMASI WAJIB (MEMPERBAIKI DATA MENTAH STAGE 1)
 7. JAM SPESIFIK PADA "TIM" (EKSKLUSI PUKUL & SIANG/MALAM):
    - "TIM" HANYA boleh berisi angka jam dan zona waktu: "06 . 00 WIB", "10 . 30 Wita", "18 . 00 WIB", "17 : 00 WIB".
    - Kata pengantar seperti 'pukul', 'jam', 'sekira', 'sekitar' dan keterangan waktu diurnal ('siang', 'malam', 'pagi', 'sore') WAJIB BERSTATUS O (di luar rentang TIM).
-   - Contoh teks: "... pada pukul 14 . 30 WIB siang tadi ..." -> Entitas TIM: {"entity": "14 . 30 WIB", "type": "TIM"}
+   - Contoh teks: "... pada pukul 14 . 30 WIB siang tadi ..." → Entitas TIM: {"entity": "14 . 30 WIB", "type": "TIM"}
 
 8. TANDA KURUNG TANGGAL KEPALA BERITA PADA "DAT":
    - Format berita daring 'Hari ( DD / MM / YYYY )' atau 'Hari ( DD / MM )' (misal: 'Selasa ( 15 / 5 / 2018 )', 'Senin ( 2 / 4 / 2018 )') dianotasi sebagai SATU SPAN UTUH "DAT" mencakup tanda kurung buka dan tutupnya!
-   - Contoh teks: "... dilaporkan pada Selasa ( 15 / 5 / 2018 ) di Jakarta ..." -> Entitas DAT: {"entity": "Selasa ( 15 / 5 / 2018 )", "type": "DAT"} (kata 'pada' berstatus O).
+   - Contoh teks: "... dilaporkan pada Selasa ( 15 / 5 / 2018 ) di Jakarta ..." → Entitas DAT: {"entity": "Selasa ( 15 / 5 / 2018 )", "type": "DAT"} (kata 'pada' berstatus O).
 
 9. DISTINGSI SPASIAL: GPE VS LOC VS FAC:
    - GPE: Wilayah pemerintahan resmi (Indonesia, Jakarta, Surabaya, Kabupaten Banyuwangi).
@@ -186,8 +186,8 @@ BAGIAN C: 10 ATURAN TRANSFORMASI WAJIB (MEMPERBAIKI DATA MENTAH STAGE 1)
 10. TANDA PETIK & PENANDA MEDIA PADA "WOA" DAN "EVT":
     - Tanda petik ganda/tunggal di sekitar karya seni atau peristiwa WAJIB DI EKSKLUSI (O).
     - Kata jenis media di depan judul (film, lagu, novel, buku, operasi) WAJIB DI EKSKLUSI (O).
-    - Contoh teks: "... menonton film ' The Dark Knight ' di bioskop ..." -> Entitas WOA: {"entity": "The Dark Knight", "type": "WOA"} (kata 'film' dan tanda petik berstatus O).
-    - Nama dokumen hukum bilingual dalam kurung dipisah: 'Undang - undang Rahasia Negara Myanmar ( Official Secrets Act )' -> {"entity": "Undang - undang Rahasia Negara Myanmar", "type": "LAW"}, {"entity": "Official Secrets Act", "type": "LAW"} (tanda kurung berstatus O).
+    - Contoh teks: "... menonton film ' The Dark Knight ' di bioskop ..." → Entitas WOA: {"entity": "The Dark Knight", "type": "WOA"} (kata 'film' dan tanda petik berstatus O).
+    - Nama dokumen hukum bilingual dalam kurung dipisah: 'Undang - undang Rahasia Negara Myanmar ( Official Secrets Act )' → {"entity": "Undang - undang Rahasia Negara Myanmar", "type": "LAW"}, {"entity": "Official Secrets Act", "type": "LAW"} (tanda kurung berstatus O).
 
 =============================================================================
 BAGIAN D: FORMAT KELUARAN YANG DIHARAPKAN
@@ -207,7 +207,7 @@ Kembalikan HANYA format JSON valid berikut:
 
 ---
 
-### Demonstrasi In-Context Few-Shot (Data Mentah -> Data Terverifikasi)
+### Demonstrasi In-Context Few-Shot (Data Mentah → Data Terverifikasi)
 
 Berikut adalah contoh pasangan input *batch* mentah (dengan kesalahan tipikal Stage 1) dan hasil verifikasi yang wajib dihasilkan oleh model:
 
@@ -378,7 +378,7 @@ TAG_FIXES = {
     "NORP": "NOR", "REGION": "LOC",  # REG dialihkan ke LOC untuk wilayah geografis
 }
 
-def build_correction_prompt(batch: List[Dict]) -> str:
+def build_correction_prompt(batch: List[Dict]) → str:
     """
     Menyusun prompt Quality Control (QC) Tahap 2 untuk model Verifikator
     yang 100% patuh pada pedoman batas NERGRIT (18 Kelas, tanpa REG dan TTL).
@@ -413,7 +413,7 @@ HANYA 18 tipe entitas berikut yang VALID untuk luaran:
 10. LAN (Language): Nama bahasa alami manusia (bahasa Indonesia, bahasa Arab, Latin). Kata 'bahasa' inklusif masuk LAN.
 11. DAT (Date): Tanggal kalender, hari, bulan, tahun (2018, 15 Mei 2018), dan FORMAT BERITA BERKURUNG: 'Hari ( DD / MM / YYYY )' sebagai SATU SPAN UTUH DAT (+ kurung). Kata 'pada'/'hari' di luar span.
 12. TIM (Time): Jam spesifik arloji & zona waktu (06 . 00 WIB, 10 . 30 Wita). Kata 'pukul', 'jam', 'sekira', dan penanda 'pagi'/'siang'/'malam' WAJIB O.
-13. MON (Money): Nilai uang beserta simbol/satuan mata uang (Rp 50 . 000, 100 triliun rupiah, US$ 50 juta).
+13. MON (Money): Nilai uang beserta simbol/satuan mata uang (Rp 50 . 000, 100 triliun rupiah, US→ 50 juta).
 14. QTY (Quantity): Satuan ukuran fisik DAN SELURUH DURASI WAKTU LAMPAU/JANGKA (dua tahun, tiga bulan, 24 jam, 30 menit, dua hari, seminggu). Preposisi 'selama' di luar span.
 15. CRD (Cardinal): Bilangan cacah murni tanpa satuan fisik/waktu (satu, dua, 115, 1 . 000). Termasuk kata 'kedua'/'keduanya' saat bermakna kuantitas jamak (both).
 16. ORD (Ordinal): Bilangan urutan, tingkat, ranking (pertama, terakhir, ketiga). Format 'ke-N' wajib inklusif menyerap 'ke' dan tanda hubung (ke - 4, ke 58).
@@ -429,8 +429,8 @@ BAGIAN C: ATURAN TRANSFORMASI WAJIB (MEMPERBAIKI DATA MENTAH)
 4. NOR VS ORG: Seluruh aparat hukum, militer, dinas pemda, kementerian, DPR, KPK, dan parpol WAJIB "NOR". "ORG" khusus bisnis swasta/BUMN, portal pers, klub olahraga.
 5. WAJIB MENAMBAHKAN PRODUK HURUF KECIL KE "PRD": Seluruh kendaraan (mobil, sepeda motor, truk, bus, kapal, pesawat), komoditas (BBM, minyak, kopi, sabu), dan perlengkapan (helm, jaket) wajib diberi label "PRD".
 6. DURASI WAKTU KE "QTY": 'dua tahun', 'tiga bulan', '24 jam', '30 menit' WAJIB "QTY" (bukan DAT atau TIM).
-7. EKSKLUSI KATA PUKUL & SIANG PADA "TIM": 'pukul 10 . 30 Wita' -> entitas TIM HANYA '10 . 30 Wita' (kata 'pukul' berstatus O).
-8. KURUNG TANGGAL KEPALA BERITA PADA "DAT": 'Selasa ( 15 / 5 / 2018 )' -> satu span utuh "DAT" (+ kurung).
+7. EKSKLUSI KATA PUKUL & SIANG PADA "TIM": 'pukul 10 . 30 Wita' → entitas TIM HANYA '10 . 30 Wita' (kata 'pukul' berstatus O).
+8. KURUNG TANGGAL KEPALA BERITA PADA "DAT": 'Selasa ( 15 / 5 / 2018 )' → satu span utuh "DAT" (+ kurung).
 9. DISTINGSI SPASIAL: GPE (wilayah administratif), LOC (bentang alam, nama jalan, Monas, Asia Tenggara), FAC (bandara, jalan tol, jembatan, stadion, gedung DPR, masjid fisik).
 10. TANDA PETIK & PENANDA MEDIA: Tanda petik pada judul karya seni (WOA) atau peristiwa (EVT) serta kata jenis 'film'/'novel' wajib di luar span (O).
 
@@ -451,14 +451,14 @@ Tabel berikut membuktikan bahwa seluruh isi prompt di atas terhubung 100% secara
 | Kaidah pada Prompt Verifikasi | Rujukan Subbab di [`NERGRIT_ANNOTATION_GUIDELINES.md`](NERGRIT_ANNOTATION_GUIDELINES.md) | Catatan Penyelarasan Korpus Gold |
 | :--- | :--- | :--- |
 | **Peniadaan `REG` & `TTL`** | Subbab 1.3, Subbab 3.19, Subbab 4.2 | Selaras dengan normalisasi ke `O` pada `notebooks/bab4_pipeline/data.py:L174`. |
-| **Kawasan Regional $ightarrow$ `LOC`** | Subbab 3.4 (Kriteria Inklusi) & Subbab 5.3 | Mengoreksi salah definisi `REG` pada `pipeline.py` generasi awal. |
+| **Kawasan Regional → `LOC`** | Subbab 3.4 (Kriteria Inklusi) & Subbab 5.3 | Mengoreksi salah definisi `REG` pada `pipeline.py` generasi awal. |
 | **Pangkat Melekat ke `PER`** | Subbab 3.1 & Subbab 4.2 (Butir 2) | Pangkat kepangkatan (`Jenderal`, `Aiptu`, `Kombes`) 100% diserap ke `B-PER`. |
-| **Jabatan Struktural $ightarrow$ `NOR`** | Subbab 3.18 & Subbab 5.1 | `Presiden`, `Menteri`, `Gubernur` dilabeli `NOR` terpisah dari nama individu. |
+| **Jabatan Struktural → `NOR`** | Subbab 3.18 & Subbab 5.1 | `Presiden`, `Menteri`, `Gubernur` dilabeli `NOR` terpisah dari nama individu. |
 | **Eksklusi Preposisi (99,99%)** | Subbab 4.1 (Kaidah Emas 1) | Preposisi `di`, `ke`, `dari`, `pada`, `dalam`, `selama` berstatus `O`. |
-| **Lembaga Negara & Parpol $ightarrow$ `NOR`** | Subbab 3.18 & Subbab 5.1 (Pohon Keputusan) | Aparat hukum, militer, kementerian, komisi, dan parpol adalah `NOR`. |
-| **Kendaraan & Komoditas $ightarrow$ `PRD`** | Subbab 3.9 & Subbab 4.4 | Seluruh kendaraan huruf kecil (`mobil`, `truk`) dan komoditas fisik adalah `PRD`. |
-| **Durasi Waktu $ightarrow$ `QTY`** | Subbab 3.14 & Subbab 4.5 | Durasi waktu lampau/jangka (`dua tahun`, `24 jam`) konsisten masuk `QTY`. |
+| **Lembaga Negara & Parpol → `NOR`** | Subbab 3.18 & Subbab 5.1 (Pohon Keputusan) | Aparat hukum, militer, kementerian, komisi, dan parpol adalah `NOR`. |
+| **Kendaraan & Komoditas → `PRD`** | Subbab 3.9 & Subbab 4.4 | Seluruh kendaraan huruf kecil (`mobil`, `truk`) dan komoditas fisik adalah `PRD`. |
+| **Durasi Waktu → `QTY`** | Subbab 3.14 & Subbab 4.5 | Durasi waktu lampau/jangka (`dua tahun`, `24 jam`) konsisten masuk `QTY`. |
 | **Eksklusi `pukul` pada `TIM`** | Subbab 3.12 & Subbab 5.4 | Jam spesifik hanya angka jam; `pukul` dan `siang` berstatus `O`. |
 | **Kurung Tanggal Tajuk Berita `DAT`** | Subbab 3.11 & Subbab 4.3 | Format `Hari ( DD / MM / YYYY )` adalah satu span utuh `DAT` (+ kurung). |
 | **Eksklusi Tanda Petik `WOA`/`EVT`** | Subbab 3.7, Subbab 3.6, Subbab 4.6 | Tanda petik ganda/tunggal dan kata jenis `film`/`lagu` berstatus `O`. |
-| **Disambiguasi `kedua` (`CRD` vs `ORD`)** | Subbab 3.15, Subbab 3.16, Subbab 5.4 | `kedua` bermakna *both* $ightarrow$ `CRD`; `kedua` bermakna ke-2 $ightarrow$ `ORD`. |
+| **Disambiguasi `kedua` (`CRD` vs `ORD`)** | Subbab 3.15, Subbab 3.16, Subbab 5.4 | `kedua` bermakna *both* → `CRD`; `kedua` bermakna ke-2 → `ORD`. |
