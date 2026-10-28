@@ -82,7 +82,7 @@ Secara komputasional, korpus bersih NERGRIT memiliki karakteristik volume sebaga
 - **Partisi Latih (*Train*)**: 12.514 kalimat | 43.125 rentang entitas.
 - **Partisi Validasi (*Validation*)**: 2.520 kalimat | 8.433 rentang entitas.
 - **Partisi Uji (*Test*)**: 2.397 kalimat | 8.890 rentang entitas.
-- **Total Keseluruhan**: **17.431 kalimat terverifikasi** | **60.448 rentang entitas unik**.
+- **Total Keseluruhan**: **17.431 kalimat terverifikasi** | **60.448 rentang entitas** (24.234 entitas unik per kelas).
 
 ### 1.2 Urgensi Pedoman Baku
 Anotasi manual pada korpus NERGRIT dikerjakan oleh annotator manusia dengan seperangkat intuisi linguistik yang konsisten namun memiliki sejumlah deviasi khas dibanding standar annotasi Barat (seperti CoNLL-2003 atau OntoNotes 5.0 murni). Tanpa pedoman tertulis yang komprehensif, annotator manusia baru maupun model kecerdasan buatan (*Large Language Models*) berisiko besar menghasilkan batas token (*boundary*) yang tidak selaras (*misaligned*).
@@ -143,7 +143,7 @@ Indonesia   I-GPE  <-- Dianggap sebagai 1 entitas raksasa yang keliru
 ### 2.3 Nuansa Tokenisasi Bahasa Indonesia & Tanda Baca Lepas
 Korpus NERGRIT menerapkan tokenisasi berbasis pemisahan spasi ketat (*whitespace-delimited tokenization*) di mana tanda baca diperlakukan sebagai token mandiri:
 1. **Tanda Baca Terpisah (*Detached Punctuation*)**: Koma (`,`), titik akhir kalimat (`.`), tanda petik (`"`, `'`), tanda kurung (`(`, `)`), titik dua (`:`), dan garis miring (`/`) wajib dipisahkan dengan spasi sebelum anotasi.
-2. **Titik Singkatan (*Abbreviation Dots*)**: Titik yang melekat pada singkatan gelar atau inisial (`Dr.`, `dr.`, `H.`, `PT.`, `Tbk.`, `A.M.`) diperlakukan sebagai satu kesatuan token utuh bersama huruf singkatannya.
+2. **Titik Singkatan & Penanda Desimal (*Abbreviation & Numerical Dots*)**: Pada korpus mentah NERGRIT, tanda titik singkatan (`No . 11`, `KOMPAS . com`, `PT .`) maupun pemisah jam/desimal (`06 . 00`, `41 . 227`) secara empiris hampir seluruhnya dipisahkan sebagai token mandiri (`.`). Apabila berada di dalam entitas, token titik ini diserap sebagai `I-TAG`. Pada pipeline rekayasa inferensi modern atau LLM, titik singkatan yang melekat (`Dr.`) dapat diproses sebagai satu token utuh sesuai tokenizer yang digunakan.
 3. **Tanda Hubung (*Hyphen*)**: Tanda hubung pada nomor ordinal (`ke - 4`) atau nama majemuk (`Soekarno - Hatta`) dipisahkan menjadi token mandiri (`ke`, `-`, `4`), namun seluruh token tersebut berada dalam satu rentang BIO yang utuh.
 
 ---
@@ -161,10 +161,10 @@ Di bawah ini adalah definisi operasional, batasan leksikal, serta kriteria inklu
   - Nama lengkap atau nama panggilan individu: `Joko Widodo`, `Prabowo`, `Sandiaga Uno`, `Aisha Li`.
   - Inisial nama berkarakter formal: `MAZ`, `AS`, `FI`, `RBT`, `A.M. Hendropriyono`.
   - Tokoh fiksi atau mitologis: `Harry Potter`, `Gatotkaca`.
-  - **Penyerapan Gelar Melekat**: Gelar akademis dan keagamaan yang melekat langsung di depan nama diserap ke dalam rentang `PER` sebagai token pembuka (`B-PER`): `Dr. Mahathir Mohamad`, `KH Ma'ruf Amin`, `Prof. Dr. Ir. Harijono`, `Habib Salim Segaf Al Jufri`.
+  - **Penyerapan Gelar Melekat & Pangkat Militer/Polri**: Gelar akademis, keagamaan, serta pangkat kedinasan militer/kepolisian yang melekat langsung di depan nama individu diserap ke dalam rentang `PER` sebagai token pembuka (`B-PER`): `Dr. Mahathir Mohamad`, `KH Ma'ruf Amin`, `Prof. Dr. Ir. Harijono`, `Habib Salim Segaf Al Jufri`, `Jenderal Tito Karnavian`, `Aiptu Sutisna`, `Kombes Argo Yuwono`.
 - **Kriteria Eksklusi**:
   - Sapaan kekeluargaan/penghormatan umum (`Bapak`, `Ibu`, `Saudara`, `Tuan`, `Ny.`): Diberi label `O`.
-  - Gelar jabatan kenegaraan, kepolisian, atau militer (`Presiden`, `Menteri`, `Gubernur`, `Kapolri`, `Jenderal`, `Aiptu`): Diberi label `NOR` atau `O`.
+  - Jabatan struktural kenegaraan dan pimpinan institusional (`Presiden`, `Menteri`, `Gubernur`, `Kapolri`, `Panglima TNI`): Diberi label `NOR`.
   - Kelompok manusia kolektif atau etnisitas: Diberi label `NOR`.
 - **Contoh Valid NERGRIT**:
   1. `[PER Joko Widodo /PER]`
@@ -247,7 +247,7 @@ Di bawah ini adalah definisi operasional, batasan leksikal, serta kriteria inklu
   - Bandara dan pelabuhan transportasi: `Bandara Soekarno - Hatta`, `Bandara International Minangkabau`, `Pelabuhan Bakauheni`.
   - Terminal bus dan stasiun kereta: `Terminal Bus Tanjung Priok`, `Stasiun Gambir`.
   - Stadion olahraga dan arena pertunjukan: `Stadion Gelora Bung Karno`, `GBK`.
-  - Bangunan fisik dan aula pertemuan: `Balai Kota`, `Aula Mapolresta Solo`, `Lembaga Pemasyarakatan ( LP ) Salemba`, `ruang paripurna DPRD`.
+  - Bangunan fisik dan aula pertemuan: `Balai Kota`, `Aula Mapolresta Solo`, `Lembaga Pemasyarakatan ( LP ) Salemba`, `Gedung DPR`.
   - Infrastruktur jalan tol dan utilitas buatan: `Tol Cipali`, `PLTA Waduk Cirata`, `WC`.
 - **Kriteria Eksklusi**:
   - Koridor jalan raya biasa tanpa tol (`Jalan Sudirman`): Diberi label `LOC`.
@@ -307,13 +307,13 @@ Di bawah ini adalah definisi operasional, batasan leksikal, serta kriteria inklu
 - **Karakteristik Korpus**: Total 445 sebutan (299 entitas unik). Panjang rata-rata: 5,37 token (maksimal 87 token).
 - **Kriteria Inklusi**:
   - Undang-undang nasional beserta nomor dan tahunnya: `Undang - Undang No . 11 Tahun 2008`, `Undang - Undang Dasar 1945`.
-  - Undang-undang asing atau traktat internasional: `Undang - undang Rahasia Negara Myanmar ( Official Secrets Act )`.
+  - Undang-undang asing atau traktat internasional: `Undang - undang Rahasia Negara Myanmar` dan terjemahan asingnya `Official Secrets Act` (tanda kurung di luar rentang).
   - Kitab hukum dan peraturan pemerintah: `KUHP`, `KUHAP`, `Perpres Nomor 20 Tahun 2018`.
 - **Kriteria Eksklusi**:
   - Hukum syariat agama atau dogma moral (`rukun Islam`, `syariat Islam`): Diberi label `REG` atau `O`.
   - Tanda hubung pada kata `Undang - Undang`: Diserap ke dalam `LAW` sebagai `I-LAW`.
 - **Contoh Valid NERGRIT**:
-  1. `[LAW Undang - undang Rahasia Negara Myanmar ( Official Secrets Act ) /LAW]`
+  1. `[LAW Undang - undang Rahasia Negara Myanmar /LAW] ( [LAW Official Secrets Act /LAW] )` $\rightarrow$ tanda kurung berstatus `O`, membentuk 2 entitas `LAW` terpisah.
   2. `[LAW KUHP /LAW]`
   3. `[LAW Undang - Undang Nomor 5 Tahun 2018 /LAW]`
   4. `[LAW UUD 1945 /LAW]`
@@ -327,7 +327,7 @@ Di bawah ini adalah definisi operasional, batasan leksikal, serta kriteria inklu
   - Seluruh sarana moda transportasi fisik: `mobil`, `sepeda motor`, `truk`, `bus`, `pesawat`, `kapal`.
   - Komoditas pangan, perkebunan, dan energi: `beras`, `kopi`, `rendang`, `semur daging`, `daging`, `gemitir`, `BBM`, `minyak`.
   - Zat kimia, obat-obatan, dan narkotika: `sabu`.
-  - Alat, busana, dan perlengkapan fisik: `helm`, `jaket`, `sulaman tangan`.
+  - Alat, busana, dan perlengkapan fisik: `helm`, `jaket`.
   - Gadget elektronik dan peranti keras bermerek: `iPhone`, `Galaxy S9`, `Boeing 737`.
   - Indeks pasar modal dan finansial: `IHSG`.
   - Aplikasi perangkat lunak/platform digital saat merujuk pada produk/aplikasi: `Twitter`, `Facebook`, `Instagram`.
@@ -349,7 +349,7 @@ Di bawah ini adalah definisi operasional, batasan leksikal, serta kriteria inklu
 - **Karakteristik Korpus**: Sangat langka di korpus NERGRIT (total 13 sebutan, 9 unik). Panjang rata-rata: 1,92 token.
 - **Kriteria Inklusi**:
   - Frasa bahasa alami: `bahasa Arab`, `bahasa Indonesia`, `bahasa Inggris`, `bahasa Mandarin`.
-  - Kata benda bahasa tanpa prefiks `bahasa` jika konteksnya merujuk pada sistem bahasa: `Arab` (dalam kalimat *"pelajaran bahasa Arab dan Al Quran"*).
+  - Kata benda bahasa tanpa prefiks `bahasa` jika konteksnya merujuk pada sistem bahasa: `Latin` (dalam kalimat *"teks - teks Latin"*). Pada *"pelajaran bahasa Arab dan Al Quran"*, kata `bahasa` tetap diinklusi (`[LAN bahasa Arab /LAN]`).
 - **Kriteria Eksklusi**:
   - Nama negara atau wilayah tempat bahasa dituturkan (`Arab Saudi`): Diberi label `GPE`.
   - Etnisitas atau warga negara (`orang Arab`): Diberi label `NOR`.
@@ -386,15 +386,15 @@ Di bawah ini adalah definisi operasional, batasan leksikal, serta kriteria inklu
 - **Definisi Semantik**: Penanda titik waktu spesifik dalam siklus 24 jam sehari, jam dinding, pembacaan arloji, beserta penanda zona waktu (*WIB, WITA, WIT, GMT*).
 - **Karakteristik Korpus**: Total 1.060 sebutan (731 entitas unik). Panjang rata-rata: 3,87 token.
 - **Kriteria Inklusi**:
-  - Jam berskala titik atau titik dua: `06 . 00 WIB`, `pukul 10 . 30 Wita`, `sekira pukul 18 . 00 WIB`, `17 : 00 WIB`.
-  - Penanda siang/malam spesifik bila merujuk pada jam: `pukul 12 . 00 siang`.
+  - Jam berskala titik atau titik dua: `06 . 00 WIB`, `10 . 30 Wita`, `18 . 00 WIB`, `17 : 00 WIB` (kata pengantar `pukul`/`sekira` berstatus `O`).
 - **Kriteria Eksklusi**:
+  - Kata penunjuk waktu arloji harian (`pukul`, `jam`) serta penanda waktu diurnal (`siang`, `malam`, `pagi`, `sore`): Wajib berstatus `O` (misal: `pukul [TIM 12 . 00 /TIM] siang`).
   - Durasi rentang waktu (`selama 24 jam`, `30 menit`): Diberi label `QTY`.
-  - Kata keterangan waktu umum tanpa jam spesifik (`pagi tadi`, `malam nanti`): Berstatus `O` atau diserap tergantung konteks kepala berita.
+  - Kata keterangan waktu umum tanpa jam spesifik (`pagi tadi`, `malam nanti`): Berstatus `O`.
 - **Contoh Valid NERGRIT**:
-  1. `[TIM pukul 10 . 30 Wita /TIM]`
+  1. `pukul [TIM 10 . 30 Wita /TIM]` $\rightarrow$ `pukul` berstatus `O`
   2. `[TIM 06 . 00 - 11 . 00 WIB /TIM]`
-  3. `[TIM sekira pukul 18 . 00 WIB /TIM]`
+  3. `sekira pukul [TIM 18 . 00 WIB /TIM]` $\rightarrow$ `sekira` dan `pukul` berstatus `O`
   4. `[TIM 17 : 00 WIB /TIM]`
 
 ---
@@ -430,7 +430,7 @@ Di bawah ini adalah definisi operasional, batasan leksikal, serta kriteria inklu
 - **Contoh Valid NERGRIT**:
   1. `[QTY 41 . 227 ton /QTY]`
   2. `[QTY 15 kilogram /QTY]`
-  3. `[QTY selama dua tahun lebih /QTY]` atau `[QTY dua tahun /QTY]`
+  3. `selama [QTY dua tahun lebih /QTY]` (atau `[QTY dua tahun /QTY]`) $\rightarrow$ preposisi `selama` berstatus `O`
   4. `[QTY 36 hari /QTY]`
   5. `[QTY 24 jam /QTY]`
   6. `[QTY dua abad /QTY]`
@@ -453,7 +453,7 @@ Di bawah ini adalah definisi operasional, batasan leksikal, serta kriteria inklu
   1. `[CRD tiga /CRD] orang`
   2. `[CRD 115 /CRD] bus`
   3. `[CRD dua /CRD] sindikat`
-  4. `[CRD Keduanya /CRD] shalat Jumat`
+  4. `[CRD Keduanya /CRD] masing - masing` (pada *"Keduanya shalat Jumat"*, kata *Keduanya* berstatus `O`)
   5. `[CRD 1 . 000 /CRD] Anak Yatim`
 
 ---
@@ -500,7 +500,7 @@ Di bawah ini adalah definisi operasional, batasan leksikal, serta kriteria inklu
   - Lembaga tinggi negara, kementerian, dan komisi negara: `KPK`, `DPR`, `KPU`, `BMKG`, `pemerintah`, `pemkab`, `Pemerintah Provinsi DKI Jakarta`, `Dewan Perwakilan Rakyat Daerah ( DPRD ) Kabupaten Karanganyar`.
   - Partai politik dan fraksi legislatif: `PKS`, `Gerindra`, `Demokrat`, `PDIP`, `Golkar`.
   - Organisasi antarpemerintah dunia: `PBB`, `WHO`, `CBF`.
-  - Jabatan dan kepangkatan kenegaraan/militer resmi: `Presiden`, `Menteri`, `Gubernur DKI Jakarta`, `Kapolri`, `Kasat Lantas Polres Sarolangun`, `Komisaris Jenderal Polisi`, `Direktur Kriminal Khusus Polda Bali`, `Aiptu`.
+  - Jabatan dan pimpinan instansi kenegaraan/militer resmi: `Presiden`, `Menteri`, `Gubernur DKI Jakarta`, `Kapolri`, `Kasat Lantas Polres Sarolangun`, `Direktur Kriminal Khusus Polda Bali`. Pangkat kepangkatan mandiri tanpa nama orang (misal dalam kurung aposisi: `Komisaris Jenderal Polisi`) dilabeli `NOR`, namun jika melekat langsung di depan nama individu, pangkat tersebut diserap ke `B-PER`.
   - Kelompok kebangsaan dan kewarganegaraan: `warga negara Malaysia`, `Cina` (dalam konteks polisi Cina).
 - **Kriteria Eksklusi**:
   - Perusahaan swasta, BUMN korporasi, dan klub olahraga: Diberi label `ORG`.
@@ -574,12 +574,12 @@ Korpus manusia NERGRIT memisahkan perlakuan sapaan ke dalam 3 hierarki sintaksis
 1. **Sapaan Kehormatan Kekerabatan (`Bapak`, `Ibu`, `Saudara`, `Tuan`, `Nona`)**:
    - Status: **100% DIEKSKLUSI** dari `PER` (berstatus `O`).
    - Contoh: `Bapak [PER Joko Widodo /PER]`, `Ibu [PER Iriana /PER]`.
-2. **Gelar Akademis & Keagamaan Melekat (`Dr.`, `dr.`, `Prof.`, `Ir.`, `K.H.`, `Habib`, `Ustadz`)**:
-   - Status: **DISERAP KE DALAM `PER`** sebagai token `B-PER`.
-   - Contoh: `[PER Dr. Mahathir Mohamad /PER]`, `[PER K.H. Ma'ruf Amin /PER]`, `[PER Habib Salim Segaf Al Jufri /PER]`.
-3. **Jabatan Kenegaraan, Kepolisian, dan Militer (`Presiden`, `Menteri`, `Gubernur`, `Kapolri`, `Jenderal`, `Aiptu`)**:
+2. **Gelar Akademis, Keagamaan, dan Pangkat Militer/Polri Melekat (`Dr.`, `dr.`, `Prof.`, `Ir.`, `K.H.`, `Habib`, `Jenderal`, `Aiptu`, `Kombes`)**:
+   - Status: **DISERAP KE DALAM `PER`** sebagai token `B-PER` pembuka rentang nama diri.
+   - Contoh: `[PER Dr. Mahathir Mohamad /PER]`, `[PER Jenderal Tito Karnavian /PER]`, `[PER Kombes Pol Argo Yuwono /PER]`.
+3. **Jabatan Kenegaraan & Pimpinan Instansi (`Presiden`, `Menteri`, `Gubernur`, `Kapolri`, `Panglima TNI`)**:
    - Status: **DILABELI SEBAGAI `NOR`**, TIDAK diserap ke dalam `PER`.
-   - Contoh: `[NOR Presiden /NOR] [PER Joko Widodo /PER]`, `[NOR Menteri Keuangan /NOR] [PER Sri Mulyani /PER]`, `[NOR Gubernur DKI Jakarta /NOR] [PER Anies Baswedan /PER]`.
+   - Contoh: `[NOR Presiden /NOR] [PER Joko Widodo /PER]`, `[NOR Kapolri /NOR] [PER Jenderal Tito Karnavian /PER]`, `[NOR Menteri Keuangan /NOR] [PER Sri Mulyani /PER]`.
 
 ### 4.3 Tanda Kurung Tanggal Kepala Berita pada `DAT`
 - **Fenomena Berita Daring**: Wartawan media daring Indonesia kerap menuliskan format penanggalan kepala berita berupa `Hari ( DD / MM / YYYY )`.
@@ -611,7 +611,7 @@ Korpus manusia NERGRIT memisahkan perlakuan sapaan ke dalam 3 hierarki sintaksis
 - **Contoh**:
   - `film " [WOA The Dark Knight /WOA] "` $\rightarrow$ Tanda petik di luar span.
   - `lagu ' [WOA Indonesia Raya /WOA] '` $\rightarrow$ Tanda petik di luar span.
-  - `bertulisan ' [O Rahasia Negara /O] '` $\rightarrow$ Tanda petik di luar span.
+  - `operasi ' [EVT Ketupat 2018 /EVT] '` $\rightarrow$ Tanda petik di luar span.
 
 ### 4.7 Penanganan Tanda Hubung (*Hyphenation*) & Reduplikasi
 - **Tanda Hubung Ordinal**: `ke - 4` $\rightarrow$ `ke` (`B-ORD`), `-` (`I-ORD`), `4` (`I-ORD`).
@@ -714,7 +714,7 @@ Apakah token mengandung angka, bilangan, atau penunjuk urutan?
   |       |-- TIDAK
   |
   +---> Apakah menunjukkan waktu pembacaan jam arloji / titik waktu harian?
-  |       |-- YA  ==> Beri label TIM (misal: 06 . 00 WIB, pukul 10 . 30 Wita)
+  |       |-- YA  ==> Beri label TIM (misal: 06 . 00 WIB, 10 . 30 Wita; kata pukul/sekira berstatus O)
   |       |-- TIDAK
   |
   +---> Apakah angka kuantitas cacah murni tanpa satuan di atas?
@@ -766,7 +766,7 @@ Apakah entitas berakar dari konteks keagamaan / spiritual?
 
 ## 6. Contoh Anotasi Berjalan Token-demi-Token
 
-Berikut adalah 5 contoh teks berita riil yang dianotasi token demi token secara lengkap sesuai standar baku NERGRIT:
+Berikut adalah 8 contoh teks berita riil yang dianotasi token demi token secara lengkap sesuai standar baku NERGRIT:
 
 ### Kasus 1: Berita Politik & Pemerintahan
 **Kalimat Masukan**:  
@@ -912,8 +912,6 @@ Berikut adalah 5 contoh teks berita riil yang dianotasi token demi token secara 
 
 ---
 
----
-
 ### Kasus 6: Berita Hukum, Pengadilan, & Perundang-Undangan
 **Kalimat Masukan**:  
 `Majelis hakim Pengadilan Negeri Jakarta Pusat menjatuhkan vonis kepada 3 terdakwa pelanggar Undang - Undang Nomor 11 Tahun 2008 pada Kamis ( 18 / 5 ) .`
@@ -967,8 +965,8 @@ Berikut adalah 5 contoh teks berita riil yang dianotasi token demi token secara 
 | 9 | Hatta | **`I-FAC`** | `FAC` | Kelanjutan nama fasilitas fisik bandara. |
 | 10 | ditunda | **`O`** | - | Verba pasif. |
 | 11 | hingga | **`O`** | - | Preposisi temporal batas waktu wajib dieksklusi (`O`). |
-| 12 | pukul | **`B-TIM`** | `TIM` | Kata pengantar titik penunjuk jam arloji harian. |
-| 13 | 14 | **`I-TIM`** | `TIM` | Angka penunjuk jam dalam siklus 24 jam. |
+| 12 | pukul | **`O`** | - | Kata penunjuk waktu dieksklusi (`O`). |
+| 13 | 14 | **`B-TIM`** | `TIM` | Awal entitas penunjuk jam dalam siklus 24 jam. |
 | 14 | . | **`I-TIM`** | `TIM` | Tanda titik pemisah jam dan menit yang terpisah spasi. |
 | 15 | 30 | **`I-TIM`** | `TIM` | Angka penunjuk menit. |
 | 16 | WIB | **`I-TIM`** | `TIM` | Penanda zona waktu resmi Indonesia Barat diserap ke `TIM`. |
@@ -1017,7 +1015,7 @@ Sebelum menyelesaikan sebuah set kalimat atau memvalidasi output model, setiap a
 
 - [ ] **Uji Preposisi Spasial & Temporal**: Pastikan tidak ada kata `di`, `ke`, `dari`, `pada`, `dalam`, atau `selama` yang berada di dalam span entitas (satu-satunya pengecualian adalah `ke` sebagai prefiks ordinal `ke - N` pada `ORD`).
 - [ ] **Uji Sapaan Kekerabatan**: Pastikan kata sapaan umum seperti `Bapak`, `Ibu`, `Saudara`, `Tuan` berstatus `O` dan tidak masuk ke dalam `PER`.
-- [ ] **Uji Gelar Melekat vs Jabatan**: Pastikan gelar akademis/religi (`Dr.`, `KH`, `Habib`) diserap ke `PER` (`B-PER`), sedangkan jabatan politik/militer/kenegaraan (`Presiden`, `Gubernur`, `Kapolri`) dilabeli `NOR`.
+- [ ] **Uji Gelar Melekat vs Jabatan**: Pastikan gelar akademis/religi/pangkat melekat (`Dr.`, `KH`, `Habib`, `Jenderal`, `Kombes`) diserap ke `PER` (`B-PER`), sedangkan jabatan politik/kenegaraan (`Presiden`, `Gubernur`, `Kapolri`) dilabeli `NOR`.
 - [ ] **Uji Lembaga Negara vs Korporasi**: Pastikan lembaga eksekutif, yudikatif, legislatif, kepolisian, militer, dan parpol dilabeli `NOR`. Pastikan `ORG` hanya digunakan untuk korporasi komersial swasta/BUMN, portal media berita, dan klub olahraga.
 - [ ] **Uji Sarana & Komoditas Huruf Kecil**: Pastikan sarana transportasi huruf kecil (`mobil`, `sepeda motor`, `truk`, `pesawat`) serta komoditas perdagangan (`sabu`, `beras`, `kopi`, `BBM`) diberi label `PRD`.
 - [ ] **Uji Format Tanggal Berita**: Pastikan format penanggalan kepala berita berformat kurung `Hari ( DD / MM / YYYY )` ditandai sebagai **satu kesatuan utuh `DAT`** mencakup tanda kurung buka dan tutupnya.
@@ -1059,7 +1057,7 @@ Anda adalah annotator ahli korpus Named Entity Recognition (NER) bahasa Indonesi
 Tugas Anda adalah melakukan tokenisasi dan pelabelan BIO (Beginning, Inside, Outside) secara presisi terhadap teks bahasa Indonesia yang diberikan, dengan mematuhi 19 taksonomi kelas dan kaidah batas empiris baku NERGRIT.
 
 19 KELAS ENTITAS NERGRIT:
-1. PER (Person): Nama individu manusia (Joko Widodo). Sapaan umum (Bapak/Ibu) WAJIB O. Gelar akademik/religi melekat (Dr., KH, Habib) DISERAP ke B-PER. Jabatan kenegaraan/militer (Presiden, Menteri, Kapolri) DIBERI LABEL NOR.
+1. PER (Person): Nama individu manusia (Joko Widodo). Sapaan umum (Bapak/Ibu) WAJIB O. Gelar akademik/religi/pangkat melekat (Dr., KH, Habib, Jenderal, Kombes) DISERAP ke B-PER. Jabatan struktural kenegaraan/instansi (Presiden, Menteri, Kapolri) DIBERI LABEL NOR.
 2. ORG (Organization): Perusahaan swasta, BUMN komersial (Bank Mandiri, Pertamina), portal media pers (detikcom, CNN Indonesia), dan klub sepak bola (Chelsea, Timnas Brasil).
 3. GPE (Geo-Political Entity): Negara, provinsi, kota, kabupaten, desa administratif berpemerintahan (Indonesia, Jawa Timur, Surabaya).
 4. LOC (Location): Bentang alam alami (Gunung Agung, Danau Toba), koridor jalan (Jalan Sudirman), taman publik (Taman Fatahillah), kawasan benua.
@@ -1070,7 +1068,7 @@ Tugas Anda adalah melakukan tokenisasi dan pelabelan BIO (Beginning, Inside, Out
 9. PRD (Product): Seluruh kendaraan fisik huruf kecil (mobil, sepeda motor, truk, bus, pesawat), komoditas (sabu, beras, kopi, BBM), gawai elektronik, dan indeks bursa (IHSG).
 10. LAN (Language): Nama bahasa alami manusia (bahasa Arab, bahasa Indonesia).
 11. DAT (Date): Tanggal kalender, hari, bulan, angka tahun tunggal, dan format berita daring 'Hari ( DD / MM / YYYY )' sebagai SATU SPAN UTUH DAT (+ kurung).
-12. TIM (Time): Jam spesifik arloji / pukul (06 . 00 WIB, pukul 10 . 30 Wita).
+12. TIM (Time): Jam spesifik arloji / titik waktu (06 . 00 WIB, 10 . 30 Wita; kata 'pukul' / 'sekira' wajib O).
 13. MON (Money): Nilai nominal moneter beserta simbol mata uang (Rp 40 Ribu, 100 triliun rupiah, US$ 50 juta).
 14. QTY (Quantity): Satuan metrik fisik (15 kilogram, 41 ton) DAN DURASI WAKTU LAMPAU/JANGKA (dua tahun, 24 jam, 36 hari, 30 menit).
 15. CRD (Cardinal): Bilangan cacah/kuantitas murni tanpa satuan fisik/uang (satu, dua, 115, 1 . 000, kedua saat bermakna both).
@@ -1116,7 +1114,7 @@ Dalam format JSON rentang (*span-based*), indeks token menggunakan penomoran ber
   ]
 }
 ```
-> **Catatan Kritis Batas**: Perhatikan bahwa token ke-4 adalah preposisi `"di"` yang wajib berstatus `O`. Oleh sebab itu, rentang entitas `Surabaya` dimulai pada indeks token `5` hingga `6` (`[5, 6)`), bukan `4`!
+> **Catatan Kritis Batas**: Perhatikan bahwa token berindeks 4 (token ke-5) adalah preposisi `"di"` yang wajib berstatus `O`. Oleh sebab itu, rentang entitas `Surabaya` dimulai pada indeks token `5` hingga `6` (`[5, 6)`), bukan `4`!
 
 ---
 
