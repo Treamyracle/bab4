@@ -82,10 +82,14 @@ TAG_FIXES = {
     "NORP": "NOR", "REGION": "LOC",
 }
 
-# Prepositions to exclude from entity boundaries (Rule 3)
-PREPOSITIONS_TO_STRIP = [
-    "pada hari ", "hari ", "di ", "ke ", "dari ", "pada ", "dalam ",
-    "selama ", "sejak ", "hingga ", "sampai ", "oleh ", "tentang "
+# Prepositions and quantitative prefixes to exclude from entity boundaries (Rule 3)
+# Longer / compound prefixes MUST come before shorter prefixes
+PREFIXES_TO_STRIP = [
+    "pada hari ", "hari ", "ke dalam ", "di dalam ",
+    "sebesar ", "sejauh ", "seluas ", "seberat ", "sebanyak ", "setinggi ", "sedalam ",
+    "berbiaya ", "senilai ", "seharga ", "mencapai ", "berkisar ",
+    "di ", "ke ", "dari ", "pada ", "dalam ", "selama ", "sejak ",
+    "hingga ", "sampai ", "menuju ", "oleh ", "tentang ", "bagi ", "untuk "
 ]
 
 # Honorifics / common greetings to drop (Rule 2a)
@@ -96,7 +100,7 @@ HONORIFICS_TO_DROP = {
 # Attached military / academic ranks to absorb into PER (Rule 2b)
 ATTACHED_RANKS_PREFIXES = (
     "dr.", "dr ", "prof.", "prof ", "ir.", "ir ", "kh ", "k.h.", "habib",
-    "ustadz", "ustad", "jenderal", "kombes", "aiptu", "akbp", "letkol",
+    "ustadz", "ustad ", "jenderal", "kombes", "aiptu", "akbp", "letkol",
     "brigjen", "mayjen", "marsekal", "laksamana"
 )
 
@@ -115,6 +119,22 @@ RELIGION_TERMS_TO_DROP = {
     "injil", "taurat", "puasa", "buka puasa", "sholat", "solat", "salat",
     "azan", "adzan", "insya allah", "alhamdulillah", "ramadan", "ramadhan"
 }
+
+# Media type prefixes for WOA and EVT (Rule 10)
+MEDIA_TYPE_PREFIXES = [
+    "film ", "lagu ", "novel ", "buku ", "album ", "lukisan ", "drama ",
+    "serial ", "sinetron ", "operasi "
+]
+
+# Diurnal suffixes to exclude from TIM (Rule 7)
+TIME_DIURNAL_SUFFIXES = [
+    " siang", " pagi", " sore", " malam", " dini hari", " petang"
+]
+
+# Time prefixes to exclude from TIM (Rule 7)
+TIME_PREFIXES = [
+    "sekitar pukul ", "sekira pukul ", "pukul ", "jam ", "sekitar ", "sekira "
+]
 
 
 # =============================================================================
@@ -267,9 +287,20 @@ def parse_json_from_response(response: str) -> Optional[Dict]:
     if not response or not isinstance(response, str):
         return None
 
-    # Step 0: Strip thinking tags <think>...</think> or <thought>...</thought>
+    # Step 0: Strip closed thinking tags <think>...</think> or <thought>...</thought>
     cleaned = re.sub(r"<think>[\s\S]*?</think>", "", response, flags=re.IGNORECASE)
     cleaned = re.sub(r"<thought>[\s\S]*?</thought>", "", cleaned, flags=re.IGNORECASE)
+
+    # If <think> tag is unclosed, strip from <think> to markdown code fence or last {"data":
+    if "<think>" in cleaned.lower():
+        fence_idx = cleaned.find("```")
+        if fence_idx != -1:
+            cleaned = cleaned[fence_idx:]
+        else:
+            last_data_match = list(re.finditer(r'\{\s*"data"\s*:', cleaned, re.IGNORECASE))
+            if last_data_match:
+                cleaned = cleaned[last_data_match[-1].start():]
+
     cleaned = cleaned.strip()
 
     # Step 1: Unwrap serialized OpenRouter JSON envelope if present
@@ -301,11 +332,11 @@ def parse_json_from_response(response: str) -> Optional[Dict]:
     except Exception:
         pass
 
-    # Step 4: Regex markdown match
-    match = re.search(r"```(?:json)?\s*(\{[\s\S]*?\})\s*```", response, re.DOTALL)
-    if match:
+    # Step 4: Regex markdown match (search in reverse order to find final block)
+    matches = list(re.finditer(r"```(?:json)?\s*(\{[\s\S]*?\})\s*```", response, re.DOTALL))
+    for m in reversed(matches):
         try:
-            obj = json.loads(match.group(1).strip())
+            obj = json.loads(m.group(1).strip())
             if isinstance(obj, dict) and "data" in obj:
                 return obj
         except Exception:
@@ -330,10 +361,10 @@ def parse_json_from_response(response: str) -> Optional[Dict]:
     except Exception:
         pass
 
-    # Step 6: Find {"data": and extract JSON decoder slice
-    match = re.search(r'\{\s*"data"\s*:', repaired)
-    if match:
-        sub = repaired[match.start():]
+    # Step 6: Find {"data": and extract JSON decoder slice (search in reverse to avoid draft CoT)
+    matches = list(re.finditer(r'\{\s*"data"\s*:', repaired))
+    for m in reversed(matches):
+        sub = repaired[m.start():]
         try:
             decoder = json.JSONDecoder()
             obj, _ = decoder.raw_decode(sub)
@@ -366,6 +397,19 @@ def parse_json_from_response(response: str) -> Optional[Dict]:
             except Exception:
                 continue
 
+        # If truncated mid-element, search backwards for the last closed element '}'
+        last_elem_end = snippet.rfind("}")
+        if last_elem_end != -1 and last_elem_end > snippet.find("["):
+            sub_snippet = snippet[:last_elem_end + 1]
+            for suffix in ["]}", "]}"]:
+                try:
+                    fixed = re.sub(r",\s*([}\]])", r"\1", sub_snippet + suffix)
+                    obj = json.loads(fixed)
+                    if isinstance(obj, dict) and "data" in obj:
+                        return obj
+                except Exception:
+                    continue
+
     return None
 
 
@@ -373,17 +417,168 @@ def parse_json_from_response(response: str) -> Optional[Dict]:
 # ENTITY SANITIZER & VERBATIM SUBSTRING VALIDATOR
 # =============================================================================
 
+def absorb_attached_ranks(original_text: str, raw_entities: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """
+    Absorb attached military / academic ranks (Rule 2b) into adjacent PER entities.
+    E.g. {"entity": "Jenderal", "type": "TTL"} + {"entity": "Tito Karnavian", "type": "PER"}
+    -> {"entity": "Jenderal Tito Karnavian", "type": "PER"}.
+    """
+    absorbed: List[Dict[str, Any]] = []
+    used_indices = set()
+    n = len(raw_entities)
+
+    for i in range(n):
+        if i in used_indices:
+            continue
+        item = raw_entities[i]
+        ent_str = str(item.get("entity", "")).strip()
+        ent_type = str(item.get("type", "")).strip().upper()
+
+        # Check if item is an attached rank
+        is_rank = False
+        ent_lower = ent_str.lower()
+        if ent_type in ("TTL", "PER"):
+            if any(ent_lower == r.strip() or ent_lower.startswith(r) for r in ATTACHED_RANKS_PREFIXES):
+                is_rank = True
+
+        if is_rank:
+            # Look ahead for an adjacent PER entity
+            merged = False
+            for j in range(i + 1, min(i + 4, n)):
+                if j in used_indices:
+                    continue
+                next_item = raw_entities[j]
+                next_str = str(next_item.get("entity", "")).strip()
+                next_type = str(next_item.get("type", "")).strip().upper()
+
+                if next_type == "PER":
+                    candidate_full = f"{ent_str} {next_str}"
+                    if candidate_full in original_text:
+                        absorbed.append({"entity": candidate_full, "type": "PER"})
+                        used_indices.add(i)
+                        used_indices.add(j)
+                        merged = True
+                        break
+                    # Case-insensitive recovery
+                    pattern = re.compile(re.escape(candidate_full), re.IGNORECASE)
+                    m = pattern.search(original_text)
+                    if m:
+                        absorbed.append({"entity": m.group(0), "type": "PER"})
+                        used_indices.add(i)
+                        used_indices.add(j)
+                        merged = True
+                        break
+
+            if not merged:
+                # If rank was TTL and not merged with any PER, drop it (do not emit orphan PER)
+                if ent_type == "TTL":
+                    used_indices.add(i)
+                    continue
+                # If already PER, drop if it is purely an attached rank without a personal name
+                if any(ent_lower == r.strip() for r in ATTACHED_RANKS_PREFIXES):
+                    used_indices.add(i)
+                    continue
+                absorbed.append(item)
+                used_indices.add(i)
+        else:
+            absorbed.append(item)
+            used_indices.add(i)
+
+    return absorbed
+
+
+def clean_entity_boundaries(ent_str: str, ent_type: str, original_text: str) -> str:
+    """Strip illegal prepositions, prefixes, diurnal suffixes, and surrounding quotes."""
+    candidate = ent_str.strip()
+
+    # Strip surrounding quotes
+    candidate = candidate.strip("\"'“”‘’` ")
+
+    changed = True
+    while changed and candidate:
+        changed = False
+
+        # Protection rules:
+        # GPE: DI Yogyakarta / D.I. Yogyakarta (Daerah Istimewa)
+        if ent_type == "GPE" and (candidate.startswith("DI ") or candidate.startswith("D.I. ")):
+            break
+        # ORD: ke - 4, ke 58, ke-1
+        if ent_type == "ORD" and re.match(r"^ke\s*[-–—]?\s*\d+", candidate, re.IGNORECASE):
+            break
+        # LAN: bahasa Indonesia
+        if ent_type == "LAN" and candidate.lower().startswith("bahasa "):
+            break
+
+        cand_lower = candidate.lower()
+
+        # Rule 10: Strip media type prefix for WOA and EVT
+        if ent_type in ("WOA", "EVT"):
+            for mp in MEDIA_TYPE_PREFIXES:
+                if cand_lower.startswith(mp):
+                    sub = candidate[len(mp):].strip("\"'“”‘’` ")
+                    if sub and sub in original_text:
+                        candidate = sub
+                        changed = True
+                        break
+            if changed:
+                continue
+
+        # Rule 7: Strip time prefixes for TIM
+        if ent_type == "TIM":
+            for tp in TIME_PREFIXES:
+                if cand_lower.startswith(tp):
+                    sub = candidate[len(tp):].strip()
+                    if sub and sub in original_text:
+                        candidate = sub
+                        changed = True
+                        break
+            if changed:
+                continue
+
+        # Rule 3: Strip prepositions and quantitative prefixes
+        for prep in PREFIXES_TO_STRIP:
+            if cand_lower.startswith(prep):
+                sub = candidate[len(prep):].strip("\"'“”‘’` ")
+                if sub and sub in original_text:
+                    candidate = sub
+                    changed = True
+                    break
+
+    # Rule 7: Strip diurnal suffixes for TIM
+    if ent_type == "TIM":
+        for suffix in TIME_DIURNAL_SUFFIXES:
+            if candidate.lower().endswith(suffix):
+                sub = candidate[:-len(suffix)].strip()
+                if sub and sub in original_text:
+                    candidate = sub
+                    break
+
+    # Strip surrounding quotes again if newly exposed
+    candidate = candidate.strip("\"'“”‘’` ")
+
+    # Strip trailing punctuation if not part of original span
+    if candidate.endswith(",") and candidate[:-1].strip() in original_text:
+        candidate = candidate[:-1].strip()
+    if candidate.endswith(";") and candidate[:-1].strip() in original_text:
+        candidate = candidate[:-1].strip()
+
+    return candidate
+
+
 def sanitize_and_validate_entities(
     original_text: str,
     raw_entities: List[Dict[str, Any]]
 ) -> List[Dict[str, str]]:
     """
     Apply strict 18-class filtering, 10 transformation rules (0 REG, 0 TTL),
-    preposition stripping, and verbatim substring validation against original text.
+    preposition stripping, attached rank absorption, and verbatim substring validation against original text.
     """
+    # Step 1: Absorb attached military / academic ranks (Rule 2b)
+    merged_entities = absorb_attached_ranks(original_text, raw_entities)
+
     valid_entities: List[Dict[str, str]] = []
 
-    for item in raw_entities:
+    for item in merged_entities:
         if not isinstance(item, dict):
             continue
 
@@ -395,66 +590,56 @@ def sanitize_and_validate_entities(
         ent_str = raw_ent.strip()
         ent_type = str(raw_type).strip().upper()
 
-        # Normalize tag typos
+        # Normalize tag typos/synonyms
         if ent_type in TAG_FIXES:
             ent_type = TAG_FIXES[ent_type]
 
+        ent_lower = ent_str.lower()
+
+        # Universal Drop Rule 1: Religious doctrines, adherents, scriptures, prayers -> Outside (O)
+        if ent_lower in RELIGION_TERMS_TO_DROP or ent_lower.startswith("umat "):
+            continue
+
+        # Universal Drop Rule 2: Standalone honorifics -> Outside (O)
+        if ent_lower in HONORIFICS_TO_DROP:
+            continue
+
         # Rule 1: Resolution of REG (Zero REG allowed in output)
         if ent_type == "REG":
-            ent_lower = ent_str.lower()
             if any(w in ent_lower for w in ["asia", "timur tengah", "pasifik", "eropa", "amerika", "afrika", "kawasan"]):
                 ent_type = "LOC"
             elif any(w in ent_lower for w in ["masjid", "gereja", "katedral", "pura", "vihara", "klenteng"]):
                 ent_type = "FAC"
             elif any(w in ent_lower for w in ["lebaran", "natal", "idul fitri", "idul adha", "nyepi", "waisak", "imlek"]):
                 ent_type = "EVT"
-            elif any(w in ent_lower for w in RELIGION_TERMS_TO_DROP):
-                continue  # Religious doctrines/adherents become Outside (O)
             else:
                 continue
 
         # Rule 2: Resolution of TTL (Zero TTL allowed in output)
         if ent_type == "TTL":
-            ent_lower = ent_str.lower()
-            if ent_lower in HONORIFICS_TO_DROP:
-                continue  # Bapak, Ibu dropped to O
+            if any(kw in ent_lower for kw in STATE_LEADERSHIP_KEYWORDS):
+                ent_type = "NOR"
             elif any(ent_lower.startswith(p) for p in ATTACHED_RANKS_PREFIXES):
-                ent_type = "PER"  # Absorbed into PER
-            elif any(kw in ent_lower for kw in STATE_LEADERSHIP_KEYWORDS):
-                ent_type = "NOR"  # Structural state positions mapped to NOR
+                ent_type = "PER"
             else:
                 continue
 
-        # Rule 3: Golden Preposition Exclusion (except ORD "ke - 4")
-        if ent_type != "ORD":
-            for prep in PREPOSITIONS_TO_STRIP:
-                if ent_str.lower().startswith(prep):
-                    stripped_candidate = ent_str[len(prep):].strip()
-                    if stripped_candidate and stripped_candidate in original_text:
-                        ent_str = stripped_candidate
+        # Rule 2a: Honorific stripping from PER (e.g. "Bapak Joko Widodo" -> "Joko Widodo")
+        if ent_type == "PER":
+            for h in HONORIFICS_TO_DROP:
+                h_prefix = f"{h} "
+                if ent_str.lower().startswith(h_prefix):
+                    candidate = ent_str[len(h_prefix):].strip()
+                    if candidate and candidate in original_text:
+                        ent_str = candidate
                     break
 
-        # Rule 7: Time exclusion of "pukul", "jam", "sekitar"
-        if ent_type == "TIM":
-            for prefix in ["pukul ", "jam ", "sekitar ", "sekira "]:
-                if ent_str.lower().startswith(prefix):
-                    stripped = ent_str[len(prefix):].strip()
-                    if stripped and stripped in original_text:
-                        ent_str = stripped
-                    break
-            # Remove trailing diurnal markers
-            for suffix in [" siang", " pagi", " sore", " malam", " dini hari"]:
-                if ent_str.lower().endswith(suffix):
-                    stripped = ent_str[:-len(suffix)].strip()
-                    if stripped and stripped in original_text:
-                        ent_str = stripped
-                    break
+        # Clean boundaries: prepositions, prefixes, diurnal suffixes, quotes
+        ent_str = clean_entity_boundaries(ent_str, ent_type, original_text)
 
-        # Rule 10: Strip surrounding quotes
-        if (ent_str.startswith('"') and ent_str.endswith('"')) or (ent_str.startswith("'") and ent_str.endswith("'")):
-            stripped = ent_str[1:-1].strip()
-            if stripped and stripped in original_text:
-                ent_str = stripped
+        # Re-check universal drop on cleaned string
+        if ent_str.lower() in RELIGION_TERMS_TO_DROP or ent_str.lower() in HONORIFICS_TO_DROP:
+            continue
 
         # Strict 18-class filter
         if ent_type not in ALLOWED_TYPES_SET:
@@ -623,6 +808,7 @@ def export_verified_dataset(output_dir: Path):
     conll_export_path = output_dir / "corrected_nemotron_18class.conll"
 
     all_data = []
+    seen_texts = set()
     conll_sentences = []
     class_distribution = {etype: 0 for etype in ACTIVE_ENTITY_TYPES}
 
@@ -633,6 +819,10 @@ def export_verified_dataset(output_dir: Path):
                 continue
             try:
                 item = json.loads(line)
+                txt = item.get("text", "")
+                if txt in seen_texts:
+                    continue
+                seen_texts.add(txt)
                 all_data.append(item)
             except Exception:
                 continue
@@ -803,14 +993,20 @@ def run_verification(args: argparse.Namespace):
             continue
 
         corrected_list = parsed_obj["data"]
-        # Ensure 1:1 correspondence with batch
+        # Ensure 1:1 correspondence with batch via text matching and index fallback
         verified_batch_results = []
+        lookup_by_text = {}
+        for c_item in corrected_list:
+            if isinstance(c_item, dict) and "text" in c_item:
+                lookup_by_text[c_item["text"].strip()] = c_item
+
         for orig_idx, orig_item in enumerate(batch):
             orig_text = orig_item.get("text", "")
-            # Find matching item in corrected_list
-            corr_item = None
-            if orig_idx < len(corrected_list):
-                corr_item = corrected_list[orig_idx]
+            corr_item = lookup_by_text.get(orig_text.strip())
+            if corr_item is None and orig_idx < len(corrected_list):
+                cand = corrected_list[orig_idx]
+                if isinstance(cand, dict):
+                    corr_item = cand
             
             raw_ents = corr_item.get("entities", []) if corr_item else orig_item.get("entities", [])
             sanitized_ents = sanitize_and_validate_entities(orig_text, raw_ents)
@@ -819,34 +1015,46 @@ def run_verification(args: argparse.Namespace):
                 "entities": sanitized_ents
             })
 
-        # Append incrementally to corrected.jsonl
-        with open(jsonl_file, "a", encoding="utf-8") as f:
-            for item in verified_batch_results:
-                f.write(json.dumps(item, ensure_ascii=False) + "\n")
+        if not args.test_mode:
+            # Append incrementally to corrected.jsonl
+            with open(jsonl_file, "a", encoding="utf-8") as f:
+                for item in verified_batch_results:
+                    f.write(json.dumps(item, ensure_ascii=False) + "\n")
 
-        processed_in_session += len(verified_batch_results)
-        current_idx += len(batch)
+            processed_in_session += len(verified_batch_results)
+            current_idx += len(batch)
 
-        # Update telemetry & state
-        telemetry_entry["success"] = True
-        with open(telemetry_file, "a", encoding="utf-8") as tf:
-            tf.write(json.dumps(telemetry_entry, ensure_ascii=False) + "\n")
+            # Update telemetry & state
+            telemetry_entry["success"] = True
+            with open(telemetry_file, "a", encoding="utf-8") as tf:
+                tf.write(json.dumps(telemetry_entry, ensure_ascii=False) + "\n")
 
-        state = {
-            "last_processed_index": current_idx,
-            "total_processed": current_idx,
-            "total_raw": total_raw,
-            "model": args.model,
-            "last_updated": datetime.datetime.now().isoformat(),
-            "completed": (current_idx >= total_raw)
-        }
-        with open(state_file, "w", encoding="utf-8") as sf:
-            json.dump(state, sf, ensure_ascii=False, indent=2)
+            state = {
+                "last_processed_index": current_idx,
+                "total_processed": current_idx,
+                "total_raw": total_raw,
+                "model": args.model,
+                "last_updated": datetime.datetime.now().isoformat(),
+                "completed": (current_idx >= total_raw)
+            }
+            with open(state_file, "w", encoding="utf-8") as sf:
+                json.dump(state, sf, ensure_ascii=False, indent=2)
 
-        print(f" ✅ HTTP 200 in {latency:.2f}s (Tokens: {t_tokens:,} | +{len(verified_batch_results)} sents -> Total: {current_idx:,}/{total_raw:,})")
+            print(f" ✅ HTTP 200 in {latency:.2f}s (Tokens: {t_tokens:,} | +{len(verified_batch_results)} sents -> Total: {current_idx:,}/{total_raw:,})")
+        else:
+            # Test mode: write smoke test output and log telemetry without mutating production state
+            telemetry_entry["success"] = True
+            telemetry_entry["test_mode"] = True
+            with open(telemetry_file, "a", encoding="utf-8") as tf:
+                tf.write(json.dumps(telemetry_entry, ensure_ascii=False) + "\n")
 
-        # Smoke test validation check
-        if args.test_mode:
+            smoke_test_file = output_dir / "smoke_test_results.json"
+            with open(smoke_test_file, "w", encoding="utf-8") as stf:
+                json.dump({"data": verified_batch_results}, stf, ensure_ascii=False, indent=2)
+
+            print(f" ✅ HTTP 200 in {latency:.2f}s (Tokens: {t_tokens:,} | 2 sentences verified)")
+
+            # Smoke test validation check
             print("\n🔬 Validating smoke test assertions...")
             assert status_code == 200, f"Expected status 200, got {status_code}"
             assert len(verified_batch_results) == 2, f"Expected 2 verified sentences, got {len(verified_batch_results)}"
