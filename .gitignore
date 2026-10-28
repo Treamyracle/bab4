@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+~$*
+eval_tmp/
+.pytest_cache/
+tests/tmp*/
+* (1).pdf
+
+# Bab 4 runtime outputs; the portable source bundle is versioned.
+.bab4_runtime/
+.bab4_workers/
+bab4_results/
+bab4_results.zip
+notebooks/bab4_results/
+notebooks/bab4_results.zip
+notebooks/bab4_colab_package.zip
+notebooks/bab4_a100_continue_package.zip
+notebooks/bab4_audit_completed.zip
+tests/_artifacts/
+bab4_results_raw_v2/
+bab4_results_raw_v2.zip
+notebooks/bab4_a100_raw_v2_package/
+notebooks/bab4_a100_raw_v2_package.zip
+notebooks/bab4_historical_audit.zip
+
+# Distilled data & verification runtime outputs
+data/distilled/
+data/distilled_nemotron_verified/
