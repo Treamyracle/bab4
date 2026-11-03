@@ -1,6 +1,7 @@
 # =============================================================================
 # SEL 10: ANALISIS GALAT OTOMATIS, VISUALISASI GRAFIK, PAKET .ZIP, & UPLOAD DRIVE OTOMATIS
 # =============================================================================
+from collections import Counter
 from datetime import datetime, timezone
 import matplotlib
 matplotlib.use("Agg")

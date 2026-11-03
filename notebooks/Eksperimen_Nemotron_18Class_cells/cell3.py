@@ -25,10 +25,19 @@ REQUIRED_PACKAGES = [
     ("matplotlib", "matplotlib>=3.7.0"),
 ]
 
+def _is_module_available(module_name: str) -> bool:
+    if module_name in sys.modules and sys.modules[module_name] is not None:
+        return True
+    try:
+        return importlib.util.find_spec(module_name) is not None
+    except (ValueError, ImportError):
+        return module_name in sys.modules
+
+
 missing_specs = [
     pip_spec
     for module_name, pip_spec in REQUIRED_PACKAGES
-    if importlib.util.find_spec(module_name) is None
+    if not _is_module_available(module_name)
 ]
 
 if missing_specs and (IN_COLAB or os.environ.get("NEMOTRON_FORCE_PIP_INSTALL") == "1") and os.environ.get("NEMOTRON_SKIP_PIP") != "1":
@@ -37,14 +46,15 @@ if missing_specs and (IN_COLAB or os.environ.get("NEMOTRON_FORCE_PIP_INSTALL") =
         sys.executable, "-m", "pip", "install", "--quiet",
         "--disable-pip-version-check", *missing_specs
     ])
+    importlib.invalidate_caches()
     print("✅ Pemasangan pustaka selesai.")
 elif not missing_specs:
     print("✅ Seluruh pustaka utama sudah terpasang di lingkungan runtime.")
 else:
     print(f"ℹ️ Mode uji lokal tanpa instalasi pip otomatis (pustaka opsional belum terpasang: {missing_specs}).")
 
-TORCH_AVAILABLE = importlib.util.find_spec("torch") is not None
-TRANSFORMERS_AVAILABLE = importlib.util.find_spec("transformers") is not None
+TORCH_AVAILABLE = _is_module_available("torch")
+TRANSFORMERS_AVAILABLE = _is_module_available("transformers")
 
 if TORCH_AVAILABLE:
     import torch

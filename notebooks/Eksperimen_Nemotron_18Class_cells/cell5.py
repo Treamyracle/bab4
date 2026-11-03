@@ -335,7 +335,9 @@ def load_and_prepare_corpora(
     aliases = {**GOLD_EXTRA_ALIASES, **_read_aliases(data_dir / "gold" / "labels-map.csv")}
     gold_rows = []
     for split, filename in (("train", "train.txt"), ("validation", "valid.txt"), ("test", "test.txt")):
-        rel_path = f"gold/{filename}"
+        # Gunakan prefix kanonis "data/{filename}" agar hash sentence_id & urutan kalimat Gold
+        # 100% identik bit-for-bit dengan notebooks/bab4_pipeline/data.py (train_hash 26d1055a4d59).
+        rel_path = f"data/{filename}"
         token_buf, tag_buf, sent_idx = [], [], 0
         lines = (data_dir / "gold" / filename).read_text(encoding="utf-8-sig").splitlines() + [""]
         for line in lines:

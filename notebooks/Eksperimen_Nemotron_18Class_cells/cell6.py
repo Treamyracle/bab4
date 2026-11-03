@@ -3,6 +3,7 @@
 # =============================================================================
 import gc
 import inspect
+import re
 
 spans = entity_spans
 
@@ -222,7 +223,7 @@ def build_training_arguments(config: dict, run_dir: Path, seed: int):
     """Bangun TrainingArguments yang 100% sesuai spesifikasi Tabel 3.2 skripsi."""
     from transformers import TrainingArguments
     sig = inspect.signature(TrainingArguments.__init__).parameters
-    use_workers = config["dataloader_num_workers"] if CUDA_AVAILABLE else 0
+    use_workers = min(int(config["dataloader_num_workers"]), os.cpu_count() or 2) if CUDA_AVAILABLE else 0
     values = dict(
         output_dir=str(Path(run_dir) / "checkpoints"),
         per_device_train_batch_size=config["train_batch_size"],
@@ -295,6 +296,110 @@ def load_initial_indobert_model(config: dict):
     return AutoModelForTokenClassification.from_pretrained(**init_kwargs)
 
 
+def verify_completed_run_dir(candidate_dir: Path, expected_train_hash: str | None = None) -> dict | None:
+    """Verifikasi bahwa run telah selesai DAN seluruh berkas bobot best_model utuh sesuai SHA-256."""
+    candidate_dir = Path(candidate_dir)
+    manifest_file = candidate_dir / "run_manifest.json"
+    best_dir = candidate_dir / "best_model"
+    if not manifest_file.is_file() or not best_dir.is_dir():
+        return None
+    try:
+        manifest = json.loads(manifest_file.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    if manifest.get("status") != "complete":
+        return None
+    if expected_train_hash is not None and manifest.get("train_hash") != expected_train_hash:
+        return None
+    expected_files = manifest.get("model_files")
+    if not isinstance(expected_files, dict) or not expected_files:
+        return None
+    actual_files = _file_hashes(best_dir)
+    if actual_files != expected_files:
+        return None
+    return manifest
+
+
+def _checkpoint_hashes(ckpt_dir: Path) -> dict[str, str]:
+    return {
+        name: digest
+        for name, digest in _file_hashes(ckpt_dir).items()
+        if name != "checkpoint_manifest.json"
+    }
+
+
+def write_checkpoint_manifest(ckpt_dir: Path, train_hash: str, require_scaler: bool = False) -> dict:
+    """Catat manifes integritas checkpoint hanya jika model, optimizer, scheduler, dan RNG lengkap."""
+    ckpt_dir = Path(ckpt_dir)
+    required = {"optimizer.pt", "scheduler.pt", "trainer_state.json", "rng_state.pth", "config.json"}
+    if require_scaler:
+        required.add("scaler.pt")
+    files = _checkpoint_hashes(ckpt_dir)
+    if (required - set(files)) or not ({"model.safetensors", "pytorch_model.bin"} & set(files)):
+        raise ValueError(f"Checkpoint tidak lengkap pada {ckpt_dir}: berkas yang ada = {sorted(files)}")
+    payload = {
+        "train_hash": train_hash,
+        "requires_fp16_scaler": bool(require_scaler),
+        "files": files,
+    }
+    (ckpt_dir / "checkpoint_manifest.json").write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    return payload
+
+
+def is_verified_checkpoint_dir(ckpt_dir: Path, expected_train_hash: str) -> bool:
+    """Periksa apakah direktori checkpoint-* memiliki manifes integritas yang sah atau state lengkap."""
+    ckpt_dir = Path(ckpt_dir)
+    if not ckpt_dir.is_dir():
+        return False
+    manifest_file = ckpt_dir / "checkpoint_manifest.json"
+    hashes = _checkpoint_hashes(ckpt_dir)
+    if manifest_file.is_file():
+        try:
+            manifest = json.loads(manifest_file.read_text(encoding="utf-8"))
+        except Exception:
+            return False
+        if manifest.get("train_hash") != expected_train_hash:
+            return False
+        if manifest.get("requires_fp16_scaler") and "scaler.pt" not in hashes:
+            return False
+        return manifest.get("files") == hashes
+    required = {"optimizer.pt", "scheduler.pt", "trainer_state.json", "rng_state.pth", "config.json"}
+    return not (required - set(hashes)) and bool({"model.safetensors", "pytorch_model.bin"} & set(hashes))
+
+
+def find_or_restore_verified_checkpoint(
+    run_dir: Path,
+    drive_run_dir: Path,
+    expected_train_hash: str,
+) -> str | None:
+    """Cari checkpoint terverifikasi terbaru di lokal atau pulihkan dari Google Drive."""
+    local_ckpt_root = Path(run_dir) / "checkpoints"
+    drive_ckpt_root = Path(drive_run_dir) / "checkpoints"
+
+    for source_label, root_dir in (("lokal", local_ckpt_root), ("Google Drive", drive_ckpt_root)):
+        if not root_dir.is_dir():
+            continue
+        candidates = sorted(
+            (p for p in root_dir.glob("checkpoint-*") if p.is_dir() and re.fullmatch(r"checkpoint-\d+", p.name)),
+            key=lambda p: int(p.name.rsplit("-", 1)[-1]),
+            reverse=True,
+        )
+        for candidate in candidates:
+            if is_verified_checkpoint_dir(candidate, expected_train_hash):
+                if root_dir == drive_ckpt_root:
+                    target_local = local_ckpt_root / candidate.name
+                    target_local.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copytree(candidate, target_local, dirs_exist_ok=True)
+                    print(f"☁️ Memulihkan checkpoint {candidate.name} dari Google Drive ke {target_local}")
+                    return str(target_local)
+                return str(candidate)
+            else:
+                print(f"⚠️ Melewati checkpoint tidak lengkap/korup ({source_label}): {candidate}")
+    return None
+
+
 def train_scenario_model(
     dataset_key: str,
     history_prefix: str,
@@ -307,7 +412,7 @@ def train_scenario_model(
 ) -> dict:
     """Latih atau pulihkan model untuk satu skenario dan cadangkan otomatis ke Google Drive."""
     from datasets import Dataset
-    from transformers import DataCollatorForTokenClassification, EarlyStoppingCallback, Trainer
+    from transformers import DataCollatorForTokenClassification, EarlyStoppingCallback, Trainer, TrainerCallback
 
     run_id = f"{dataset_key}_s{seed}"
     run_dir = runs_dir / run_id
@@ -324,35 +429,25 @@ def train_scenario_model(
         for r in val_records
     ])
 
-    # 1. Cek apakah run sudah selesai di lokal atau di Google Drive (mendukung auto-resume penuh)
-    if not manifest_path.is_file() and (drive_run_dir / "run_manifest.json").is_file():
+    # 1. Cek apakah run sudah selesai & terverifikasi SHA-256 di lokal atau di Google Drive
+    local_verified = verify_completed_run_dir(run_dir, expected_train_hash=train_hash)
+    if local_verified is None and verify_completed_run_dir(drive_run_dir, expected_train_hash=train_hash) is not None:
         try:
-            drive_manifest = json.loads((drive_run_dir / "run_manifest.json").read_text(encoding="utf-8"))
-            if (
-                drive_manifest.get("status") == "complete"
-                and drive_manifest.get("train_hash") == train_hash
-                and (drive_run_dir / "best_model" / "config.json").is_file()
-            ):
-                print(f"☁️ Memulihkan model {run_id} yang telah selesai dari Google Drive...")
-                shutil.copytree(drive_run_dir, run_dir, dirs_exist_ok=True)
+            print(f"☁️ Memulihkan model {run_id} yang telah selesai dan terverifikasi dari Google Drive...")
+            shutil.copytree(drive_run_dir, run_dir, dirs_exist_ok=True)
+            local_verified = verify_completed_run_dir(run_dir, expected_train_hash=train_hash)
         except Exception as exc:
             print(f"⚠️ Gagal memulihkan {run_id} dari Google Drive: {exc}")
 
-    if manifest_path.is_file():
-        existing = json.loads(manifest_path.read_text(encoding="utf-8"))
-        if (
-            existing.get("status") == "complete"
-            and existing.get("train_hash") == train_hash
-            and (best_model_dir / "config.json").is_file()
-        ):
-            hist_csv_path = HISTORIES_DIR / f"{history_prefix}_s{seed}.csv"
-            hist_json_path = HISTORIES_DIR / f"{history_prefix}_s{seed}.json"
-            if (run_dir / "training_history.csv").is_file() and not hist_csv_path.is_file():
-                shutil.copy2(run_dir / "training_history.csv", hist_csv_path)
-            if (run_dir / "training_history.json").is_file() and not hist_json_path.is_file():
-                shutil.copy2(run_dir / "training_history.json", hist_json_path)
-            print(f"✅ Run {run_id} sudah selesai dan terverifikasi. Melewati pelatihan ulang.")
-            return existing
+    if local_verified is not None:
+        hist_csv_path = HISTORIES_DIR / f"{history_prefix}_s{seed}.csv"
+        hist_json_path = HISTORIES_DIR / f"{history_prefix}_s{seed}.json"
+        if (run_dir / "training_history.csv").is_file() and not hist_csv_path.is_file():
+            shutil.copy2(run_dir / "training_history.csv", hist_csv_path)
+        if (run_dir / "training_history.json").is_file() and not hist_json_path.is_file():
+            shutil.copy2(run_dir / "training_history.json", hist_json_path)
+        print(f"✅ Run {run_id} sudah selesai dan terverifikasi (SHA-256 cocok). Melewati pelatihan ulang.")
+        return local_verified
 
     # 2. Chunking kalimat latih & validasi
     print(f"✂️ Melakukan word-aligned chunking (max_length={config['max_seq_length']}) untuk {run_id}...")
@@ -373,21 +468,16 @@ def train_scenario_model(
 
     run_dir.mkdir(parents=True, exist_ok=True)
     ckpt_root = run_dir / "checkpoints"
-    resume_ckpt = None
-    if ckpt_root.is_dir():
-        ckpts = sorted(
-            (p for p in ckpt_root.glob("checkpoint-*") if p.is_dir() and re.fullmatch(r"checkpoint-\d+", p.name)),
-            key=lambda p: int(p.name.rsplit("-", 1)[-1]),
-        )
-        if ckpts:
-            resume_ckpt = str(ckpts[-1])
-            print(f"🔄 Melanjutkan pelatihan {run_id} dari checkpoint: {resume_ckpt}")
+    resume_ckpt = find_or_restore_verified_checkpoint(run_dir, drive_run_dir, train_hash)
+    if resume_ckpt:
+        print(f"🔄 Melanjutkan pelatihan {run_id} dari checkpoint terverifikasi: {resume_ckpt}")
 
     configure_reproducibility(seed)
     model = load_initial_indobert_model(config)
 
     labels = config["labels"]
     kinds = tuple(config["active_types"])
+    require_fp16_scaler = bool(config["fp16"] and CUDA_AVAILABLE)
 
     def compute_metrics(eval_pred):
         logits = eval_pred.predictions[0] if isinstance(eval_pred.predictions, tuple) else eval_pred.predictions
@@ -395,6 +485,22 @@ def train_scenario_model(
         pred_tags = recombine_predictions(val_records, val_chunks, pred_ids, labels)
         scores = span_metrics([row["tags"] for row in val_records], pred_tags, kinds)
         return {k: v for k, v in scores.items() if k != "per_class"}
+
+    class IntegrityAndDriveSyncCallback(TrainerCallback):
+        """Verifikasi keutuhan checkpoint per-epoch dan cadangkan otomatis ke Google Drive."""
+
+        def on_save(self, args, state, control, **kwargs):
+            ckpt_dir = Path(args.output_dir) / f"checkpoint-{state.global_step}"
+            if ckpt_dir.is_dir():
+                write_checkpoint_manifest(ckpt_dir, train_hash, require_scaler=require_fp16_scaler)
+                if config.get("save_best_weights_to_drive", True):
+                    drive_ckpt_root = DRIVE_BASE_DIR / "runs" / run_id / "checkpoints"
+                    sync_to_drive(ckpt_dir, f"runs/{run_id}/checkpoints/{ckpt_dir.name}", verify_hash=False)
+                    if drive_ckpt_root.is_dir():
+                        for old_cp in drive_ckpt_root.glob("checkpoint-*"):
+                            if old_cp.is_dir() and old_cp.name != ckpt_dir.name:
+                                shutil.rmtree(old_cp, ignore_errors=True)
+            return control
 
     trainer = Trainer(
         model=model,
@@ -409,7 +515,8 @@ def train_scenario_model(
             EarlyStoppingCallback(
                 early_stopping_patience=config["early_stopping_patience"],
                 early_stopping_threshold=config["early_stopping_threshold"],
-            )
+            ),
+            IntegrityAndDriveSyncCallback(),
         ],
         **_trainer_tokenizer_kwarg(tokenizer),
     )
@@ -460,6 +567,7 @@ def train_scenario_model(
         "validation_chunks": len(val_chunks),
         "train_hash": train_hash,
         "validation_hash": val_hash,
+        "resumed_from_checkpoint": resume_ckpt,
         "best_checkpoint": trainer.state.best_model_checkpoint,
         "best_validation_macro_f1": float(trainer.state.best_metric or 0.0),
         "epochs_completed": float(trainer.state.epoch or 0.0),
@@ -471,7 +579,7 @@ def train_scenario_model(
     }
     manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    # 4. Bersihkan checkpoint optimizer sementara setelah best_model aman
+    # 4. Bersihkan checkpoint optimizer sementara di lokal setelah best_model aman
     if ckpt_root.is_dir():
         shutil.rmtree(ckpt_root, ignore_errors=True)
 
@@ -480,14 +588,17 @@ def train_scenario_model(
     if CUDA_AVAILABLE:
         torch.cuda.empty_cache()
 
-    # 5. Cadangkan otomatis ke Google Drive
+    # 5. Cadangkan otomatis ke Google Drive (best_model terlebih dahulu, run_manifest.json paling akhir)
     print(f"☁️ Mencadangkan artefak {run_id} ke Google Drive...")
-    for fname in ("run_manifest.json", "training_history.json", "training_history.csv", "trainer_state.json"):
+    if config.get("save_best_weights_to_drive", True):
+        sync_to_drive(best_model_dir, f"runs/{run_id}/best_model", verify_hash=False)
+    for fname in ("training_history.json", "training_history.csv", "trainer_state.json", "run_manifest.json"):
         sync_to_drive(run_dir / fname, f"runs/{run_id}/{fname}")
     sync_to_drive(hist_csv_path, f"histories/{hist_csv_path.name}")
     sync_to_drive(hist_json_path, f"histories/{hist_json_path.name}")
-    if config.get("save_best_weights_to_drive", True):
-        sync_to_drive(best_model_dir, f"runs/{run_id}/best_model", verify_hash=False)
+    drive_ckpt_root = drive_run_dir / "checkpoints"
+    if drive_ckpt_root.is_dir():
+        shutil.rmtree(drive_ckpt_root, ignore_errors=True)
 
     return manifest
 

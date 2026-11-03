@@ -1,6 +1,7 @@
 # =============================================================================
 # SEL 9: EVALUASI HEAD-TO-HEAD PADA NERGRIT GOLD TEST SET (AGREGAT & PER KELAS)
 # =============================================================================
+import statistics
 
 # Referensi Skor Bab 4 Sebelum Verifikasi Ulang 18-Kelas (untuk Perbandingan Dampak Pembersihan)
 HISTORICAL_BAB4_REFERENCE = {
@@ -87,14 +88,28 @@ def evaluate_all_scenarios_on_gold_test(
     for dataset_key, file_prefix, label_title in scenario_specs:
         for seed in seeds:
             run_id = f"{dataset_key}_s{seed}"
-            model_dir = runs_dir / run_id / "best_model"
-            if not (model_dir / "config.json").is_file():
-                drive_model_dir = DRIVE_BASE_DIR / "runs" / run_id / "best_model"
-                if (drive_model_dir / "config.json").is_file():
+            run_dir = runs_dir / run_id
+            drive_run_dir = DRIVE_BASE_DIR / "runs" / run_id
+            model_dir = run_dir / "best_model"
+
+            local_has_manifest = (run_dir / "run_manifest.json").is_file()
+            local_ok = (
+                verify_completed_run_dir(run_dir) is not None
+                if local_has_manifest
+                else (model_dir / "config.json").is_file()
+            )
+            if not local_ok:
+                drive_has_manifest = (drive_run_dir / "run_manifest.json").is_file()
+                drive_ok = (
+                    verify_completed_run_dir(drive_run_dir) is not None
+                    if drive_has_manifest
+                    else (drive_run_dir / "best_model" / "config.json").is_file()
+                )
+                if drive_ok:
                     print(f"☁️ Memulihkan best_model {run_id} dari Google Drive...")
-                    shutil.copytree(drive_model_dir, model_dir, dirs_exist_ok=True)
+                    shutil.copytree(drive_run_dir, run_dir, dirs_exist_ok=True)
                 else:
-                    raise FileNotFoundError(f"Model terbaik tidak ditemukan untuk {run_id} di {model_dir}")
+                    raise FileNotFoundError(f"Model terbaik yang utuh tidak ditemukan untuk {run_id} di {model_dir}")
 
             print(f"🔍 Mengevaluasi {label_title} ({run_id}) pada NERGRIT Gold Test Set ({len(test_records):,} kalimat)...")
             pred_tags = predict_with_model(

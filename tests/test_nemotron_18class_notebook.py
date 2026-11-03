@@ -203,6 +203,11 @@ class TestNemotron18ClassNotebook(unittest.TestCase):
                 self.assertEqual(len(prepared["gold"]["validation"]), 2543)
                 self.assertEqual(len(prepared["gold"]["test"]), 2423)
                 self.assertEqual(prep_manifest["statistics"]["gold"]["test"]["E"], 8890)
+                gold_train_digest = ns["stable_json_hash"]([
+                    {"sentence_id": r["sentence_id"], "tokens": r["tokens"], "tags": r["tags"]}
+                    for r in prepared["gold"]["train"]
+                ])
+                self.assertEqual(gold_train_digest[:12], "26d1055a4d59")
                 self.assertEqual(len(prepared["nemotron_18class"]["train"]), 14896)
                 self.assertEqual(len(prepared["nemotron_18class"]["validation"]), 2629)
                 self.assertTrue((drive_dir / "tables" / "dataset_statistics.csv").is_file())
@@ -499,6 +504,322 @@ class TestNemotron18ClassNotebook(unittest.TestCase):
                 self.assertTrue((drive_dir / "tables" / "per_class_18_comparison.csv").is_file())
                 self.assertTrue((drive_dir / "predictions" / "gold_s42_test_predictions.jsonl").is_file())
                 self.assertTrue((drive_dir / "predictions" / "nemotron_s42_test_predictions.jsonl").is_file())
+            finally:
+                if old_local_env is None:
+                    os.environ.pop("NEMOTRON_LOCAL_WORK_DIR", None)
+                else:
+                    os.environ["NEMOTRON_LOCAL_WORK_DIR"] = old_local_env
+                if old_drive_env is None:
+                    os.environ.pop("NEMOTRON_DRIVE_DIR", None)
+                else:
+                    os.environ["NEMOTRON_DRIVE_DIR"] = old_drive_env
+
+    def test_06_train_scenario_model_checkpoint_integrity_and_drive_resume(self):
+        """Test train_scenario_model, cell7, cell8, predict_with_model, checkpoint verification, Drive resume, and cp1252 safety."""
+        import subprocess
+        import types
+        from unittest.mock import patch
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_root = Path(tmpdir)
+            local_work_dir = tmp_root / "work"
+            drive_dir = tmp_root / "drive"
+
+            # 1. Verify cell2.py runs cleanly in a fresh subprocess with PYTHONIOENCODING=cp1252
+            env_cp1252 = dict(os.environ)
+            env_cp1252["PYTHONIOENCODING"] = "cp1252"
+            env_cp1252["NEMOTRON_LOCAL_WORK_DIR"] = str(local_work_dir)
+            env_cp1252["NEMOTRON_DRIVE_DIR"] = str(drive_dir)
+            proc = subprocess.run(
+                [sys.executable, str(DEFAULT_CELLS_DIR / "cell2.py")],
+                env=env_cp1252,
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                check=False,
+            )
+            self.assertEqual(proc.returncode, 0, f"cell2.py failed under cp1252: {proc.stderr}")
+
+            # 2. Build stub torch, datasets, and transformers modules to exercise train_scenario_model & predict_with_model
+            fake_torch = types.ModuleType("torch")
+            fake_torch.__version__ = "2.5.0+mock"
+            fake_torch.float32 = "float32"
+            fake_torch.manual_seed = lambda s: None
+            fake_torch.are_deterministic_algorithms_enabled = lambda: True
+            fake_torch.cuda = types.SimpleNamespace(
+                is_available=lambda: False,
+                device_count=lambda: 0,
+                is_bf16_supported=lambda: False,
+                empty_cache=lambda: None,
+            )
+            fake_torch.backends = types.SimpleNamespace(
+                cudnn=types.SimpleNamespace(deterministic=True, benchmark=False, allow_tf32=False, version=lambda: None),
+                cuda=types.SimpleNamespace(matmul=types.SimpleNamespace(allow_tf32=False)),
+            )
+
+            fake_datasets = types.ModuleType("datasets")
+
+            class FakeDataset:
+                def __init__(self, items):
+                    self.items = list(items)
+
+                def __len__(self):
+                    return len(self.items)
+
+                @classmethod
+                def from_list(cls, items):
+                    return cls(items)
+
+            fake_datasets.Dataset = FakeDataset
+
+            fake_transformers = types.ModuleType("transformers")
+            fake_transformers.__version__ = "4.46.0+mock"
+            fake_transformers.set_seed = lambda seed, deterministic=True: None
+
+            class FakeTokenizer(MockFastTokenizer):
+                @classmethod
+                def from_pretrained(cls, *args, **kwargs):
+                    return cls()
+
+                def save_pretrained(self, save_dir: str):
+                    p = Path(save_dir)
+                    p.mkdir(parents=True, exist_ok=True)
+                    (p / "tokenizer_config.json").write_text("{}", encoding="utf-8")
+
+            class FakeConfig:
+                num_labels = 37
+                id2label = {}
+                label2id = {}
+                hidden_dropout_prob = 0.1
+                attention_probs_dropout_prob = 0.1
+                classifier_dropout = 0.1
+
+                @classmethod
+                def from_pretrained(cls, *args, **kwargs):
+                    return cls()
+
+            class FakeModel:
+                @classmethod
+                def from_pretrained(cls, pretrained_model_name_or_path, *args, **kwargs):
+                    p = Path(pretrained_model_name_or_path)
+                    if p.exists() and not (p / "model.safetensors").is_file():
+                        raise FileNotFoundError(f"Missing model.safetensors in {p}")
+                    return cls()
+
+            class FakeTrainingArguments:
+                def __init__(
+                    self,
+                    output_dir="",
+                    per_device_train_batch_size=32,
+                    gradient_accumulation_steps=1,
+                    per_device_eval_batch_size=64,
+                    learning_rate=2e-5,
+                    weight_decay=0.01,
+                    adam_beta1=0.9,
+                    adam_beta2=0.999,
+                    adam_epsilon=1e-8,
+                    warmup_ratio=0.10,
+                    lr_scheduler_type="linear",
+                    num_train_epochs=10,
+                    max_grad_norm=1.0,
+                    fp16=False,
+                    bf16=False,
+                    tf32=False,
+                    gradient_checkpointing=False,
+                    save_strategy="epoch",
+                    eval_strategy="epoch",
+                    logging_strategy="epoch",
+                    load_best_model_at_end=True,
+                    metric_for_best_model="macro_f1",
+                    greater_is_better=True,
+                    save_total_limit=1,
+                    restore_callback_states_from_checkpoint=True,
+                    seed=42,
+                    data_seed=42,
+                    report_to="none",
+                    dataloader_num_workers=0,
+                    dataloader_pin_memory=False,
+                    dataloader_persistent_workers=False,
+                    label_smoothing_factor=0.0,
+                    optim="adamw_torch",
+                    full_determinism=False,
+                ):
+                    self.output_dir = output_dir
+
+            class FakeTrainerCallback:
+                pass
+
+            class FakeEarlyStoppingCallback(FakeTrainerCallback):
+                def __init__(self, early_stopping_patience=2, early_stopping_threshold=0.0):
+                    self.patience = early_stopping_patience
+
+            class FakeCollator:
+                def __init__(self, tokenizer, pad_to_multiple_of=8):
+                    self.pad_to_multiple_of = pad_to_multiple_of
+
+            class FakeLogits:
+                def __init__(self, pred_ids_2d):
+                    self._ids = pred_ids_2d
+
+                def argmax(self, axis=-1):
+                    return self._ids
+
+            train_calls = []
+
+            class FakeTrainer:
+                def __init__(
+                    self,
+                    model=None,
+                    args=None,
+                    train_dataset=None,
+                    eval_dataset=None,
+                    data_collator=None,
+                    compute_metrics=None,
+                    callbacks=None,
+                    processing_class=None,
+                ):
+                    self.model = model
+                    self.args = args
+                    self.train_dataset = train_dataset
+                    self.eval_dataset = eval_dataset
+                    self.compute_metrics = compute_metrics
+                    self.callbacks = callbacks or []
+                    self.state = types.SimpleNamespace(
+                        global_step=12,
+                        epoch=2.0,
+                        best_metric=0.8125,
+                        best_model_checkpoint=str(Path(args.output_dir) / "checkpoint-12"),
+                        log_history=[
+                            {"epoch": 1.0, "loss": 0.42},
+                            {"epoch": 1.0, "eval_loss": 0.21, "eval_micro_f1": 0.80, "eval_macro_f1": 0.75},
+                            {"epoch": 2.0, "loss": 0.19},
+                            {"epoch": 2.0, "eval_loss": 0.16, "eval_micro_f1": 0.85, "eval_macro_f1": 0.8125},
+                        ],
+                        to_dict=lambda: {"global_step": 12, "epoch": 2.0, "best_metric": 0.8125},
+                    )
+
+                def train(self, resume_from_checkpoint=None):
+                    train_calls.append(resume_from_checkpoint)
+                    ckpt_dir = Path(self.args.output_dir) / "checkpoint-12"
+                    ckpt_dir.mkdir(parents=True, exist_ok=True)
+                    for req_file in ("optimizer.pt", "scheduler.pt", "trainer_state.json", "rng_state.pth", "config.json", "model.safetensors"):
+                        (ckpt_dir / req_file).write_text(f"mock-{req_file}", encoding="utf-8")
+                    for cb in self.callbacks:
+                        if hasattr(cb, "on_save"):
+                            cb.on_save(self.args, self.state, None)
+                    if self.compute_metrics and self.eval_dataset:
+                        pred_2d = [
+                            [(lbl if lbl != -100 else 0) for lbl in item["labels"]]
+                            for item in self.eval_dataset.items
+                        ]
+                        eval_out = types.SimpleNamespace(predictions=FakeLogits(pred_2d))
+                        metrics = self.compute_metrics(eval_out)
+                        self.state.best_metric = metrics.get("macro_f1", 0.8125)
+                    return types.SimpleNamespace(metrics={"train_loss": 0.19, "train_runtime": 1.5})
+
+                def save_model(self, output_dir: str):
+                    out_p = Path(output_dir)
+                    out_p.mkdir(parents=True, exist_ok=True)
+                    (out_p / "config.json").write_text('{"architectures": ["BertForTokenClassification"]}', encoding="utf-8")
+                    (out_p / "model.safetensors").write_bytes(b"MOCK_INDOBERT_LARGE_SAFENTENSORS_WEIGHTS")
+
+                def predict(self, test_dataset):
+                    pred_2d = [
+                        [(lbl if lbl != -100 else 0) for lbl in item["labels"]]
+                        for item in test_dataset.items
+                    ]
+                    return types.SimpleNamespace(predictions=FakeLogits(pred_2d))
+
+            fake_transformers.AutoTokenizer = FakeTokenizer
+            fake_transformers.AutoConfig = FakeConfig
+            fake_transformers.AutoModelForTokenClassification = FakeModel
+            fake_transformers.TrainingArguments = FakeTrainingArguments
+            fake_transformers.TrainerCallback = FakeTrainerCallback
+            fake_transformers.EarlyStoppingCallback = FakeEarlyStoppingCallback
+            fake_transformers.DataCollatorForTokenClassification = FakeCollator
+            fake_transformers.Trainer = FakeTrainer
+
+            old_local_env = os.environ.get("NEMOTRON_LOCAL_WORK_DIR")
+            old_drive_env = os.environ.get("NEMOTRON_DRIVE_DIR")
+            os.environ["NEMOTRON_LOCAL_WORK_DIR"] = str(local_work_dir)
+            os.environ["NEMOTRON_DRIVE_DIR"] = str(drive_dir)
+
+            try:
+                with patch.dict(
+                    sys.modules,
+                    {"torch": fake_torch, "datasets": fake_datasets, "transformers": fake_transformers},
+                ):
+                    ns = {"__name__": "__main__", "torch": fake_torch}
+                    for cell_name in ("cell2.py", "cell3.py", "cell6.py"):
+                        cell_5_defs = (
+                            "from collections import Counter\n"
+                            "import csv, re\n"
+                            "def entity_spans(tags):\n"
+                            "    res, s, k = [], None, None\n"
+                            "    for idx, t in enumerate(list(tags)+['O']):\n"
+                            "        p, c = ('O', None) if t == 'O' else t.split('-', 1)\n"
+                            "        if s is not None and (p != 'I' or c != k):\n"
+                            "            res.append((s, idx, k)); s, k = None, None\n"
+                            "        if p != 'O' and s is None: s, k = idx, c\n"
+                            "    return res\n"
+                            "def write_csv_rows(path, rows):\n"
+                            "    path.parent.mkdir(parents=True, exist_ok=True)\n"
+                            "    path.write_text('ok', encoding='utf-8')\n"
+                        )
+                        if cell_name == "cell6.py":
+                            exec(cell_5_defs, ns)
+                        exec(compile((DEFAULT_CELLS_DIR / cell_name).read_text(encoding="utf-8"), cell_name, "exec"), ns)
+
+                    mini_records = [
+                        {"sentence_id": "s1", "tokens": ["Presiden", "Joko", "Widodo", "di", "Jakarta"], "tags": ["B-NOR", "B-PER", "I-PER", "O", "B-GPE"]},
+                        {"sentence_id": "s2", "tokens": ["Harga", "BBM", "Rp", "10.000"], "tags": ["O", "B-PRD", "B-MON", "I-MON"]},
+                    ]
+                    ns["PREPARED_DATA"] = {
+                        "gold": {"train": mini_records, "validation": mini_records, "test": mini_records},
+                        "nemotron_18class": {"train": mini_records, "validation": mini_records},
+                    }
+
+                    # Execute cell7.py and cell8.py (fresh training + Drive backup)
+                    exec(compile((DEFAULT_CELLS_DIR / "cell7.py").read_text(encoding="utf-8"), "cell7.py", "exec"), ns)
+                    exec(compile((DEFAULT_CELLS_DIR / "cell8.py").read_text(encoding="utf-8"), "cell8.py", "exec"), ns)
+                    self.assertEqual(len(train_calls), 2)
+                    self.assertIsNone(train_calls[0])
+
+                    # Verify Drive backup has intact best_model and run_manifest.json
+                    drive_gold_run = drive_dir / "runs" / "gold_s42"
+                    self.assertIsNotNone(ns["verify_completed_run_dir"](drive_gold_run))
+
+                    # Simulate Colab VM disconnect: delete local run_dir, re-run cell7 -> must restore from Drive & skip training!
+                    shutil.rmtree(ns["RUNS_DIR"] / "gold_s42")
+                    exec(compile((DEFAULT_CELLS_DIR / "cell7.py").read_text(encoding="utf-8"), "cell7.py", "exec"), ns)
+                    self.assertEqual(len(train_calls), 2, "Should have restored verified model from Drive without retraining!")
+
+                    # Simulate corrupted/incomplete Drive backup (model.safetensors missing, config.json still present)
+                    shutil.rmtree(ns["RUNS_DIR"] / "gold_s42")
+                    (drive_gold_run / "best_model" / "model.safetensors").unlink()
+                    self.assertIsNone(ns["verify_completed_run_dir"](drive_gold_run))
+
+                    # Also place a verified checkpoint-8 and an incomplete checkpoint-9 on Drive to test checkpoint auto-restore
+                    train_hash = ns["GOLD_RUN_MANIFESTS"][42]["train_hash"]
+                    cp8 = drive_gold_run / "checkpoints" / "checkpoint-8"
+                    cp8.mkdir(parents=True, exist_ok=True)
+                    for req_file in ("optimizer.pt", "scheduler.pt", "trainer_state.json", "rng_state.pth", "config.json", "model.safetensors"):
+                        (cp8 / req_file).write_text(f"cp8-{req_file}", encoding="utf-8")
+                    ns["write_checkpoint_manifest"](cp8, train_hash, require_scaler=False)
+
+                    cp9_corrupt = drive_gold_run / "checkpoints" / "checkpoint-9"
+                    cp9_corrupt.mkdir(parents=True, exist_ok=True)
+                    (cp9_corrupt / "config.json").write_text("{}", encoding="utf-8")
+
+                    exec(compile((DEFAULT_CELLS_DIR / "cell7.py").read_text(encoding="utf-8"), "cell7.py", "exec"), ns)
+                    self.assertEqual(len(train_calls), 3, "Corrupted best_model must trigger retraining!")
+                    self.assertTrue(str(train_calls[-1]).endswith("checkpoint-8"), f"Expected resume from checkpoint-8, got {train_calls[-1]}")
+
+                    # Execute cell9.py using the real predict_with_model (not monkeypatched)
+                    exec(compile((DEFAULT_CELLS_DIR / "cell9.py").read_text(encoding="utf-8"), "cell9.py", "exec"), ns)
+                    self.assertEqual(ns["EVAL_BUNDLE"]["evaluation_results"]["gold"][42]["support"], 5)
+                    self.assertEqual(ns["EVAL_BUNDLE"]["evaluation_results"]["gold"][42]["fn"], 5)
             finally:
                 if old_local_env is None:
                     os.environ.pop("NEMOTRON_LOCAL_WORK_DIR", None)

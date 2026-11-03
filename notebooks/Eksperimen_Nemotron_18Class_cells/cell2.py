@@ -12,6 +12,13 @@ import shutil
 import sys
 import time
 
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+
 # 1. Taksonomi 18 Kelas Entitas Aktif (Tanpa REG dan TTL)
 ACTIVE_TYPES = (
     "CRD", "DAT", "EVT", "FAC", "GPE", "LAN", "LAW", "LOC", "MON",
@@ -54,7 +61,7 @@ DROPOUT = 0.10
 MAX_GRAD_NORM = 1.0
 PAD_TO_MULTIPLE_OF = 8
 OPTIM = "adamw_torch"
-DATALOADER_NUM_WORKERS = 2
+DATALOADER_NUM_WORKERS = 4
 SAVE_BEST_WEIGHTS_TO_DRIVE = True
 
 CONFIG = {
