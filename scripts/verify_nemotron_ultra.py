@@ -808,7 +808,6 @@ def export_verified_dataset(output_dir: Path):
     conll_export_path = output_dir / "corrected_nemotron_18class.conll"
 
     all_data = []
-    seen_texts = set()
     conll_sentences = []
     class_distribution = {etype: 0 for etype in ACTIVE_ENTITY_TYPES}
 
@@ -819,10 +818,6 @@ def export_verified_dataset(output_dir: Path):
                 continue
             try:
                 item = json.loads(line)
-                txt = item.get("text", "")
-                if txt in seen_texts:
-                    continue
-                seen_texts.add(txt)
                 all_data.append(item)
             except Exception:
                 continue

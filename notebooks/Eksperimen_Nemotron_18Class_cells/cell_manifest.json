@@ -1,0 +1,60 @@
+{
+  "format": "nemotron-18class-colab-cells-v1",
+  "notebook_output": "notebooks/Eksperimen_Nemotron_18Class_Colab.ipynb",
+  "bundle_output": "notebooks/nemotron_18class_colab_bundle.zip",
+  "training_seeds": [42],
+  "entity_classes": 18,
+  "bio_tags": 37,
+  "cells": [
+    {
+      "file": "cell1.py",
+      "cell_type": "markdown",
+      "title": "Judul, Dokumentasi Metodologi, & Tabel Hiperparameter"
+    },
+    {
+      "file": "cell2.py",
+      "cell_type": "code",
+      "title": "Konfigurasi Eksperimen, Seed [42], & Mount Google Drive Otomatis"
+    },
+    {
+      "file": "cell3.py",
+      "cell_type": "code",
+      "title": "Instalasi Dependensi, Deteksi GPU (BF16/FP16), & Reproduksibilitas"
+    },
+    {
+      "file": "cell4.py",
+      "cell_type": "code",
+      "title": "Unduh/Ekstrak Bundle Data Gold & Nemotron 18-Kelas + Sinkronisasi Drive Otomatis"
+    },
+    {
+      "file": "cell5.py",
+      "cell_type": "code",
+      "title": "Pre-processing, Anti-Leakage Split (Jaccard 5-Gram >= 0.90), & Statistik 18 Kelas"
+    },
+    {
+      "file": "cell6.py",
+      "cell_type": "code",
+      "title": "Word-Aligned Lossless Chunking (256) & Evaluator Span CoNLL Exact-Match"
+    },
+    {
+      "file": "cell7.py",
+      "cell_type": "code",
+      "title": "Pelatihan Skenario 1: NERGRIT Gold Baseline (Seed 42)"
+    },
+    {
+      "file": "cell8.py",
+      "cell_type": "code",
+      "title": "Pelatihan Skenario 2: Korpus Sintetis Nemotron 18-Kelas Baru (Seed 42)"
+    },
+    {
+      "file": "cell9.py",
+      "cell_type": "code",
+      "title": "Evaluasi Head-to-Head pada NERGRIT Gold Test Set (Agregat & Per Kelas)"
+    },
+    {
+      "file": "cell10.py",
+      "cell_type": "code",
+      "title": "Analisis Galat Otomatis, Visualisasi Grafik, Pengemasan .zip, & Upload Drive Otomatis"
+    }
+  ]
+}
