@@ -55,9 +55,42 @@ except ImportError:
 DEFAULT_MODEL = "nvidia/nemotron-3-ultra-550b-a55b:free"
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
-# Default API key (base64 encoded to protect repository secret scanning while retaining zero-config execution)
+def format_api_key(key: Optional[str]) -> str:
+    """Ensure OpenRouter API key is formatted with sk-or-v1- prefix."""
+    if not key or not key.strip():
+        return ""
+    key = key.strip()
+    if not key.startswith("sk-or-v1-"):
+        if key.startswith("sk-or-"):
+            key = "sk-or-v1-" + key[len("sk-or-"):]
+        elif key.startswith("sk-"):
+            key = "sk-or-v1-" + key[len("sk-"):]
+        else:
+            key = "sk-or-v1-" + key
+    return key
+
+
+def resolve_api_key(cli_key: Optional[str] = None) -> str:
+    """Retrieve OpenRouter API key from CLI argument, environment variable, or Windows registry."""
+    if cli_key and cli_key.strip():
+        return format_api_key(cli_key)
+    env_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+    if env_key:
+        return format_api_key(env_key)
+    if sys.platform == "win32":
+        try:
+            import winreg
+            with winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"Environment") as rkey:
+                reg_val, _ = winreg.QueryValueEx(rkey, "OPENROUTER_API_KEY")
+                if reg_val and reg_val.strip():
+                    return format_api_key(reg_val)
+        except Exception:
+            pass
+    return ""
+
+
 _DEFAULT_KEY_B64 = b""
-DEFAULT_API_KEY = base64.b64decode(_DEFAULT_KEY_B64).decode("ascii")
+DEFAULT_API_KEY = resolve_api_key()
 
 HF_RAW_URL = "https://huggingface.co/datasets/treamyracle/distilled-indonesian-ner-v2/resolve/main/json/raw_distilled_nemotron_17525.json"
 DEFAULT_RAW_FILE = "data/distilled/raw/raw_distilled_nemotron_17525.json"
@@ -141,19 +174,6 @@ TIME_PREFIXES = [
 # HELPER FUNCTIONS & API KEY SANITIZATION
 # =============================================================================
 
-def format_api_key(key: Optional[str]) -> str:
-    """Ensure OpenRouter API key is formatted with sk-or-v1- prefix."""
-    if not key or not key.strip():
-        key = DEFAULT_API_KEY
-    key = key.strip()
-    if not key.startswith("sk-or-v1-"):
-        if key.startswith("sk-or-"):
-            key = "sk-or-v1-" + key[len("sk-or-"):]
-        elif key.startswith("sk-"):
-            key = "sk-or-v1-" + key[len("sk-"):]
-        else:
-            key = "sk-or-v1-" + key
-    return key
 
 
 def get_repo_root() -> Path:
@@ -873,7 +893,7 @@ def run_verification(args: argparse.Namespace):
     state_file = output_dir / "state.json"
     telemetry_file = output_dir / "telemetry.jsonl"
 
-    api_key = format_api_key(args.api_key or os.environ.get("OPENROUTER_API_KEY"))
+    api_key = resolve_api_key(args.api_key)
 
     # Load or download raw dataset
     raw_items = ensure_raw_dataset(raw_file)
