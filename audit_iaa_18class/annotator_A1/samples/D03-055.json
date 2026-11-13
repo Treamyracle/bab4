@@ -1,0 +1,90 @@
+{
+  "sample_id": "D03-055",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        1,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          1,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        4,
+        7,
+        "MON"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          4,
+          7,
+          "MON"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        14,
+        19,
+        "LAW"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          14,
+          19,
+          "LAW"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      1,
+      "NOR"
+    ],
+    [
+      4,
+      7,
+      "MON"
+    ],
+    [
+      14,
+      19,
+      "LAW"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:26:23"
+}

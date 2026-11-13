@@ -1,0 +1,114 @@
+{
+  "sample_id": "D03-070",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        2,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          2,
+          "PRD"
+        ]
+      ],
+      "note": "Moda sarana transportasi fisik/kereta perkotaan tepat berkelas PRD."
+    },
+    {
+      "id": "E002",
+      "original": [
+        3,
+        5,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          3,
+          5,
+          "PRD"
+        ]
+      ],
+      "note": "Moda sarana transportasi fisik/kereta perkotaan tepat berkelas PRD."
+    },
+    {
+      "id": "E003",
+      "original": [
+        11,
+        12,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          11,
+          12,
+          "GPE"
+        ]
+      ],
+      "note": "Jakarta adalah entitas geopolitik administratif berkelas GPE."
+    },
+    {
+      "id": "E004",
+      "original": [
+        17,
+        19,
+        "PRC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          17,
+          19,
+          "PRC"
+        ]
+      ],
+      "note": "Nilai persentase leksikal tepat berkelas PRC, kata 'mencapai' di luar span."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      2,
+      "PRD"
+    ],
+    [
+      3,
+      5,
+      "PRD"
+    ],
+    [
+      11,
+      12,
+      "GPE"
+    ],
+    [
+      17,
+      19,
+      "PRC"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:17:37"
+}

@@ -1,0 +1,98 @@
+{
+  "data": [
+    {
+      "text": "Kepala BNPB Letjen Suharyanto memimpin evakuasi warga setelah erupsi Gunung Merapi di Kabupaten Sleman, Daerah Istimewa Yogyakarta, pada Senin pukul 09.30 WIB, sementara PMI mengerahkan 150 relawan dan tiga ambulans ke Stadion Maguwoharjo.",
+      "entities": [
+        {
+          "entity": "Kepala",
+          "type": "NOR"
+        },
+        {
+          "entity": "BNPB",
+          "type": "NOR"
+        },
+        {
+          "entity": "Letjen Suharyanto",
+          "type": "PER"
+        },
+        {
+          "entity": "Gunung Merapi",
+          "type": "LOC"
+        },
+        {
+          "entity": "Kabupaten Sleman",
+          "type": "GPE"
+        },
+        {
+          "entity": "Daerah Istimewa Yogyakarta",
+          "type": "GPE"
+        },
+        {
+          "entity": "Senin",
+          "type": "DAT"
+        },
+        {
+          "entity": "09.30 WIB",
+          "type": "TIM"
+        },
+        {
+          "entity": "PMI",
+          "type": "NOR"
+        },
+        {
+          "entity": "150",
+          "type": "CRD"
+        },
+        {
+          "entity": "tiga",
+          "type": "CRD"
+        },
+        {
+          "entity": "ambulans",
+          "type": "PRD"
+        },
+        {
+          "entity": "Stadion Maguwoharjo",
+          "type": "FAC"
+        }
+      ]
+    },
+    {
+      "text": "Gubernur Jawa Barat Dedi Mulyadi menetapkan status tanggap darurat Banjir Bandang Garut setelah Sungai Cimanuk meluap, dan Kementerian Sosial menyalurkan bantuan senilai Rp 5 miliar kepada korban di Kabupaten Garut.",
+      "entities": [
+        {
+          "entity": "Gubernur",
+          "type": "NOR"
+        },
+        {
+          "entity": "Jawa Barat",
+          "type": "GPE"
+        },
+        {
+          "entity": "Dedi Mulyadi",
+          "type": "PER"
+        },
+        {
+          "entity": "Banjir Bandang Garut",
+          "type": "EVT"
+        },
+        {
+          "entity": "Sungai Cimanuk",
+          "type": "LOC"
+        },
+        {
+          "entity": "Kementerian Sosial",
+          "type": "NOR"
+        },
+        {
+          "entity": "Rp 5 miliar",
+          "type": "MON"
+        },
+        {
+          "entity": "Kabupaten Garut",
+          "type": "GPE"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "sample_id": "D01-097",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        2,
+        5,
+        "FAC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          2,
+          5,
+          "FAC"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        6,
+        8,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          6,
+          8,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        10,
+        14,
+        "QTY"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:CRD:11-13",
+      "replacement_spans": [
+        [
+          10,
+          13,
+          "CRD"
+        ]
+      ],
+      "note": "5 . 000 adalah bilangan cacah (CRD), sedangkan kata penggolong 'unit' berstatus O dan bukan satuan ukuran fisik (QTY)"
+    },
+    {
+      "id": "E004",
+      "original": [
+        19,
+        21,
+        "QTY"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          19,
+          21,
+          "QTY"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        25,
+        28,
+        "MON"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          25,
+          28,
+          "MON"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E006",
+      "original": [
+        31,
+        33,
+        "DAT"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:DAT:33-33",
+      "replacement_spans": [
+        [
+          32,
+          33,
+          "DAT"
+        ]
+      ],
+      "note": "Eksklusi kata penunjuk waktu 'tahun' ke O; entitas DAT tunggal adalah angka tahun 2028"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      2,
+      5,
+      "FAC"
+    ],
+    [
+      6,
+      8,
+      "GPE"
+    ],
+    [
+      10,
+      13,
+      "CRD"
+    ],
+    [
+      19,
+      21,
+      "QTY"
+    ],
+    [
+      25,
+      28,
+      "MON"
+    ],
+    [
+      32,
+      33,
+      "DAT"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:50:41"
+}

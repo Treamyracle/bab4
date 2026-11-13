@@ -1,0 +1,138 @@
+{
+  "sample_id": "D02-089",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        2,
+        3,
+        "ORG"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          2,
+          3,
+          "ORG"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        3,
+        6,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          3,
+          6,
+          "PER"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        11,
+        13,
+        "LOC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          11,
+          13,
+          "LOC"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        14,
+        16,
+        "LOC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          14,
+          16,
+          "LOC"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        19,
+        20,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          19,
+          20,
+          "PRD"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      2,
+      3,
+      "ORG"
+    ],
+    [
+      3,
+      6,
+      "PER"
+    ],
+    [
+      11,
+      13,
+      "LOC"
+    ],
+    [
+      14,
+      16,
+      "LOC"
+    ],
+    [
+      19,
+      20,
+      "PRD"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:24:44"
+}

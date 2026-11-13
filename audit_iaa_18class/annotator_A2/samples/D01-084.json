@@ -1,0 +1,186 @@
+{
+  "sample_id": "D01-084",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        2,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          2,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        3,
+        6,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          3,
+          6,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        8,
+        9,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          8,
+          9,
+          "PRD"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        11,
+        14,
+        "QTY"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          11,
+          14,
+          "QTY"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        15,
+        17,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          15,
+          17,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E006",
+      "original": [
+        20,
+        21,
+        "ORG"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          20,
+          21,
+          "ORG"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E007",
+      "original": [
+        24,
+        25,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          24,
+          25,
+          "PRD"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      3,
+      6,
+      "NOR"
+    ],
+    [
+      8,
+      9,
+      "PRD"
+    ],
+    [
+      11,
+      14,
+      "QTY"
+    ],
+    [
+      15,
+      17,
+      "DAT"
+    ],
+    [
+      20,
+      21,
+      "ORG"
+    ],
+    [
+      24,
+      25,
+      "PRD"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:47:20"
+}

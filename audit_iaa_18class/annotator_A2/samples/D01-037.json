@@ -1,0 +1,114 @@
+{
+  "sample_id": "D01-037",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        2,
+        "ORG"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          2,
+          "ORG"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        5,
+        6,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          5,
+          6,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        15,
+        21,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          15,
+          21,
+          "PER"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        22,
+        25,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          22,
+          25,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      2,
+      "ORG"
+    ],
+    [
+      5,
+      6,
+      "NOR"
+    ],
+    [
+      15,
+      21,
+      "PER"
+    ],
+    [
+      22,
+      25,
+      "DAT"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:38:09"
+}

@@ -1,0 +1,162 @@
+{
+  "sample_id": "D02-068",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        4,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          4,
+          "NOR"
+        ]
+      ],
+      "note": "Lembaga pemerintah nonkementerian sesuai kelas NOR dan Aturan 4"
+    },
+    {
+      "id": "E002",
+      "original": [
+        5,
+        8,
+        "CRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          5,
+          8,
+          "CRD"
+        ]
+      ],
+      "note": "Bilangan cacah murni sesuai kelas CRD"
+    },
+    {
+      "id": "E003",
+      "original": [
+        11,
+        13,
+        "LOC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          11,
+          13,
+          "LOC"
+        ]
+      ],
+      "note": "Bentang alam alami (gunung) non-administratif tanpa menyerap kata 'lereng' sesuai kelas LOC dan Aturan 9"
+    },
+    {
+      "id": "E004",
+      "original": [
+        14,
+        16,
+        "FAC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          14,
+          16,
+          "FAC"
+        ]
+      ],
+      "note": "Bangunan fisik buatan manusia (stadion) tanpa preposisi 'ke' sesuai kelas FAC dan Aturan 9"
+    },
+    {
+      "id": "E005",
+      "original": [
+        18,
+        22,
+        "TIM"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          18,
+          22,
+          "TIM"
+        ]
+      ],
+      "note": "Waktu jam spesifik dan zona waktu dengan mengeksklusi kata 'pukul' sesuai kelas TIM dan Aturan 7"
+    },
+    {
+      "id": "E006",
+      "original": [
+        23,
+        26,
+        "EVT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          23,
+          26,
+          "EVT"
+        ]
+      ],
+      "note": "Peristiwa bencana alam spesifik tanpa menyerap konjungsi 'setelah' sesuai kelas EVT"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      4,
+      "NOR"
+    ],
+    [
+      5,
+      8,
+      "CRD"
+    ],
+    [
+      11,
+      13,
+      "LOC"
+    ],
+    [
+      14,
+      16,
+      "FAC"
+    ],
+    [
+      18,
+      22,
+      "TIM"
+    ],
+    [
+      23,
+      26,
+      "EVT"
+    ]
+  ],
+  "notes": "Anotasi sudah sempurna dan sepenuhnya mematuhi batas entitas serta aturan eksklusi preposisi.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:08:54"
+}

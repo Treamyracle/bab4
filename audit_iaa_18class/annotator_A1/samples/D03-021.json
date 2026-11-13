@@ -1,0 +1,127 @@
+{
+  "sample_id": "D03-021",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        1,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          1,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        1,
+        2,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          1,
+          2,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        5,
+        6,
+        "PRD"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "5G adalah standar teknologi jaringan, bukan produk fisik atau gawai dalam cakupan PRD."
+    },
+    {
+      "id": "E004",
+      "original": [
+        6,
+        7,
+        "ORD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          6,
+          7,
+          "ORD"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        14,
+        16,
+        "QTY"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          14,
+          16,
+          "QTY"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      1,
+      "NOR"
+    ],
+    [
+      1,
+      2,
+      "GPE"
+    ],
+    [
+      6,
+      7,
+      "ORD"
+    ],
+    [
+      14,
+      16,
+      "QTY"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:25:44"
+}

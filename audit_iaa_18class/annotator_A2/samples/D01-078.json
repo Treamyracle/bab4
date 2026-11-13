@@ -1,0 +1,175 @@
+{
+  "sample_id": "D01-078",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        4,
+        "GPE"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:GPE:4-4",
+      "replacement_spans": [
+        [
+          3,
+          4,
+          "GPE"
+        ]
+      ],
+      "note": "Perbaiki batas entitas GPE menjadi hanya 'Nusantara' (token 4); frasa deskriptif 'Kota Smart City' bukan bagian dari nama resmi entitas geopolitik."
+    },
+    {
+      "id": "E002",
+      "original": [
+        5,
+        6,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          5,
+          6,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        9,
+        12,
+        "FAC"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "'jaringan transporte listrik' adalah frasa benda umum / sistem konseptual, bukan nama bangunan fisik atau infrastruktur buatan manusia (FAC)."
+    },
+    {
+      "id": "E004",
+      "original": [
+        14,
+        15,
+        "CRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          14,
+          15,
+          "CRD"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        15,
+        17,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          15,
+          17,
+          "PRD"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E006",
+      "original": [
+        19,
+        20,
+        "ORG"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          19,
+          20,
+          "ORG"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E007",
+      "original": [
+        23,
+        24,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          23,
+          24,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      3,
+      4,
+      "GPE"
+    ],
+    [
+      5,
+      6,
+      "GPE"
+    ],
+    [
+      14,
+      15,
+      "CRD"
+    ],
+    [
+      15,
+      17,
+      "PRD"
+    ],
+    [
+      19,
+      20,
+      "ORG"
+    ],
+    [
+      23,
+      24,
+      "DAT"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:44:08"
+}

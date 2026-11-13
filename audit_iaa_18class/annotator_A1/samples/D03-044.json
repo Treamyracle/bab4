@@ -1,0 +1,105 @@
+{
+  "sample_id": "D03-044",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        1,
+        "NOR"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:NOR:1-2",
+      "replacement_spans": [
+        [
+          0,
+          2,
+          "NOR"
+        ]
+      ],
+      "note": "Jabatan struktural dan lembaga membentuk span NOR Kepala BSSN"
+    },
+    {
+      "id": "E002",
+      "original": [
+        1,
+        2,
+        "NOR"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "BSSN sudah tercakup dalam span NOR Kepala BSSN"
+    },
+    {
+      "id": "E003",
+      "original": [
+        3,
+        5,
+        "PER"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "Teks berulang Hrepetitions bukan nama individu yang sah"
+    },
+    {
+      "id": "E004",
+      "original": [
+        16,
+        20,
+        "TIM"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          16,
+          20,
+          "TIM"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        21,
+        22,
+        "DAT"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "Kata ini bukan tanggal"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      16,
+      20,
+      "TIM"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:26:20"
+}

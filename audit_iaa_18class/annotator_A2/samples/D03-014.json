@@ -1,0 +1,103 @@
+{
+  "sample_id": "D03-014",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        2,
+        "NOR"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:NOR:1-3",
+      "replacement_spans": [
+        [
+          0,
+          3,
+          "NOR"
+        ]
+      ],
+      "note": "Perluas span NOR agar mencakup nama kota Jakarta menjadi satu kesatuan lembaga Pemerintah Kota Jakarta"
+    },
+    {
+      "id": "E002",
+      "original": [
+        2,
+        3,
+        "GPE"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "Diserap ke dalam span NOR Pemerintah Kota Jakarta (E001)"
+    },
+    {
+      "id": "E003",
+      "original": [
+        14,
+        16,
+        "FAC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          14,
+          16,
+          "FAC"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        17,
+        18,
+        "ORD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          17,
+          18,
+          "ORD"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      3,
+      "NOR"
+    ],
+    [
+      14,
+      16,
+      "FAC"
+    ],
+    [
+      17,
+      18,
+      "ORD"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:08:50"
+}

@@ -1,0 +1,22 @@
+{
+  "python_version": "3.13.16",
+  "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+  "torch_version": "2.11.0+cu130",
+  "torch_cuda_version": "13.0",
+  "cudnn_version": 92700,
+  "transformers_version": "5.22.0",
+  "cuda_available": true,
+  "gpu_name": "NVIDIA A100-SXM4-40GB",
+  "gpu_count": 1,
+  "vram_gib": 39.49,
+  "compute_capability": [
+    8,
+    0
+  ],
+  "bf16_supported": true,
+  "precision_mode": "bf16",
+  "deterministic_algorithms": true,
+  "cudnn_deterministic": true,
+  "cudnn_benchmark": false,
+  "tf32_allowed": false
+}

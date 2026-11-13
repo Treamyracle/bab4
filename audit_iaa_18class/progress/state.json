@@ -1,0 +1,28 @@
+{
+  "updated_at": "2026-11-14T03:41:52",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "annotators": {
+    "A1": {
+      "model": "cx/gpt-6-luna",
+      "reasoning_effort": "high",
+      "completed": 300,
+      "total": 300,
+      "per_dataset_completed": {
+        "D01": 100,
+        "D02": 100,
+        "D03": 100
+      }
+    },
+    "A2": {
+      "model": "ag/gemini-3.8-flash-high",
+      "reasoning_effort": "high",
+      "completed": 300,
+      "total": 300,
+      "per_dataset_completed": {
+        "D01": 100,
+        "D02": 100,
+        "D03": 100
+      }
+    }
+  }
+}

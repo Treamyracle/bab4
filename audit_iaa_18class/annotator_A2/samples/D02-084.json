@@ -1,0 +1,114 @@
+{
+  "sample_id": "D02-084",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        3,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          3,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        5,
+        7,
+        "EVT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          5,
+          7,
+          "EVT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        8,
+        12,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          8,
+          12,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        13,
+        17,
+        "PRC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          13,
+          17,
+          "PRC"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      3,
+      "NOR"
+    ],
+    [
+      5,
+      7,
+      "EVT"
+    ],
+    [
+      8,
+      12,
+      "NOR"
+    ],
+    [
+      13,
+      17,
+      "PRC"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:04:09"
+}

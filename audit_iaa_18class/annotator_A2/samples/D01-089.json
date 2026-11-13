@@ -1,0 +1,271 @@
+{
+  "sample_id": "D01-089",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        2,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          2,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        2,
+        3,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          2,
+          3,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        4,
+        5,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          4,
+          5,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        6,
+        10,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          6,
+          10,
+          "PER"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        16,
+        19,
+        "EVT"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "Bukan entitas bernama resmi (frasa nomina umum/deskriptif, bukan ajang pameran spesifik EVT)"
+    },
+    {
+      "id": "E006",
+      "original": [
+        20,
+        21,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          20,
+          21,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E007",
+      "original": [
+        22,
+        23,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          22,
+          23,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E008",
+      "original": [
+        24,
+        27,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          24,
+          27,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E009",
+      "original": [
+        31,
+        32,
+        "LAW"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          31,
+          32,
+          "LAW"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E010",
+      "original": [
+        36,
+        39,
+        "ORG"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          36,
+          39,
+          "ORG"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E011",
+      "original": [
+        42,
+        47,
+        "MON"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          42,
+          47,
+          "MON"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      2,
+      3,
+      "GPE"
+    ],
+    [
+      4,
+      5,
+      "GPE"
+    ],
+    [
+      6,
+      10,
+      "PER"
+    ],
+    [
+      20,
+      21,
+      "GPE"
+    ],
+    [
+      22,
+      23,
+      "DAT"
+    ],
+    [
+      24,
+      27,
+      "DAT"
+    ],
+    [
+      31,
+      32,
+      "LAW"
+    ],
+    [
+      36,
+      39,
+      "ORG"
+    ],
+    [
+      42,
+      47,
+      "MON"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:52:58"
+}

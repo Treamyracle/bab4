@@ -1,0 +1,207 @@
+{
+  "sample_id": "D01-054",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        3,
+        6,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          3,
+          6,
+          "PER"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        11,
+        15,
+        "ORG"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          11,
+          15,
+          "ORG"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        16,
+        19,
+        "EVT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          16,
+          19,
+          "EVT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        20,
+        22,
+        "FAC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          20,
+          22,
+          "FAC"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        23,
+        24,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          23,
+          24,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E006",
+      "original": [
+        26,
+        27,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          26,
+          27,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E007",
+      "original": [
+        28,
+        31,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          28,
+          31,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      2,
+      3,
+      "NOR"
+    ]
+  ],
+  "final_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      2,
+      3,
+      "NOR"
+    ],
+    [
+      3,
+      6,
+      "PER"
+    ],
+    [
+      11,
+      15,
+      "ORG"
+    ],
+    [
+      16,
+      19,
+      "EVT"
+    ],
+    [
+      20,
+      22,
+      "FAC"
+    ],
+    [
+      23,
+      24,
+      "GPE"
+    ],
+    [
+      26,
+      27,
+      "DAT"
+    ],
+    [
+      28,
+      31,
+      "DAT"
+    ]
+  ],
+  "notes": "Jabatan Ketua Umum dan organisasi PSSI terlewat.",
+  "normalizations": [],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:20:17"
+}

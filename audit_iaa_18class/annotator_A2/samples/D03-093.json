@@ -1,0 +1,114 @@
+{
+  "sample_id": "D03-093",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        2,
+        6,
+        "TIM"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          2,
+          6,
+          "TIM"
+        ]
+      ],
+      "note": "Waktu jam spesifik 10 . 00 WIB tepat berlabel TIM tanpa menyerap preposisi dan kata pukul."
+    },
+    {
+      "id": "E002",
+      "original": [
+        7,
+        8,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          7,
+          8,
+          "NOR"
+        ]
+      ],
+      "note": "Jabatan struktural kenegaraan Presiden tepat berlabel NOR."
+    },
+    {
+      "id": "E003",
+      "original": [
+        15,
+        17,
+        "FAC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          15,
+          17,
+          "FAC"
+        ]
+      ],
+      "note": "Bangunan fisik istana kepresidenan Istana Negara tepat berlabel FAC."
+    },
+    {
+      "id": "E004",
+      "original": [
+        21,
+        22,
+        "ORD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          21,
+          22,
+          "ORD"
+        ]
+      ],
+      "note": "Bilangan urutan pertama tepat berlabel ORD."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      2,
+      6,
+      "TIM"
+    ],
+    [
+      7,
+      8,
+      "NOR"
+    ],
+    [
+      15,
+      17,
+      "FAC"
+    ],
+    [
+      21,
+      22,
+      "ORD"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:18:25"
+}

@@ -1,0 +1,162 @@
+{
+  "sample_id": "D02-039",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        4,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          4,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        5,
+        6,
+        "CRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          5,
+          6,
+          "CRD"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        12,
+        17,
+        "LOC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          12,
+          17,
+          "LOC"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        18,
+        20,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          18,
+          20,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        21,
+        22,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          21,
+          22,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E006",
+      "original": [
+        23,
+        27,
+        "TIM"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          23,
+          27,
+          "TIM"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      4,
+      "NOR"
+    ],
+    [
+      5,
+      6,
+      "CRD"
+    ],
+    [
+      12,
+      17,
+      "LOC"
+    ],
+    [
+      18,
+      20,
+      "GPE"
+    ],
+    [
+      21,
+      22,
+      "DAT"
+    ],
+    [
+      23,
+      27,
+      "TIM"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:55:23"
+}

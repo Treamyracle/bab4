@@ -1,0 +1,319 @@
+{
+  "sample_id": "D01-031",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        2,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          2,
+          "NOR"
+        ]
+      ],
+      "note": "Duta Besar merupakan jabatan diplomatik struktural kenegaraan (NOR) yang tepat dipisah dari nama orang."
+    },
+    {
+      "id": "E002",
+      "original": [
+        2,
+        3,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          2,
+          3,
+          "GPE"
+        ]
+      ],
+      "note": "Jepang adalah entitas geopolitik administratif berdaulat (GPE)."
+    },
+    {
+      "id": "E003",
+      "original": [
+        4,
+        5,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          4,
+          5,
+          "GPE"
+        ]
+      ],
+      "note": "Indonesia adalah entitas geopolitik administratif berdaulat (GPE)."
+    },
+    {
+      "id": "E004",
+      "original": [
+        6,
+        8,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          6,
+          8,
+          "PER"
+        ]
+      ],
+      "note": "Kenichi Suganuma adalah nama individu (PER)."
+    },
+    {
+      "id": "E005",
+      "original": [
+        10,
+        12,
+        "EVT"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "Pertemuan bilateral adalah frasa nomina umum aktivitas diplomasi, bukan nama peristiwa resmi bersejarah atau ajang terorganisasi (EVT)."
+    },
+    {
+      "id": "E006",
+      "original": [
+        13,
+        16,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          13,
+          16,
+          "NOR"
+        ]
+      ],
+      "note": "Menteri Luar Negeri adalah jabatan struktural kementerian kenegaraan (NOR)."
+    },
+    {
+      "id": "E007",
+      "original": [
+        16,
+        17,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          16,
+          17,
+          "GPE"
+        ]
+      ],
+      "note": "Indonesia adalah entitas geopolitik administratif (GPE)."
+    },
+    {
+      "id": "E008",
+      "original": [
+        17,
+        19,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          17,
+          19,
+          "PER"
+        ]
+      ],
+      "note": "Retno Marsudi adalah nama individu (PER)."
+    },
+    {
+      "id": "E009",
+      "original": [
+        20,
+        21,
+        "GPE"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:LOC:21-21",
+      "replacement_spans": [
+        [
+          20,
+          21,
+          "LOC"
+        ]
+      ],
+      "note": "Kansai adalah kawasan regional/geografis non-administratif di Jepang, bukan entitas geopolitik berpemerintahan resmi (GPE), sehingga harus diklasifikasikan sebagai LOC."
+    },
+    {
+      "id": "E010",
+      "original": [
+        22,
+        23,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          22,
+          23,
+          "GPE"
+        ]
+      ],
+      "note": "Jepang adalah entitas geopolitik administratif berdaulat (GPE)."
+    },
+    {
+      "id": "E011",
+      "original": [
+        25,
+        26,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          25,
+          26,
+          "DAT"
+        ]
+      ],
+      "note": "Selasa adalah nama hari kalender (DAT)."
+    },
+    {
+      "id": "E012",
+      "original": [
+        27,
+        30,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          27,
+          30,
+          "DAT"
+        ]
+      ],
+      "note": "3 September 2024 adalah penanggalan kalender lengkap (DAT) yang dipisah dari hari oleh tanda koma."
+    },
+    {
+      "id": "E013",
+      "original": [
+        31,
+        35,
+        "TIM"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          31,
+          35,
+          "TIM"
+        ]
+      ],
+      "note": "09 : 00 JST adalah waktu arloji spesifik beserta zona waktu (TIM), kata bantu 'pukul' telah dieksklusi."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      2,
+      3,
+      "GPE"
+    ],
+    [
+      4,
+      5,
+      "GPE"
+    ],
+    [
+      6,
+      8,
+      "PER"
+    ],
+    [
+      13,
+      16,
+      "NOR"
+    ],
+    [
+      16,
+      17,
+      "GPE"
+    ],
+    [
+      17,
+      19,
+      "PER"
+    ],
+    [
+      20,
+      21,
+      "LOC"
+    ],
+    [
+      22,
+      23,
+      "GPE"
+    ],
+    [
+      25,
+      26,
+      "DAT"
+    ],
+    [
+      27,
+      30,
+      "DAT"
+    ],
+    [
+      31,
+      35,
+      "TIM"
+    ]
+  ],
+  "notes": "E005 dihapus karena merupakan nomina umum; E009 dikoreksi dari GPE ke LOC karena Kansai adalah kawasan regional non-administratif.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:35:29"
+}

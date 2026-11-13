@@ -1,0 +1,162 @@
+{
+  "sample_id": "D02-002",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        1,
+        2,
+        "CRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          1,
+          2,
+          "CRD"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        5,
+        6,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          5,
+          6,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        8,
+        11,
+        "MON"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          8,
+          11,
+          "MON"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        12,
+        15,
+        "ORG"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          12,
+          15,
+          "ORG"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        20,
+        22,
+        "LAN"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          20,
+          22,
+          "LAN"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E006",
+      "original": [
+        25,
+        26,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          25,
+          26,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      1,
+      2,
+      "CRD"
+    ],
+    [
+      5,
+      6,
+      "GPE"
+    ],
+    [
+      8,
+      11,
+      "MON"
+    ],
+    [
+      12,
+      15,
+      "ORG"
+    ],
+    [
+      20,
+      22,
+      "LAN"
+    ],
+    [
+      25,
+      26,
+      "GPE"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:22:12"
+}

@@ -1,0 +1,105 @@
+{
+  "sample_id": "D03-013",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        2,
+        "NOR"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:NOR:1-3",
+      "replacement_spans": [
+        [
+          0,
+          3,
+          "NOR"
+        ]
+      ],
+      "note": "Perluas span NOR agar mencakup nama kota Surabaya menjadi satu kesatuan lembaga Pemerintah Kota Surabaya"
+    },
+    {
+      "id": "E002",
+      "original": [
+        2,
+        3,
+        "GPE"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "Diserap ke dalam span NOR Pemerintah Kota Surabaya (E001)"
+    },
+    {
+      "id": "E003",
+      "original": [
+        4,
+        5,
+        "CRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          4,
+          5,
+          "CRD"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        5,
+        6,
+        "FAC"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "Kata benda umum di luar PRD bukan entitas bernama (False Positive)"
+    },
+    {
+      "id": "E005",
+      "original": [
+        15,
+        17,
+        "LOC"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "Bukan nama jalan spesifik melainkan frasa nomina umum (False Positive)"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      3,
+      "NOR"
+    ],
+    [
+      4,
+      5,
+      "CRD"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:08:50"
+}

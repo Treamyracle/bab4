@@ -1,0 +1,186 @@
+{
+  "sample_id": "D02-100",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        3,
+        "ORG"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          3,
+          "ORG"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        4,
+        7,
+        "FAC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          4,
+          7,
+          "FAC"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        8,
+        9,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          8,
+          9,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        11,
+        16,
+        "QTY"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          11,
+          16,
+          "QTY"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        21,
+        22,
+        "ORG"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          21,
+          22,
+          "ORG"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E006",
+      "original": [
+        25,
+        27,
+        "QTY"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          25,
+          27,
+          "QTY"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E007",
+      "original": [
+        28,
+        30,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          28,
+          30,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      3,
+      "ORG"
+    ],
+    [
+      4,
+      7,
+      "FAC"
+    ],
+    [
+      8,
+      9,
+      "GPE"
+    ],
+    [
+      11,
+      16,
+      "QTY"
+    ],
+    [
+      21,
+      22,
+      "ORG"
+    ],
+    [
+      25,
+      27,
+      "QTY"
+    ],
+    [
+      28,
+      30,
+      "GPE"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:10:32"
+}

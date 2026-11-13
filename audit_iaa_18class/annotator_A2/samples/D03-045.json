@@ -1,0 +1,127 @@
+{
+  "sample_id": "D03-045",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        2,
+        "LAW"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          2,
+          "LAW"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        6,
+        7,
+        "PRD"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:PRD:7-9",
+      "replacement_spans": [
+        [
+          6,
+          9,
+          "PRD"
+        ]
+      ],
+      "note": "Koreksi fragmentasi BIO; satukan frasa sarana transportasi 'kapal USS Renville' menjadi satu rentang PRD utuh (7-9)."
+    },
+    {
+      "id": "E003",
+      "original": [
+        7,
+        9,
+        "PRD"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "Tercakup dalam penggabungan rentang PRD:7-9 pada E002."
+    },
+    {
+      "id": "E004",
+      "original": [
+        12,
+        14,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          12,
+          14,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        16,
+        18,
+        "PRC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          16,
+          18,
+          "PRC"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      2,
+      "LAW"
+    ],
+    [
+      6,
+      9,
+      "PRD"
+    ],
+    [
+      12,
+      14,
+      "GPE"
+    ],
+    [
+      16,
+      18,
+      "PRC"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:14:38"
+}

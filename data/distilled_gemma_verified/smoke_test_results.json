@@ -1,0 +1,62 @@
+[
+  {
+    "id": "smoke_1",
+    "text": "Menteri Ketenagakerjaan Ida Fauziah menyalurkan beras Bulog sebanyak 5 juta ton ke Jawa Barat pada Januari 2024 .",
+    "entities": [
+      {
+        "entity": "Menteri Ketenagakerjaan",
+        "type": "NOR"
+      },
+      {
+        "entity": "Ida Fauziah",
+        "type": "PER"
+      },
+      {
+        "entity": "beras",
+        "type": "PRD"
+      },
+      {
+        "entity": "Bulog",
+        "type": "ORG"
+      },
+      {
+        "entity": "5 juta ton",
+        "type": "QTY"
+      },
+      {
+        "entity": "Jawa Barat",
+        "type": "GPE"
+      },
+      {
+        "entity": "Januari 2024",
+        "type": "DAT"
+      }
+    ]
+  },
+  {
+    "id": "smoke_2",
+    "text": "Bambang Surya menghadiri Festival Budaya Nusantara di Museum Nasional Jakarta bersama perwakilan UNESCO .",
+    "entities": [
+      {
+        "entity": "Bambang Surya",
+        "type": "PER"
+      },
+      {
+        "entity": "Festival Budaya Nusantara",
+        "type": "EVT"
+      },
+      {
+        "entity": "Museum Nasional",
+        "type": "FAC"
+      },
+      {
+        "entity": "Jakarta",
+        "type": "GPE"
+      },
+      {
+        "entity": "UNESCO",
+        "type": "NOR"
+      }
+    ]
+  }
+]

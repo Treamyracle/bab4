@@ -1,0 +1,230 @@
+{
+  "sample_id": "D01-016",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        4,
+        "EVT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          4,
+          "EVT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        5,
+        7,
+        "FAC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          5,
+          7,
+          "FAC"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        8,
+        9,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          8,
+          9,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        13,
+        16,
+        "EVT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          13,
+          16,
+          "EVT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        17,
+        24,
+        "PER"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:PER:18-18; NOR:19-19; PER:23-24",
+      "replacement_spans": [
+        [
+          17,
+          18,
+          "PER"
+        ],
+        [
+          18,
+          19,
+          "NOR"
+        ],
+        [
+          22,
+          24,
+          "PER"
+        ]
+      ],
+      "note": "Letnan diserap ke PER; TNI adalah NOR; tanda kurung dan Purnawirawan bukan bagian span entitas"
+    },
+    {
+      "id": "E006",
+      "original": [
+        27,
+        33,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          27,
+          33,
+          "PER"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E007",
+      "original": [
+        35,
+        36,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          35,
+          36,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E008",
+      "original": [
+        37,
+        40,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          37,
+          40,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      4,
+      "EVT"
+    ],
+    [
+      5,
+      7,
+      "FAC"
+    ],
+    [
+      8,
+      9,
+      "GPE"
+    ],
+    [
+      13,
+      16,
+      "EVT"
+    ],
+    [
+      17,
+      18,
+      "PER"
+    ],
+    [
+      18,
+      19,
+      "NOR"
+    ],
+    [
+      22,
+      24,
+      "PER"
+    ],
+    [
+      27,
+      33,
+      "PER"
+    ],
+    [
+      35,
+      36,
+      "DAT"
+    ],
+    [
+      37,
+      40,
+      "DAT"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:18:54"
+}

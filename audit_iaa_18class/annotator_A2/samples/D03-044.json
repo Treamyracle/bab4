@@ -1,0 +1,116 @@
+{
+  "sample_id": "D03-044",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        1,
+        "NOR"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:NOR:1-2",
+      "replacement_spans": [
+        [
+          0,
+          2,
+          "NOR"
+        ]
+      ],
+      "note": "Satukan jabatan struktural kenegaraan Kepala BSSN ke dalam satu rentang NOR:1-2."
+    },
+    {
+      "id": "E002",
+      "original": [
+        1,
+        2,
+        "NOR"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "Tercakup dalam penggabungan rentang NOR:1-2 pada E001."
+    },
+    {
+      "id": "E003",
+      "original": [
+        3,
+        5,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          3,
+          5,
+          "PER"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        16,
+        20,
+        "TIM"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          16,
+          20,
+          "TIM"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        21,
+        22,
+        "DAT"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "'ini' adalah pronomina demonstrativa, bukan entitas penanggalan kalender DAT."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      3,
+      5,
+      "PER"
+    ],
+    [
+      16,
+      20,
+      "TIM"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:14:38"
+}

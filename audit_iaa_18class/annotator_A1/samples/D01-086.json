@@ -1,0 +1,223 @@
+{
+  "sample_id": "D01-086",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        7,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          7,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        12,
+        15,
+        "PRD"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "AES-256 adalah standar enkripsi, bukan entitas PRD menurut taksonomi."
+    },
+    {
+      "id": "E003",
+      "original": [
+        20,
+        21,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          20,
+          21,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        22,
+        23,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          22,
+          23,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        24,
+        27,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          24,
+          27,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E006",
+      "original": [
+        31,
+        32,
+        "CRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          31,
+          32,
+          "CRD"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E007",
+      "original": [
+        34,
+        38,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          34,
+          38,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E008",
+      "original": [
+        40,
+        42,
+        "LAN"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          40,
+          42,
+          "LAN"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E009",
+      "original": [
+        46,
+        48,
+        "LOC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          46,
+          48,
+          "LOC"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      7,
+      "NOR"
+    ],
+    [
+      20,
+      21,
+      "GPE"
+    ],
+    [
+      22,
+      23,
+      "DAT"
+    ],
+    [
+      24,
+      27,
+      "DAT"
+    ],
+    [
+      31,
+      32,
+      "CRD"
+    ],
+    [
+      34,
+      38,
+      "NOR"
+    ],
+    [
+      40,
+      42,
+      "LAN"
+    ],
+    [
+      46,
+      48,
+      "LOC"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:21:48"
+}

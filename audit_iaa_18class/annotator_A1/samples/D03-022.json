@@ -1,0 +1,48 @@
+{
+  "sample_id": "D03-022",
+  "decisions": [],
+  "missing_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      6,
+      9,
+      "MON"
+    ],
+    [
+      14,
+      16,
+      "GPE"
+    ]
+  ],
+  "final_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      6,
+      9,
+      "MON"
+    ],
+    [
+      14,
+      16,
+      "GPE"
+    ]
+  ],
+  "notes": "BPJS Ketenagakerjaan adalah lembaga nasional; nilai uang dan Jakarta Pusat terlewat.",
+  "normalizations": [],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:25:44"
+}

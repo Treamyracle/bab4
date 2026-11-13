@@ -1,0 +1,90 @@
+{
+  "sample_id": "D03-086",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        5,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          5,
+          "NOR"
+        ]
+      ],
+      "note": "Rentang dan kelas entitas kementerian (NOR) sudah tepat."
+    },
+    {
+      "id": "E002",
+      "original": [
+        10,
+        12,
+        "QTY"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          10,
+          12,
+          "QTY"
+        ]
+      ],
+      "note": "Rentang kuantitas luas (QTY) sudah tepat dan mengecualikan kata 'seluas'."
+    },
+    {
+      "id": "E003",
+      "original": [
+        14,
+        17,
+        "LOC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          14,
+          17,
+          "LOC"
+        ]
+      ],
+      "note": "Rentang bentang alam kepulauan (LOC) sudah tepat dan mengecualikan 'di wilayah'."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      5,
+      "NOR"
+    ],
+    [
+      10,
+      12,
+      "QTY"
+    ],
+    [
+      14,
+      17,
+      "LOC"
+    ]
+  ],
+  "notes": "Seluruh entitas sudah teranotasi dengan benar sesuai kaidah NERGRIT.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:18:20"
+}

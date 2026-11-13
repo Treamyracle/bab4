@@ -1,0 +1,138 @@
+{
+  "sample_id": "D02-042",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        7,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          7,
+          "NOR"
+        ]
+      ],
+      "note": "Badan Meteorologi , Klimatologi , dan Geofisika adalah lembaga pemerintah nonkementerian (NOR)"
+    },
+    {
+      "id": "E002",
+      "original": [
+        11,
+        14,
+        "FAC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          11,
+          14,
+          "FAC"
+        ]
+      ],
+      "note": "Observatorium Nasional Timau adalah bangunan fisik fasilitas ilmiah (FAC)"
+    },
+    {
+      "id": "E003",
+      "original": [
+        15,
+        18,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          15,
+          18,
+          "GPE"
+        ]
+      ],
+      "note": "Nusa Tenggara Timur adalah entitas geopolitik administratif provinsi (GPE)"
+    },
+    {
+      "id": "E004",
+      "original": [
+        20,
+        21,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          20,
+          21,
+          "DAT"
+        ]
+      ],
+      "note": "Jumat adalah nama hari (DAT)"
+    },
+    {
+      "id": "E005",
+      "original": [
+        22,
+        26,
+        "TIM"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          22,
+          26,
+          "TIM"
+        ]
+      ],
+      "note": "21 . 00 WITA adalah jam spesifik arloji dengan zona waktu tanpa kata pukul (TIM)"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      7,
+      "NOR"
+    ],
+    [
+      11,
+      14,
+      "FAC"
+    ],
+    [
+      15,
+      18,
+      "GPE"
+    ],
+    [
+      20,
+      21,
+      "DAT"
+    ],
+    [
+      22,
+      26,
+      "TIM"
+    ]
+  ],
+  "notes": "Seluruh entitas dan batas token sudah tepat sesuai pedoman.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:55:05"
+}

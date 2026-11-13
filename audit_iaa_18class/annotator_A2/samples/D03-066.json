@@ -1,0 +1,138 @@
+{
+  "sample_id": "D03-066",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        2,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          2,
+          "NOR"
+        ]
+      ],
+      "note": "Jabatan struktural Panglima TNI tepat berkelas NOR dan terpisah dari nama individu."
+    },
+    {
+      "id": "E002",
+      "original": [
+        2,
+        5,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          2,
+          5,
+          "PER"
+        ]
+      ],
+      "note": "Pangkat kedinasan militer Jenderal sudah terserap dengan benar ke dalam span PER bersama nama."
+    },
+    {
+      "id": "E003",
+      "original": [
+        10,
+        11,
+        "GPE"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:LOC:11-11",
+      "replacement_spans": [
+        [
+          10,
+          11,
+          "LOC"
+        ]
+      ],
+      "note": "Kalimantan merupakan bentang alam/pulau non-administratif (bukan wilayah administratif berpemerintahan), sehingga sesuai Pedoman NERGRIT harus berkelas LOC, bukan GPE."
+    },
+    {
+      "id": "E004",
+      "original": [
+        12,
+        13,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          12,
+          13,
+          "GPE"
+        ]
+      ],
+      "note": "Malaysia adalah entitas geopolitik negara berdaulat berkelas GPE."
+    },
+    {
+      "id": "E005",
+      "original": [
+        15,
+        16,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          15,
+          16,
+          "DAT"
+        ]
+      ],
+      "note": "Tahun tunggal 2024 berkelas DAT, kata bantu 'selama' dan 'tahun' tepat di luar span."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      2,
+      5,
+      "PER"
+    ],
+    [
+      10,
+      11,
+      "LOC"
+    ],
+    [
+      12,
+      13,
+      "GPE"
+    ],
+    [
+      15,
+      16,
+      "DAT"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:17:37"
+}

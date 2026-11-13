@@ -1,0 +1,212 @@
+{
+  "sample_id": "D01-048",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        1,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          1,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        2,
+        3,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          2,
+          3,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        5,
+        6,
+        "CRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          5,
+          6,
+          "CRD"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        11,
+        16,
+        "FAC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "REPLACE:FAC:12-16",
+      "replacement_spans": [
+        [
+          11,
+          16,
+          "FAC"
+        ]
+      ],
+      "note": "Rentang benar; jalan tol termasuk FAC"
+    },
+    {
+      "id": "E005",
+      "original": [
+        18,
+        20,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          18,
+          20,
+          "PER"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E006",
+      "original": [
+        21,
+        23,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          21,
+          23,
+          "PER"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E007",
+      "original": [
+        25,
+        27,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          25,
+          27,
+          "PER"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E008",
+      "original": [
+        35,
+        40,
+        "MON"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          35,
+          40,
+          "MON"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      1,
+      "NOR"
+    ],
+    [
+      2,
+      3,
+      "NOR"
+    ],
+    [
+      5,
+      6,
+      "CRD"
+    ],
+    [
+      11,
+      16,
+      "FAC"
+    ],
+    [
+      18,
+      20,
+      "PER"
+    ],
+    [
+      21,
+      23,
+      "PER"
+    ],
+    [
+      25,
+      27,
+      "PER"
+    ],
+    [
+      35,
+      40,
+      "MON"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [
+    "D01-048/E004: REPLACE identical to original -> CORRECT/KEEP"
+  ],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:20:19"
+}

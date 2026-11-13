@@ -1,0 +1,8 @@
+{
+  "last_processed_index": 17434,
+  "total_processed": 17434,
+  "total_raw": 17434,
+  "model": "nvidia/nemotron-3.5-super-vl:free",
+  "last_updated": "2026-11-10T17:41:12.366617",
+  "completed": true
+}

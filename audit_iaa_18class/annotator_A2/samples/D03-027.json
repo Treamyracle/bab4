@@ -1,0 +1,124 @@
+{
+  "sample_id": "D03-027",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        3,
+        "ORG"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          3,
+          "ORG"
+        ]
+      ],
+      "note": "BUMN/korporasi PT PAL Industri sudah tepat sebagai ORG"
+    },
+    {
+      "id": "E002",
+      "original": [
+        6,
+        10,
+        "PRD"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:PRD:7-8; PRD:10-10",
+      "replacement_spans": [
+        [
+          6,
+          8,
+          "PRD"
+        ],
+        [
+          9,
+          10,
+          "PRD"
+        ]
+      ],
+      "note": "Kata penggolong 'jenis' adalah kata benda umum dan wajib dikeluarkan (O); rentang dipecah menjadi dua entitas PRD terpisah yaitu 'kapal perang' (PRD:7-8) dan 'fregat' (PRD:10-10)"
+    },
+    {
+      "id": "E003",
+      "original": [
+        14,
+        20,
+        "LAW"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          14,
+          20,
+          "LAW"
+        ]
+      ],
+      "note": "Nama dokumen perundang-undangan sudah tepat sebagai LAW dan preposisi 'tentang' berada di luar span"
+    },
+    {
+      "id": "E004",
+      "original": [
+        21,
+        22,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          21,
+          22,
+          "NOR"
+        ]
+      ],
+      "note": "Institusi militer nasional TNI sudah tepat sebagai NOR"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      3,
+      "ORG"
+    ],
+    [
+      6,
+      8,
+      "PRD"
+    ],
+    [
+      9,
+      10,
+      "PRD"
+    ],
+    [
+      14,
+      20,
+      "LAW"
+    ],
+    [
+      21,
+      22,
+      "NOR"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:10:24"
+}

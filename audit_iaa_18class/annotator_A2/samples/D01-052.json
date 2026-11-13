@@ -1,0 +1,161 @@
+{
+  "sample_id": "D01-052",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        7,
+        "EVT"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "Bukan entitas bernama resmi dalam 18 kelas NERGRIT; aktivitas vaksinasi medis dan nama penyakit bukan EVT"
+    },
+    {
+      "id": "E002",
+      "original": [
+        9,
+        12,
+        "FAC"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:FAC:10-11; GPE:12-12",
+      "replacement_spans": [
+        [
+          9,
+          11,
+          "FAC"
+        ],
+        [
+          11,
+          12,
+          "GPE"
+        ]
+      ],
+      "note": "Pisahkan fasilitas fisik rumah sakit RSUP Persahabatan (FAC:10-11) dari entitas wilayah administratif Jakarta (GPE:12-12)"
+    },
+    {
+      "id": "E003",
+      "original": [
+        13,
+        16,
+        "CRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          13,
+          16,
+          "CRD"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        19,
+        23,
+        "TIM"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          19,
+          23,
+          "TIM"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        24,
+        25,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          24,
+          25,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E006",
+      "original": [
+        26,
+        29,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          26,
+          29,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      9,
+      11,
+      "FAC"
+    ],
+    [
+      11,
+      12,
+      "GPE"
+    ],
+    [
+      13,
+      16,
+      "CRD"
+    ],
+    [
+      19,
+      23,
+      "TIM"
+    ],
+    [
+      24,
+      25,
+      "DAT"
+    ],
+    [
+      26,
+      29,
+      "DAT"
+    ]
+  ],
+  "notes": "E001 dihapus karena bukan EVT yang valid; E002 dipecah antara FAC dan GPE sesuai batas distingsi spasial.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:59:27"
+}

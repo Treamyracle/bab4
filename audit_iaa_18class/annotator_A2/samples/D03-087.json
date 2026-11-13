@@ -1,0 +1,138 @@
+{
+  "sample_id": "D03-087",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        1,
+        4,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          1,
+          4,
+          "NOR"
+        ]
+      ],
+      "note": "Rentang kontingen/misi militer (NOR) sudah tepat."
+    },
+    {
+      "id": "E002",
+      "original": [
+        7,
+        8,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          7,
+          8,
+          "NOR"
+        ]
+      ],
+      "note": "Akronim kewarganegaraan WNI termasuk kategori NOR."
+    },
+    {
+      "id": "E003",
+      "original": [
+        11,
+        12,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          11,
+          12,
+          "GPE"
+        ]
+      ],
+      "note": "Nama negara berdaulat (GPE) sudah tepat."
+    },
+    {
+      "id": "E004",
+      "original": [
+        14,
+        18,
+        "TIM"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          14,
+          18,
+          "TIM"
+        ]
+      ],
+      "note": "Angka jam arloji spesifik dan zona waktu (TIM) sudah tepat serta mengecualikan preposisi 'pada' dan kata 'pukul'."
+    },
+    {
+      "id": "E005",
+      "original": [
+        21,
+        22,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          21,
+          22,
+          "NOR"
+        ]
+      ],
+      "note": "Organisasi antarpemerintah internasional PBB termasuk kategori NOR."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      1,
+      4,
+      "NOR"
+    ],
+    [
+      7,
+      8,
+      "NOR"
+    ],
+    [
+      11,
+      12,
+      "GPE"
+    ],
+    [
+      14,
+      18,
+      "TIM"
+    ],
+    [
+      21,
+      22,
+      "NOR"
+    ]
+  ],
+  "notes": "Seluruh entitas sudah teranotasi dengan benar sesuai kaidah NERGRIT.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:18:20"
+}

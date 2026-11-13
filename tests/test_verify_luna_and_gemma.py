@@ -12,6 +12,13 @@ from scripts.verify_luna_gemini import (
     ALLOWED_TYPES_SET as LUNA_ALLOWED_TYPES
 )
 
+from scripts.verify_gemma_gemini import (
+    parse_json_from_response as parse_gemma_gemini_json,
+    sanitize_and_validate_entities as sanitize_gemma_gemini_entities,
+    align_entities_to_bio as align_gemma_gemini_bio,
+    ALLOWED_TYPES_SET as GEMMA_GEMINI_ALLOWED_TYPES
+)
+
 from scripts.verify_gemma_nemotron_vl import (
     format_api_key as format_gemma_key,
     parse_json_from_response as parse_gemma_json,
@@ -118,6 +125,29 @@ class TestVerifyLunaAndGemma(unittest.TestCase):
         self.assertTrue(any(s["entity"] == "Jawa Barat" and s["type"] == "LOC" for s in sanitized))
         self.assertTrue(any(s["entity"] == "Januari 2024" and s["type"] == "DAT" for s in sanitized))
         self.assertFalse(any(s["entity"] == "Islam" for s in sanitized))
+
+    def test_gemma_gemini_sse_and_sanitization(self):
+        text = "Menteri Ketenagakerjaan Ida Fauziah menyalurkan beras Bulog sebanyak 5 juta ton ke Jawa Barat pada Januari 2024 ."
+        raw_items = [
+            {"entity": "Menteri", "type": "TTL"},
+            {"entity": "Ida Fauziah", "type": "PER"},
+            {"entity": "Bulog", "type": "ORG"},
+            {"entity": "5 juta ton", "type": "QTY"},
+            {"entity": "beras", "type": "PRD"},
+            {"entity": "ke Jawa Barat", "type": "GPE"},
+            {"entity": "Januari 2024", "type": "DAT"}
+        ]
+        sanitized = sanitize_gemma_gemini_entities(text, raw_items)
+        types = {s["type"] for s in sanitized}
+        self.assertIn("NOR", types)
+        self.assertIn("PER", types)
+        self.assertIn("ORG", types)
+        self.assertIn("QTY", types)
+        self.assertIn("PRD", types)
+        self.assertIn("GPE", types)
+        self.assertIn("DAT", types)
+        self.assertNotIn("TTL", types)
+        self.assertNotIn("REG", types)
 
     def test_bio_tag_alignment(self):
         text = "Letjen Suharyanto mengunjungi Monas di Jakarta ."

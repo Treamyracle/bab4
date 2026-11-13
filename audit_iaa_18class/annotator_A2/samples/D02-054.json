@@ -1,0 +1,162 @@
+{
+  "sample_id": "D02-054",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        3,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          3,
+          "NOR"
+        ]
+      ],
+      "note": "Direktur Jenderal Kebudayaan adalah jabatan struktural kenegaraan (NOR) yang terpisah dari nama PER."
+    },
+    {
+      "id": "E002",
+      "original": [
+        3,
+        5,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          3,
+          5,
+          "PER"
+        ]
+      ],
+      "note": "Hilmar Farid adalah nama individu (PER) dengan batas span yang tepat."
+    },
+    {
+      "id": "E003",
+      "original": [
+        10,
+        11,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          10,
+          11,
+          "GPE"
+        ]
+      ],
+      "note": "Yogyakarta adalah wilayah geopolitik administratif (GPE) tanpa preposisi 'di'."
+    },
+    {
+      "id": "E004",
+      "original": [
+        14,
+        16,
+        "LAN"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          14,
+          16,
+          "LAN"
+        ]
+      ],
+      "note": "bahasa Indonesia adalah nama bahasa alami (LAN) yang menyerap kata jenis 'bahasa'."
+    },
+    {
+      "id": "E005",
+      "original": [
+        17,
+        19,
+        "LAN"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          17,
+          19,
+          "LAN"
+        ]
+      ],
+      "note": "bahasa Jawa adalah nama bahasa alami (LAN) yang menyerap kata jenis 'bahasa'."
+    },
+    {
+      "id": "E006",
+      "original": [
+        21,
+        23,
+        "LAN"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          21,
+          23,
+          "LAN"
+        ]
+      ],
+      "note": "bahasa Inggris adalah nama bahasa alami (LAN) yang menyerap kata jenis 'bahasa'."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      3,
+      "NOR"
+    ],
+    [
+      3,
+      5,
+      "PER"
+    ],
+    [
+      10,
+      11,
+      "GPE"
+    ],
+    [
+      14,
+      16,
+      "LAN"
+    ],
+    [
+      17,
+      19,
+      "LAN"
+    ],
+    [
+      21,
+      23,
+      "LAN"
+    ]
+  ],
+  "notes": "Pelabelan LAN menyerap kata 'bahasa' dan jabatan struktural (NOR) terpisah dari PER sudah tepat.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:56:56"
+}

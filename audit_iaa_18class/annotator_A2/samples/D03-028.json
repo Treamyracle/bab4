@@ -1,0 +1,90 @@
+{
+  "sample_id": "D03-028",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        1,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          1,
+          "NOR"
+        ]
+      ],
+      "note": "Badan pemerintah BPJPH sudah tepat sebagai NOR"
+    },
+    {
+      "id": "E002",
+      "original": [
+        12,
+        18,
+        "LAW"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          12,
+          18,
+          "LAW"
+        ]
+      ],
+      "note": "Dokumen perundang-undangan UU No . 33 Tahun 2014 sudah tepat sebagai LAW"
+    },
+    {
+      "id": "E003",
+      "original": [
+        19,
+        21,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          19,
+          21,
+          "DAT"
+        ]
+      ],
+      "note": "Bulan dan tahun kalender Oktober 2024 sudah tepat sebagai DAT dan preposisi 'sebelum' berada di luar span"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      1,
+      "NOR"
+    ],
+    [
+      12,
+      18,
+      "LAW"
+    ],
+    [
+      19,
+      21,
+      "DAT"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:10:24"
+}

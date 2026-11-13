@@ -1,0 +1,127 @@
+{
+  "sample_id": "D02-005",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        5,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          5,
+          "NOR"
+        ]
+      ],
+      "note": "Lembaga pemerintah nonkementerian BRIN berkelas NOR sudah tepat."
+    },
+    {
+      "id": "E002",
+      "original": [
+        6,
+        7,
+        "PRD"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "Kata 'teleskop' adalah kata jenis/kata benda umum di luar taksonomi PRD huruf kecil, sehingga berstatus O."
+    },
+    {
+      "id": "E003",
+      "original": [
+        7,
+        8,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          7,
+          8,
+          "PRD"
+        ]
+      ],
+      "note": "Nama instrumen/perangkat teknologi antariksa LUPEX berkelas PRD sudah tepat."
+    },
+    {
+      "id": "E004",
+      "original": [
+        12,
+        13,
+        "LOC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          12,
+          13,
+          "LOC"
+        ]
+      ],
+      "note": "Bulan sebagai bentang alam/benda antariksa alami berkelas LOC sudah tepat."
+    },
+    {
+      "id": "E005",
+      "original": [
+        14,
+        15,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          14,
+          15,
+          "DAT"
+        ]
+      ],
+      "note": "Angka tahun 2026 berkelas DAT tanpa preposisi 'pada' sudah tepat."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      5,
+      "NOR"
+    ],
+    [
+      7,
+      8,
+      "PRD"
+    ],
+    [
+      12,
+      13,
+      "LOC"
+    ],
+    [
+      14,
+      15,
+      "DAT"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:48:51"
+}

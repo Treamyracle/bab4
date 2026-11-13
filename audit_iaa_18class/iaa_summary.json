@@ -1,0 +1,509 @@
+{
+  "schema_version": 2,
+  "status": "complete",
+  "method": "independent_dual_annotator_llm_audit",
+  "nergrit_spec": "18-class Stage 2 (0 REG, 0 TTL)",
+  "annotators": {
+    "A1": {
+      "model": "cx/gpt-6-luna",
+      "reasoning_effort": "high"
+    },
+    "A2": {
+      "model": "ag/gemini-3.8-flash-high",
+      "reasoning_effort": "high"
+    }
+  },
+  "independent_annotation": true,
+  "inter_annotator_agreement_available": true,
+  "consensus_rule": "dual_agreement: original span overturned only if both annotators reject it; new/replacement span added only if both annotators propose the identical span",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "sampling_seed": 20261022,
+  "samples_compared": 300,
+  "bootstrap_iterations": 1000,
+  "response_normalizations": 4,
+  "iaa_total": {
+    "sentences": 300,
+    "tokens": 7732,
+    "token_bio_percent_agreement": 0.9752974650801862,
+    "token_bio_kappa": 0.965873694040465,
+    "token_type_percent_agreement": 0.980082772891878,
+    "token_type_kappa": 0.9721426811441152,
+    "spans_annotator_1": 1669,
+    "spans_annotator_2": 1637,
+    "spans_agreed": 1551,
+    "span_f1_agreement": 0.9382940108892922,
+    "original_entities_judged": 1643,
+    "entity_decision_percent_agreement_3class": 0.9421789409616556,
+    "entity_decision_kappa_3class": 0.601630892524438,
+    "entity_decision_kappa_binary": 0.6075827119981726,
+    "entity_decision_exact_agreement": 0.9403530127814973,
+    "sentence_identical_rate": 0.7066666666666667,
+    "sentence_error_kappa": 0.5733532934131738,
+    "ci95": {
+      "token_bio_kappa": [
+        0.9584476413610614,
+        0.9724702898266863
+      ],
+      "token_type_kappa": [
+        0.9656875525775688,
+        0.977694942771616
+      ],
+      "span_f1_agreement": [
+        0.925990675990676,
+        0.9496969696969697
+      ],
+      "entity_decision_kappa_3class": [
+        0.51853649199147,
+        0.6744367502194477
+      ],
+      "entity_decision_kappa_binary": [
+        0.521892442684927,
+        0.6820318466201503
+      ]
+    }
+  },
+  "iaa_per_dataset": [
+    {
+      "dataset_code": "D01",
+      "dataset": "nemotron",
+      "sentences": 100,
+      "tokens": 3124,
+      "token_bio_percent_agreement": 0.969270166453265,
+      "token_bio_kappa": 0.9594697322402695,
+      "token_type_percent_agreement": 0.9753521126760564,
+      "token_type_kappa": 0.9670113758558019,
+      "spans_annotator_1": 712,
+      "spans_annotator_2": 688,
+      "spans_agreed": 650,
+      "span_f1_agreement": 0.9285714285714286,
+      "original_entities_judged": 691,
+      "entity_decision_percent_agreement_3class": 0.9406657018813314,
+      "entity_decision_kappa_3class": 0.7069368586560739,
+      "entity_decision_kappa_binary": 0.7076926330929166,
+      "entity_decision_exact_agreement": 0.9363241678726484,
+      "sentence_identical_rate": 0.63,
+      "sentence_error_kappa": 0.6784565916398714,
+      "ci95": {
+        "token_bio_kappa": [
+          0.94606164842864,
+          0.972042257334458
+        ],
+        "token_type_kappa": [
+          0.9556097270681481,
+          0.9770492614525295
+        ],
+        "span_f1_agreement": [
+          0.9067245119305857,
+          0.9499263622974963
+        ],
+        "entity_decision_kappa_3class": [
+          0.6079327362456592,
+          0.7970456454774572
+        ],
+        "entity_decision_kappa_binary": [
+          0.6086060293738723,
+          0.7965393663566609
+        ]
+      }
+    },
+    {
+      "dataset_code": "D02",
+      "dataset": "luna",
+      "sentences": 100,
+      "tokens": 2564,
+      "token_bio_percent_agreement": 0.9820592823712948,
+      "token_bio_kappa": 0.9758230324030893,
+      "token_type_percent_agreement": 0.984399375975039,
+      "token_type_kappa": 0.9786899470406953,
+      "spans_annotator_1": 560,
+      "spans_annotator_2": 557,
+      "spans_agreed": 535,
+      "span_f1_agreement": 0.9579230080572964,
+      "original_entities_judged": 560,
+      "entity_decision_percent_agreement_3class": 0.9535714285714286,
+      "entity_decision_kappa_3class": 0.41853035143770023,
+      "entity_decision_kappa_binary": 0.4580645161290328,
+      "entity_decision_exact_agreement": 0.9535714285714286,
+      "sentence_identical_rate": 0.79,
+      "sentence_error_kappa": 0.4242424242424243,
+      "ci95": {
+        "token_bio_kappa": [
+          0.9642908146121979,
+          0.9866443288388659
+        ],
+        "token_type_kappa": [
+          0.9684673629161447,
+          0.9884497315986359
+        ],
+        "span_f1_agreement": [
+          0.9388523047977423,
+          0.9750692520775623
+        ],
+        "entity_decision_kappa_3class": [
+          0.17674478829470422,
+          0.6059379217273951
+        ],
+        "entity_decision_kappa_binary": [
+          0.20024370430544383,
+          0.6535947712418302
+        ]
+      }
+    },
+    {
+      "dataset_code": "D03",
+      "dataset": "gemma",
+      "sentences": 100,
+      "tokens": 2044,
+      "token_bio_percent_agreement": 0.976027397260274,
+      "token_bio_kappa": 0.9623195188624375,
+      "token_type_percent_agreement": 0.9818982387475538,
+      "token_type_kappa": 0.9712650622093849,
+      "spans_annotator_1": 397,
+      "spans_annotator_2": 392,
+      "spans_agreed": 366,
+      "span_f1_agreement": 0.9277566539923955,
+      "original_entities_judged": 392,
+      "entity_decision_percent_agreement_3class": 0.9285714285714286,
+      "entity_decision_kappa_3class": 0.4529505582137162,
+      "entity_decision_kappa_binary": 0.4431253170979203,
+      "entity_decision_exact_agreement": 0.9285714285714286,
+      "sentence_identical_rate": 0.7,
+      "sentence_error_kappa": 0.4161358811040341,
+      "ci95": {
+        "token_bio_kappa": [
+          0.9493315907407335,
+          0.974581259310395
+        ],
+        "token_type_kappa": [
+          0.9603004233322868,
+          0.9819149139687593
+        ],
+        "span_f1_agreement": [
+          0.9035532994923858,
+          0.9510664993726474
+        ],
+        "entity_decision_kappa_3class": [
+          0.2620621282220748,
+          0.5901982102534077
+        ],
+        "entity_decision_kappa_binary": [
+          0.2531272994849152,
+          0.5809595202398798
+        ]
+      }
+    }
+  ],
+  "iaa_per_class": [
+    {
+      "entity_class": "CRD",
+      "spans_annotator_1": 54,
+      "spans_annotator_2": 53,
+      "spans_agreed": 52,
+      "span_f1_agreement": 0.9719626168224299
+    },
+    {
+      "entity_class": "DAT",
+      "spans_annotator_1": 200,
+      "spans_annotator_2": 193,
+      "spans_agreed": 182,
+      "span_f1_agreement": 0.926208651399491
+    },
+    {
+      "entity_class": "EVT",
+      "spans_annotator_1": 68,
+      "spans_annotator_2": 66,
+      "spans_agreed": 63,
+      "span_f1_agreement": 0.9402985074626866
+    },
+    {
+      "entity_class": "FAC",
+      "spans_annotator_1": 81,
+      "spans_annotator_2": 74,
+      "spans_agreed": 70,
+      "span_f1_agreement": 0.9032258064516129
+    },
+    {
+      "entity_class": "GPE",
+      "spans_annotator_1": 290,
+      "spans_annotator_2": 281,
+      "spans_agreed": 277,
+      "span_f1_agreement": 0.9702276707530648
+    },
+    {
+      "entity_class": "LAN",
+      "spans_annotator_1": 22,
+      "spans_annotator_2": 22,
+      "spans_agreed": 22,
+      "span_f1_agreement": 1.0
+    },
+    {
+      "entity_class": "LAW",
+      "spans_annotator_1": 49,
+      "spans_annotator_2": 45,
+      "spans_agreed": 39,
+      "span_f1_agreement": 0.8297872340425532
+    },
+    {
+      "entity_class": "LOC",
+      "spans_annotator_1": 60,
+      "spans_annotator_2": 64,
+      "spans_agreed": 57,
+      "span_f1_agreement": 0.9193548387096774
+    },
+    {
+      "entity_class": "MON",
+      "spans_annotator_1": 71,
+      "spans_annotator_2": 71,
+      "spans_agreed": 71,
+      "span_f1_agreement": 1.0
+    },
+    {
+      "entity_class": "NOR",
+      "spans_annotator_1": 280,
+      "spans_annotator_2": 269,
+      "spans_agreed": 249,
+      "span_f1_agreement": 0.907103825136612
+    },
+    {
+      "entity_class": "ORD",
+      "spans_annotator_1": 29,
+      "spans_annotator_2": 28,
+      "spans_agreed": 27,
+      "span_f1_agreement": 0.9473684210526315
+    },
+    {
+      "entity_class": "ORG",
+      "spans_annotator_1": 76,
+      "spans_annotator_2": 84,
+      "spans_agreed": 73,
+      "span_f1_agreement": 0.9125
+    },
+    {
+      "entity_class": "PER",
+      "spans_annotator_1": 145,
+      "spans_annotator_2": 145,
+      "spans_agreed": 143,
+      "span_f1_agreement": 0.9862068965517241
+    },
+    {
+      "entity_class": "PRC",
+      "spans_annotator_1": 42,
+      "spans_annotator_2": 42,
+      "spans_agreed": 42,
+      "span_f1_agreement": 1.0
+    },
+    {
+      "entity_class": "PRD",
+      "spans_annotator_1": 87,
+      "spans_annotator_2": 87,
+      "spans_agreed": 75,
+      "span_f1_agreement": 0.8620689655172413
+    },
+    {
+      "entity_class": "QTY",
+      "spans_annotator_1": 69,
+      "spans_annotator_2": 68,
+      "spans_agreed": 67,
+      "span_f1_agreement": 0.9781021897810219
+    },
+    {
+      "entity_class": "TIM",
+      "spans_annotator_1": 36,
+      "spans_annotator_2": 36,
+      "spans_agreed": 36,
+      "span_f1_agreement": 1.0
+    },
+    {
+      "entity_class": "WOA",
+      "spans_annotator_1": 10,
+      "spans_annotator_2": 9,
+      "spans_agreed": 6,
+      "span_f1_agreement": 0.631578947368421
+    }
+  ],
+  "consensus_quality_total": {
+    "sentences": 300,
+    "right": 1562,
+    "wrong": 81,
+    "missing": 10,
+    "tp": 1562,
+    "fp": 81,
+    "fn": 80,
+    "precision": 0.9506999391357274,
+    "recall": 0.951278928136419,
+    "f1": 0.9509893455098934,
+    "sentences_with_error": 66,
+    "raw_sentence_error_rate": 0.22
+  },
+  "consensus_quality_per_dataset": [
+    {
+      "dataset_code": "D01",
+      "dataset": "nemotron",
+      "sentences": 100,
+      "right": 634,
+      "wrong": 57,
+      "missing": 0,
+      "tp": 634,
+      "fp": 57,
+      "fn": 56,
+      "precision": 0.9175108538350217,
+      "recall": 0.9188405797101449,
+      "f1": 0.9181752353367125,
+      "sentences_with_error": 42,
+      "raw_sentence_error_rate": 0.42,
+      "weighted_sentence_error_rate": 0.4246173944297019
+    },
+    {
+      "dataset_code": "D02",
+      "dataset": "luna",
+      "sentences": 100,
+      "right": 549,
+      "wrong": 11,
+      "missing": 3,
+      "tp": 549,
+      "fp": 11,
+      "fn": 10,
+      "precision": 0.9803571428571428,
+      "recall": 0.9821109123434705,
+      "f1": 0.9812332439678284,
+      "sentences_with_error": 11,
+      "raw_sentence_error_rate": 0.11,
+      "weighted_sentence_error_rate": 0.10414596453075997
+    },
+    {
+      "dataset_code": "D03",
+      "dataset": "gemma",
+      "sentences": 100,
+      "right": 379,
+      "wrong": 13,
+      "missing": 7,
+      "tp": 379,
+      "fp": 13,
+      "fn": 14,
+      "precision": 0.9668367346938775,
+      "recall": 0.9643765903307888,
+      "f1": 0.9656050955414013,
+      "sentences_with_error": 13,
+      "raw_sentence_error_rate": 0.13,
+      "weighted_sentence_error_rate": 0.11678449763828921
+    }
+  ],
+  "annotator_quality_per_dataset": [
+    {
+      "annotator": "A1",
+      "model": "cx/gpt-6-luna",
+      "dataset_code": "D01",
+      "dataset": "nemotron",
+      "sentences": 100,
+      "right": 613,
+      "wrong": 78,
+      "missing": 7,
+      "tp": 613,
+      "fp": 78,
+      "fn": 99,
+      "precision": 0.8871201157742402,
+      "recall": 0.8609550561797753,
+      "f1": 0.8738417676407698,
+      "sentences_with_error": 56,
+      "raw_sentence_error_rate": 0.56,
+      "weighted_sentence_error_rate": 0.5658839151778892
+    },
+    {
+      "annotator": "A2",
+      "model": "ag/gemini-3.8-flash-high",
+      "dataset_code": "D01",
+      "dataset": "nemotron",
+      "sentences": 100,
+      "right": 615,
+      "wrong": 76,
+      "missing": 2,
+      "tp": 615,
+      "fp": 76,
+      "fn": 73,
+      "precision": 0.8900144717800289,
+      "recall": 0.8938953488372093,
+      "f1": 0.8919506889050036,
+      "sentences_with_error": 52,
+      "raw_sentence_error_rate": 0.52,
+      "weighted_sentence_error_rate": 0.5258725516148958
+    },
+    {
+      "annotator": "A1",
+      "model": "cx/gpt-6-luna",
+      "dataset_code": "D02",
+      "dataset": "luna",
+      "sentences": 100,
+      "right": 530,
+      "wrong": 30,
+      "missing": 5,
+      "tp": 530,
+      "fp": 30,
+      "fn": 30,
+      "precision": 0.9464285714285714,
+      "recall": 0.9464285714285714,
+      "f1": 0.9464285714285714,
+      "sentences_with_error": 25,
+      "raw_sentence_error_rate": 0.25,
+      "weighted_sentence_error_rate": 0.2488234139269372
+    },
+    {
+      "annotator": "A2",
+      "model": "ag/gemini-3.8-flash-high",
+      "dataset_code": "D02",
+      "dataset": "luna",
+      "sentences": 100,
+      "right": 544,
+      "wrong": 16,
+      "missing": 5,
+      "tp": 544,
+      "fp": 16,
+      "fn": 13,
+      "precision": 0.9714285714285714,
+      "recall": 0.9766606822262118,
+      "f1": 0.9740376007162042,
+      "sentences_with_error": 16,
+      "raw_sentence_error_rate": 0.16,
+      "weighted_sentence_error_rate": 0.1563207333464216
+    },
+    {
+      "annotator": "A1",
+      "model": "cx/gpt-6-luna",
+      "dataset_code": "D03",
+      "dataset": "gemma",
+      "sentences": 100,
+      "right": 366,
+      "wrong": 26,
+      "missing": 15,
+      "tp": 366,
+      "fp": 26,
+      "fn": 31,
+      "precision": 0.9336734693877551,
+      "recall": 0.9219143576826196,
+      "f1": 0.9277566539923955,
+      "sentences_with_error": 28,
+      "raw_sentence_error_rate": 0.28,
+      "weighted_sentence_error_rate": 0.256515690704504
+    },
+    {
+      "annotator": "A2",
+      "model": "ag/gemini-3.8-flash-high",
+      "dataset_code": "D03",
+      "dataset": "gemma",
+      "sentences": 100,
+      "right": 365,
+      "wrong": 27,
+      "missing": 9,
+      "tp": 365,
+      "fp": 27,
+      "fn": 27,
+      "precision": 0.9311224489795918,
+      "recall": 0.9311224489795918,
+      "f1": 0.9311224489795918,
+      "sentences_with_error": 22,
+      "raw_sentence_error_rate": 0.22,
+      "weighted_sentence_error_rate": 0.21218573226267423
+    }
+  ],
+  "interpretation_scale": "Landis & Koch (1977)",
+  "generated_at": "2026-11-13T19:19:23"
+}

@@ -1,0 +1,210 @@
+{
+  "sample_id": "D01-070",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        1,
+        5,
+        "EVT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          1,
+          5,
+          "EVT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        8,
+        10,
+        "ORG"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          8,
+          10,
+          "ORG"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        12,
+        13,
+        "CRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          12,
+          13,
+          "CRD"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        15,
+        18,
+        "ORG"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:FAC:16-18",
+      "replacement_spans": [
+        [
+          15,
+          18,
+          "FAC"
+        ]
+      ],
+      "note": "Universitas merupakan institusi pendidikan fisik, sehingga masuk FAC."
+    },
+    {
+      "id": "E005",
+      "original": [
+        19,
+        21,
+        "ORD"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:ORD:21-21",
+      "replacement_spans": [
+        [
+          20,
+          21,
+          "ORD"
+        ]
+      ],
+      "note": "Hanya 'kedua' yang menyatakan urutan; 'peringkat' berada di luar span."
+    },
+    {
+      "id": "E006",
+      "original": [
+        23,
+        26,
+        "MON"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          23,
+          26,
+          "MON"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E007",
+      "original": [
+        32,
+        34,
+        "FAC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          32,
+          34,
+          "FAC"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E008",
+      "original": [
+        35,
+        38,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          35,
+          38,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      1,
+      5,
+      "EVT"
+    ],
+    [
+      8,
+      10,
+      "ORG"
+    ],
+    [
+      12,
+      13,
+      "CRD"
+    ],
+    [
+      15,
+      18,
+      "FAC"
+    ],
+    [
+      20,
+      21,
+      "ORD"
+    ],
+    [
+      23,
+      26,
+      "MON"
+    ],
+    [
+      32,
+      34,
+      "FAC"
+    ],
+    [
+      35,
+      38,
+      "DAT"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:21:05"
+}

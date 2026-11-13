@@ -1,0 +1,62 @@
+{
+  "data": [
+    {
+      "text": "Presiden Joko Widodo membuka sidang DPR RI tahun 2024 di Gedung Negara setelah mengunjungi kawasan Gunung Merapi, Yogyakarta, pada Senin, 8 Januari 2024.",
+      "entities": [
+        {
+          "entity": "Presiden",
+          "type": "NOR"
+        },
+        {
+          "entity": "Joko Widodo",
+          "type": "PER"
+        },
+        {
+          "entity": "DPR RI",
+          "type": "NOR"
+        },
+        {
+          "entity": "2024",
+          "type": "DAT"
+        },
+        {
+          "entity": "Gedung Negara",
+          "type": "FAC"
+        },
+        {
+          "entity": "Gunung Merapi",
+          "type": "LOC"
+        },
+        {
+          "entity": "Yogyakarta",
+          "type": "GPE"
+        },
+        {
+          "entity": "Senin",
+          "type": "DAT"
+        },
+        {
+          "entity": "8 Januari 2024",
+          "type": "DAT"
+        }
+      ]
+    },
+    {
+      "text": "Komisi Pemilihan Umum (KPU) menetapkan jadwal Pemilu Legislatif 2024 mulai 14 Februari 2024.",
+      "entities": [
+        {
+          "entity": "Komisi Pemilihan Umum (KPU)",
+          "type": "NOR"
+        },
+        {
+          "entity": "Pemilu Legislatif 2024",
+          "type": "EVT"
+        },
+        {
+          "entity": "14 Februari 2024",
+          "type": "DAT"
+        }
+      ]
+    }
+  ]
+}

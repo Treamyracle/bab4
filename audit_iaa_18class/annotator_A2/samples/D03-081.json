@@ -1,0 +1,48 @@
+{
+  "sample_id": "D03-081",
+  "decisions": [],
+  "missing_spans": [
+    [
+      0,
+      1,
+      "NOR"
+    ],
+    [
+      2,
+      10,
+      "LAW"
+    ],
+    [
+      16,
+      17,
+      "NOR"
+    ]
+  ],
+  "final_spans": [
+    [
+      0,
+      1,
+      "NOR"
+    ],
+    [
+      2,
+      10,
+      "LAW"
+    ],
+    [
+      16,
+      17,
+      "NOR"
+    ]
+  ],
+  "notes": "Menemukan entitas terlewat: 'Pemerintah' (NOR:1-1) sebagai lembaga negara, 'UU No . 13 Tahun 2003 tentang Ketenagakerjaan' (LAW:3-10) sebagai dokumen hukum resmi, dan 'WNI' (NOR:17-17) sebagai kelompok kewarganegaraan.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:17:16"
+}

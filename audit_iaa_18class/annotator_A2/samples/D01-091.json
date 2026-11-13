@@ -1,0 +1,125 @@
+{
+  "sample_id": "D01-091",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        4,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          4,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        5,
+        11,
+        "LAW"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          5,
+          11,
+          "LAW"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        16,
+        17,
+        "GPE"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:LAN:17-17",
+      "replacement_spans": [
+        [
+          16,
+          17,
+          "LAN"
+        ]
+      ],
+      "note": "Ubah kelas dari GPE ke LAN karena kata Indonesia dalam konteks berbahasa Indonesia merujuk pada nama bahasa alami"
+    },
+    {
+      "id": "E004",
+      "original": [
+        25,
+        26,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          25,
+          26,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [
+    [
+      21,
+      22,
+      "GPE"
+    ]
+  ],
+  "final_spans": [
+    [
+      0,
+      4,
+      "NOR"
+    ],
+    [
+      5,
+      11,
+      "LAW"
+    ],
+    [
+      16,
+      17,
+      "LAN"
+    ],
+    [
+      21,
+      22,
+      "GPE"
+    ],
+    [
+      25,
+      26,
+      "NOR"
+    ]
+  ],
+  "notes": "Token Indonesia pada indeks 22 merujuk pada wilayah geopolitik negara (GPE) yang terlewat pada token O",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:46:59"
+}

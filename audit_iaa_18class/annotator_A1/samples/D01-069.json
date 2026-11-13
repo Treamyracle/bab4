@@ -1,0 +1,282 @@
+{
+  "sample_id": "D01-069",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        1,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          1,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        1,
+        2,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          1,
+          2,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        2,
+        4,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          2,
+          4,
+          "PER"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        8,
+        9,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          8,
+          9,
+          "PRD"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        11,
+        13,
+        "QTY"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:CRD:12-12",
+      "replacement_spans": [
+        [
+          11,
+          12,
+          "CRD"
+        ]
+      ],
+      "note": "1500 adalah bilangan cacah; UMKM bukan satuan kuantitas."
+    },
+    {
+      "id": "E006",
+      "original": [
+        14,
+        17,
+        "MON"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          14,
+          17,
+          "MON"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E007",
+      "original": [
+        20,
+        21,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          20,
+          21,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E008",
+      "original": [
+        21,
+        22,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          21,
+          22,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E009",
+      "original": [
+        24,
+        26,
+        "EVT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          24,
+          26,
+          "EVT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E010",
+      "original": [
+        26,
+        27,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          26,
+          27,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E011",
+      "original": [
+        28,
+        30,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          28,
+          30,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      1,
+      "NOR"
+    ],
+    [
+      1,
+      2,
+      "GPE"
+    ],
+    [
+      2,
+      4,
+      "PER"
+    ],
+    [
+      8,
+      9,
+      "PRD"
+    ],
+    [
+      11,
+      12,
+      "CRD"
+    ],
+    [
+      14,
+      17,
+      "MON"
+    ],
+    [
+      20,
+      21,
+      "NOR"
+    ],
+    [
+      21,
+      22,
+      "GPE"
+    ],
+    [
+      24,
+      26,
+      "EVT"
+    ],
+    [
+      26,
+      27,
+      "DAT"
+    ],
+    [
+      28,
+      30,
+      "GPE"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:21:05"
+}

@@ -1,0 +1,138 @@
+{
+  "sample_id": "D03-057",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        1,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          1,
+          "NOR"
+        ]
+      ],
+      "note": "Kapolri merupakan jabatan struktural kenegaraan/kepolisian yang tepat berlabel NOR dan terpisah dari nama."
+    },
+    {
+      "id": "E002",
+      "original": [
+        1,
+        4,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          1,
+          4,
+          "PER"
+        ]
+      ],
+      "note": "Listyo Sigit Prabowo adalah nama individu manusia (PER)."
+    },
+    {
+      "id": "E003",
+      "original": [
+        7,
+        8,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          7,
+          8,
+          "NOR"
+        ]
+      ],
+      "note": "Polri adalah institusi kepolisian negara (NOR)."
+    },
+    {
+      "id": "E004",
+      "original": [
+        12,
+        15,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          12,
+          15,
+          "GPE"
+        ]
+      ],
+      "note": "Ibu Kota Nusantara adalah entitas administratif geopolitik (GPE)."
+    },
+    {
+      "id": "E005",
+      "original": [
+        17,
+        19,
+        "EVT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          17,
+          19,
+          "EVT"
+        ]
+      ],
+      "note": "HUT RI adalah peringatan/peristiwa perayaan hari bersejarah nasional (EVT)."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      1,
+      "NOR"
+    ],
+    [
+      1,
+      4,
+      "PER"
+    ],
+    [
+      7,
+      8,
+      "NOR"
+    ],
+    [
+      12,
+      15,
+      "GPE"
+    ],
+    [
+      17,
+      19,
+      "EVT"
+    ]
+  ],
+  "notes": "Seluruh anotasi entitas sudah sesuai pedoman NERGRIT.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:13:45"
+}

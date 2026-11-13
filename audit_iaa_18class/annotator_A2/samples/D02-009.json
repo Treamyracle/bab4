@@ -1,0 +1,114 @@
+{
+  "sample_id": "D02-009",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        1,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          1,
+          "NOR"
+        ]
+      ],
+      "note": "Kementerian/lembaga pemerintah NOR sudah tepat"
+    },
+    {
+      "id": "E002",
+      "original": [
+        7,
+        11,
+        "TIM"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          7,
+          11,
+          "TIM"
+        ]
+      ],
+      "note": "Format jam spesifik dan zona waktu TIM sudah tepat tanpa preposisi pada dan kata pukul"
+    },
+    {
+      "id": "E003",
+      "original": [
+        12,
+        13,
+        "CRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          12,
+          13,
+          "CRD"
+        ]
+      ],
+      "note": "Bilangan cacah murni CRD sudah tepat"
+    },
+    {
+      "id": "E004",
+      "original": [
+        19,
+        24,
+        "MON"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          19,
+          24,
+          "MON"
+        ]
+      ],
+      "note": "Nominal moneter MON sudah tepat tanpa menyerap tanda titik akhir"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      1,
+      "NOR"
+    ],
+    [
+      7,
+      11,
+      "TIM"
+    ],
+    [
+      12,
+      13,
+      "CRD"
+    ],
+    [
+      19,
+      24,
+      "MON"
+    ]
+  ],
+  "notes": "Semua entitas sah telah teridentifikasi dengan batas rentang yang presisi.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:50:17"
+}

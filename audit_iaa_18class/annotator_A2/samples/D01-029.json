@@ -1,0 +1,233 @@
+{
+  "sample_id": "D01-029",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        1,
+        "NOR"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:NOR:1-2",
+      "replacement_spans": [
+        [
+          0,
+          2,
+          "NOR"
+        ]
+      ],
+      "note": "Satukan jabatan struktural kenegaraan 'Ketua KPU' menjadi satu rentang utuh NOR:1-2."
+    },
+    {
+      "id": "E002",
+      "original": [
+        1,
+        2,
+        "NOR"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "Dilebur ke dalam satu span NOR:1-2 bersama token 1."
+    },
+    {
+      "id": "E003",
+      "original": [
+        2,
+        4,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          2,
+          4,
+          "PER"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        5,
+        10,
+        "EVT"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:EVT:8-10",
+      "replacement_spans": [
+        [
+          7,
+          10,
+          "EVT"
+        ]
+      ],
+      "note": "Koreksi boundary EVT: eksklusi kata benda umum 'deklarasi hasil', nama peristiwa resmi adalah 'pemilu legislatif 2024'."
+    },
+    {
+      "id": "E005",
+      "original": [
+        11,
+        14,
+        "FAC"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:FAC:12-13; GPE:14-14",
+      "replacement_spans": [
+        [
+          11,
+          13,
+          "FAC"
+        ],
+        [
+          13,
+          14,
+          "GPE"
+        ]
+      ],
+      "note": "Pisahkan infrastruktur fisik 'Gedung KPU' (FAC:12-13) dari entitas wilayah administratif 'Jakarta' (GPE:14-14)."
+    },
+    {
+      "id": "E006",
+      "original": [
+        15,
+        16,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          15,
+          16,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E007",
+      "original": [
+        17,
+        20,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          17,
+          20,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E008",
+      "original": [
+        22,
+        26,
+        "TIM"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          22,
+          26,
+          "TIM"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E009",
+      "original": [
+        31,
+        34,
+        "QTY"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:CRD:32-33",
+      "replacement_spans": [
+        [
+          31,
+          33,
+          "CRD"
+        ]
+      ],
+      "note": "Koreksi kelas dan boundary: '160 juta' adalah bilangan cacah/kuantitas murni (CRD), bukan satuan ukuran fisik (QTY); kata benda 'orang' dieksklusi (O)."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      2,
+      4,
+      "PER"
+    ],
+    [
+      7,
+      10,
+      "EVT"
+    ],
+    [
+      11,
+      13,
+      "FAC"
+    ],
+    [
+      13,
+      14,
+      "GPE"
+    ],
+    [
+      15,
+      16,
+      "DAT"
+    ],
+    [
+      17,
+      20,
+      "DAT"
+    ],
+    [
+      22,
+      26,
+      "TIM"
+    ],
+    [
+      31,
+      33,
+      "CRD"
+    ]
+  ],
+  "notes": "Penggabungan multi-token jabatan NOR, pemotongan kata umum pada EVT, pemisahan FAC dan GPE, serta koreksi kuantitas orang menjadi CRD.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:33:02"
+}

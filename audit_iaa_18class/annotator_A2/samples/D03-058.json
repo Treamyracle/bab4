@@ -1,0 +1,114 @@
+{
+  "sample_id": "D03-058",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        4,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          4,
+          "PRD"
+        ]
+      ],
+      "note": "Indeks Harga Saham Gabungan adalah indeks pasar modal yang masuk kategori produk finansial (PRD)."
+    },
+    {
+      "id": "E002",
+      "original": [
+        5,
+        6,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          5,
+          6,
+          "PRD"
+        ]
+      ],
+      "note": "IHSG adalah akronim indeks pasar modal (PRD)."
+    },
+    {
+      "id": "E003",
+      "original": [
+        10,
+        13,
+        "CRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          10,
+          13,
+          "CRD"
+        ]
+      ],
+      "note": "7 . 300 adalah angka bilangan cacah/kuantitas murni (CRD)."
+    },
+    {
+      "id": "E004",
+      "original": [
+        19,
+        22,
+        "MON"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          19,
+          22,
+          "MON"
+        ]
+      ],
+      "note": "Rp 10 triliun adalah nilai nominal moneter lengkap (MON), prefiks 'sebesar' telah benar dieksklusi."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      4,
+      "PRD"
+    ],
+    [
+      5,
+      6,
+      "PRD"
+    ],
+    [
+      10,
+      13,
+      "CRD"
+    ],
+    [
+      19,
+      22,
+      "MON"
+    ]
+  ],
+  "notes": "Tidak ditemukan kesalahan kelas, batas span, maupun entitas yang terlewat.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:13:45"
+}

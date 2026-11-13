@@ -25,9 +25,4 @@ notebooks/bab4_a100_raw_v2_package/
 notebooks/bab4_a100_raw_v2_package.zip
 notebooks/bab4_historical_audit.zip
 
-# Distilled data & verification runtime outputs
-data/distilled/
-data/distilled_nemotron_verified/
-data/distilled_luna_verified/
-data/distilled_gemma_verified/
-notebooks/experiments/
+# Runtime outputs only (keep completed distilled datasets & experiment results tracked)

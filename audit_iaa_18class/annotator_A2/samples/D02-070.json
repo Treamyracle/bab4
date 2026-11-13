@@ -1,0 +1,114 @@
+{
+  "sample_id": "D02-070",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        9,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          9,
+          "NOR"
+        ]
+      ],
+      "note": "Lembaga kementerian negara sesuai kelas NOR dan Aturan 4"
+    },
+    {
+      "id": "E002",
+      "original": [
+        10,
+        12,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          10,
+          12,
+          "PRD"
+        ]
+      ],
+      "note": "Komoditas pangan/kuliner khas sesuai kelas PRD dan Aturan 5"
+    },
+    {
+      "id": "E003",
+      "original": [
+        17,
+        19,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          17,
+          19,
+          "GPE"
+        ]
+      ],
+      "note": "Entitas geopolitik administratif provinsi tanpa preposisi 'dari' sesuai kelas GPE dan Aturan 3"
+    },
+    {
+      "id": "E004",
+      "original": [
+        20,
+        23,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          20,
+          23,
+          "DAT"
+        ]
+      ],
+      "note": "Tanggal kalender spesifik tanpa preposisi 'pada' sesuai kelas DAT"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      9,
+      "NOR"
+    ],
+    [
+      10,
+      12,
+      "PRD"
+    ],
+    [
+      17,
+      19,
+      "GPE"
+    ],
+    [
+      20,
+      23,
+      "DAT"
+    ]
+  ],
+  "notes": "Peniadaan anotasi pada istilah penganut agama ('umat Muslim') dan konsep keagamaan ('halal') sudah 100% tepat berstatus O sesuai Aturan 1.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:08:54"
+}

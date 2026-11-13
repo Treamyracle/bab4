@@ -1,0 +1,125 @@
+{
+  "sample_id": "D02-007",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        2,
+        3,
+        "ORG"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          2,
+          3,
+          "ORG"
+        ]
+      ],
+      "note": "Organisasi serikat pekerja non-pemerintah ORG sudah tepat"
+    },
+    {
+      "id": "E002",
+      "original": [
+        3,
+        7,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          3,
+          7,
+          "PER"
+        ]
+      ],
+      "note": "Rentang nama individu PER sudah tepat"
+    },
+    {
+      "id": "E003",
+      "original": [
+        12,
+        13,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          12,
+          13,
+          "GPE"
+        ]
+      ],
+      "note": "Entitas geopolitik kota GPE sudah tepat"
+    },
+    {
+      "id": "E004",
+      "original": [
+        16,
+        17,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          16,
+          17,
+          "DAT"
+        ]
+      ],
+      "note": "Tahun kalender DAT sudah tepat"
+    }
+  ],
+  "missing_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ]
+  ],
+  "final_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      2,
+      3,
+      "ORG"
+    ],
+    [
+      3,
+      7,
+      "PER"
+    ],
+    [
+      12,
+      13,
+      "GPE"
+    ],
+    [
+      16,
+      17,
+      "DAT"
+    ]
+  ],
+  "notes": "Jabatan struktural 'Sekretaris Jenderal' pada token 1-2 terlewat dan wajib dilabeli sebagai NOR.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:50:17"
+}

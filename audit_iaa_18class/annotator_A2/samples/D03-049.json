@@ -1,0 +1,114 @@
+{
+  "sample_id": "D03-049",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        2,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          2,
+          "PER"
+        ]
+      ],
+      "note": "Jonatan Christie adalah nama individu manusia berlabel PER."
+    },
+    {
+      "id": "E002",
+      "original": [
+        8,
+        10,
+        "EVT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          8,
+          10,
+          "EVT"
+        ]
+      ],
+      "note": "Indonesia Open adalah turnamen olahraga berlabel EVT (kata jenis 'turnamen' di luar span)."
+    },
+    {
+      "id": "E003",
+      "original": [
+        14,
+        15,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          14,
+          15,
+          "GPE"
+        ]
+      ],
+      "note": "Denmark adalah negara berdaulat berlabel GPE."
+    },
+    {
+      "id": "E004",
+      "original": [
+        17,
+        19,
+        "DAT"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:DAT:18-18",
+      "replacement_spans": [
+        [
+          17,
+          18,
+          "DAT"
+        ]
+      ],
+      "note": "Keluarkan kata keterangan deiktik waktu 'kemarin' dari rentang DAT; hanya nama hari 'Minggu' yang menjadi entitas DAT."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      2,
+      "PER"
+    ],
+    [
+      8,
+      10,
+      "EVT"
+    ],
+    [
+      14,
+      15,
+      "GPE"
+    ],
+    [
+      17,
+      18,
+      "DAT"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:14:31"
+}

@@ -1,0 +1,66 @@
+{
+  "sample_id": "D03-068",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        1,
+        10,
+        "LAW"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          1,
+          10,
+          "LAW"
+        ]
+      ],
+      "note": "Judul resmi undang-undang utuh tepat berkelas LAW."
+    },
+    {
+      "id": "E002",
+      "original": [
+        21,
+        23,
+        "LOC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          21,
+          23,
+          "LOC"
+        ]
+      ],
+      "note": "Kawasan makro-regional Asia Tenggara tepat berkelas LOC."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      1,
+      10,
+      "LAW"
+    ],
+    [
+      21,
+      23,
+      "LOC"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:17:37"
+}

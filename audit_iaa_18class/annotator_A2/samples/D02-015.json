@@ -1,0 +1,42 @@
+{
+  "sample_id": "D02-015",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        21,
+        23,
+        "EVT"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:EVT:21-23",
+      "replacement_spans": [
+        [
+          20,
+          23,
+          "EVT"
+        ]
+      ],
+      "note": "Perbaiki batas rentang EVT menjadi 'Hari Raya Idulfitri' (tokens 21-23) dengan menyerap kata 'Hari'"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      20,
+      23,
+      "EVT"
+    ]
+  ],
+  "notes": "Sebutan penganut agama (Muslim, Kristen, Katolik, Hindu, Buddha, Khonghucu) sudah benar berstatus O sesuai aturan eliminasi istilah agama",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:52:20"
+}

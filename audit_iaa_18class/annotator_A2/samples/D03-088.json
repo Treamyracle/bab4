@@ -1,0 +1,111 @@
+{
+  "sample_id": "D03-088",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        1,
+        "ORG"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          1,
+          "ORG"
+        ]
+      ],
+      "note": "BUMN korporasi Pertamina termasuk ORG."
+    },
+    {
+      "id": "E002",
+      "original": [
+        10,
+        13,
+        "MON"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          10,
+          13,
+          "MON"
+        ]
+      ],
+      "note": "Nilai nominal moneter (MON) sudah tepat dan mengecualikan kata 'mencapai'."
+    },
+    {
+      "id": "E003",
+      "original": [
+        16,
+        18,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          16,
+          18,
+          "PRD"
+        ]
+      ],
+      "note": "Komoditas energi 'minyak bumi' termasuk PRD."
+    }
+  ],
+  "missing_spans": [
+    [
+      3,
+      4,
+      "PRD"
+    ],
+    [
+      5,
+      7,
+      "LOC"
+    ]
+  ],
+  "final_spans": [
+    [
+      0,
+      1,
+      "ORG"
+    ],
+    [
+      3,
+      4,
+      "PRD"
+    ],
+    [
+      5,
+      7,
+      "LOC"
+    ],
+    [
+      10,
+      13,
+      "MON"
+    ],
+    [
+      16,
+      18,
+      "PRD"
+    ]
+  ],
+  "notes": "Komoditas energi 'migas' (token 4) terlewat sebagai PRD, dan wilayah kerja migas 'Blok Rokan' (token 6-7) terlewat sebagai LOC.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:18:20"
+}

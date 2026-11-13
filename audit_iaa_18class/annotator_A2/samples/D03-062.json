@@ -1,0 +1,114 @@
+{
+  "sample_id": "D03-062",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        1,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          1,
+          "NOR"
+        ]
+      ],
+      "note": "Gubernur adalah jabatan struktural kenegaraan berstatus NOR dan terpisah dari nama wilayah"
+    },
+    {
+      "id": "E002",
+      "original": [
+        1,
+        2,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          1,
+          2,
+          "GPE"
+        ]
+      ],
+      "note": "Bali adalah entitas geopolitik administratif berstatus GPE"
+    },
+    {
+      "id": "E003",
+      "original": [
+        6,
+        7,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          6,
+          7,
+          "GPE"
+        ]
+      ],
+      "note": "Bali merujuk pada wilayah asal arsitektur vernakular berstatus GPE"
+    },
+    {
+      "id": "E004",
+      "original": [
+        12,
+        13,
+        "LOC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          12,
+          13,
+          "LOC"
+        ]
+      ],
+      "note": "Mandalika adalah kawasan non-administratif berstatus LOC"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      1,
+      "NOR"
+    ],
+    [
+      1,
+      2,
+      "GPE"
+    ],
+    [
+      6,
+      7,
+      "GPE"
+    ],
+    [
+      12,
+      13,
+      "LOC"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:14:10"
+}

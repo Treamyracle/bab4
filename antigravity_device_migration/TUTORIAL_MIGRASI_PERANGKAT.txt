@@ -1,0 +1,62 @@
+================================================================================
+PANDUAN LENGKAP: MENAUTKAN SESI KE PROYEK SKRIPSI
+(C:\Users\tream\OneDrive\Documents\SKRIPSI\skripsi)
+================================================================================
+
+Folder ini memuat seluruh data cadangan (backup) percakapan, pemikiran, kode,
+dan artefak untuk Sesi ID: 81089962-53ae-4754-ac53-0a755e441870.
+
+Dengan panduan ini, Anda dapat:
+1. Menautkan sesi obrolan ini langsung ke folder:
+   C:\Users\tream\OneDrive\Documents\SKRIPSI\skripsi
+   sehingga saat folder tersebut dibuka di Antigravity, percakapan ini langsung
+   muncul di dalam proyek tersebut.
+2. Memulihkan sesi di perangkat/komputer lain secara utuh.
+
+--------------------------------------------------------------------------------
+ISI BERKAS DI DALAM FOLDER INI:
+--------------------------------------------------------------------------------
+1. link_to_workspace.py
+   -> Skrip 1-klik untuk menautkan sesi obrolan saat ini ke folder skripsi baru.
+2. restore_session.py
+   -> Skrip pemulihan lengkap jika dipindahkan ke komputer/laptop lain.
+3. session_metadata.json
+   -> Metadata sesi dan daftar workspace URIs yang terdaftar.
+4. conversation_db_81089962-53ae-4754-ac53-0a755e441870.zip
+   -> Database riwayat chat SQLite (.db).
+5. brain_81089962-53ae-4754-ac53-0a755e441870.zip
+   -> Folder artefak & log sesi.
+
+================================================================================
+CARA 1: MENAUTKAN SESI KE FOLDER "SKRIPSI\skripsi" DI LAPTOP SAAT INI
+================================================================================
+
+Jika Anda memindahkan repositori ke `C:\Users\tream\OneDrive\Documents\SKRIPSI\skripsi`
+dan ingin percakapan ini otomatis muncul di proyek tersebut:
+
+1. TUTUP terlebih dahulu aplikasi Antigravity.
+2. Buka PowerShell atau Terminal di laptop Anda, lalu jalankan:
+   python "C:\Users\tream\OneDrive\Documents\SKRIPSI\skripsi\antigravity_device_migration\link_to_workspace.py"
+
+3. Buka kembali aplikasi Antigravity.
+4. Pilih "Open Folder" / "Add Project" lalu arahkan ke:
+   C:\Users\tream\OneDrive\Documents\SKRIPSI\skripsi
+
+5. Selesai! Percakapan "IndoBERT NER Thesis Progress Review" akan langsung
+   terbuka dan terikat di dalam proyek folder tersebut.
+
+================================================================================
+CARA 2: MEMULIHKAN DI LAPTOP/KOMPUTER BARU
+================================================================================
+
+1. Clone repositori ini di perangkat baru:
+   git clone https://github.com/Treamyracle/skripsi.git
+   cd skripsi
+
+2. Pastikan Antigravity tertutup.
+3. Jalankan:
+   python antigravity_device_migration/restore_session.py
+
+4. Buka aplikasi Antigravity dan buka folder repo skripsi. Sesi akan langsung
+   aktif dan terhubung.
+================================================================================

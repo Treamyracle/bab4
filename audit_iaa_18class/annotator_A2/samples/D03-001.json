@@ -1,0 +1,138 @@
+{
+  "sample_id": "D03-001",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        1,
+        2,
+        "NOR"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:NOR:1-2",
+      "replacement_spans": [
+        [
+          0,
+          2,
+          "NOR"
+        ]
+      ],
+      "note": "Perluas span NOR untuk menyerap jabatan struktural kenegaraan 'Kepala BNPB' secara utuh (tokens 1-2)."
+    },
+    {
+      "id": "E002",
+      "original": [
+        3,
+        5,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          3,
+          5,
+          "PER"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        11,
+        13,
+        "LOC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          11,
+          13,
+          "LOC"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        19,
+        21,
+        "ORD"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:ORD:21-21",
+      "replacement_spans": [
+        [
+          20,
+          21,
+          "ORD"
+        ]
+      ],
+      "note": "Keluarkan kata benda umum 'level' dari rentang ORD sehingga hanya menyisakan angka tingkatan 'III'."
+    },
+    {
+      "id": "E005",
+      "original": [
+        22,
+        23,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          22,
+          23,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      3,
+      5,
+      "PER"
+    ],
+    [
+      11,
+      13,
+      "LOC"
+    ],
+    [
+      20,
+      21,
+      "ORD"
+    ],
+    [
+      22,
+      23,
+      "DAT"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:05:42"
+}

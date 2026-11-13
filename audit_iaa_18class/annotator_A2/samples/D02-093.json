@@ -1,0 +1,138 @@
+{
+  "sample_id": "D02-093",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        1,
+        2,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          1,
+          2,
+          "NOR"
+        ]
+      ],
+      "note": "PMI adalah organisasi kemanusiaan nasional berstatus badan hukum publik berkelas NOR"
+    },
+    {
+      "id": "E002",
+      "original": [
+        3,
+        6,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          3,
+          6,
+          "PER"
+        ]
+      ],
+      "note": "Gelar profesi Dokter diserap ke dalam rentang PER bersama nama individu Rina Kartika"
+    },
+    {
+      "id": "E003",
+      "original": [
+        7,
+        8,
+        "CRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          7,
+          8,
+          "CRD"
+        ]
+      ],
+      "note": "500 adalah bilangan cacah murni berkelas CRD"
+    },
+    {
+      "id": "E004",
+      "original": [
+        11,
+        15,
+        "QTY"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          11,
+          15,
+          "QTY"
+        ]
+      ],
+      "note": "2 . 000 liter adalah kuantitas fisik volume berkelas QTY"
+    },
+    {
+      "id": "E005",
+      "original": [
+        20,
+        22,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          20,
+          22,
+          "GPE"
+        ]
+      ],
+      "note": "Kabupaten Demak adalah wilayah administratif pemerintahan tingkat kabupaten berkelas GPE"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      1,
+      2,
+      "NOR"
+    ],
+    [
+      3,
+      6,
+      "PER"
+    ],
+    [
+      7,
+      8,
+      "CRD"
+    ],
+    [
+      11,
+      15,
+      "QTY"
+    ],
+    [
+      20,
+      22,
+      "GPE"
+    ]
+  ],
+  "notes": "Anotasi lengkap dan tidak ada entitas yang terlewat.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:06:52"
+}

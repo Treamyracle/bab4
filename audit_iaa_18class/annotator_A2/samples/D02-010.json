@@ -1,0 +1,42 @@
+{
+  "sample_id": "D02-010",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        5,
+        8,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          5,
+          8,
+          "GPE"
+        ]
+      ],
+      "note": "Entitas geopolitik administratif GPE sudah tepat menyerap kata jenis Kabupaten dan mengeksklusi preposisi di"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      5,
+      8,
+      "GPE"
+    ]
+  ],
+  "notes": "Istilah keagamaan dan penganut agama ('Muslim' dan 'Hindu') berstatus O sesuai aturan peniadaan TTL/REG.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:50:17"
+}

@@ -1,0 +1,244 @@
+{
+  "sample_id": "D01-040",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        7,
+        "FAC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          7,
+          "FAC"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        7,
+        9,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          7,
+          9,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        10,
+        12,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          10,
+          12,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        14,
+        16,
+        "QTY"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:CRD:15-15",
+      "replacement_spans": [
+        [
+          14,
+          15,
+          "CRD"
+        ]
+      ],
+      "note": "\"25\" adalah bilangan cacah; \"unit\" bukan satuan ukuran fisik"
+    },
+    {
+      "id": "E005",
+      "original": [
+        16,
+        18,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          16,
+          18,
+          "PRD"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E006",
+      "original": [
+        19,
+        21,
+        "QTY"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          19,
+          21,
+          "QTY"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E007",
+      "original": [
+        28,
+        33,
+        "MON"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          28,
+          33,
+          "MON"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E008",
+      "original": [
+        36,
+        40,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          36,
+          40,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E009",
+      "original": [
+        41,
+        46,
+        "DAT"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:DAT:42-42; DAT:44-46",
+      "replacement_spans": [
+        [
+          41,
+          42,
+          "DAT"
+        ],
+        [
+          43,
+          46,
+          "DAT"
+        ]
+      ],
+      "note": "Koma pada token 43 bukan bagian dari entitas tanggal"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      7,
+      "FAC"
+    ],
+    [
+      7,
+      9,
+      "GPE"
+    ],
+    [
+      10,
+      12,
+      "GPE"
+    ],
+    [
+      14,
+      15,
+      "CRD"
+    ],
+    [
+      16,
+      18,
+      "PRD"
+    ],
+    [
+      19,
+      21,
+      "QTY"
+    ],
+    [
+      28,
+      33,
+      "MON"
+    ],
+    [
+      36,
+      40,
+      "NOR"
+    ],
+    [
+      41,
+      42,
+      "DAT"
+    ],
+    [
+      43,
+      46,
+      "DAT"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:19:41"
+}

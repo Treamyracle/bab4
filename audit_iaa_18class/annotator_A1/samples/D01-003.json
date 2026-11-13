@@ -1,0 +1,220 @@
+{
+  "sample_id": "D01-003",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        3,
+        5,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          3,
+          5,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        6,
+        8,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          6,
+          8,
+          "PER"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        17,
+        18,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          17,
+          18,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        19,
+        22,
+        "EVT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          19,
+          22,
+          "EVT"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        25,
+        28,
+        "FAC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          25,
+          28,
+          "FAC"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E006",
+      "original": [
+        29,
+        30,
+        "LOC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          29,
+          30,
+          "LOC"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E007",
+      "original": [
+        31,
+        32,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          31,
+          32,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E008",
+      "original": [
+        33,
+        38,
+        "DAT"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:DAT:34-34; DAT:36-38",
+      "replacement_spans": [
+        [
+          33,
+          34,
+          "DAT"
+        ],
+        [
+          35,
+          38,
+          "DAT"
+        ]
+      ],
+      "note": "Koma bukan bagian rentang tanggal; pisahkan nama hari dari tanggal kalender"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      3,
+      5,
+      "NOR"
+    ],
+    [
+      6,
+      8,
+      "PER"
+    ],
+    [
+      17,
+      18,
+      "NOR"
+    ],
+    [
+      19,
+      22,
+      "EVT"
+    ],
+    [
+      25,
+      28,
+      "FAC"
+    ],
+    [
+      29,
+      30,
+      "LOC"
+    ],
+    [
+      31,
+      32,
+      "GPE"
+    ],
+    [
+      33,
+      34,
+      "DAT"
+    ],
+    [
+      35,
+      38,
+      "DAT"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:18:56"
+}

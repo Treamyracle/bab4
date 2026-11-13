@@ -1,0 +1,138 @@
+{
+  "sample_id": "D02-071",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        1,
+        5,
+        "EVT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          1,
+          5,
+          "EVT"
+        ]
+      ],
+      "note": "KTT Iklim Dunia 2025 tepat sebagai EVT (konferensi resmi)."
+    },
+    {
+      "id": "E002",
+      "original": [
+        6,
+        7,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          6,
+          7,
+          "GPE"
+        ]
+      ],
+      "note": "Bali tepat sebagai GPE (entitas geopolitik provinsi)."
+    },
+    {
+      "id": "E003",
+      "original": [
+        8,
+        9,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          8,
+          9,
+          "GPE"
+        ]
+      ],
+      "note": "Indonesia tepat sebagai GPE (negara berdaulat)."
+    },
+    {
+      "id": "E004",
+      "original": [
+        16,
+        17,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          16,
+          17,
+          "DAT"
+        ]
+      ],
+      "note": "2060 tepat sebagai DAT (angka tahun tunggal)."
+    },
+    {
+      "id": "E005",
+      "original": [
+        25,
+        27,
+        "LOC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          25,
+          27,
+          "LOC"
+        ]
+      ],
+      "note": "Sungai Kapuas tepat sebagai LOC (bentang alam alami non-administratif)."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      1,
+      5,
+      "EVT"
+    ],
+    [
+      6,
+      7,
+      "GPE"
+    ],
+    [
+      8,
+      9,
+      "GPE"
+    ],
+    [
+      16,
+      17,
+      "DAT"
+    ],
+    [
+      25,
+      27,
+      "LOC"
+    ]
+  ],
+  "notes": "Seluruh entitas dan batas token sudah tepat.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:01:42"
+}

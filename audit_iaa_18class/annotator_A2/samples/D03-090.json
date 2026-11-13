@@ -1,0 +1,114 @@
+{
+  "sample_id": "D03-090",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        2,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          2,
+          "NOR"
+        ]
+      ],
+      "note": "Kelompok etnis 'Suku Dayak' dikategorikan sebagai NOR sesuai aturan 18."
+    },
+    {
+      "id": "E002",
+      "original": [
+        3,
+        5,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          3,
+          5,
+          "GPE"
+        ]
+      ],
+      "note": "Provinsi administratif (GPE) sudah tepat."
+    },
+    {
+      "id": "E003",
+      "original": [
+        6,
+        8,
+        "EVT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          6,
+          8,
+          "EVT"
+        ]
+      ],
+      "note": "Festival perayaan budaya Gawai Dayak dikategorikan sebagai EVT."
+    },
+    {
+      "id": "E004",
+      "original": [
+        9,
+        11,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          9,
+          11,
+          "DAT"
+        ]
+      ],
+      "note": "Penanda waktu kalender 'bulan Juni' (DAT) sudah tepat dan mengecualikan preposisi 'pada'."
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      3,
+      5,
+      "GPE"
+    ],
+    [
+      6,
+      8,
+      "EVT"
+    ],
+    [
+      9,
+      11,
+      "DAT"
+    ]
+  ],
+  "notes": "Seluruh entitas sudah teranotasi dengan benar sesuai kaidah NERGRIT.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "gemma",
+  "dataset_code": "D03",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T19:18:20"
+}

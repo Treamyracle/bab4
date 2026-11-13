@@ -1,0 +1,258 @@
+{
+  "sample_id": "D02-006",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        3,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          3,
+          "NOR"
+        ]
+      ],
+      "note": "Rentang dan kelas jabatan struktural NOR sudah tepat"
+    },
+    {
+      "id": "E002",
+      "original": [
+        3,
+        5,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          3,
+          5,
+          "PER"
+        ]
+      ],
+      "note": "Rentang dan kelas PER sudah tepat"
+    },
+    {
+      "id": "E003",
+      "original": [
+        6,
+        9,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          6,
+          9,
+          "PRD"
+        ]
+      ],
+      "note": "Komoditas kuliner/pangan PRD sudah tepat"
+    },
+    {
+      "id": "E004",
+      "original": [
+        10,
+        12,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          10,
+          12,
+          "PRD"
+        ]
+      ],
+      "note": "Komoditas pangan PRD sudah tepat"
+    },
+    {
+      "id": "E005",
+      "original": [
+        13,
+        16,
+        "EVT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          13,
+          16,
+          "EVT"
+        ]
+      ],
+      "note": "Ajang festival EVT sudah tepat"
+    },
+    {
+      "id": "E006",
+      "original": [
+        17,
+        18,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          17,
+          18,
+          "GPE"
+        ]
+      ],
+      "note": "Entitas geopolitik kota GPE sudah tepat"
+    },
+    {
+      "id": "E007",
+      "original": [
+        22,
+        23,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          22,
+          23,
+          "GPE"
+        ]
+      ],
+      "note": "Entitas geopolitik negara GPE sudah tepat"
+    },
+    {
+      "id": "E008",
+      "original": [
+        24,
+        25,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          24,
+          25,
+          "GPE"
+        ]
+      ],
+      "note": "Entitas geopolitik negara GPE sudah tepat"
+    },
+    {
+      "id": "E009",
+      "original": [
+        27,
+        28,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          27,
+          28,
+          "GPE"
+        ]
+      ],
+      "note": "Entitas geopolitik negara GPE sudah tepat"
+    },
+    {
+      "id": "E010",
+      "original": [
+        31,
+        32,
+        "LAN"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          31,
+          32,
+          "LAN"
+        ]
+      ],
+      "note": "Nama bahasa alami LAN sudah tepat tanpa kata berimbuhan berbahasa"
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      3,
+      "NOR"
+    ],
+    [
+      3,
+      5,
+      "PER"
+    ],
+    [
+      6,
+      9,
+      "PRD"
+    ],
+    [
+      10,
+      12,
+      "PRD"
+    ],
+    [
+      13,
+      16,
+      "EVT"
+    ],
+    [
+      17,
+      18,
+      "GPE"
+    ],
+    [
+      22,
+      23,
+      "GPE"
+    ],
+    [
+      24,
+      25,
+      "GPE"
+    ],
+    [
+      27,
+      28,
+      "GPE"
+    ],
+    [
+      31,
+      32,
+      "LAN"
+    ]
+  ],
+  "notes": "Seluruh batas dan kelas entitas telah sesuai pedoman NERGRIT.",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "luna",
+  "dataset_code": "D02",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:50:17"
+}

@@ -1,0 +1,1937 @@
+{
+  "seed": 42,
+  "gold": {
+    "exact_match_tp": 7487,
+    "total_error_events": 1841,
+    "counts": {
+      "type_confusion": 463,
+      "boundary_error_same_type": 335,
+      "boundary_and_type_error": 227,
+      "spurious_fp": 438,
+      "missed_fn": 378
+    },
+    "proportions_pct": {
+      "type_confusion": 25.15,
+      "boundary_error_same_type": 18.2,
+      "boundary_and_type_error": 12.33,
+      "spurious_fp": 23.79,
+      "missed_fn": 20.53
+    },
+    "top_type_confusions": [
+      {
+        "gold_type": "QTY",
+        "pred_type": "CRD",
+        "count": 92
+      },
+      {
+        "gold_type": "ORG",
+        "pred_type": "NOR",
+        "count": 72
+      },
+      {
+        "gold_type": "NOR",
+        "pred_type": "ORG",
+        "count": 70
+      },
+      {
+        "gold_type": "LOC",
+        "pred_type": "GPE",
+        "count": 53
+      },
+      {
+        "gold_type": "GPE",
+        "pred_type": "ORG",
+        "count": 48
+      },
+      {
+        "gold_type": "ORD",
+        "pred_type": "CRD",
+        "count": 35
+      },
+      {
+        "gold_type": "GPE",
+        "pred_type": "LOC",
+        "count": 32
+      },
+      {
+        "gold_type": "PRD",
+        "pred_type": "ORG",
+        "count": 31
+      },
+      {
+        "gold_type": "ORG",
+        "pred_type": "PRD",
+        "count": 25
+      },
+      {
+        "gold_type": "CRD",
+        "pred_type": "QTY",
+        "count": 21
+      },
+      {
+        "gold_type": "NOR",
+        "pred_type": "GPE",
+        "count": 18
+      },
+      {
+        "gold_type": "FAC",
+        "pred_type": "LOC",
+        "count": 16
+      },
+      {
+        "gold_type": "GPE",
+        "pred_type": "NOR",
+        "count": 16
+      },
+      {
+        "gold_type": "FAC",
+        "pred_type": "GPE",
+        "count": 14
+      },
+      {
+        "gold_type": "LOC",
+        "pred_type": "FAC",
+        "count": 13
+      },
+      {
+        "gold_type": "ORG",
+        "pred_type": "GPE",
+        "count": 13
+      },
+      {
+        "gold_type": "ORG",
+        "pred_type": "FAC",
+        "count": 10
+      },
+      {
+        "gold_type": "LAW",
+        "pred_type": "PRD",
+        "count": 7
+      },
+      {
+        "gold_type": "PER",
+        "pred_type": "ORG",
+        "count": 6
+      },
+      {
+        "gold_type": "PRD",
+        "pred_type": "QTY",
+        "count": 5
+      },
+      {
+        "gold_type": "ORG",
+        "pred_type": "LOC",
+        "count": 5
+      },
+      {
+        "gold_type": "CRD",
+        "pred_type": "ORD",
+        "count": 5
+      },
+      {
+        "gold_type": "ORD",
+        "pred_type": "LOC",
+        "count": 5
+      },
+      {
+        "gold_type": "LOC",
+        "pred_type": "ORG",
+        "count": 4
+      },
+      {
+        "gold_type": "PRD",
+        "pred_type": "LOC",
+        "count": 4
+      },
+      {
+        "gold_type": "DAT",
+        "pred_type": "EVT",
+        "count": 4
+      },
+      {
+        "gold_type": "NOR",
+        "pred_type": "LOC",
+        "count": 4
+      },
+      {
+        "gold_type": "NOR",
+        "pred_type": "PER",
+        "count": 4
+      },
+      {
+        "gold_type": "PER",
+        "pred_type": "PRC",
+        "count": 3
+      },
+      {
+        "gold_type": "LOC",
+        "pred_type": "PRD",
+        "count": 3
+      }
+    ],
+    "spurious_fp_by_class": {
+      "CRD": 24,
+      "DAT": 9,
+      "EVT": 18,
+      "FAC": 13,
+      "GPE": 42,
+      "LAN": 0,
+      "LAW": 0,
+      "LOC": 21,
+      "MON": 2,
+      "NOR": 74,
+      "ORD": 3,
+      "ORG": 48,
+      "PER": 21,
+      "PRC": 4,
+      "PRD": 148,
+      "QTY": 10,
+      "TIM": 1,
+      "WOA": 0
+    },
+    "missed_fn_by_class": {
+      "CRD": 24,
+      "DAT": 11,
+      "EVT": 29,
+      "FAC": 14,
+      "GPE": 27,
+      "LAN": 0,
+      "LAW": 4,
+      "LOC": 11,
+      "MON": 3,
+      "NOR": 34,
+      "ORD": 4,
+      "ORG": 36,
+      "PER": 15,
+      "PRC": 3,
+      "PRD": 151,
+      "QTY": 8,
+      "TIM": 4,
+      "WOA": 0
+    },
+    "boundary_error_by_class": {
+      "CRD": 5,
+      "DAT": 28,
+      "EVT": 21,
+      "FAC": 8,
+      "GPE": 20,
+      "LAN": 0,
+      "LAW": 3,
+      "LOC": 29,
+      "MON": 2,
+      "NOR": 35,
+      "ORD": 2,
+      "ORG": 36,
+      "PER": 23,
+      "PRC": 2,
+      "PRD": 103,
+      "QTY": 15,
+      "TIM": 3,
+      "WOA": 0
+    },
+    "sample_errors": {
+      "type_confusion": [
+        {
+          "sentence_id": "gold-008f853752144e9f1b4b",
+          "span_text": "Direktur Jenderal Minyak dan  Gas Bumi",
+          "gold_type": "ORG",
+          "pred_type": "NOR"
+        },
+        {
+          "sentence_id": "gold-00b7a2b1cf00663c4ea0",
+          "span_text": "Nizhny Novgorod Stadium",
+          "gold_type": "FAC",
+          "pred_type": "LOC"
+        },
+        {
+          "sentence_id": "gold-019c5a4d71ed6d2e4d3d",
+          "span_text": "Mugello",
+          "gold_type": "LOC",
+          "pred_type": "GPE"
+        },
+        {
+          "sentence_id": "gold-030c6ec8cbc49da487fb",
+          "span_text": "CHP",
+          "gold_type": "NOR",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-0379f7f18d438715f209",
+          "span_text": "Meksiko",
+          "gold_type": "GPE",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-0379f7f18d438715f209",
+          "span_text": "Swedia",
+          "gold_type": "GPE",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-0379f7f18d438715f209",
+          "span_text": "Swedia",
+          "gold_type": "GPE",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-0379f7f18d438715f209",
+          "span_text": "Jerman",
+          "gold_type": "GPE",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-0379f7f18d438715f209",
+          "span_text": "Swedia",
+          "gold_type": "GPE",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-0379f7f18d438715f209",
+          "span_text": "Belanda",
+          "gold_type": "GPE",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-0379f7f18d438715f209",
+          "span_text": "Italia",
+          "gold_type": "GPE",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-05df74b470abc58aa0e7",
+          "span_text": "Repsol Honda",
+          "gold_type": "PRD",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-085f5e1212cfb2edb2bc",
+          "span_text": "Uni Eropa",
+          "gold_type": "GPE",
+          "pred_type": "NOR"
+        },
+        {
+          "sentence_id": "gold-08c920a1b1f609ff5282",
+          "span_text": "Jawa Tengah",
+          "gold_type": "LOC",
+          "pred_type": "GPE"
+        },
+        {
+          "sentence_id": "gold-0900d644a60fc3d865d2",
+          "span_text": "Timnas Jerman",
+          "gold_type": "NOR",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-0900d644a60fc3d865d2",
+          "span_text": "Meksiko",
+          "gold_type": "GPE",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-0900d644a60fc3d865d2",
+          "span_text": "Swedia",
+          "gold_type": "GPE",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-0900d644a60fc3d865d2",
+          "span_text": "Korea Selatan",
+          "gold_type": "GPE",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-0900d644a60fc3d865d2",
+          "span_text": "Jerman",
+          "gold_type": "GPE",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-0a21b7fbf5587c2af1ab",
+          "span_text": "Kramatjati",
+          "gold_type": "LOC",
+          "pred_type": "GPE"
+        },
+        {
+          "sentence_id": "gold-0b0eb5171549a21f43a6",
+          "span_text": "Polres Bantul",
+          "gold_type": "ORG",
+          "pred_type": "NOR"
+        },
+        {
+          "sentence_id": "gold-0b19218c3e94fcfb51c6",
+          "span_text": "JawaPos . com",
+          "gold_type": "PRD",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-0b2c007c4f6f19ff93b4",
+          "span_text": "38 persen",
+          "gold_type": "PER",
+          "pred_type": "PRC"
+        },
+        {
+          "sentence_id": "gold-0e38e36da0d42c252aa9",
+          "span_text": "Jerman",
+          "gold_type": "GPE",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-0e38e36da0d42c252aa9",
+          "span_text": "Jerman",
+          "gold_type": "GPE",
+          "pred_type": "ORG"
+        }
+      ],
+      "boundary_error_same_type": [
+        {
+          "sentence_id": "gold-008f853752144e9f1b4b",
+          "entity_type": "PRD",
+          "gold_text": "BBM ",
+          "pred_text": "BBM  nonsubsidi"
+        },
+        {
+          "sentence_id": "gold-00a1534cfb03b20b9fa1",
+          "entity_type": "LAW",
+          "gold_text": "perpres",
+          "pred_text": "perpres pelibatan"
+        },
+        {
+          "sentence_id": "gold-00b7a2b1cf00663c4ea0",
+          "entity_type": "ORG",
+          "gold_text": "Gelandang timnas Kroasia",
+          "pred_text": "timnas Kroasia"
+        },
+        {
+          "sentence_id": "gold-017e8a642e5030f35fdc",
+          "entity_type": "NOR",
+          "gold_text": "Dinas Pariwisata Pemuda  dan Olah Raga ( Disparpora )",
+          "pred_text": "Dinas Pariwisata Pemuda  dan Olah Raga ( Disparpora ) Kabupaten Cianjur"
+        },
+        {
+          "sentence_id": "gold-02a80e1b552d44d268dd",
+          "entity_type": "PRD",
+          "gold_text": "oli",
+          "pred_text": "oli murah"
+        },
+        {
+          "sentence_id": "gold-0497eae236b072c92cf7",
+          "entity_type": "LOC",
+          "gold_text": "Stadion NSC Olimpiyskiy",
+          "pred_text": "mixed zone Stadion NSC Olimpiyskiy"
+        },
+        {
+          "sentence_id": "gold-04d406da9312241a1929",
+          "entity_type": "TIM",
+          "gold_text": "6 a . m .",
+          "pred_text": "6 a"
+        },
+        {
+          "sentence_id": "gold-067557249f81e555ce34",
+          "entity_type": "PRD",
+          "gold_text": "karung goni",
+          "pred_text": "karung"
+        },
+        {
+          "sentence_id": "gold-073e3ed60573d8517fd4",
+          "entity_type": "PER",
+          "gold_text": "Andres",
+          "pred_text": "Andres ] Iniesta"
+        },
+        {
+          "sentence_id": "gold-09b76fd86655a3ac3eb2",
+          "entity_type": "GPE",
+          "gold_text": "Kalitengah Lor",
+          "pred_text": "Dusun Kalitengah Lor"
+        },
+        {
+          "sentence_id": "gold-0b19218c3e94fcfb51c6",
+          "entity_type": "ORG",
+          "gold_text": "admin sopir Grab",
+          "pred_text": "Grab"
+        },
+        {
+          "sentence_id": "gold-0b5d187f6b4dfcdae591",
+          "entity_type": "NOR",
+          "gold_text": "Kapolres Buleleng AKBP",
+          "pred_text": "Kapolres Buleleng"
+        },
+        {
+          "sentence_id": "gold-0b5d187f6b4dfcdae591",
+          "entity_type": "PER",
+          "gold_text": "Suratno",
+          "pred_text": "AKBP Suratno"
+        },
+        {
+          "sentence_id": "gold-0ceaadf39456d6a96ced",
+          "entity_type": "PRD",
+          "gold_text": "bus penumpang",
+          "pred_text": "bus"
+        },
+        {
+          "sentence_id": "gold-0d664910cfe926bfb598",
+          "entity_type": "GPE",
+          "gold_text": "Kecamatan Cibinong Kabupaten Bogor",
+          "pred_text": "Kecamatan Cibinong"
+        },
+        {
+          "sentence_id": "gold-0d664910cfe926bfb598",
+          "entity_type": "LOC",
+          "gold_text": "Kompleks Sekretariat Daerah",
+          "pred_text": "Sekretariat Daerah"
+        },
+        {
+          "sentence_id": "gold-0d664910cfe926bfb598",
+          "entity_type": "DAT",
+          "gold_text": "awal 2018",
+          "pred_text": "2018"
+        },
+        {
+          "sentence_id": "gold-0d780c3ca88dd25c1039",
+          "entity_type": "NOR",
+          "gold_text": "Bea Cukai Malaysia",
+          "pred_text": "Pejabat Bea Cukai Malaysia"
+        },
+        {
+          "sentence_id": "gold-0d9717648361546c063e",
+          "entity_type": "NOR",
+          "gold_text": "Polisi Cina",
+          "pred_text": "Polisi"
+        },
+        {
+          "sentence_id": "gold-0e7bbc5bf5cbbaaefd30",
+          "entity_type": "PER",
+          "gold_text": "Salman",
+          "pred_text": "Raja Salman"
+        },
+        {
+          "sentence_id": "gold-0f498a1cdc9b4906576e",
+          "entity_type": "PER",
+          "gold_text": "Tunjuk Inarno Djayadi",
+          "pred_text": "Inarno Djayadi"
+        },
+        {
+          "sentence_id": "gold-0fae64462f30e7000ebb",
+          "entity_type": "NOR",
+          "gold_text": "Jawa Timur",
+          "pred_text": "Polda Jawa Timur"
+        },
+        {
+          "sentence_id": "gold-10b2002d84d8759622c3",
+          "entity_type": "PRD",
+          "gold_text": "TRIBUNBATAM . id",
+          "pred_text": "TRIBUNBATAM"
+        },
+        {
+          "sentence_id": "gold-10e46f36b89a46a8ed92",
+          "entity_type": "ORG",
+          "gold_text": "Tim CNNIndonesia . com",
+          "pred_text": "CNNIndonesia . com"
+        },
+        {
+          "sentence_id": "gold-112cbd3f078e4472bc00",
+          "entity_type": "FAC",
+          "gold_text": "Tol Cikampek dan Cipali",
+          "pred_text": "Tol Cikampek"
+        }
+      ],
+      "boundary_and_type_error": [
+        {
+          "sentence_id": "gold-012a59cf5fe79ed51faa",
+          "gold_type": "ORG",
+          "gold_text": "WRI",
+          "pred_type": "PRD",
+          "pred_text": "laporan WRI"
+        },
+        {
+          "sentence_id": "gold-06b540bd7290b80df949",
+          "gold_type": "LOC",
+          "gold_text": "Pelabuhan Merak",
+          "pred_type": "FAC",
+          "pred_text": "Pelabuhan"
+        },
+        {
+          "sentence_id": "gold-0a2df0c2e0d5debf4d89",
+          "gold_type": "LOC",
+          "gold_text": "kantor pusat Yamaha",
+          "pred_type": "ORG",
+          "pred_text": "Yamaha"
+        },
+        {
+          "sentence_id": "gold-0b5d187f6b4dfcdae591",
+          "gold_type": "LOC",
+          "gold_text": "Celukan Bawang",
+          "pred_type": "PRD",
+          "pred_text": "PLTU Celukan Bawang"
+        },
+        {
+          "sentence_id": "gold-0d05754f4c4c2d3e88a2",
+          "gold_type": "PRC",
+          "gold_text": "3 , 41 %",
+          "pred_type": "MON",
+          "pred_text": "Rp 3 , 41"
+        },
+        {
+          "sentence_id": "gold-108533742cf9c7a6727b",
+          "gold_type": "ORG",
+          "gold_text": "Badan Keselamatan Lalu Lintas Amerika Serikat",
+          "pred_type": "NOR",
+          "pred_text": "Badan"
+        },
+        {
+          "sentence_id": "gold-109e225800ccfb867588",
+          "gold_type": "CRD",
+          "gold_text": "20",
+          "pred_type": "QTY",
+          "pred_text": "20 hingga"
+        },
+        {
+          "sentence_id": "gold-129c9effbe63066bd2e7",
+          "gold_type": "QTY",
+          "gold_text": "tiga unit mobil",
+          "pred_type": "CRD",
+          "pred_text": "tiga"
+        },
+        {
+          "sentence_id": "gold-129c9effbe63066bd2e7",
+          "gold_type": "QTY",
+          "gold_text": "12 mesin apung",
+          "pred_type": "CRD",
+          "pred_text": "12"
+        },
+        {
+          "sentence_id": "gold-129c9effbe63066bd2e7",
+          "gold_type": "QTY",
+          "gold_text": "24 orang",
+          "pred_type": "CRD",
+          "pred_text": "24"
+        },
+        {
+          "sentence_id": "gold-12cc81f5d45b1c1a61ba",
+          "gold_type": "GPE",
+          "gold_text": "Jakarta",
+          "pred_type": "FAC",
+          "pred_text": "tol Jakarta arah Cikampek"
+        },
+        {
+          "sentence_id": "gold-12cc81f5d45b1c1a61ba",
+          "gold_type": "PRD",
+          "gold_text": "rest area Km 39",
+          "pred_type": "LOC",
+          "pred_text": "39"
+        },
+        {
+          "sentence_id": "gold-12f0534b5795c7d408d7",
+          "gold_type": "LOC",
+          "gold_text": "Perairan Desa Igal",
+          "pred_type": "GPE",
+          "pred_text": "Desa Igal"
+        },
+        {
+          "sentence_id": "gold-12f0534b5795c7d408d7",
+          "gold_type": "PRD",
+          "gold_text": "kapal",
+          "pred_type": "QTY",
+          "pred_text": "kapal ("
+        },
+        {
+          "sentence_id": "gold-164d488ca967594e4cd6",
+          "gold_type": "PER",
+          "gold_text": "Freeman",
+          "pred_type": "ORG",
+          "pred_text": "[ Freeman"
+        },
+        {
+          "sentence_id": "gold-18aaa648a6fa685b4f5c",
+          "gold_type": "FAC",
+          "gold_text": "Balai Kota Jakarta",
+          "pred_type": "LOC",
+          "pred_text": "Balai"
+        },
+        {
+          "sentence_id": "gold-19f11528861950f9cbdb",
+          "gold_type": "EVT",
+          "gold_text": "mudik 2018",
+          "pred_type": "DAT",
+          "pred_text": "2018"
+        },
+        {
+          "sentence_id": "gold-1a4a72c380168ab4a237",
+          "gold_type": "QTY",
+          "gold_text": "10 unit mobil",
+          "pred_type": "CRD",
+          "pred_text": "10"
+        },
+        {
+          "sentence_id": "gold-1a6d93c9502aec923104",
+          "gold_type": "DAT",
+          "gold_text": "1997",
+          "pred_type": "EVT",
+          "pred_text": "kudeta 1997"
+        },
+        {
+          "sentence_id": "gold-1b3bfbd345dbf96c187c",
+          "gold_type": "LOC",
+          "gold_text": "kawasan Shah Alam",
+          "pred_type": "GPE",
+          "pred_text": "Shah"
+        },
+        {
+          "sentence_id": "gold-1b3bfbd345dbf96c187c",
+          "gold_type": "FAC",
+          "gold_text": "pabrik dan kantor pusat Proton",
+          "pred_type": "ORG",
+          "pred_text": "Proton"
+        },
+        {
+          "sentence_id": "gold-1ba5064c49c9832b3f3d",
+          "gold_type": "CRD",
+          "gold_text": "226",
+          "pred_type": "QTY",
+          "pred_text": "226 karung"
+        },
+        {
+          "sentence_id": "gold-1ba5064c49c9832b3f3d",
+          "gold_type": "ORG",
+          "gold_text": "Bea Cukai",
+          "pred_type": "NOR",
+          "pred_text": "penyidik pegawai negeri sipil Bea Cukai"
+        },
+        {
+          "sentence_id": "gold-1ba5064c49c9832b3f3d",
+          "gold_type": "PRD",
+          "gold_text": "truk Mitshubishi Colt Diesel",
+          "pred_type": "QTY",
+          "pred_text": "truk Mitshubishi"
+        },
+        {
+          "sentence_id": "gold-1c1b6a4f3ba22c710319",
+          "gold_type": "PER",
+          "gold_text": "Sheikh Qatar",
+          "pred_type": "GPE",
+          "pred_text": "Qatar"
+        }
+      ],
+      "spurious_fp": [
+        {
+          "sentence_id": "gold-008f853752144e9f1b4b",
+          "pred_type": "NOR",
+          "pred_text": "pemerintah "
+        },
+        {
+          "sentence_id": "gold-011510de0701929fb73d",
+          "pred_type": "PRD",
+          "pred_text": "lampu lalu lintas"
+        },
+        {
+          "sentence_id": "gold-04d406da9312241a1929",
+          "pred_type": "TIM",
+          "pred_text": "m"
+        },
+        {
+          "sentence_id": "gold-05e8ff82aea4938d9b86",
+          "pred_type": "ORG",
+          "pred_text": "KSSK"
+        },
+        {
+          "sentence_id": "gold-061ceeebdd827225e969",
+          "pred_type": "PRD",
+          "pred_text": "hujan abu"
+        },
+        {
+          "sentence_id": "gold-067557249f81e555ce34",
+          "pred_type": "PER",
+          "pred_text": "ari"
+        },
+        {
+          "sentence_id": "gold-067557249f81e555ce34",
+          "pred_type": "PER",
+          "pred_text": "ari"
+        },
+        {
+          "sentence_id": "gold-06b540bd7290b80df949",
+          "pred_type": "LOC",
+          "pred_text": "Merak"
+        },
+        {
+          "sentence_id": "gold-07008f552e043c0b3cb1",
+          "pred_type": "PRD",
+          "pred_text": "mobil tanki"
+        },
+        {
+          "sentence_id": "gold-077767c44d0f24aaca60",
+          "pred_type": "EVT",
+          "pred_text": "operasi pemberantasan"
+        },
+        {
+          "sentence_id": "gold-0900d644a60fc3d865d2",
+          "pred_type": "ORG",
+          "pred_text": "grup F"
+        },
+        {
+          "sentence_id": "gold-0911f01063bea623b4ec",
+          "pred_type": "ORG",
+          "pred_text": "Proton"
+        },
+        {
+          "sentence_id": "gold-0b5d187f6b4dfcdae591",
+          "pred_type": "NOR",
+          "pred_text": "polisi"
+        },
+        {
+          "sentence_id": "gold-0ba8e267bb81d2ad1796",
+          "pred_type": "PRD",
+          "pred_text": "beras"
+        },
+        {
+          "sentence_id": "gold-0d05754f4c4c2d3e88a2",
+          "pred_type": "PRC",
+          "pred_text": "%"
+        },
+        {
+          "sentence_id": "gold-0d664910cfe926bfb598",
+          "pred_type": "GPE",
+          "pred_text": "Kabupaten Bogor"
+        },
+        {
+          "sentence_id": "gold-0d9717648361546c063e",
+          "pred_type": "GPE",
+          "pred_text": "Cina"
+        },
+        {
+          "sentence_id": "gold-0f88e3e90f417b567fc3",
+          "pred_type": "NOR",
+          "pred_text": "pemerintah"
+        },
+        {
+          "sentence_id": "gold-0f88e3e90f417b567fc3",
+          "pred_type": "PRD",
+          "pred_text": "mesin pompa air"
+        },
+        {
+          "sentence_id": "gold-105183ccc090eb1c412b",
+          "pred_type": "GPE",
+          "pred_text": "Bolivia"
+        },
+        {
+          "sentence_id": "gold-108533742cf9c7a6727b",
+          "pred_type": "ORG",
+          "pred_text": "Keselamatan"
+        },
+        {
+          "sentence_id": "gold-108533742cf9c7a6727b",
+          "pred_type": "NOR",
+          "pred_text": "Lalu"
+        },
+        {
+          "sentence_id": "gold-108533742cf9c7a6727b",
+          "pred_type": "ORG",
+          "pred_text": "Lintas"
+        },
+        {
+          "sentence_id": "gold-108533742cf9c7a6727b",
+          "pred_type": "NOR",
+          "pred_text": "Amerika Serikat"
+        },
+        {
+          "sentence_id": "gold-10b2002d84d8759622c3",
+          "pred_type": "ORG",
+          "pred_text": "."
+        }
+      ],
+      "missed_fn": [
+        {
+          "sentence_id": "gold-017e8a642e5030f35fdc",
+          "gold_type": "GPE",
+          "gold_text": "Kabupaten Cianjur"
+        },
+        {
+          "sentence_id": "gold-0243dc5eaae0e3c27aa4",
+          "gold_type": "PRD",
+          "gold_text": "bahan peledak"
+        },
+        {
+          "sentence_id": "gold-04b09617567297d5afc9",
+          "gold_type": "PRD",
+          "gold_text": "kardus sepatu"
+        },
+        {
+          "sentence_id": "gold-05244bef87d9ad392e1f",
+          "gold_type": "PER",
+          "gold_text": "Pak Ogah"
+        },
+        {
+          "sentence_id": "gold-05f3e21660f43c446587",
+          "gold_type": "EVT",
+          "gold_text": "Lebaran"
+        },
+        {
+          "sentence_id": "gold-073e3ed60573d8517fd4",
+          "gold_type": "PER",
+          "gold_text": "Iniesta"
+        },
+        {
+          "sentence_id": "gold-08e1f7aa50063d2d2052",
+          "gold_type": "PER",
+          "gold_text": "mbr"
+        },
+        {
+          "sentence_id": "gold-08e1f7aa50063d2d2052",
+          "gold_type": "PER",
+          "gold_text": "mbr"
+        },
+        {
+          "sentence_id": "gold-0911f01063bea623b4ec",
+          "gold_type": "ORG",
+          "gold_text": "perusahaan otomotif"
+        },
+        {
+          "sentence_id": "gold-092051e00de00f40b679",
+          "gold_type": "LAW",
+          "gold_text": "SK"
+        },
+        {
+          "sentence_id": "gold-09b76fd86655a3ac3eb2",
+          "gold_type": "GPE",
+          "gold_text": "Dusun"
+        },
+        {
+          "sentence_id": "gold-0a21b7fbf5587c2af1ab",
+          "gold_type": "PRD",
+          "gold_text": "mobil"
+        },
+        {
+          "sentence_id": "gold-0b2c007c4f6f19ff93b4",
+          "gold_type": "PRD",
+          "gold_text": "tiket kereta"
+        },
+        {
+          "sentence_id": "gold-0b5d187f6b4dfcdae591",
+          "gold_type": "FAC",
+          "gold_text": "PLTU"
+        },
+        {
+          "sentence_id": "gold-0b5d187f6b4dfcdae591",
+          "gold_type": "ORD",
+          "gold_text": "I"
+        },
+        {
+          "sentence_id": "gold-0c876d00ba0357c135cf",
+          "gold_type": "EVT",
+          "gold_text": "Letusan freaktik"
+        },
+        {
+          "sentence_id": "gold-0c9bfd41cb999ebeb2c0",
+          "gold_type": "NOR",
+          "gold_text": "Kapolsek"
+        },
+        {
+          "sentence_id": "gold-0d05754f4c4c2d3e88a2",
+          "gold_type": "MON",
+          "gold_text": "Rp"
+        },
+        {
+          "sentence_id": "gold-0edffca62fac810d4f82",
+          "gold_type": "NOR",
+          "gold_text": "polisi"
+        },
+        {
+          "sentence_id": "gold-0f07b065dbf16f547375",
+          "gold_type": "ORG",
+          "gold_text": "SMP"
+        },
+        {
+          "sentence_id": "gold-0fae64462f30e7000ebb",
+          "gold_type": "NOR",
+          "gold_text": "Polda"
+        },
+        {
+          "sentence_id": "gold-112cbd3f078e4472bc00",
+          "gold_type": "PRD",
+          "gold_text": "Rest Area"
+        },
+        {
+          "sentence_id": "gold-114085dd751b8b15d0de",
+          "gold_type": "EVT",
+          "gold_text": "Tahun Baru"
+        },
+        {
+          "sentence_id": "gold-123a97a6349b5f2a8d0a",
+          "gold_type": "DAT",
+          "gold_text": "15"
+        },
+        {
+          "sentence_id": "gold-123a97a6349b5f2a8d0a",
+          "gold_type": "DAT",
+          "gold_text": "5"
+        }
+      ]
+    }
+  },
+  "nemotron_18class": {
+    "exact_match_tp": 5781,
+    "total_error_events": 4508,
+    "counts": {
+      "type_confusion": 693,
+      "boundary_error_same_type": 906,
+      "boundary_and_type_error": 526,
+      "spurious_fp": 1399,
+      "missed_fn": 984
+    },
+    "proportions_pct": {
+      "type_confusion": 15.37,
+      "boundary_error_same_type": 20.1,
+      "boundary_and_type_error": 11.67,
+      "spurious_fp": 31.03,
+      "missed_fn": 21.83
+    },
+    "top_type_confusions": [
+      {
+        "gold_type": "ORG",
+        "pred_type": "NOR",
+        "count": 215
+      },
+      {
+        "gold_type": "CRD",
+        "pred_type": "QTY",
+        "count": 98
+      },
+      {
+        "gold_type": "LOC",
+        "pred_type": "FAC",
+        "count": 97
+      },
+      {
+        "gold_type": "ORG",
+        "pred_type": "GPE",
+        "count": 91
+      },
+      {
+        "gold_type": "QTY",
+        "pred_type": "CRD",
+        "count": 77
+      },
+      {
+        "gold_type": "GPE",
+        "pred_type": "LOC",
+        "count": 72
+      },
+      {
+        "gold_type": "LOC",
+        "pred_type": "GPE",
+        "count": 62
+      },
+      {
+        "gold_type": "PRD",
+        "pred_type": "ORG",
+        "count": 60
+      },
+      {
+        "gold_type": "PER",
+        "pred_type": "NOR",
+        "count": 43
+      },
+      {
+        "gold_type": "NOR",
+        "pred_type": "ORG",
+        "count": 40
+      },
+      {
+        "gold_type": "MON",
+        "pred_type": "PRD",
+        "count": 35
+      },
+      {
+        "gold_type": "ORG",
+        "pred_type": "PRD",
+        "count": 29
+      },
+      {
+        "gold_type": "PRD",
+        "pred_type": "FAC",
+        "count": 25
+      },
+      {
+        "gold_type": "ORG",
+        "pred_type": "FAC",
+        "count": 22
+      },
+      {
+        "gold_type": "GPE",
+        "pred_type": "NOR",
+        "count": 19
+      },
+      {
+        "gold_type": "MON",
+        "pred_type": "GPE",
+        "count": 19
+      },
+      {
+        "gold_type": "ORD",
+        "pred_type": "CRD",
+        "count": 15
+      },
+      {
+        "gold_type": "CRD",
+        "pred_type": "DAT",
+        "count": 14
+      },
+      {
+        "gold_type": "NOR",
+        "pred_type": "GPE",
+        "count": 14
+      },
+      {
+        "gold_type": "PER",
+        "pred_type": "ORG",
+        "count": 11
+      },
+      {
+        "gold_type": "FAC",
+        "pred_type": "GPE",
+        "count": 11
+      },
+      {
+        "gold_type": "ORG",
+        "pred_type": "EVT",
+        "count": 10
+      },
+      {
+        "gold_type": "ORG",
+        "pred_type": "WOA",
+        "count": 7
+      },
+      {
+        "gold_type": "PRD",
+        "pred_type": "WOA",
+        "count": 7
+      },
+      {
+        "gold_type": "LOC",
+        "pred_type": "NOR",
+        "count": 6
+      },
+      {
+        "gold_type": "PRD",
+        "pred_type": "NOR",
+        "count": 6
+      },
+      {
+        "gold_type": "GPE",
+        "pred_type": "FAC",
+        "count": 6
+      },
+      {
+        "gold_type": "EVT",
+        "pred_type": "LOC",
+        "count": 6
+      },
+      {
+        "gold_type": "ORD",
+        "pred_type": "DAT",
+        "count": 6
+      },
+      {
+        "gold_type": "PRD",
+        "pred_type": "GPE",
+        "count": 5
+      }
+    ],
+    "spurious_fp_by_class": {
+      "CRD": 32,
+      "DAT": 326,
+      "EVT": 49,
+      "FAC": 78,
+      "GPE": 227,
+      "LAN": 0,
+      "LAW": 9,
+      "LOC": 68,
+      "MON": 1,
+      "NOR": 195,
+      "ORD": 6,
+      "ORG": 79,
+      "PER": 21,
+      "PRC": 5,
+      "PRD": 172,
+      "QTY": 117,
+      "TIM": 4,
+      "WOA": 10
+    },
+    "missed_fn_by_class": {
+      "CRD": 136,
+      "DAT": 16,
+      "EVT": 23,
+      "FAC": 12,
+      "GPE": 41,
+      "LAN": 0,
+      "LAW": 7,
+      "LOC": 14,
+      "MON": 33,
+      "NOR": 84,
+      "ORD": 33,
+      "ORG": 119,
+      "PER": 201,
+      "PRC": 3,
+      "PRD": 244,
+      "QTY": 14,
+      "TIM": 4,
+      "WOA": 0
+    },
+    "boundary_error_by_class": {
+      "CRD": 10,
+      "DAT": 277,
+      "EVT": 46,
+      "FAC": 15,
+      "GPE": 22,
+      "LAN": 0,
+      "LAW": 14,
+      "LOC": 25,
+      "MON": 10,
+      "NOR": 201,
+      "ORD": 4,
+      "ORG": 74,
+      "PER": 40,
+      "PRC": 12,
+      "PRD": 118,
+      "QTY": 18,
+      "TIM": 20,
+      "WOA": 0
+    },
+    "sample_errors": {
+      "type_confusion": [
+        {
+          "sentence_id": "gold-008f853752144e9f1b4b",
+          "span_text": "Direktur Jenderal Minyak dan  Gas Bumi",
+          "gold_type": "ORG",
+          "pred_type": "NOR"
+        },
+        {
+          "sentence_id": "gold-00e0214a4a88ef6baa09",
+          "span_text": "Trump",
+          "gold_type": "PER",
+          "pred_type": "NOR"
+        },
+        {
+          "sentence_id": "gold-01021ce54cfe7c45f6a3",
+          "span_text": "REUTERS",
+          "gold_type": "ORG",
+          "pred_type": "NOR"
+        },
+        {
+          "sentence_id": "gold-019c5a4d71ed6d2e4d3d",
+          "span_text": "Mugello",
+          "gold_type": "LOC",
+          "pred_type": "GPE"
+        },
+        {
+          "sentence_id": "gold-030c6ec8cbc49da487fb",
+          "span_text": "Erdogan",
+          "gold_type": "PER",
+          "pred_type": "NOR"
+        },
+        {
+          "sentence_id": "gold-0379f7f18d438715f209",
+          "span_text": "Eropa",
+          "gold_type": "GPE",
+          "pred_type": "LOC"
+        },
+        {
+          "sentence_id": "gold-03c0da7af1658b127fc3",
+          "span_text": "Pasar Desa Prawoto",
+          "gold_type": "LOC",
+          "pred_type": "FAC"
+        },
+        {
+          "sentence_id": "gold-03f74a9b8829df5fc2a4",
+          "span_text": "Drivespark",
+          "gold_type": "ORG",
+          "pred_type": "PRD"
+        },
+        {
+          "sentence_id": "gold-042fa4c084ba7f7bbd0e",
+          "span_text": "Bea Cukai",
+          "gold_type": "ORG",
+          "pred_type": "NOR"
+        },
+        {
+          "sentence_id": "gold-04d406da9312241a1929",
+          "span_text": "22 %",
+          "gold_type": "PRC",
+          "pred_type": "TIM"
+        },
+        {
+          "sentence_id": "gold-05df74b470abc58aa0e7",
+          "span_text": "Repsol Honda",
+          "gold_type": "PRD",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-05f4e3de14cdd6e4a3e0",
+          "span_text": "Jerman",
+          "gold_type": "ORG",
+          "pred_type": "GPE"
+        },
+        {
+          "sentence_id": "gold-05f4e3de14cdd6e4a3e0",
+          "span_text": "Meksiko",
+          "gold_type": "ORG",
+          "pred_type": "GPE"
+        },
+        {
+          "sentence_id": "gold-06b540bd7290b80df949",
+          "span_text": "Pelabuhan Merak",
+          "gold_type": "LOC",
+          "pred_type": "FAC"
+        },
+        {
+          "sentence_id": "gold-073e3ed60573d8517fd4",
+          "span_text": "Barcelona",
+          "gold_type": "ORG",
+          "pred_type": "GPE"
+        },
+        {
+          "sentence_id": "gold-085f5e1212cfb2edb2bc",
+          "span_text": "Uni Eropa",
+          "gold_type": "GPE",
+          "pred_type": "NOR"
+        },
+        {
+          "sentence_id": "gold-08c920a1b1f609ff5282",
+          "span_text": "Jawa Tengah",
+          "gold_type": "LOC",
+          "pred_type": "GPE"
+        },
+        {
+          "sentence_id": "gold-0900d644a60fc3d865d2",
+          "span_text": "Timnas Jerman",
+          "gold_type": "NOR",
+          "pred_type": "ORG"
+        },
+        {
+          "sentence_id": "gold-09b76fd86655a3ac3eb2",
+          "span_text": "Kalitengah Lor",
+          "gold_type": "GPE",
+          "pred_type": "LOC"
+        },
+        {
+          "sentence_id": "gold-0a21b7fbf5587c2af1ab",
+          "span_text": "Kramatjati",
+          "gold_type": "LOC",
+          "pred_type": "GPE"
+        },
+        {
+          "sentence_id": "gold-0a2df0c2e0d5debf4d89",
+          "span_text": "kantor pusat Yamaha",
+          "gold_type": "LOC",
+          "pred_type": "FAC"
+        },
+        {
+          "sentence_id": "gold-0b02249254ecd8031eb1",
+          "span_text": "Sumatera",
+          "gold_type": "GPE",
+          "pred_type": "LOC"
+        },
+        {
+          "sentence_id": "gold-0b02249254ecd8031eb1",
+          "span_text": "Kalimantan",
+          "gold_type": "GPE",
+          "pred_type": "LOC"
+        },
+        {
+          "sentence_id": "gold-0b02249254ecd8031eb1",
+          "span_text": "Sulawesi",
+          "gold_type": "GPE",
+          "pred_type": "LOC"
+        },
+        {
+          "sentence_id": "gold-0b0eb5171549a21f43a6",
+          "span_text": "Polres Bantul",
+          "gold_type": "ORG",
+          "pred_type": "NOR"
+        }
+      ],
+      "boundary_error_same_type": [
+        {
+          "sentence_id": "gold-000682d8b1f19db3dade",
+          "entity_type": "LAW",
+          "gold_text": "UUD 1945 Pasal 34 Ayat 1",
+          "pred_text": "UUD 1945"
+        },
+        {
+          "sentence_id": "gold-008f853752144e9f1b4b",
+          "entity_type": "PRD",
+          "gold_text": "BBM ",
+          "pred_text": "BBM  nonsubsidi"
+        },
+        {
+          "sentence_id": "gold-00b7a2b1cf00663c4ea0",
+          "entity_type": "ORG",
+          "gold_text": "Gelandang timnas Kroasia",
+          "pred_text": "timnas Kroasia"
+        },
+        {
+          "sentence_id": "gold-011510de0701929fb73d",
+          "entity_type": "ORG",
+          "gold_text": "satuharapan . com",
+          "pred_text": "satuharapan"
+        },
+        {
+          "sentence_id": "gold-026eda86de954dff5062",
+          "entity_type": "PER",
+          "gold_text": "GEORGIA LOUISE PITKIN",
+          "pred_text": "LOUISE PITKIN"
+        },
+        {
+          "sentence_id": "gold-02a80e1b552d44d268dd",
+          "entity_type": "PRD",
+          "gold_text": "oli",
+          "pred_text": "oli murah"
+        },
+        {
+          "sentence_id": "gold-02a80e1b552d44d268dd",
+          "entity_type": "PRD",
+          "gold_text": "oli",
+          "pred_text": "oli mahal"
+        },
+        {
+          "sentence_id": "gold-042fa4c084ba7f7bbd0e",
+          "entity_type": "NOR",
+          "gold_text": "Direkrorat Polair",
+          "pred_text": "Polair"
+        },
+        {
+          "sentence_id": "gold-048c00410712540ab59a",
+          "entity_type": "ORG",
+          "gold_text": "Patroli Indosiar",
+          "pred_text": "Indosiar"
+        },
+        {
+          "sentence_id": "gold-04d406da9312241a1929",
+          "entity_type": "TIM",
+          "gold_text": "6 a . m .",
+          "pred_text": "6 a . m"
+        },
+        {
+          "sentence_id": "gold-05244bef87d9ad392e1f",
+          "entity_type": "DAT",
+          "gold_text": "Senin ( 11 / 12 / 2017 )",
+          "pred_text": "Senin ( 11 / 12 / 2017"
+        },
+        {
+          "sentence_id": "gold-05a1f605c39be00928b9",
+          "entity_type": "DAT",
+          "gold_text": "Senin 21  May  2018 ",
+          "pred_text": "Senin"
+        },
+        {
+          "sentence_id": "gold-073e3ed60573d8517fd4",
+          "entity_type": "PER",
+          "gold_text": "Andres",
+          "pred_text": "Andres ] Iniesta"
+        },
+        {
+          "sentence_id": "gold-074dcb02c6274c68bc7a",
+          "entity_type": "ORG",
+          "gold_text": "Manchester United",
+          "pred_text": "Manchester"
+        },
+        {
+          "sentence_id": "gold-090e5982db20c025e2a2",
+          "entity_type": "DAT",
+          "gold_text": "Kamis 30 August 2018",
+          "pred_text": "Kamis"
+        },
+        {
+          "sentence_id": "gold-0911f01063bea623b4ec",
+          "entity_type": "ORG",
+          "gold_text": "Grup Lotus",
+          "pred_text": "Lotus"
+        },
+        {
+          "sentence_id": "gold-092051e00de00f40b679",
+          "entity_type": "LAW",
+          "gold_text": "Surat Keputusan ",
+          "pred_text": "Surat Keputusan  ( SK )"
+        },
+        {
+          "sentence_id": "gold-09b76fd86655a3ac3eb2",
+          "entity_type": "DAT",
+          "gold_text": "Kamis ( 24 / 5 / 2018 )",
+          "pred_text": "Kamis ( 24 / 5 / 2018"
+        },
+        {
+          "sentence_id": "gold-0a5535433eb848dd9fee",
+          "entity_type": "PER",
+          "gold_text": "M Zaelani Sidiq",
+          "pred_text": "Zaelani Sidiq"
+        },
+        {
+          "sentence_id": "gold-0b19218c3e94fcfb51c6",
+          "entity_type": "ORG",
+          "gold_text": "admin sopir Grab",
+          "pred_text": "Grab"
+        },
+        {
+          "sentence_id": "gold-0b2c007c4f6f19ff93b4",
+          "entity_type": "PRD",
+          "gold_text": "tiket kereta",
+          "pred_text": "kereta"
+        },
+        {
+          "sentence_id": "gold-0b5d187f6b4dfcdae591",
+          "entity_type": "NOR",
+          "gold_text": "Kapolres Buleleng AKBP",
+          "pred_text": "Kapolres"
+        },
+        {
+          "sentence_id": "gold-0b5d187f6b4dfcdae591",
+          "entity_type": "PER",
+          "gold_text": "Suratno",
+          "pred_text": "AKBP Suratno"
+        },
+        {
+          "sentence_id": "gold-0ba8e267bb81d2ad1796",
+          "entity_type": "NOR",
+          "gold_text": "Sekjen Kementerian Perdagangan",
+          "pred_text": "Sekjen"
+        },
+        {
+          "sentence_id": "gold-0c8f5685dfe1bc48f97f",
+          "entity_type": "DAT",
+          "gold_text": "Kamis 4 Januari 2017",
+          "pred_text": "Kamis"
+        }
+      ],
+      "boundary_and_type_error": [
+        {
+          "sentence_id": "gold-00a1534cfb03b20b9fa1",
+          "gold_type": "ORG",
+          "gold_text": "CNN Indonesia",
+          "pred_type": "NOR",
+          "pred_text": "CNN"
+        },
+        {
+          "sentence_id": "gold-012a59cf5fe79ed51faa",
+          "gold_type": "ORG",
+          "gold_text": "WRI",
+          "pred_type": "WOA",
+          "pred_text": "WRI baru"
+        },
+        {
+          "sentence_id": "gold-037df83bb82c7450c4e9",
+          "gold_type": "CRD",
+          "gold_text": "8",
+          "pred_type": "QTY",
+          "pred_text": "8 orang"
+        },
+        {
+          "sentence_id": "gold-0497eae236b072c92cf7",
+          "gold_type": "LOC",
+          "gold_text": "Stadion NSC Olimpiyskiy",
+          "pred_type": "FAC",
+          "pred_text": "mixed zone Stadion NSC Olimpiyskiy"
+        },
+        {
+          "sentence_id": "gold-05244bef87d9ad392e1f",
+          "gold_type": "PER",
+          "gold_text": "Pak Ogah",
+          "pred_type": "NOR",
+          "pred_text": "Ogah"
+        },
+        {
+          "sentence_id": "gold-05e8ff82aea4938d9b86",
+          "gold_type": "ORG",
+          "gold_text": "Bank Indonesia",
+          "pred_type": "NOR",
+          "pred_text": "Bank Indonesia ( BI )"
+        },
+        {
+          "sentence_id": "gold-05e8ff82aea4938d9b86",
+          "gold_type": "ORG",
+          "gold_text": "Otoritas Jasa Keuangan",
+          "pred_type": "NOR",
+          "pred_text": "Otoritas Jasa Keuangan ( OJK )"
+        },
+        {
+          "sentence_id": "gold-05e8ff82aea4938d9b86",
+          "gold_type": "ORG",
+          "gold_text": "Lembaga Penjamin Simpanan",
+          "pred_type": "NOR",
+          "pred_text": "Lembaga Penjamin Simpanan ( LPS )"
+        },
+        {
+          "sentence_id": "gold-0b19218c3e94fcfb51c6",
+          "gold_type": "PRD",
+          "gold_text": "JawaPos . com",
+          "pred_type": "GPE",
+          "pred_text": "JawaPos"
+        },
+        {
+          "sentence_id": "gold-0b5d187f6b4dfcdae591",
+          "gold_type": "LOC",
+          "gold_text": "Celukan Bawang",
+          "pred_type": "FAC",
+          "pred_text": "PLTU Celukan Bawang"
+        },
+        {
+          "sentence_id": "gold-0c8f5685dfe1bc48f97f",
+          "gold_type": "CRD",
+          "gold_text": "427",
+          "pred_type": "QTY",
+          "pred_text": "427 kasus"
+        },
+        {
+          "sentence_id": "gold-0d05754f4c4c2d3e88a2",
+          "gold_type": "PRC",
+          "gold_text": "3 , 41 %",
+          "pred_type": "MON",
+          "pred_text": "Rp 3 , 41 %"
+        },
+        {
+          "sentence_id": "gold-0d4925f550111a0021dd",
+          "gold_type": "MON",
+          "gold_text": "dolar Amerika Serikat",
+          "pred_type": "GPE",
+          "pred_text": "Amerika Serikat"
+        },
+        {
+          "sentence_id": "gold-0d664910cfe926bfb598",
+          "gold_type": "LOC",
+          "gold_text": "Kompleks Sekretariat Daerah",
+          "pred_type": "FAC",
+          "pred_text": "Kompleks Sekretariat Daerah setempat"
+        },
+        {
+          "sentence_id": "gold-0df98d564f33f389d542",
+          "gold_type": "PRD",
+          "gold_text": "Statistik Utang Luar Negeri Indonesia",
+          "pred_type": "WOA",
+          "pred_text": "Statistik Utang Luar Negeri Indonesia ( SULNI"
+        },
+        {
+          "sentence_id": "gold-0df98d564f33f389d542",
+          "gold_type": "ORG",
+          "gold_text": "Bank Indonesia",
+          "pred_type": "NOR",
+          "pred_text": "Bank Indonesia ( BI )"
+        },
+        {
+          "sentence_id": "gold-0e7bbc5bf5cbbaaefd30",
+          "gold_type": "PER",
+          "gold_text": "Salman",
+          "pred_type": "NOR",
+          "pred_text": "Raja Salman"
+        },
+        {
+          "sentence_id": "gold-0e8ac51ea1902532dd68",
+          "gold_type": "PRD",
+          "gold_text": "anjungan tunai mandiri",
+          "pred_type": "FAC",
+          "pred_text": "anjungan tunai mandiri ( ATM )"
+        },
+        {
+          "sentence_id": "gold-0ec4838a7bd27e3d1a2d",
+          "gold_type": "ORG",
+          "gold_text": "CNN Indonesia",
+          "pred_type": "NOR",
+          "pred_text": "CNN"
+        },
+        {
+          "sentence_id": "gold-0fae64462f30e7000ebb",
+          "gold_type": "LOC",
+          "gold_text": "Perumahan Mutiara Graha Famili Surabaya",
+          "pred_type": "FAC",
+          "pred_text": "Perumahan Mutiara Graha Famili"
+        },
+        {
+          "sentence_id": "gold-1083e64dd79cf5b5f904",
+          "gold_type": "PER",
+          "gold_text": "Pep Guardiola",
+          "pred_type": "NOR",
+          "pred_text": "Pep"
+        },
+        {
+          "sentence_id": "gold-108533742cf9c7a6727b",
+          "gold_type": "ORG",
+          "gold_text": "Badan Keselamatan Lalu Lintas Amerika Serikat",
+          "pred_type": "NOR",
+          "pred_text": "Badan Keselamatan Lalu Lintas Amerika Serikat ( NTHSA )"
+        },
+        {
+          "sentence_id": "gold-10b2002d84d8759622c3",
+          "gold_type": "PRD",
+          "gold_text": "TRIBUNBATAM . id",
+          "pred_type": "NOR",
+          "pred_text": "TRIBUNBATAM"
+        },
+        {
+          "sentence_id": "gold-112cbd3f078e4472bc00",
+          "gold_type": "PRD",
+          "gold_text": "Rest Area",
+          "pred_type": "FAC",
+          "pred_text": "Rest Area Padat"
+        },
+        {
+          "sentence_id": "gold-129c9effbe63066bd2e7",
+          "gold_type": "QTY",
+          "gold_text": "tiga unit mobil",
+          "pred_type": "CRD",
+          "pred_text": "tiga"
+        }
+      ],
+      "spurious_fp": [
+        {
+          "sentence_id": "gold-000682d8b1f19db3dade",
+          "pred_type": "LAW",
+          "pred_text": "Pasal 34 Ayat 1"
+        },
+        {
+          "sentence_id": "gold-008f853752144e9f1b4b",
+          "pred_type": "NOR",
+          "pred_text": "pemerintah "
+        },
+        {
+          "sentence_id": "gold-00a1534cfb03b20b9fa1",
+          "pred_type": "NOR",
+          "pred_text": "Presiden"
+        },
+        {
+          "sentence_id": "gold-00a1534cfb03b20b9fa1",
+          "pred_type": "ORG",
+          "pred_text": "Indonesia"
+        },
+        {
+          "sentence_id": "gold-011510de0701929fb73d",
+          "pred_type": "ORG",
+          "pred_text": "com"
+        },
+        {
+          "sentence_id": "gold-01c8a0e9c1ff5b2f3bfe",
+          "pred_type": "DAT",
+          "pred_text": "tahun ini"
+        },
+        {
+          "sentence_id": "gold-021614560100d2197dfd",
+          "pred_type": "EVT",
+          "pred_text": "rapat"
+        },
+        {
+          "sentence_id": "gold-023a9528c8effac2f7d0",
+          "pred_type": "EVT",
+          "pred_text": "Arus Mudik"
+        },
+        {
+          "sentence_id": "gold-0243dc5eaae0e3c27aa4",
+          "pred_type": "PRD",
+          "pred_text": "militer"
+        },
+        {
+          "sentence_id": "gold-0243dc5eaae0e3c27aa4",
+          "pred_type": "LOC",
+          "pred_text": "hutan"
+        },
+        {
+          "sentence_id": "gold-037df83bb82c7450c4e9",
+          "pred_type": "DAT",
+          "pred_text": "tahun"
+        },
+        {
+          "sentence_id": "gold-037df83bb82c7450c4e9",
+          "pred_type": "QTY",
+          "pred_text": "orang"
+        },
+        {
+          "sentence_id": "gold-037df83bb82c7450c4e9",
+          "pred_type": "DAT",
+          "pred_text": "tahun"
+        },
+        {
+          "sentence_id": "gold-03a4072b38c219df6a1d",
+          "pred_type": "DAT",
+          "pred_text": "tahun"
+        },
+        {
+          "sentence_id": "gold-03a4072b38c219df6a1d",
+          "pred_type": "QTY",
+          "pred_text": "kasus"
+        },
+        {
+          "sentence_id": "gold-03a4072b38c219df6a1d",
+          "pred_type": "QTY",
+          "pred_text": "orang"
+        },
+        {
+          "sentence_id": "gold-04b09617567297d5afc9",
+          "pred_type": "LOC",
+          "pred_text": "jalan persawahan"
+        },
+        {
+          "sentence_id": "gold-04d54d052f0b2a33bd09",
+          "pred_type": "DAT",
+          "pred_text": "tahun lalu"
+        },
+        {
+          "sentence_id": "gold-056b66d7729e8a97b288",
+          "pred_type": "NOR",
+          "pred_text": "aparat"
+        },
+        {
+          "sentence_id": "gold-05a1f605c39be00928b9",
+          "pred_type": "DAT",
+          "pred_text": "21  May  2018 "
+        },
+        {
+          "sentence_id": "gold-05e228b62d7ccebbe1d2",
+          "pred_type": "QTY",
+          "pred_text": "kasus"
+        },
+        {
+          "sentence_id": "gold-05e8ff82aea4938d9b86",
+          "pred_type": "NOR",
+          "pred_text": "KSSK"
+        },
+        {
+          "sentence_id": "gold-06b540bd7290b80df949",
+          "pred_type": "FAC",
+          "pred_text": "loket"
+        },
+        {
+          "sentence_id": "gold-07008f552e043c0b3cb1",
+          "pred_type": "PRD",
+          "pred_text": "mobil tanki"
+        },
+        {
+          "sentence_id": "gold-074dcb02c6274c68bc7a",
+          "pred_type": "GPE",
+          "pred_text": "United"
+        }
+      ],
+      "missed_fn": [
+        {
+          "sentence_id": "gold-0023d65b7ab6c9f02e6f",
+          "gold_type": "ORD",
+          "gold_text": "1"
+        },
+        {
+          "sentence_id": "gold-00b7a2b1cf00663c4ea0",
+          "gold_type": "ORG",
+          "gold_text": "REUTERS"
+        },
+        {
+          "sentence_id": "gold-01da2d89bef64d840a47",
+          "gold_type": "NOR",
+          "gold_text": "Polisi"
+        },
+        {
+          "sentence_id": "gold-0243dc5eaae0e3c27aa4",
+          "gold_type": "PRD",
+          "gold_text": "bahan peledak"
+        },
+        {
+          "sentence_id": "gold-029cbf7a39246c59c582",
+          "gold_type": "MON",
+          "gold_text": "rupiah"
+        },
+        {
+          "sentence_id": "gold-02a80e1b552d44d268dd",
+          "gold_type": "PRD",
+          "gold_text": "oli"
+        },
+        {
+          "sentence_id": "gold-02a80e1b552d44d268dd",
+          "gold_type": "PRD",
+          "gold_text": "Oli"
+        },
+        {
+          "sentence_id": "gold-0379f7f18d438715f209",
+          "gold_type": "CRD",
+          "gold_text": "16"
+        },
+        {
+          "sentence_id": "gold-0379f7f18d438715f209",
+          "gold_type": "CRD",
+          "gold_text": "16"
+        },
+        {
+          "sentence_id": "gold-03f930e4f8a192509f2c",
+          "gold_type": "PER",
+          "gold_text": "Yuli"
+        },
+        {
+          "sentence_id": "gold-048c00410712540ab59a",
+          "gold_type": "PRD",
+          "gold_text": "ATM "
+        },
+        {
+          "sentence_id": "gold-04b09617567297d5afc9",
+          "gold_type": "PRD",
+          "gold_text": "kardus sepatu"
+        },
+        {
+          "sentence_id": "gold-057ea3ed61be5ddcc8cc",
+          "gold_type": "NOR",
+          "gold_text": "kepolisian"
+        },
+        {
+          "sentence_id": "gold-05e8ff82aea4938d9b86",
+          "gold_type": "ORG",
+          "gold_text": "BI"
+        },
+        {
+          "sentence_id": "gold-05e8ff82aea4938d9b86",
+          "gold_type": "ORG",
+          "gold_text": "OJK"
+        },
+        {
+          "sentence_id": "gold-05e8ff82aea4938d9b86",
+          "gold_type": "ORG",
+          "gold_text": "LPS"
+        },
+        {
+          "sentence_id": "gold-05f3e21660f43c446587",
+          "gold_type": "PRD",
+          "gold_text": "mobil"
+        },
+        {
+          "sentence_id": "gold-073e3ed60573d8517fd4",
+          "gold_type": "PER",
+          "gold_text": "Iniesta"
+        },
+        {
+          "sentence_id": "gold-07f1681f4e0e04c38cd1",
+          "gold_type": "PER",
+          "gold_text": "Babe"
+        },
+        {
+          "sentence_id": "gold-08c920a1b1f609ff5282",
+          "gold_type": "PER",
+          "gold_text": "Sarwa"
+        },
+        {
+          "sentence_id": "gold-08c920a1b1f609ff5282",
+          "gold_type": "PER",
+          "gold_text": "alg"
+        },
+        {
+          "sentence_id": "gold-08c920a1b1f609ff5282",
+          "gold_type": "PER",
+          "gold_text": "sip"
+        },
+        {
+          "sentence_id": "gold-08e1f7aa50063d2d2052",
+          "gold_type": "PER",
+          "gold_text": "mbr"
+        },
+        {
+          "sentence_id": "gold-08e1f7aa50063d2d2052",
+          "gold_type": "PER",
+          "gold_text": "mbr"
+        },
+        {
+          "sentence_id": "gold-0911f01063bea623b4ec",
+          "gold_type": "ORG",
+          "gold_text": "perusahaan otomotif"
+        }
+      ]
+    }
+  }
+}

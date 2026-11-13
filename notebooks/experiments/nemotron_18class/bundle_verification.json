@@ -1,0 +1,26 @@
+{
+  "bundle_path": "/content/nemotron_18class_workspace/nemotron_18class_colab_bundle.zip",
+  "bundle_sha256": "cc29515ffcab4f109d4c962c6f4791676aa66d1bdd5b0ebc6c6b78447170a612",
+  "extracted_dir": "/content/nemotron_18class_workspace/data",
+  "verified_files": {
+    "gold/labels-map.csv": "0afc5bb1de7e0243d90e35fb305ce824e6ebb1f40fbb846b333d0f884f78bc34",
+    "gold/test.txt": "50107b2780111a9a9ab48c647e3af0cd68cba478efb9c57b58d61dbcec22f261",
+    "gold/train.txt": "b0ab0e2299a6d209aa59679b6bc473f075ee05f45eedc85a591c3b1a99835b9f",
+    "gold/valid.txt": "df6a16b850bdd50ba30e075870f69a57ac497efd8e204950e2856b31d2f80b43",
+    "nemotron_18class/corrected.jsonl": "b59246c9f1f8eb89c3730fe57c3011f6a7afad3e10c06827ee685961ebeb68d5"
+  },
+  "record_counts": {
+    "gold_partitioned_test_entities": 8890,
+    "gold_partitioned_test_sentences": 2423,
+    "gold_partitioned_train_sentences": 12465,
+    "gold_partitioned_validation_sentences": 2543,
+    "gold_test_raw_sentences": 2397,
+    "gold_train_raw_sentences": 12514,
+    "gold_valid_raw_sentences": 2520,
+    "nemotron_18class_json_entities": 119680,
+    "nemotron_18class_partitioned_train_sentences": 14896,
+    "nemotron_18class_partitioned_validation_sentences": 2629,
+    "nemotron_18class_sentences": 17525
+  },
+  "nemotron_sentences_verified": 17525
+}

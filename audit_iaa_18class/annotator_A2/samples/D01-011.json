@@ -1,0 +1,244 @@
+{
+  "sample_id": "D01-011",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        3,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          0,
+          3,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E002",
+      "original": [
+        3,
+        6,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          3,
+          6,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        7,
+        12,
+        "PER"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          7,
+          12,
+          "PER"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        17,
+        20,
+        "WOA"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          17,
+          20,
+          "WOA"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        27,
+        37,
+        "LAW"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:LAW:28-33; LAW:35-37",
+      "replacement_spans": [
+        [
+          27,
+          33,
+          "LAW"
+        ],
+        [
+          34,
+          37,
+          "LAW"
+        ]
+      ],
+      "note": "Preposisi 'tentang' dilarang masuk ke dalam rentang entitas sesuai Aturan B.3; pisahkan nomor UU dan nama resmi undang-undang menjadi dua span LAW terpisah."
+    },
+    {
+      "id": "E006",
+      "original": [
+        41,
+        43,
+        "QTY"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:CRD:42-42",
+      "replacement_spans": [
+        [
+          41,
+          42,
+          "CRD"
+        ]
+      ],
+      "note": "'200' adalah bilangan cacah murni (CRD), sedangkan kata benda 'mahasiswa' berstatus O."
+    },
+    {
+      "id": "E007",
+      "original": [
+        46,
+        47,
+        "LOC"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          46,
+          47,
+          "LOC"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E008",
+      "original": [
+        49,
+        50,
+        "NOR"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          49,
+          50,
+          "NOR"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E009",
+      "original": [
+        51,
+        54,
+        "MON"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          51,
+          54,
+          "MON"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      3,
+      "NOR"
+    ],
+    [
+      3,
+      6,
+      "NOR"
+    ],
+    [
+      7,
+      12,
+      "PER"
+    ],
+    [
+      17,
+      20,
+      "WOA"
+    ],
+    [
+      27,
+      33,
+      "LAW"
+    ],
+    [
+      34,
+      37,
+      "LAW"
+    ],
+    [
+      41,
+      42,
+      "CRD"
+    ],
+    [
+      46,
+      47,
+      "LOC"
+    ],
+    [
+      49,
+      50,
+      "NOR"
+    ],
+    [
+      51,
+      54,
+      "MON"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:29:33"
+}

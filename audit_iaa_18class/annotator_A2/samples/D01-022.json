@@ -1,0 +1,161 @@
+{
+  "sample_id": "D01-022",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        8,
+        "ORG"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:ORG:1-5; ORG:7-7",
+      "replacement_spans": [
+        [
+          0,
+          5,
+          "ORG"
+        ],
+        [
+          6,
+          7,
+          "ORG"
+        ]
+      ],
+      "note": "Pisahkan nama perusahaan dan akronimnya menjadi dua span ORG terpisah serta keluarkan tanda kurung dari span entitas."
+    },
+    {
+      "id": "E002",
+      "original": [
+        10,
+        12,
+        "PRD"
+      ],
+      "decision": "INCORRECT",
+      "category": "REMOVE",
+      "action": "REMOVE",
+      "replacement_spans": [],
+      "note": "'turbin angin' merupakan kata benda umum di luar cakupan kelas PRD (bukan kendaraan, gawai, komoditas, atau alat keselamatan)."
+    },
+    {
+      "id": "E003",
+      "original": [
+        12,
+        14,
+        "PRD"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          12,
+          14,
+          "PRD"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        15,
+        16,
+        "GPE"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          15,
+          16,
+          "GPE"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E005",
+      "original": [
+        18,
+        20,
+        "QTY"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          18,
+          20,
+          "QTY"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E006",
+      "original": [
+        24,
+        26,
+        "DAT"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          24,
+          26,
+          "DAT"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      5,
+      "ORG"
+    ],
+    [
+      6,
+      7,
+      "ORG"
+    ],
+    [
+      12,
+      14,
+      "PRD"
+    ],
+    [
+      15,
+      16,
+      "GPE"
+    ],
+    [
+      18,
+      20,
+      "QTY"
+    ],
+    [
+      24,
+      26,
+      "DAT"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A2",
+  "model": "ag/gemini-3.8-flash-high",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:32:13"
+}

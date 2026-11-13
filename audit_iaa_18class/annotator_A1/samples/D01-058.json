@@ -1,0 +1,124 @@
+{
+  "sample_id": "D01-058",
+  "decisions": [
+    {
+      "id": "E001",
+      "original": [
+        0,
+        4,
+        "NOR"
+      ],
+      "decision": "INCORRECT",
+      "category": "REPLACE",
+      "action": "REPLACE:NOR:1-2; GPE:3-4",
+      "replacement_spans": [
+        [
+          0,
+          2,
+          "NOR"
+        ],
+        [
+          2,
+          4,
+          "GPE"
+        ]
+      ],
+      "note": "Pisahkan nama pengadilan sebagai NOR dari wilayah administratif Jakarta Barat sebagai GPE"
+    },
+    {
+      "id": "E002",
+      "original": [
+        10,
+        16,
+        "LAW"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          10,
+          16,
+          "LAW"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E003",
+      "original": [
+        24,
+        27,
+        "MON"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          24,
+          27,
+          "MON"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "id": "E004",
+      "original": [
+        30,
+        36,
+        "LAW"
+      ],
+      "decision": "CORRECT",
+      "category": "KEEP",
+      "action": "KEEP",
+      "replacement_spans": [
+        [
+          30,
+          36,
+          "LAW"
+        ]
+      ],
+      "note": ""
+    }
+  ],
+  "missing_spans": [],
+  "final_spans": [
+    [
+      0,
+      2,
+      "NOR"
+    ],
+    [
+      2,
+      4,
+      "GPE"
+    ],
+    [
+      10,
+      16,
+      "LAW"
+    ],
+    [
+      24,
+      27,
+      "MON"
+    ],
+    [
+      30,
+      36,
+      "LAW"
+    ]
+  ],
+  "notes": "",
+  "normalizations": [],
+  "annotator": "A1",
+  "model": "cx/gpt-6-luna",
+  "reasoning_effort": "high",
+  "dataset": "nemotron",
+  "dataset_code": "D01",
+  "sample_manifest_hash": "74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd",
+  "attempt": 1,
+  "annotated_at": "2026-11-13T18:20:21"
+}

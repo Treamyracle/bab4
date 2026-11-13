@@ -1,0 +1,6296 @@
+BAB4 INDEPENDENT ANNOTATOR AUDIT (18-CLASS NERGRIT)
+SCHEMA_VERSION=2
+DATASET_CODE=D03
+SAMPLE_MANIFEST_HASH=74a5f973856b63e3661b1d4696bdb52ffaba277938adbd1ae2000b3972bf4acd
+ANNOTATOR_ID=A1
+ANNOTATOR_MODEL=cx/gpt-6-luna
+REASONING_EFFORT=high
+EXPORT_DATE=2026-11-13
+
+=== SAMPLE D03-001 ===
+SOURCE_RECORD_REF=b0ce3bedd11e454c4da80ec9311bad572b808cbdd59f3934c299123e3240a426
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Kepala BNPB , Letjen Suharyanto , mengoordinasikan evakuasi warga di lereng Gunung Merapi setelah status level aktivitas naik menjadi level III pada Senin lalu ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Kepala"	O	O
+2	"BNPB"	B-NOR	B-NOR
+3	","	O	O
+4	"Letjen"	B-PER	B-PER
+5	"Suharyanto"	I-PER	I-PER
+6	","	O	O
+7	"mengoordinasikan"	O	O
+8	"evakuasi"	O	O
+9	"warga"	O	O
+10	"di"	O	O
+11	"lereng"	O	O
+12	"Gunung"	B-LOC	B-LOC
+13	"Merapi"	I-LOC	I-LOC
+14	"setelah"	O	O
+15	"status"	O	O
+16	"level"	O	O
+17	"aktivitas"	O	O
+18	"naik"	O	O
+19	"menjadi"	O	O
+20	"level"	B-ORD	B-ORD
+21	"III"	I-ORD	I-ORD
+22	"pada"	O	O
+23	"Senin"	B-DAT	B-DAT
+24	"lalu"	O	O
+25	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:2-2
+TEXT="BNPB"
+DECISION=INCORRECT
+ACTION=REPLACE:NOR:1-2
+NOTE=Jabatan struktural Kepala harus disertakan dalam span NOR bersama BNPB
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:4-5
+TEXT="Letjen Suharyanto"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LOC:12-13
+TEXT="Gunung Merapi"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=ORD:20-21
+TEXT="level III"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=DAT:23-23
+TEXT="Senin"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-001 ===
+
+=== SAMPLE D03-002 ===
+SOURCE_RECORD_REF=d06f7a37670bd64d5f9a12cd0e87a53273a9ff1c82a9fe4b817927ac6c0bd022
+SOURCE_SPLIT=verified_18class
+STRATUM=E1_LONG
+SENTENCE="Laporan terbaru mengenai perubahan iklim global menyebutkan bahwa suhu rata - rata bumi meningkat 1 , 1 derajat Celsius sejak era industri ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Laporan"	O	O
+2	"terbaru"	O	O
+3	"mengenai"	O	O
+4	"perubahan"	O	O
+5	"iklim"	O	O
+6	"global"	O	O
+7	"menyebutkan"	O	O
+8	"bahwa"	O	O
+9	"suhu"	O	O
+10	"rata"	O	O
+11	"-"	O	O
+12	"rata"	O	O
+13	"bumi"	O	O
+14	"meningkat"	O	O
+15	"1"	B-QTY	B-QTY
+16	","	I-QTY	I-QTY
+17	"1"	I-QTY	I-QTY
+18	"derajat"	I-QTY	I-QTY
+19	"Celsius"	I-QTY	I-QTY
+20	"sejak"	O	O
+21	"era"	O	O
+22	"industri"	O	O
+23	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=QTY:15-19
+TEXT="1 , 1 derajat Celsius"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-002 ===
+
+=== SAMPLE D03-003 ===
+SOURCE_RECORD_REF=113af10c199222ee426a21f6963c42f018d4b2815d69edca0625f8c90dfe14b7
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Indeks Harga Saham Gabungan ( IHSG ) melonjak 0 , 8 % pada perdagangan Selasa pagi setelah investor asing mengucurkan investasi sebesar Rp 2 triliun ke pasar modal Indonesia ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Indeks"	B-PRD	B-PRD
+2	"Harga"	I-PRD	I-PRD
+3	"Saham"	I-PRD	I-PRD
+4	"Gabungan"	I-PRD	I-PRD
+5	"("	O	O
+6	"IHSG"	B-PRD	B-PRD
+7	")"	O	O
+8	"melonjak"	O	O
+9	"0"	B-PRC	B-PRC
+10	","	I-PRC	I-PRC
+11	"8"	I-PRC	I-PRC
+12	"%"	I-PRC	I-PRC
+13	"pada"	O	O
+14	"perdagangan"	O	O
+15	"Selasa"	B-DAT	B-DAT
+16	"pagi"	O	O
+17	"setelah"	O	O
+18	"investor"	O	O
+19	"asing"	O	O
+20	"mengucurkan"	O	O
+21	"investasi"	O	O
+22	"sebesar"	O	O
+23	"Rp"	B-MON	B-MON
+24	"2"	I-MON	I-MON
+25	"triliun"	I-MON	I-MON
+26	"ke"	O	O
+27	"pasar"	O	O
+28	"modal"	O	O
+29	"Indonesia"	B-GPE	B-GPE
+30	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PRD:1-4
+TEXT="Indeks Harga Saham Gabungan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PRD:6-6
+TEXT="IHSG"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PRC:9-12
+TEXT="0 , 8 %"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=DAT:15-15
+TEXT="Selasa"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=MON:23-25
+TEXT="Rp 2 triliun"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E006
+ORIGINAL=GPE:29-29
+TEXT="Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-003 ===
+
+=== SAMPLE D03-004 ===
+SOURCE_RECORD_REF=e99cd12158f8e0faf935dc576bab71bda7490fa17a17f17c4f728897ea7d0246
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Menteri Luar Negeri Retno Marsudi menegaskan komitmen Indonesia dalam kepemimpinan ASEAN tahun 2023 melalui pidato dalam bahasa Inggris ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Menteri"	B-NOR	B-NOR
+2	"Luar"	I-NOR	I-NOR
+3	"Negeri"	I-NOR	I-NOR
+4	"Retno"	B-PER	B-PER
+5	"Marsudi"	I-PER	I-PER
+6	"menegaskan"	O	O
+7	"komitmen"	O	O
+8	"Indonesia"	B-GPE	B-GPE
+9	"dalam"	O	O
+10	"kepemimpinan"	O	O
+11	"ASEAN"	B-NOR	B-NOR
+12	"tahun"	O	O
+13	"2023"	B-DAT	B-DAT
+14	"melalui"	O	O
+15	"pidato"	O	O
+16	"dalam"	O	O
+17	"bahasa"	B-LAN	B-LAN
+18	"Inggris"	I-LAN	I-LAN
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-3
+TEXT="Menteri Luar Negeri"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:4-5
+TEXT="Retno Marsudi"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=GPE:8-8
+TEXT="Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=NOR:11-11
+TEXT="ASEAN"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=DAT:13-13
+TEXT="2023"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E006
+ORIGINAL=LAN:17-18
+TEXT="bahasa Inggris"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-004 ===
+
+=== SAMPLE D03-005 ===
+SOURCE_RECORD_REF=2404b68190e145f9deaaa4eac88fd68c34db70478e5fbc88975bc12463964061
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Suku Asmat di Papua memamerkan ukiran kayu sepanjang 5 meter yang terinspirasi dari kitab suci agama Kristen dalam pameran seni di Museum Nasional ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Suku"	B-NOR	B-NOR
+2	"Asmat"	I-NOR	I-NOR
+3	"di"	O	O
+4	"Papua"	B-GPE	B-GPE
+5	"memamerkan"	O	O
+6	"ukiran"	O	O
+7	"kayu"	O	O
+8	"sepanjang"	O	O
+9	"5"	B-QTY	B-QTY
+10	"meter"	I-QTY	I-QTY
+11	"yang"	O	O
+12	"terinspirasi"	O	O
+13	"dari"	O	O
+14	"kitab"	O	O
+15	"suci"	O	O
+16	"agama"	O	O
+17	"Kristen"	O	O
+18	"dalam"	O	O
+19	"pameran"	O	O
+20	"seni"	O	O
+21	"di"	O	O
+22	"Museum"	B-FAC	B-FAC
+23	"Nasional"	I-FAC	I-FAC
+24	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Suku Asmat"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:4-4
+TEXT="Papua"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=QTY:9-10
+TEXT="5 meter"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=FAC:22-23
+TEXT="Museum Nasional"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-005 ===
+
+=== SAMPLE D03-006 ===
+SOURCE_RECORD_REF=5d8432a0e74bea5ad395da841addfaeacf2e4734a3cb8e0770918dd85f4afe07
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Pemerintah mengalokasikan dana sebesar Rp 10 triliun untuk pembangunan smelter tembaga Freeport di Papua ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pemerintah"	B-NOR	B-NOR
+2	"mengalokasikan"	O	O
+3	"dana"	O	O
+4	"sebesar"	O	O
+5	"Rp"	B-MON	B-MON
+6	"10"	I-MON	I-MON
+7	"triliun"	I-MON	I-MON
+8	"untuk"	O	O
+9	"pembangunan"	O	O
+10	"smelter"	B-FAC	B-FAC
+11	"tembaga"	I-FAC	I-FAC
+12	"Freeport"	B-ORG	B-ORG
+13	"di"	O	O
+14	"Papua"	B-GPE	B-GPE
+15	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Pemerintah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=MON:5-7
+TEXT="Rp 10 triliun"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=FAC:10-11
+TEXT="smelter tembaga"
+DECISION=INCORRECT
+ACTION=REMOVE
+NOTE=Smelter tembaga adalah nomina umum, bukan nama fasilitas.
+END_ENTITY
+ENTITY E004
+ORIGINAL=ORG:12-12
+TEXT="Freeport"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=GPE:14-14
+TEXT="Papua"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-006 ===
+
+=== SAMPLE D03-007 ===
+SOURCE_RECORD_REF=b90a0db6c71a18336f72d0cad9d048ca3dfb9c74de6760b810b5865726d24609
+SOURCE_SPLIT=verified_18class
+STRATUM=E1_SHORT
+SENTENCE="Implementasi UU No . 18 Tahun 2012 tentang Pangan menjadi landasan utama dalam memperluas area perkebunan sawit berkelanjutan ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Implementasi"	O	O
+2	"UU"	B-LAW	B-LAW
+3	"No"	I-LAW	I-LAW
+4	"."	I-LAW	I-LAW
+5	"18"	I-LAW	I-LAW
+6	"Tahun"	I-LAW	I-LAW
+7	"2012"	I-LAW	I-LAW
+8	"tentang"	O	O
+9	"Pangan"	O	O
+10	"menjadi"	O	O
+11	"landasan"	O	O
+12	"utama"	O	O
+13	"dalam"	O	O
+14	"memperluas"	O	O
+15	"area"	O	O
+16	"perkebunan"	O	O
+17	"sawit"	O	O
+18	"berkelanjutan"	O	O
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=LAW:2-7
+TEXT="UU No . 18 Tahun 2012"
+DECISION=INCORRECT
+ACTION=REPLACE:LAW:2-7; LAW:9-9
+NOTE=Pangan merupakan bagian judul resmi undang-undang; kata penghubung tentang tidak masuk span.
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-007 ===
+
+=== SAMPLE D03-008 ===
+SOURCE_RECORD_REF=1070e43eedaed1522405bb5dfac9e7f27501943c72aacc92f2501f465864b68c
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Kementerian Perhubungan meresmikan Bandara Internasional Yogyakarta yang memiliki luas lahan 450 hektar di Kulon Progo ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Kementerian"	B-NOR	B-NOR
+2	"Perhubungan"	I-NOR	I-NOR
+3	"meresmikan"	O	O
+4	"Bandara"	B-FAC	B-FAC
+5	"Internasional"	I-FAC	I-FAC
+6	"Yogyakarta"	I-FAC	I-FAC
+7	"yang"	O	O
+8	"memiliki"	O	O
+9	"luas"	O	O
+10	"lahan"	O	O
+11	"450"	B-QTY	B-QTY
+12	"hektar"	I-QTY	I-QTY
+13	"di"	O	O
+14	"Kulon"	B-GPE	B-GPE
+15	"Progo"	I-GPE	I-GPE
+16	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Kementerian Perhubungan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=FAC:4-6
+TEXT="Bandara Internasional Yogyakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=QTY:11-12
+TEXT="450 hektar"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:14-15
+TEXT="Kulon Progo"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-008 ===
+
+=== SAMPLE D03-009 ===
+SOURCE_RECORD_REF=60ddff7a767f92007d470a7d39919b25160c65a88f2118ef7d8770ad4ff2b22b
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="IHSG ditutup menguat 0 , 8 persen pada Jumat sore , dipicu oleh aliran investasi asing senilai Rp 12 triliun ke pasar modal Indonesia ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"IHSG"	B-PRD	B-PRD
+2	"ditutup"	O	O
+3	"menguat"	O	O
+4	"0"	B-PRC	B-PRC
+5	","	I-PRC	I-PRC
+6	"8"	I-PRC	I-PRC
+7	"persen"	I-PRC	I-PRC
+8	"pada"	O	O
+9	"Jumat"	B-DAT	B-DAT
+10	"sore"	O	O
+11	","	O	O
+12	"dipicu"	O	O
+13	"oleh"	O	O
+14	"aliran"	O	O
+15	"investasi"	O	O
+16	"asing"	O	O
+17	"senilai"	O	O
+18	"Rp"	B-MON	B-MON
+19	"12"	I-MON	I-MON
+20	"triliun"	I-MON	I-MON
+21	"ke"	O	O
+22	"pasar"	O	O
+23	"modal"	O	O
+24	"Indonesia"	B-GPE	B-GPE
+25	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PRD:1-1
+TEXT="IHSG"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PRC:4-7
+TEXT="0 , 8 persen"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=DAT:9-9
+TEXT="Jumat"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=MON:18-20
+TEXT="Rp 12 triliun"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=GPE:24-24
+TEXT="Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-009 ===
+
+=== SAMPLE D03-010 ===
+SOURCE_RECORD_REF=8714001a3a8bdcb67ef9477aa5453a41a7214ccfa4c7fdcca277799b8c0a6cdc
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Kominfo akan memulai lelang spektrum 5G pertama di Indonesia pada tahun 2025 untuk mempercepat transformasi digital nasional ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Kominfo"	B-NOR	B-NOR
+2	"akan"	O	O
+3	"memulai"	O	O
+4	"lelang"	O	O
+5	"spektrum"	O	O
+6	"5G"	B-PRD	B-PRD
+7	"pertama"	B-ORD	B-ORD
+8	"di"	O	O
+9	"Indonesia"	B-GPE	B-GPE
+10	"pada"	O	O
+11	"tahun"	B-DAT	B-DAT
+12	"2025"	I-DAT	I-DAT
+13	"untuk"	O	O
+14	"mempercepat"	O	O
+15	"transformasi"	O	O
+16	"digital"	O	O
+17	"nasional"	O	O
+18	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Kominfo"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PRD:6-6
+TEXT="5G"
+DECISION=INCORRECT
+ACTION=REMOVE
+NOTE=5G adalah standar teknologi jaringan, bukan produk atau perangkat fisik.
+END_ENTITY
+ENTITY E003
+ORIGINAL=ORD:7-7
+TEXT="pertama"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:9-9
+TEXT="Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=DAT:11-12
+TEXT="tahun 2025"
+DECISION=INCORRECT
+ACTION=REPLACE:DAT:12-12
+NOTE=Angka tahun merupakan DAT; kata bantu tahun berada di luar span.
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-010 ===
+
+=== SAMPLE D03-011 ===
+SOURCE_RECORD_REF=18d99cdf5ddee5ec300b743106b58bd078a77ffd65fa0c4dfdbc3177033d07e3
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="PLN meresmikan pembangkit listrik tenaga surya di Kalimantan Timur pada pukul 10 . 00 WIB hari ini untuk mendukung energi hijau ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"PLN"	B-ORG	B-ORG
+2	"meresmikan"	O	O
+3	"pembangkit"	O	O
+4	"listrik"	O	O
+5	"tenaga"	O	O
+6	"surya"	O	O
+7	"di"	O	O
+8	"Kalimantan"	B-GPE	B-GPE
+9	"Timur"	I-GPE	I-GPE
+10	"pada"	O	O
+11	"pukul"	O	O
+12	"10"	B-TIM	B-TIM
+13	"."	I-TIM	I-TIM
+14	"00"	I-TIM	I-TIM
+15	"WIB"	I-TIM	I-TIM
+16	"hari"	O	O
+17	"ini"	O	O
+18	"untuk"	O	O
+19	"mendukung"	O	O
+20	"energi"	O	O
+21	"hijau"	O	O
+22	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=ORG:1-1
+TEXT="PLN"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:8-9
+TEXT="Kalimantan Timur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=TIM:12-15
+TEXT="10 . 00 WIB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-011 ===
+
+=== SAMPLE D03-012 ===
+SOURCE_RECORD_REF=1e638bdd4da27e39b1a2e09eb222445f566204bb5b5d7c7fb350b106646b2801
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Pemerintah DKI Jakarta mengalokasikan dana Rp 2 triliun untuk perbaikan sistem sanitasi permukiman di kawasan bantaran Sungai Ciliwung ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pemerintah"	B-NOR	B-NOR
+2	"DKI"	I-NOR	I-NOR
+3	"Jakarta"	I-NOR	I-NOR
+4	"mengalokasikan"	O	O
+5	"dana"	O	O
+6	"Rp"	B-MON	B-MON
+7	"2"	I-MON	I-MON
+8	"triliun"	I-MON	I-MON
+9	"untuk"	O	O
+10	"perbaikan"	O	O
+11	"sistem"	O	O
+12	"sanitasi"	O	O
+13	"permukiman"	O	O
+14	"di"	O	O
+15	"kawasan"	O	O
+16	"bantaran"	O	O
+17	"Sungai"	B-LOC	B-LOC
+18	"Ciliwung"	I-LOC	I-LOC
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-3
+TEXT="Pemerintah DKI Jakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=MON:6-8
+TEXT="Rp 2 triliun"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LOC:17-18
+TEXT="Sungai Ciliwung"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-012 ===
+
+=== SAMPLE D03-013 ===
+SOURCE_RECORD_REF=e9681a063ddf76502ac85b0c84ba4fa823c1853ac384a8a5457608dee8a1823b
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Pemerintah Kota Surabaya membangun dua jembatan baru untuk mengatasi dinamika urbanisasi yang menyebabkan kemacetan di jalan protokol ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pemerintah"	B-NOR	B-NOR
+2	"Kota"	I-NOR	I-NOR
+3	"Surabaya"	B-GPE	B-GPE
+4	"membangun"	O	O
+5	"dua"	B-CRD	B-CRD
+6	"jembatan"	B-FAC	B-FAC
+7	"baru"	O	O
+8	"untuk"	O	O
+9	"mengatasi"	O	O
+10	"dinamika"	O	O
+11	"urbanisasi"	O	O
+12	"yang"	O	O
+13	"menyebabkan"	O	O
+14	"kemacetan"	O	O
+15	"di"	O	O
+16	"jalan"	B-LOC	B-LOC
+17	"protokol"	I-LOC	I-LOC
+18	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Pemerintah Kota"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:3-3
+TEXT="Surabaya"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=CRD:5-5
+TEXT="dua"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=FAC:6-6
+TEXT="jembatan"
+DECISION=INCORRECT
+ACTION=REMOVE
+NOTE=Jembatan disebut secara umum, bukan nama fasilitas tertentu
+END_ENTITY
+ENTITY E005
+ORIGINAL=LOC:16-17
+TEXT="jalan protokol"
+DECISION=INCORRECT
+ACTION=REMOVE
+NOTE=Jalan protokol merupakan sebutan umum, bukan nama jalan atau lokasi tertentu
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-013 ===
+
+=== SAMPLE D03-014 ===
+SOURCE_RECORD_REF=d261977019bc6e257a353765eec5aa04df37a59a86aacf58b36b106b63964eab
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Pemerintah Kota Jakarta menerapkan konsep tata kota metropolitan yang mengintegrasikan transportasi publik melalui pembangunan MRT Jakarta tahap kedua ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pemerintah"	B-NOR	B-NOR
+2	"Kota"	I-NOR	I-NOR
+3	"Jakarta"	B-GPE	B-GPE
+4	"menerapkan"	O	O
+5	"konsep"	O	O
+6	"tata"	O	O
+7	"kota"	O	O
+8	"metropolitan"	O	O
+9	"yang"	O	O
+10	"mengintegrasikan"	O	O
+11	"transportasi"	O	O
+12	"publik"	O	O
+13	"melalui"	O	O
+14	"pembangunan"	O	O
+15	"MRT"	B-FAC	B-FAC
+16	"Jakarta"	I-FAC	I-FAC
+17	"tahap"	O	O
+18	"kedua"	B-ORD	B-ORD
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Pemerintah Kota"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:3-3
+TEXT="Jakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=FAC:15-16
+TEXT="MRT Jakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=ORD:18-18
+TEXT="kedua"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-014 ===
+
+=== SAMPLE D03-015 ===
+SOURCE_RECORD_REF=03ce1b65197535f50b8bf7d2e9a3c0623ae07067c2c6c513096744922354b759
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Badan Riset dan Inovasi Nasional ( BRIN ) mengalokasikan dana sebesar Rp 500 miliar untuk riset energi terbarukan yang melibatkan peneliti dari Universitas Gadjah Mada ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Badan"	B-NOR	B-NOR
+2	"Riset"	I-NOR	I-NOR
+3	"dan"	I-NOR	I-NOR
+4	"Inovasi"	I-NOR	I-NOR
+5	"Nasional"	I-NOR	I-NOR
+6	"("	O	O
+7	"BRIN"	B-NOR	B-NOR
+8	")"	O	O
+9	"mengalokasikan"	O	O
+10	"dana"	O	O
+11	"sebesar"	O	O
+12	"Rp"	B-MON	B-MON
+13	"500"	I-MON	I-MON
+14	"miliar"	I-MON	I-MON
+15	"untuk"	O	O
+16	"riset"	O	O
+17	"energi"	O	O
+18	"terbarukan"	O	O
+19	"yang"	O	O
+20	"melibatkan"	O	O
+21	"peneliti"	O	O
+22	"dari"	O	O
+23	"Universitas"	B-ORG	B-ORG
+24	"Gadjah"	I-ORG	I-ORG
+25	"Mada"	I-ORG	I-ORG
+26	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-5
+TEXT="Badan Riset dan Inovasi Nasional"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=NOR:7-7
+TEXT="BRIN"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=MON:12-14
+TEXT="Rp 500 miliar"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=ORG:23-25
+TEXT="Universitas Gadjah Mada"
+DECISION=INCORRECT
+ACTION=REPLACE:NOR:23-25
+NOTE=Universitas Gadjah Mada merupakan institusi negeri, bukan kategori ORG yang ditetapkan
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-015 ===
+
+=== SAMPLE D03-016 ===
+SOURCE_RECORD_REF=8ddd47420e522da20f09f2645d7d86a2ad1032037ce78a2d8c11efba3fcab60a
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Indeks Harga Saham Gabungan ( IHSG ) menguat ke level 7 . 300 setelah pemerintah mengumumkan peningkatan investasi asing sebesar US $ 10 miliar ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Indeks"	B-PRD	B-PRD
+2	"Harga"	I-PRD	I-PRD
+3	"Saham"	I-PRD	I-PRD
+4	"Gabungan"	I-PRD	I-PRD
+5	"("	O	O
+6	"IHSG"	B-PRD	B-PRD
+7	")"	O	O
+8	"menguat"	O	O
+9	"ke"	O	O
+10	"level"	O	O
+11	"7"	B-CRD	B-CRD
+12	"."	I-CRD	I-CRD
+13	"300"	I-CRD	I-CRD
+14	"setelah"	O	O
+15	"pemerintah"	B-NOR	B-NOR
+16	"mengumumkan"	O	O
+17	"peningkatan"	O	O
+18	"investasi"	O	O
+19	"asing"	O	O
+20	"sebesar"	O	O
+21	"US"	B-MON	B-MON
+22	"$"	I-MON	I-MON
+23	"10"	I-MON	I-MON
+24	"miliar"	I-MON	I-MON
+25	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PRD:1-4
+TEXT="Indeks Harga Saham Gabungan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PRD:6-6
+TEXT="IHSG"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=CRD:11-13
+TEXT="7 . 300"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=NOR:15-15
+TEXT="pemerintah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=MON:21-24
+TEXT="US $ 10 miliar"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-016 ===
+
+=== SAMPLE D03-017 ===
+SOURCE_RECORD_REF=dbc848f1904155dc039cdb0c6fe4bd0abbecfeac050d5095989e6b2495774b2c
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Pemerintah Kabupaten Minahasa Utara membangun jalan tol sepanjang 12 km menuju kawasan Likupang untuk mendukung ekonomi lokal ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pemerintah"	B-NOR	B-NOR
+2	"Kabupaten"	I-NOR	I-NOR
+3	"Minahasa"	B-GPE	B-GPE
+4	"Utara"	I-GPE	I-GPE
+5	"membangun"	O	O
+6	"jalan"	B-FAC	B-FAC
+7	"tol"	I-FAC	I-FAC
+8	"sepanjang"	O	O
+9	"12"	B-QTY	B-QTY
+10	"km"	I-QTY	I-QTY
+11	"menuju"	O	O
+12	"kawasan"	O	O
+13	"Likupang"	B-LOC	B-LOC
+14	"untuk"	O	O
+15	"mendukung"	O	O
+16	"ekonomi"	O	O
+17	"lokal"	O	O
+18	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Pemerintah Kabupaten"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:3-4
+TEXT="Minahasa Utara"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=FAC:6-7
+TEXT="jalan tol"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=QTY:9-10
+TEXT="12 km"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=LOC:13-13
+TEXT="Likupang"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-017 ===
+
+=== SAMPLE D03-018 ===
+SOURCE_RECORD_REF=8ad3347c46af9a19fb1141705b96e287e323032af35ade8e6f46191c96b4a995
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Presiden Soekarno membacakan teks Proklamasi pada 17 Agustus 1945 untuk menyatakan kemerdekaan bangsa Indonesia dari penjajahan ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Presiden"	B-NOR	B-NOR
+2	"Soekarno"	B-PER	B-PER
+3	"membacakan"	O	O
+4	"teks"	O	O
+5	"Proklamasi"	B-EVT	B-EVT
+6	"pada"	O	O
+7	"17"	B-DAT	B-DAT
+8	"Agustus"	I-DAT	I-DAT
+9	"1945"	I-DAT	I-DAT
+10	"untuk"	O	O
+11	"menyatakan"	O	O
+12	"kemerdekaan"	O	O
+13	"bangsa"	O	O
+14	"Indonesia"	B-GPE	B-GPE
+15	"dari"	O	O
+16	"penjajahan"	O	O
+17	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Presiden"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:2-2
+TEXT="Soekarno"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=EVT:5-5
+TEXT="Proklamasi"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=DAT:7-9
+TEXT="17 Agustus 1945"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=GPE:14-14
+TEXT="Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-018 ===
+
+=== SAMPLE D03-019 ===
+SOURCE_RECORD_REF=460b1b7008f5da750f2cb20790a5b74e1c50a40c4f998b840612f053a7889a64
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Pembangunan Bandara Internasional Yogyakarta tahap kedua akan melibatkan dua konsorsium besar dengan total anggaran mencapai 5 triliun rupiah ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pembangunan"	O	O
+2	"Bandara"	B-FAC	B-FAC
+3	"Internasional"	I-FAC	I-FAC
+4	"Yogyakarta"	I-FAC	I-FAC
+5	"tahap"	O	O
+6	"kedua"	B-ORD	B-ORD
+7	"akan"	O	O
+8	"melibatkan"	O	O
+9	"dua"	B-CRD	B-CRD
+10	"konsorsium"	O	O
+11	"besar"	O	O
+12	"dengan"	O	O
+13	"total"	O	O
+14	"anggaran"	O	O
+15	"mencapai"	O	O
+16	"5"	B-MON	B-MON
+17	"triliun"	I-MON	I-MON
+18	"rupiah"	I-MON	I-MON
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=FAC:2-4
+TEXT="Bandara Internasional Yogyakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=ORD:6-6
+TEXT="kedua"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=CRD:9-9
+TEXT="dua"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=MON:16-18
+TEXT="5 triliun rupiah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-019 ===
+
+=== SAMPLE D03-020 ===
+SOURCE_RECORD_REF=2b705e804ba971f5e2c1f866533640233ec37a4ca68d7a91b01ac60f8bfad1ec
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Prof . Budi Santoso dari BRIN berhasil mengembangkan prototipe sensor gempa baru yang akan diuji coba di sepanjang Pantai Selatan Jawa pada Senin mendatang ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Prof"	B-PER	B-PER
+2	"."	I-PER	I-PER
+3	"Budi"	I-PER	I-PER
+4	"Santoso"	I-PER	I-PER
+5	"dari"	O	O
+6	"BRIN"	B-NOR	B-NOR
+7	"berhasil"	O	O
+8	"mengembangkan"	O	O
+9	"prototipe"	O	O
+10	"sensor"	O	O
+11	"gempa"	O	O
+12	"baru"	O	O
+13	"yang"	O	O
+14	"akan"	O	O
+15	"diuji"	O	O
+16	"coba"	O	O
+17	"di"	O	O
+18	"sepanjang"	O	O
+19	"Pantai"	B-LOC	B-LOC
+20	"Selatan"	I-LOC	I-LOC
+21	"Jawa"	I-LOC	I-LOC
+22	"pada"	O	O
+23	"Senin"	B-DAT	B-DAT
+24	"mendatang"	O	O
+25	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PER:1-4
+TEXT="Prof . Budi Santoso"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=NOR:6-6
+TEXT="BRIN"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LOC:19-21
+TEXT="Pantai Selatan Jawa"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=DAT:23-23
+TEXT="Senin"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-020 ===
+
+=== SAMPLE D03-021 ===
+SOURCE_RECORD_REF=39b18d5272ecdad84d041ed78f17479fb1954a64144822dc5046560a12ea0a28
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Pemerintah Indonesia menggelar lelang spektrum 5G pertama kalinya untuk meningkatkan kecepatan transmisi data hingga 10 Gbps ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pemerintah"	B-NOR	B-NOR
+2	"Indonesia"	B-GPE	B-GPE
+3	"menggelar"	O	O
+4	"lelang"	O	O
+5	"spektrum"	O	O
+6	"5G"	B-PRD	B-PRD
+7	"pertama"	B-ORD	B-ORD
+8	"kalinya"	O	O
+9	"untuk"	O	O
+10	"meningkatkan"	O	O
+11	"kecepatan"	O	O
+12	"transmisi"	O	O
+13	"data"	O	O
+14	"hingga"	O	O
+15	"10"	B-QTY	B-QTY
+16	"Gbps"	I-QTY	I-QTY
+17	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Pemerintah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:2-2
+TEXT="Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PRD:6-6
+TEXT="5G"
+DECISION=INCORRECT
+ACTION=REMOVE
+NOTE=5G adalah standar teknologi jaringan, bukan produk fisik atau gawai dalam cakupan PRD.
+END_ENTITY
+ENTITY E004
+ORIGINAL=ORD:7-7
+TEXT="pertama"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=QTY:15-16
+TEXT="10 Gbps"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-021 ===
+
+=== SAMPLE D03-022 ===
+SOURCE_RECORD_REF=4d906bca7e9e9b43732a6845030287014257407872826978b854df9bf293b897
+SOURCE_SPLIT=verified_18class
+STRATUM=E0_SHORT
+SENTENCE="BPJS Ketenagakerjaan memberikan santunan kematian sebesar 42 juta rupiah kepada ahli waris pekerja di Jakarta Pusat ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"BPJS"	O	O
+2	"Ketenagakerjaan"	O	O
+3	"memberikan"	O	O
+4	"santunan"	O	O
+5	"kematian"	O	O
+6	"sebesar"	O	O
+7	"42"	O	O
+8	"juta"	O	O
+9	"rupiah"	O	O
+10	"kepada"	O	O
+11	"ahli"	O	O
+12	"waris"	O	O
+13	"pekerja"	O	O
+14	"di"	O	O
+15	"Jakarta"	O	O
+16	"Pusat"	O	O
+17	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITIES_END
+MISSING_ENTITIES=NOR:1-2; MON:7-9; GPE:15-16
+SENTENCE_REVIEWED=YES
+NOTES=BPJS Ketenagakerjaan adalah lembaga nasional; nilai uang dan Jakarta Pusat terlewat.
+=== END SAMPLE D03-022 ===
+
+=== SAMPLE D03-023 ===
+SOURCE_RECORD_REF=1028699dd84ab0c433a3132804e2b04793a6676078e28b697dfbf5029dc6e3bf
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Pengrajin tenun ikat dari NTT berhasil menembus pasar Uni Eropa dengan nilai kontrak mencapai Rp 2 miliar ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pengrajin"	O	O
+2	"tenun"	B-PRD	B-PRD
+3	"ikat"	I-PRD	I-PRD
+4	"dari"	O	O
+5	"NTT"	B-GPE	B-GPE
+6	"berhasil"	O	O
+7	"menembus"	O	O
+8	"pasar"	O	O
+9	"Uni"	B-NOR	B-NOR
+10	"Eropa"	I-NOR	I-NOR
+11	"dengan"	O	O
+12	"nilai"	O	O
+13	"kontrak"	O	O
+14	"mencapai"	O	O
+15	"Rp"	B-MON	B-MON
+16	"2"	I-MON	I-MON
+17	"miliar"	I-MON	I-MON
+18	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PRD:2-3
+TEXT="tenun ikat"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:5-5
+TEXT="NTT"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=NOR:9-10
+TEXT="Uni Eropa"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=Uni Eropa adalah organisasi antarpemerintah, berlabel NOR.
+END_ENTITY
+ENTITY E004
+ORIGINAL=MON:15-17
+TEXT="Rp 2 miliar"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-023 ===
+
+=== SAMPLE D03-024 ===
+SOURCE_RECORD_REF=18aaae1b97aa4f9dadcf6249dd40b094ea874de0884de70796d12117a1b1281f
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Pemerintah memberikan subsidi sebesar 7 juta rupiah untuk pembelian motor listrik model Honda EM1 e : guna mengurangi polusi udara di Jakarta ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pemerintah"	B-NOR	B-NOR
+2	"memberikan"	O	O
+3	"subsidi"	O	O
+4	"sebesar"	O	O
+5	"7"	B-MON	B-MON
+6	"juta"	I-MON	I-MON
+7	"rupiah"	I-MON	I-MON
+8	"untuk"	O	O
+9	"pembelian"	O	O
+10	"motor"	B-PRD	B-PRD
+11	"listrik"	I-PRD	I-PRD
+12	"model"	O	O
+13	"Honda"	B-PRD	B-PRD
+14	"EM1"	I-PRD	I-PRD
+15	"e"	I-PRD	I-PRD
+16	":"	I-PRD	I-PRD
+17	"guna"	O	O
+18	"mengurangi"	O	O
+19	"polusi"	O	O
+20	"udara"	O	O
+21	"di"	O	O
+22	"Jakarta"	B-GPE	B-GPE
+23	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Pemerintah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=MON:5-7
+TEXT="7 juta rupiah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PRD:10-11
+TEXT="motor listrik"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=PRD:13-16
+TEXT="Honda EM1 e :"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=Tanda titik dua merupakan bagian dari nama model Honda EM1 e:.
+END_ENTITY
+ENTITY E005
+ORIGINAL=GPE:22-22
+TEXT="Jakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-024 ===
+
+=== SAMPLE D03-025 ===
+SOURCE_RECORD_REF=cf434b9b445b9555a7b07a8dbf69eb07d5584885329ae4e2d21e0b3e508ef87c
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Pertemuan pertama antara serikat buruh dan pengusaha di Jakarta membahas pasal 88 UU Cipta Kerja terkait perhitungan pesangon ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pertemuan"	O	O
+2	"pertama"	B-ORD	B-ORD
+3	"antara"	O	O
+4	"serikat"	O	O
+5	"buruh"	O	O
+6	"dan"	O	O
+7	"pengusaha"	O	O
+8	"di"	O	O
+9	"Jakarta"	B-GPE	B-GPE
+10	"membahas"	O	O
+11	"pasal"	B-LAW	B-LAW
+12	"88"	I-LAW	I-LAW
+13	"UU"	B-LAW	B-LAW
+14	"Cipta"	I-LAW	I-LAW
+15	"Kerja"	I-LAW	I-LAW
+16	"terkait"	O	O
+17	"perhitungan"	O	O
+18	"pesangon"	O	O
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=ORD:2-2
+TEXT="pertama"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:9-9
+TEXT="Jakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LAW:11-12
+TEXT="pasal 88"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=LAW:13-15
+TEXT="UU Cipta Kerja"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-025 ===
+
+=== SAMPLE D03-026 ===
+SOURCE_RECORD_REF=5def541d4eed451290af2121275a5eb6ee8f00bb906a0e8d4b96629b647a3e27
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Profesor Adi Permana menjelaskan bahwa kenaikan suhu global sebesar 1 , 5 derajat Celsius akan berdampak buruk pada ekosistem Samudra Hindia ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Profesor"	B-PER	B-PER
+2	"Adi"	I-PER	I-PER
+3	"Permana"	I-PER	I-PER
+4	"menjelaskan"	O	O
+5	"bahwa"	O	O
+6	"kenaikan"	O	O
+7	"suhu"	O	O
+8	"global"	O	O
+9	"sebesar"	O	O
+10	"1"	B-QTY	B-QTY
+11	","	I-QTY	I-QTY
+12	"5"	I-QTY	I-QTY
+13	"derajat"	I-QTY	I-QTY
+14	"Celsius"	I-QTY	I-QTY
+15	"akan"	O	O
+16	"berdampak"	O	O
+17	"buruk"	O	O
+18	"pada"	O	O
+19	"ekosistem"	O	O
+20	"Samudra"	B-LOC	B-LOC
+21	"Hindia"	I-LOC	I-LOC
+22	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PER:1-3
+TEXT="Profesor Adi Permana"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=QTY:10-14
+TEXT="1 , 5 derajat Celsius"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LOC:20-21
+TEXT="Samudra Hindia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-026 ===
+
+=== SAMPLE D03-027 ===
+SOURCE_RECORD_REF=81ba6af8c46db3bafbcaa3bd5b2cba35d054553fd97f97a7c0443b7e0c9aa7cb
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="PT PAL Industri sedang mengerjakan pembangunan kapal perang jenis fregat yang mengacu pada standar UU No . 34 Tahun 2004 tentang TNI ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"PT"	B-ORG	B-ORG
+2	"PAL"	I-ORG	I-ORG
+3	"Industri"	I-ORG	I-ORG
+4	"sedang"	O	O
+5	"mengerjakan"	O	O
+6	"pembangunan"	O	O
+7	"kapal"	B-PRD	B-PRD
+8	"perang"	I-PRD	I-PRD
+9	"jenis"	I-PRD	I-PRD
+10	"fregat"	I-PRD	I-PRD
+11	"yang"	O	O
+12	"mengacu"	O	O
+13	"pada"	O	O
+14	"standar"	O	O
+15	"UU"	B-LAW	B-LAW
+16	"No"	I-LAW	I-LAW
+17	"."	I-LAW	I-LAW
+18	"34"	I-LAW	I-LAW
+19	"Tahun"	I-LAW	I-LAW
+20	"2004"	I-LAW	I-LAW
+21	"tentang"	O	O
+22	"TNI"	B-NOR	B-NOR
+23	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=ORG:1-3
+TEXT="PT PAL Industri"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PRD:7-10
+TEXT="kapal perang jenis fregat"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LAW:15-20
+TEXT="UU No . 34 Tahun 2004"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=NOR:22-22
+TEXT="TNI"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-027 ===
+
+=== SAMPLE D03-028 ===
+SOURCE_RECORD_REF=6c32ccfef8104a8e387d2203a8f9b78fdfd90f863dbe095ec239ae9da5f8354c
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="BPJPH mewajibkan seluruh pelaku usaha kuliner modern untuk memiliki sertifikasi halal sesuai UU No . 33 Tahun 2014 sebelum Oktober 2024 ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"BPJPH"	B-NOR	B-NOR
+2	"mewajibkan"	O	O
+3	"seluruh"	O	O
+4	"pelaku"	O	O
+5	"usaha"	O	O
+6	"kuliner"	O	O
+7	"modern"	O	O
+8	"untuk"	O	O
+9	"memiliki"	O	O
+10	"sertifikasi"	O	O
+11	"halal"	O	O
+12	"sesuai"	O	O
+13	"UU"	B-LAW	B-LAW
+14	"No"	I-LAW	I-LAW
+15	"."	I-LAW	I-LAW
+16	"33"	I-LAW	I-LAW
+17	"Tahun"	I-LAW	I-LAW
+18	"2014"	I-LAW	I-LAW
+19	"sebelum"	O	O
+20	"Oktober"	B-DAT	B-DAT
+21	"2024"	I-DAT	I-DAT
+22	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="BPJPH"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=LAW:13-18
+TEXT="UU No . 33 Tahun 2014"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=DAT:20-21
+TEXT="Oktober 2024"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-028 ===
+
+=== SAMPLE D03-029 ===
+SOURCE_RECORD_REF=1928701fadf98c4cc8edcde95941fe1740ac3c5b0288582a99ea7ed17261e9b4
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="FKUB Provinsi Jawa Timur memastikan kerukunan antar umat Kristen dan umat Hindu menjelang perayaan Natal dan Nyepi tahun depan ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"FKUB"	B-NOR	B-NOR
+2	"Provinsi"	B-GPE	B-GPE
+3	"Jawa"	I-GPE	I-GPE
+4	"Timur"	I-GPE	I-GPE
+5	"memastikan"	O	O
+6	"kerukunan"	O	O
+7	"antar"	O	O
+8	"umat"	O	O
+9	"Kristen"	O	O
+10	"dan"	O	O
+11	"umat"	O	O
+12	"Hindu"	O	O
+13	"menjelang"	O	O
+14	"perayaan"	O	O
+15	"Natal"	B-EVT	B-EVT
+16	"dan"	O	O
+17	"Nyepi"	B-EVT	B-EVT
+18	"tahun"	O	O
+19	"depan"	O	O
+20	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="FKUB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:2-4
+TEXT="Provinsi Jawa Timur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=EVT:15-15
+TEXT="Natal"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=EVT:17-17
+TEXT="Nyepi"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-029 ===
+
+=== SAMPLE D03-030 ===
+SOURCE_RECORD_REF=54cd7e10c0c4ef74cf072e19bef3cb5f54cc737f4ce6dd62b44bb7c927bde28b
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Menteri Nadiem Makarim menjelaskan bahwa kurikulum Merdeka dari Kemendikbudristek bertujuan meningkatkan literasi siswa dalam bahasa Inggris ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Menteri"	B-NOR	B-NOR
+2	"Nadiem"	B-PER	B-PER
+3	"Makarim"	I-PER	I-PER
+4	"menjelaskan"	O	O
+5	"bahwa"	O	O
+6	"kurikulum"	O	O
+7	"Merdeka"	O	O
+8	"dari"	O	O
+9	"Kemendikbudristek"	B-NOR	B-NOR
+10	"bertujuan"	O	O
+11	"meningkatkan"	O	O
+12	"literasi"	O	O
+13	"siswa"	O	O
+14	"dalam"	O	O
+15	"bahasa"	B-LAN	B-LAN
+16	"Inggris"	I-LAN	I-LAN
+17	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Menteri"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:2-3
+TEXT="Nadiem Makarim"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=NOR:9-9
+TEXT="Kemendikbudristek"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=LAN:15-16
+TEXT="bahasa Inggris"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-030 ===
+
+=== SAMPLE D03-031 ===
+SOURCE_RECORD_REF=d98d8121faa7f316c0ca5613fe1bcd928fd194864e8e688135ddfa821d111f57
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Dirut BPJS Kesehatan Ali Ghufron Mukti menyatakan bahwa cakupan kepesertaan JKN telah mencapai 95 persen dari total penduduk Indonesia ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Dirut"	O	O
+2	"BPJS"	B-NOR	B-NOR
+3	"Kesehatan"	I-NOR	I-NOR
+4	"Ali"	B-PER	B-PER
+5	"Ghufron"	I-PER	I-PER
+6	"Mukti"	I-PER	I-PER
+7	"menyatakan"	O	O
+8	"bahwa"	O	O
+9	"cakupan"	O	O
+10	"kepesertaan"	O	O
+11	"JKN"	O	O
+12	"telah"	O	O
+13	"mencapai"	O	O
+14	"95"	B-PRC	B-PRC
+15	"persen"	I-PRC	I-PRC
+16	"dari"	O	O
+17	"total"	O	O
+18	"penduduk"	O	O
+19	"Indonesia"	B-GPE	B-GPE
+20	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:2-3
+TEXT="BPJS Kesehatan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:4-6
+TEXT="Ali Ghufron Mukti"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PRC:14-15
+TEXT="95 persen"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:19-19
+TEXT="Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NOR:1-1
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-031 ===
+
+=== SAMPLE D03-032 ===
+SOURCE_RECORD_REF=4f68a540042e953eba04b2eb74ba8faff7366bba0288edf89f6b711f88ac21d2
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Kementerian Komunikasi dan Informatika mendorong migrasi televisi digital di wilayah Sulawesi Utara , termasuk di kawasan Likupang , mulai pukul 00 . 00 WIB ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Kementerian"	B-NOR	B-NOR
+2	"Komunikasi"	I-NOR	I-NOR
+3	"dan"	I-NOR	I-NOR
+4	"Informatika"	I-NOR	I-NOR
+5	"mendorong"	O	O
+6	"migrasi"	O	O
+7	"televisi"	O	O
+8	"digital"	O	O
+9	"di"	O	O
+10	"wilayah"	O	O
+11	"Sulawesi"	B-GPE	B-GPE
+12	"Utara"	I-GPE	I-GPE
+13	","	O	O
+14	"termasuk"	O	O
+15	"di"	O	O
+16	"kawasan"	O	O
+17	"Likupang"	B-GPE	B-GPE
+18	","	O	O
+19	"mulai"	O	O
+20	"pukul"	O	O
+21	"00"	B-TIM	B-TIM
+22	"."	I-TIM	I-TIM
+23	"00"	I-TIM	I-TIM
+24	"WIB"	I-TIM	I-TIM
+25	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-4
+TEXT="Kementerian Komunikasi dan Informatika"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:11-12
+TEXT="Sulawesi Utara"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=GPE:17-17
+TEXT="Likupang"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=TIM:21-24
+TEXT="00 . 00 WIB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-032 ===
+
+=== SAMPLE D03-033 ===
+SOURCE_RECORD_REF=c8a692da9fbb9b0b17aacef8301bf59aed73372ffbfbd92b34d153d0d87bf090
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Menteri Kominfo Budi Arie Setiadi meresmikan pengoperasian satelit SATRIA - 1 yang akan menjangkau 150 . 000 titik akses internet ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Menteri"	B-NOR	B-NOR
+2	"Kominfo"	I-NOR	I-NOR
+3	"Budi"	B-PER	B-PER
+4	"Arie"	I-PER	I-PER
+5	"Setiadi"	I-PER	I-PER
+6	"meresmikan"	O	O
+7	"pengoperasian"	O	O
+8	"satelit"	B-PRD	B-PRD
+9	"SATRIA"	I-PRD	I-PRD
+10	"-"	I-PRD	I-PRD
+11	"1"	I-PRD	I-PRD
+12	"yang"	O	O
+13	"akan"	O	O
+14	"menjangkau"	O	O
+15	"150"	B-CRD	B-CRD
+16	"."	I-CRD	I-CRD
+17	"000"	I-CRD	I-CRD
+18	"titik"	O	O
+19	"akses"	O	O
+20	"internet"	O	O
+21	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Menteri Kominfo"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:3-5
+TEXT="Budi Arie Setiadi"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PRD:8-11
+TEXT="satelit SATRIA - 1"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=CRD:15-17
+TEXT="150 . 000"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-033 ===
+
+=== SAMPLE D03-034 ===
+SOURCE_RECORD_REF=348c5bb00c0baff0f8bfe9372dd9b78f18a080a0bdb8f2175737300318d83fbc
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Kemenkes bekerja sama dengan WHO untuk memetakan epidemiologi varian baru virus influenza di wilayah Asia Tenggara ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Kemenkes"	B-NOR	B-NOR
+2	"bekerja"	O	O
+3	"sama"	O	O
+4	"dengan"	O	O
+5	"WHO"	B-NOR	B-NOR
+6	"untuk"	O	O
+7	"memetakan"	O	O
+8	"epidemiologi"	O	O
+9	"varian"	O	O
+10	"baru"	O	O
+11	"virus"	O	O
+12	"influenza"	O	O
+13	"di"	O	O
+14	"wilayah"	O	O
+15	"Asia"	B-LOC	B-LOC
+16	"Tenggara"	I-LOC	I-LOC
+17	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Kemenkes"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=NOR:5-5
+TEXT="WHO"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LOC:15-16
+TEXT="Asia Tenggara"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-034 ===
+
+=== SAMPLE D03-035 ===
+SOURCE_RECORD_REF=39785aab110aaadb3b6c73baa0bb49b1d1e83bd6d76921acb569b413ac49fa9d
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Warisan kuliner suku Minangkabau kini didokumentasikan dalam buku berjudul ' Rasa Nusantara ' yang terbit pada Januari 2023 ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Warisan"	O	O
+2	"kuliner"	O	O
+3	"suku"	B-NOR	B-NOR
+4	"Minangkabau"	I-NOR	I-NOR
+5	"kini"	O	O
+6	"didokumentasikan"	O	O
+7	"dalam"	O	O
+8	"buku"	O	O
+9	"berjudul"	O	O
+10	"'"	O	O
+11	"Rasa"	B-WOA	B-WOA
+12	"Nusantara"	I-WOA	I-WOA
+13	"'"	O	O
+14	"yang"	O	O
+15	"terbit"	O	O
+16	"pada"	O	O
+17	"Januari"	B-DAT	B-DAT
+18	"2023"	I-DAT	I-DAT
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:3-4
+TEXT="suku Minangkabau"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=WOA:11-12
+TEXT="Rasa Nusantara"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=DAT:17-18
+TEXT="Januari 2023"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-035 ===
+
+=== SAMPLE D03-036 ===
+SOURCE_RECORD_REF=a8b31c9dae73640346d909d40200066ee8e4c56dfa8870c19308871c877c19c1
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Kementerian Komunikasi dan Informatika mewajibkan penggunaan bahasa Indonesia yang baku dalam setiap siaran televisi digital sesuai regulasi pemerintah ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Kementerian"	B-NOR	B-NOR
+2	"Komunikasi"	I-NOR	I-NOR
+3	"dan"	I-NOR	I-NOR
+4	"Informatika"	I-NOR	I-NOR
+5	"mewajibkan"	O	O
+6	"penggunaan"	O	O
+7	"bahasa"	B-LAN	B-LAN
+8	"Indonesia"	I-LAN	I-LAN
+9	"yang"	O	O
+10	"baku"	O	O
+11	"dalam"	O	O
+12	"setiap"	O	O
+13	"siaran"	O	O
+14	"televisi"	O	O
+15	"digital"	O	O
+16	"sesuai"	O	O
+17	"regulasi"	O	O
+18	"pemerintah"	B-NOR	B-NOR
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-4
+TEXT="Kementerian Komunikasi dan Informatika"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=LAN:7-8
+TEXT="bahasa Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=NOR:18-18
+TEXT="pemerintah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-036 ===
+
+=== SAMPLE D03-037 ===
+SOURCE_RECORD_REF=bc89638d8298486706fba3625a039a1809a3062352e3377aef34131d831ba4e5
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Gubernur Jawa Tengah Ganjar Pranowo meninjau pembangunan pabrik manufaktur baru seluas 50 hektar di kawasan industri Kendal pada pukul 10 . 00 WIB ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Gubernur"	B-NOR	B-NOR
+2	"Jawa"	B-GPE	B-GPE
+3	"Tengah"	I-GPE	I-GPE
+4	"Ganjar"	B-PER	B-PER
+5	"Pranowo"	I-PER	I-PER
+6	"meninjau"	O	O
+7	"pembangunan"	O	O
+8	"pabrik"	O	O
+9	"manufaktur"	O	O
+10	"baru"	O	O
+11	"seluas"	O	O
+12	"50"	B-QTY	B-QTY
+13	"hektar"	I-QTY	I-QTY
+14	"di"	O	O
+15	"kawasan"	O	O
+16	"industri"	O	O
+17	"Kendal"	B-GPE	B-GPE
+18	"pada"	O	O
+19	"pukul"	O	O
+20	"10"	B-TIM	B-TIM
+21	"."	I-TIM	I-TIM
+22	"00"	I-TIM	I-TIM
+23	"WIB"	I-TIM	I-TIM
+24	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Gubernur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:2-3
+TEXT="Jawa Tengah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PER:4-5
+TEXT="Ganjar Pranowo"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=QTY:12-13
+TEXT="50 hektar"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=GPE:17-17
+TEXT="Kendal"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E006
+ORIGINAL=TIM:20-23
+TEXT="10 . 00 WIB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-037 ===
+
+=== SAMPLE D03-038 ===
+SOURCE_RECORD_REF=d033f183b0f6cbad7c2ff143db03c3da9cd0b6aee69306702c1617b63ec04119
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Gubernur Jawa Barat menetapkan UMP 2024 dengan kenaikan sebesar 4 persen setelah berdiskusi dengan Dewan Pengupahan ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Gubernur"	B-NOR	B-NOR
+2	"Jawa"	B-GPE	B-GPE
+3	"Barat"	I-GPE	I-GPE
+4	"menetapkan"	O	O
+5	"UMP"	B-LAW	B-LAW
+6	"2024"	I-LAW	I-LAW
+7	"dengan"	O	O
+8	"kenaikan"	O	O
+9	"sebesar"	O	O
+10	"4"	B-PRC	B-PRC
+11	"persen"	I-PRC	I-PRC
+12	"setelah"	O	O
+13	"berdiskusi"	O	O
+14	"dengan"	O	O
+15	"Dewan"	B-NOR	B-NOR
+16	"Pengupahan"	I-NOR	I-NOR
+17	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Gubernur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:2-3
+TEXT="Jawa Barat"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LAW:5-6
+TEXT="UMP 2024"
+DECISION=INCORRECT
+ACTION=REMOVE
+NOTE=UMP 2024 bukan dokumen hukum resmi menurut taksonomi
+END_ENTITY
+ENTITY E004
+ORIGINAL=PRC:10-11
+TEXT="4 persen"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=NOR:15-16
+TEXT="Dewan Pengupahan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=DAT:6-6
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-038 ===
+
+=== SAMPLE D03-039 ===
+SOURCE_RECORD_REF=197fea4f9850af0c117e5404e3b21658baa44afd962be6a96dd90da6ad2b35b8
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Dirut PT Pertamina ( Persero ) mengumumkan rencana merger dengan beberapa anak perusahaan pada Senin untuk efisiensi biaya operasional sebesar 15 persen ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Dirut"	O	O
+2	"PT"	B-ORG	B-ORG
+3	"Pertamina"	I-ORG	I-ORG
+4	"("	I-ORG	I-ORG
+5	"Persero"	I-ORG	I-ORG
+6	")"	I-ORG	I-ORG
+7	"mengumumkan"	O	O
+8	"rencana"	O	O
+9	"merger"	O	O
+10	"dengan"	O	O
+11	"beberapa"	O	O
+12	"anak"	O	O
+13	"perusahaan"	O	O
+14	"pada"	O	O
+15	"Senin"	B-DAT	B-DAT
+16	"untuk"	O	O
+17	"efisiensi"	O	O
+18	"biaya"	O	O
+19	"operasional"	O	O
+20	"sebesar"	O	O
+21	"15"	B-PRC	B-PRC
+22	"persen"	I-PRC	I-PRC
+23	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=ORG:2-6
+TEXT="PT Pertamina ( Persero )"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=DAT:15-15
+TEXT="Senin"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PRC:21-22
+TEXT="15 persen"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-039 ===
+
+=== SAMPLE D03-040 ===
+SOURCE_RECORD_REF=d15cf894d4d5353a6d17a9cb4752efb819d32501b0520b3ddafe31af87389b8d
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Data perdagangan menunjukkan ekspor nikel Indonesia ke Tiongkok meningkat hingga 200 ton pada bulan Oktober ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Data"	O	O
+2	"perdagangan"	O	O
+3	"menunjukkan"	O	O
+4	"ekspor"	O	O
+5	"nikel"	B-PRD	B-PRD
+6	"Indonesia"	B-GPE	B-GPE
+7	"ke"	O	O
+8	"Tiongkok"	B-GPE	B-GPE
+9	"meningkat"	O	O
+10	"hingga"	O	O
+11	"200"	B-QTY	B-QTY
+12	"ton"	I-QTY	I-QTY
+13	"pada"	O	O
+14	"bulan"	O	O
+15	"Oktober"	B-DAT	B-DAT
+16	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PRD:5-5
+TEXT="nikel"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:6-6
+TEXT="Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=GPE:8-8
+TEXT="Tiongkok"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=QTY:11-12
+TEXT="200 ton"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=DAT:15-15
+TEXT="Oktober"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-040 ===
+
+=== SAMPLE D03-041 ===
+SOURCE_RECORD_REF=f7fc26b60336cc15c2f6d61f303791f565036d75a8ca9438e887433533bbcfa8
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Menteri Perindustrian Agus Gumiwang mengumumkan subsidi motor listrik sebesar Rp 7 juta untuk mendorong adopsi kendaraan ramah lingkungan di Indonesia ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Menteri"	B-NOR	B-NOR
+2	"Perindustrian"	I-NOR	I-NOR
+3	"Agus"	B-PER	B-PER
+4	"Gumiwang"	I-PER	I-PER
+5	"mengumumkan"	O	O
+6	"subsidi"	O	O
+7	"motor"	B-PRD	B-PRD
+8	"listrik"	I-PRD	I-PRD
+9	"sebesar"	O	O
+10	"Rp"	B-MON	B-MON
+11	"7"	I-MON	I-MON
+12	"juta"	I-MON	I-MON
+13	"untuk"	O	O
+14	"mendorong"	O	O
+15	"adopsi"	O	O
+16	"kendaraan"	B-PRD	B-PRD
+17	"ramah"	O	O
+18	"lingkungan"	O	O
+19	"di"	O	O
+20	"Indonesia"	B-GPE	B-GPE
+21	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Menteri Perindustrian"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:3-4
+TEXT="Agus Gumiwang"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PRD:7-8
+TEXT="motor listrik"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=MON:10-12
+TEXT="Rp 7 juta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=PRD:16-16
+TEXT="kendaraan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E006
+ORIGINAL=GPE:20-20
+TEXT="Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-041 ===
+
+=== SAMPLE D03-042 ===
+SOURCE_RECORD_REF=9a7b9ba57293f05641432b33ed39fabbd9449c24f8489e6fd03391b054bb459f
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Menteri Kesehatan Budi Gunadi Sadikin menekankan pentingnya transformasi layanan primer melalui program BPJS Kesehatan ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Menteri"	B-NOR	B-NOR
+2	"Kesehatan"	I-NOR	I-NOR
+3	"Budi"	B-PER	B-PER
+4	"Gunadi"	I-PER	I-PER
+5	"Sadikin"	I-PER	I-PER
+6	"menekankan"	O	O
+7	"pentingnya"	O	O
+8	"transformasi"	O	O
+9	"layanan"	O	O
+10	"primer"	O	O
+11	"melalui"	O	O
+12	"program"	O	O
+13	"BPJS"	B-NOR	B-NOR
+14	"Kesehatan"	I-NOR	I-NOR
+15	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Menteri Kesehatan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:3-5
+TEXT="Budi Gunadi Sadikin"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=NOR:13-14
+TEXT="BPJS Kesehatan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-042 ===
+
+=== SAMPLE D03-043 ===
+SOURCE_RECORD_REF=d3759dd8275b2cb264386a9c58bc1138fc1aae2039405d2875b8bf68a033cf76
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Komisi Pemberantasan Korupsi melakukan penggeledahan di kantor Gubernur Jawa Timur terkait kasus gratifikasi senilai 50 miliar rupiah ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Komisi"	B-NOR	B-NOR
+2	"Pemberantasan"	I-NOR	I-NOR
+3	"Korupsi"	I-NOR	I-NOR
+4	"melakukan"	O	O
+5	"penggeledahan"	O	O
+6	"di"	O	O
+7	"kantor"	O	O
+8	"Gubernur"	B-NOR	B-NOR
+9	"Jawa"	B-GPE	B-GPE
+10	"Timur"	I-GPE	I-GPE
+11	"terkait"	O	O
+12	"kasus"	O	O
+13	"gratifikasi"	O	O
+14	"senilai"	O	O
+15	"50"	B-MON	B-MON
+16	"miliar"	I-MON	I-MON
+17	"rupiah"	I-MON	I-MON
+18	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-3
+TEXT="Komisi Pemberantasan Korupsi"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=NOR:8-8
+TEXT="Gubernur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=GPE:9-10
+TEXT="Jawa Timur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=MON:15-17
+TEXT="50 miliar rupiah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-043 ===
+
+=== SAMPLE D03-044 ===
+SOURCE_RECORD_REF=143983cad3eee4796b798b84e5008be998977cec74ad8b0f09f37a37e33995c7
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Kepala BSSN , Hrepetitions Hrepetitions , memperingatkan risiko serangan siber terhadap sistem perbankan nasional pada pukul 10 . 00 WIB hari ini ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Kepala"	B-NOR	B-NOR
+2	"BSSN"	B-NOR	B-NOR
+3	","	O	O
+4	"Hrepetitions"	B-PER	B-PER
+5	"Hrepetitions"	I-PER	I-PER
+6	","	O	O
+7	"memperingatkan"	O	O
+8	"risiko"	O	O
+9	"serangan"	O	O
+10	"siber"	O	O
+11	"terhadap"	O	O
+12	"sistem"	O	O
+13	"perbankan"	O	O
+14	"nasional"	O	O
+15	"pada"	O	O
+16	"pukul"	O	O
+17	"10"	B-TIM	B-TIM
+18	"."	I-TIM	I-TIM
+19	"00"	I-TIM	I-TIM
+20	"WIB"	I-TIM	I-TIM
+21	"hari"	O	O
+22	"ini"	B-DAT	B-DAT
+23	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Kepala"
+DECISION=INCORRECT
+ACTION=REPLACE:NOR:1-2
+NOTE=Jabatan struktural dan lembaga membentuk span NOR Kepala BSSN
+END_ENTITY
+ENTITY E002
+ORIGINAL=NOR:2-2
+TEXT="BSSN"
+DECISION=INCORRECT
+ACTION=REMOVE
+NOTE=BSSN sudah tercakup dalam span NOR Kepala BSSN
+END_ENTITY
+ENTITY E003
+ORIGINAL=PER:4-5
+TEXT="Hrepetitions Hrepetitions"
+DECISION=INCORRECT
+ACTION=REMOVE
+NOTE=Teks berulang Hrepetitions bukan nama individu yang sah
+END_ENTITY
+ENTITY E004
+ORIGINAL=TIM:17-20
+TEXT="10 . 00 WIB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=DAT:22-22
+TEXT="ini"
+DECISION=INCORRECT
+ACTION=REMOVE
+NOTE=Kata ini bukan tanggal
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-044 ===
+
+=== SAMPLE D03-045 ===
+SOURCE_RECORD_REF=112c743bfcd320a7f9c73ac149f768492ef8df16fa2a2de8a5391304d319d11a
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Perjanjian Renville yang dilakukan di atas kapal USS Renville menyebabkan wilayah kedaulatan Republik Indonesia menyusut hingga 30 persen ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Perjanjian"	B-LAW	B-LAW
+2	"Renville"	I-LAW	I-LAW
+3	"yang"	O	O
+4	"dilakukan"	O	O
+5	"di"	O	O
+6	"atas"	O	O
+7	"kapal"	B-PRD	B-PRD
+8	"USS"	B-PRD	B-PRD
+9	"Renville"	I-PRD	I-PRD
+10	"menyebabkan"	O	O
+11	"wilayah"	O	O
+12	"kedaulatan"	O	O
+13	"Republik"	B-GPE	B-GPE
+14	"Indonesia"	I-GPE	I-GPE
+15	"menyusut"	O	O
+16	"hingga"	O	O
+17	"30"	B-PRC	B-PRC
+18	"persen"	I-PRC	I-PRC
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=LAW:1-2
+TEXT="Perjanjian Renville"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PRD:7-7
+TEXT="kapal"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PRD:8-9
+TEXT="USS Renville"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:13-14
+TEXT="Republik Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=PRC:17-18
+TEXT="30 persen"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-045 ===
+
+=== SAMPLE D03-046 ===
+SOURCE_RECORD_REF=31c779a53293ccdff162421a96757d7ce9212fd1fb72948a96647d8c17a5b83b
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="KPU RI mengumumkan bahwa pendaftaran calon presiden untuk Pemilu 2024 akan dibuka mulai pukul 08 . 00 WIB ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"KPU"	B-NOR	B-NOR
+2	"RI"	I-NOR	I-NOR
+3	"mengumumkan"	O	O
+4	"bahwa"	O	O
+5	"pendaftaran"	O	O
+6	"calon"	O	O
+7	"presiden"	B-NOR	B-NOR
+8	"untuk"	O	O
+9	"Pemilu"	B-EVT	B-EVT
+10	"2024"	I-EVT	I-EVT
+11	"akan"	O	O
+12	"dibuka"	O	O
+13	"mulai"	O	O
+14	"pukul"	O	O
+15	"08"	B-TIM	B-TIM
+16	"."	I-TIM	I-TIM
+17	"00"	I-TIM	I-TIM
+18	"WIB"	I-TIM	I-TIM
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="KPU RI"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=NOR:7-7
+TEXT="presiden"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=EVT:9-10
+TEXT="Pemilu 2024"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=TIM:15-18
+TEXT="08 . 00 WIB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-046 ===
+
+=== SAMPLE D03-047 ===
+SOURCE_RECORD_REF=5ce06ffc225c6161fad0a288ea3894d11c7277f1b2d17dcb1419791dafd83fa7
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Smelter tembaga milik PT Freeport Indonesia di Papua telah beroperasi penuh sejak Januari 2023 dengan kapasitas produksi ribuan ton per tahun ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Smelter"	O	O
+2	"tembaga"	O	O
+3	"milik"	O	O
+4	"PT"	B-ORG	B-ORG
+5	"Freeport"	I-ORG	I-ORG
+6	"Indonesia"	I-ORG	I-ORG
+7	"di"	O	O
+8	"Papua"	B-GPE	B-GPE
+9	"telah"	O	O
+10	"beroperasi"	O	O
+11	"penuh"	O	O
+12	"sejak"	O	O
+13	"Januari"	B-DAT	B-DAT
+14	"2023"	I-DAT	I-DAT
+15	"dengan"	O	O
+16	"kapasitas"	O	O
+17	"produksi"	O	O
+18	"ribuan"	B-QTY	B-QTY
+19	"ton"	I-QTY	I-QTY
+20	"per"	O	O
+21	"tahun"	O	O
+22	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=ORG:4-6
+TEXT="PT Freeport Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:8-8
+TEXT="Papua"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=DAT:13-14
+TEXT="Januari 2023"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=QTY:18-19
+TEXT="ribuan ton"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-047 ===
+
+=== SAMPLE D03-048 ===
+SOURCE_RECORD_REF=6bb1cb87177147a78598caf6097c80c97c85713f3f3dca8586d0c4664f9b75ad
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Suku Dayak di Kalimantan Barat berperan aktif dalam menjaga hutan lindung guna mencegah kebakaran hutan tahunan yang sering terjadi pada bulan Agustus ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Suku"	B-NOR	B-NOR
+2	"Dayak"	I-NOR	I-NOR
+3	"di"	O	O
+4	"Kalimantan"	B-GPE	B-GPE
+5	"Barat"	I-GPE	I-GPE
+6	"berperan"	O	O
+7	"aktif"	O	O
+8	"dalam"	O	O
+9	"menjaga"	O	O
+10	"hutan"	O	O
+11	"lindung"	O	O
+12	"guna"	O	O
+13	"mencegah"	O	O
+14	"kebakaran"	O	O
+15	"hutan"	O	O
+16	"tahunan"	O	O
+17	"yang"	O	O
+18	"sering"	O	O
+19	"terjadi"	O	O
+20	"pada"	O	O
+21	"bulan"	O	O
+22	"Agustus"	B-DAT	B-DAT
+23	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Suku Dayak"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:4-5
+TEXT="Kalimantan Barat"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=DAT:22-22
+TEXT="Agustus"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-048 ===
+
+=== SAMPLE D03-049 ===
+SOURCE_RECORD_REF=1fe9fb6e6ef65db04f09e4c07346fbaf83fc717874272ef1c111096856efc29a
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Jonatan Christie berhasil meraih gelar juara di turnamen Indonesia Open setelah mengalahkan atlet asal Denmark pada hari Minggu kemarin ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Jonatan"	B-PER	B-PER
+2	"Christie"	I-PER	I-PER
+3	"berhasil"	O	O
+4	"meraih"	O	O
+5	"gelar"	O	O
+6	"juara"	O	O
+7	"di"	O	O
+8	"turnamen"	O	O
+9	"Indonesia"	B-EVT	B-EVT
+10	"Open"	I-EVT	I-EVT
+11	"setelah"	O	O
+12	"mengalahkan"	O	O
+13	"atlet"	O	O
+14	"asal"	O	O
+15	"Denmark"	B-GPE	B-GPE
+16	"pada"	O	O
+17	"hari"	O	O
+18	"Minggu"	B-DAT	B-DAT
+19	"kemarin"	I-DAT	I-DAT
+20	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PER:1-2
+TEXT="Jonatan Christie"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=EVT:9-10
+TEXT="Indonesia Open"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=GPE:15-15
+TEXT="Denmark"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=DAT:18-19
+TEXT="Minggu kemarin"
+DECISION=INCORRECT
+ACTION=REPLACE:DAT:18-18
+NOTE=Hari Minggu adalah DAT; kata relatif kemarin di luar span
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-049 ===
+
+=== SAMPLE D03-050 ===
+SOURCE_RECORD_REF=52ef9d6975485fa2003b0c48b00c3d19f8b9a454f98f8fda3cb0f947bca124f5
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Gubernur Jawa Tengah , Ganjar Pranowo , mengajak wisatawan mancanegara untuk mengunjungi Candi Borobudur menggunakan bahasa Inggris yang fasih ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Gubernur"	B-NOR	B-NOR
+2	"Jawa"	B-GPE	B-GPE
+3	"Tengah"	I-GPE	I-GPE
+4	","	O	O
+5	"Ganjar"	B-PER	B-PER
+6	"Pranowo"	I-PER	I-PER
+7	","	O	O
+8	"mengajak"	O	O
+9	"wisatawan"	O	O
+10	"mancanegara"	O	O
+11	"untuk"	O	O
+12	"mengunjungi"	O	O
+13	"Candi"	B-FAC	B-FAC
+14	"Borobudur"	I-FAC	I-FAC
+15	"menggunakan"	O	O
+16	"bahasa"	B-LAN	B-LAN
+17	"Inggris"	I-LAN	I-LAN
+18	"yang"	O	O
+19	"fasih"	O	O
+20	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Gubernur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:2-3
+TEXT="Jawa Tengah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PER:5-6
+TEXT="Ganjar Pranowo"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=FAC:13-14
+TEXT="Candi Borobudur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=LAN:16-17
+TEXT="bahasa Inggris"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-050 ===
+
+=== SAMPLE D03-051 ===
+SOURCE_RECORD_REF=5c6e10538c05c9e173a0e9b10cd61774459a61bb85efaffe0237160817f4076b
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Profesor Adi Permana dari Universitas Gadjah Mada memaparkan hasil riset mitigasi tsunami di Samudra Hindia dalam konferensi internasional pertama di Jakarta ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Profesor"	B-PER	B-PER
+2	"Adi"	I-PER	I-PER
+3	"Permana"	I-PER	I-PER
+4	"dari"	O	O
+5	"Universitas"	B-ORG	B-ORG
+6	"Gadjah"	I-ORG	I-ORG
+7	"Mada"	I-ORG	I-ORG
+8	"memaparkan"	O	O
+9	"hasil"	O	O
+10	"riset"	O	O
+11	"mitigasi"	O	O
+12	"tsunami"	O	O
+13	"di"	O	O
+14	"Samudra"	B-LOC	B-LOC
+15	"Hindia"	I-LOC	I-LOC
+16	"dalam"	O	O
+17	"konferensi"	O	O
+18	"internasional"	O	O
+19	"pertama"	B-ORD	B-ORD
+20	"di"	O	O
+21	"Jakarta"	B-GPE	B-GPE
+22	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PER:1-3
+TEXT="Profesor Adi Permana"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=ORG:5-7
+TEXT="Universitas Gadjah Mada"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LOC:14-15
+TEXT="Samudra Hindia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=ORD:19-19
+TEXT="pertama"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=GPE:21-21
+TEXT="Jakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-051 ===
+
+=== SAMPLE D03-052 ===
+SOURCE_RECORD_REF=fa5ef97712febc1d076eeeaff6433f1cdf0a57ca8034b31dace450f981815ac3
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Dirut PT Telkom Indonesia menyatakan bahwa investasi pertama untuk teknologi cloud akan mencapai US $ 500 juta guna memperkuat ekosistem digital ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Dirut"	O	O
+2	"PT"	B-ORG	B-ORG
+3	"Telkom"	I-ORG	I-ORG
+4	"Indonesia"	I-ORG	I-ORG
+5	"menyatakan"	O	O
+6	"bahwa"	O	O
+7	"investasi"	O	O
+8	"pertama"	B-ORD	B-ORD
+9	"untuk"	O	O
+10	"teknologi"	O	O
+11	"cloud"	O	O
+12	"akan"	O	O
+13	"mencapai"	O	O
+14	"US"	B-MON	B-MON
+15	"$"	I-MON	I-MON
+16	"500"	I-MON	I-MON
+17	"juta"	I-MON	I-MON
+18	"guna"	O	O
+19	"memperkuat"	O	O
+20	"ekosistem"	O	O
+21	"digital"	O	O
+22	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=ORG:2-4
+TEXT="PT Telkom Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=ORD:8-8
+TEXT="pertama"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=MON:14-17
+TEXT="US $ 500 juta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NOR:1-1
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-052 ===
+
+=== SAMPLE D03-053 ===
+SOURCE_RECORD_REF=ca1ddab52120f2bd12d78f0458b7c9e12e6f293e50b36afef1f174602b587829
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Kereta Cepat Whoosh yang menghubungkan Jakarta dan Bandung mampu mencapai kecepatan 350 km / jam , menjadikannya moda transportasi tercepat pertama di Asia Tenggara ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Kereta"	B-PRD	B-PRD
+2	"Cepat"	I-PRD	I-PRD
+3	"Whoosh"	I-PRD	I-PRD
+4	"yang"	O	O
+5	"menghubungkan"	O	O
+6	"Jakarta"	B-GPE	B-GPE
+7	"dan"	O	O
+8	"Bandung"	B-GPE	B-GPE
+9	"mampu"	O	O
+10	"mencapai"	O	O
+11	"kecepatan"	O	O
+12	"350"	B-QTY	B-QTY
+13	"km"	I-QTY	I-QTY
+14	"/"	I-QTY	I-QTY
+15	"jam"	I-QTY	I-QTY
+16	","	O	O
+17	"menjadikannya"	O	O
+18	"moda"	O	O
+19	"transportasi"	O	O
+20	"tercepat"	O	O
+21	"pertama"	B-ORD	B-ORD
+22	"di"	O	O
+23	"Asia"	B-LOC	B-LOC
+24	"Tenggara"	I-LOC	I-LOC
+25	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PRD:1-3
+TEXT="Kereta Cepat Whoosh"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:6-6
+TEXT="Jakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=GPE:8-8
+TEXT="Bandung"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=QTY:12-15
+TEXT="350 km / jam"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=ORD:21-21
+TEXT="pertama"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E006
+ORIGINAL=LOC:23-24
+TEXT="Asia Tenggara"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-053 ===
+
+=== SAMPLE D03-054 ===
+SOURCE_RECORD_REF=d66cbd5007303002f3ac5081c66864c826abeb2f9983b2e404de0e4908c0d3f4
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Sesuai dengan UU No . 20 Tahun 2003 , universitas di Sulawesi Utara wajib menyediakan fasilitas laboratorium yang memadai bagi mahasiswa ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Sesuai"	O	O
+2	"dengan"	O	O
+3	"UU"	B-LAW	B-LAW
+4	"No"	I-LAW	I-LAW
+5	"."	I-LAW	I-LAW
+6	"20"	I-LAW	I-LAW
+7	"Tahun"	I-LAW	I-LAW
+8	"2003"	I-LAW	I-LAW
+9	","	O	O
+10	"universitas"	O	O
+11	"di"	O	O
+12	"Sulawesi"	B-GPE	B-GPE
+13	"Utara"	I-GPE	I-GPE
+14	"wajib"	O	O
+15	"menyediakan"	O	O
+16	"fasilitas"	O	O
+17	"laboratorium"	O	O
+18	"yang"	O	O
+19	"memadai"	O	O
+20	"bagi"	O	O
+21	"mahasiswa"	O	O
+22	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=LAW:3-8
+TEXT="UU No . 20 Tahun 2003"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:12-13
+TEXT="Sulawesi Utara"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-054 ===
+
+=== SAMPLE D03-055 ===
+SOURCE_RECORD_REF=699dbe45f230d5d5f0fed856eb4866eac230dd9fb2b5cba31341fa4b7a3c36c3
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Pemerintah mengalokasikan dana sebesar Rp 10 triliun untuk program pengentasan kemiskinan yang diatur dalam Perpres Nomor 96 Tahun 2015 ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pemerintah"	B-NOR	B-NOR
+2	"mengalokasikan"	O	O
+3	"dana"	O	O
+4	"sebesar"	O	O
+5	"Rp"	B-MON	B-MON
+6	"10"	I-MON	I-MON
+7	"triliun"	I-MON	I-MON
+8	"untuk"	O	O
+9	"program"	O	O
+10	"pengentasan"	O	O
+11	"kemiskinan"	O	O
+12	"yang"	O	O
+13	"diatur"	O	O
+14	"dalam"	O	O
+15	"Perpres"	B-LAW	B-LAW
+16	"Nomor"	I-LAW	I-LAW
+17	"96"	I-LAW	I-LAW
+18	"Tahun"	I-LAW	I-LAW
+19	"2015"	I-LAW	I-LAW
+20	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Pemerintah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=MON:5-7
+TEXT="Rp 10 triliun"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LAW:15-19
+TEXT="Perpres Nomor 96 Tahun 2015"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-055 ===
+
+=== SAMPLE D03-056 ===
+SOURCE_RECORD_REF=b70483c316d7cdcc06cd3a677b542c1e842e746aed9ed290af3821eb321548c6
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="PLN meresmikan pembangkit listrik tenaga surya berkapasitas 100 megawatt di Kalimantan Utara pada pukul 10 : 00 WITA kemarin ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"PLN"	B-ORG	B-ORG
+2	"meresmikan"	O	O
+3	"pembangkit"	B-FAC	B-FAC
+4	"listrik"	I-FAC	I-FAC
+5	"tenaga"	I-FAC	I-FAC
+6	"surya"	I-FAC	I-FAC
+7	"berkapasitas"	O	O
+8	"100"	B-QTY	B-QTY
+9	"megawatt"	I-QTY	I-QTY
+10	"di"	O	O
+11	"Kalimantan"	B-GPE	B-GPE
+12	"Utara"	I-GPE	I-GPE
+13	"pada"	O	O
+14	"pukul"	O	O
+15	"10"	B-TIM	B-TIM
+16	":"	I-TIM	I-TIM
+17	"00"	I-TIM	I-TIM
+18	"WITA"	I-TIM	I-TIM
+19	"kemarin"	B-DAT	B-DAT
+20	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=ORG:1-1
+TEXT="PLN"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=FAC:3-6
+TEXT="pembangkit listrik tenaga surya"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=QTY:8-9
+TEXT="100 megawatt"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:11-12
+TEXT="Kalimantan Utara"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=TIM:15-18
+TEXT="10 : 00 WITA"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E006
+ORIGINAL=DAT:19-19
+TEXT="kemarin"
+DECISION=INCORRECT
+ACTION=REMOVE
+NOTE="Kemarin" bukan tanggal kalender yang termasuk DAT
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-056 ===
+
+=== SAMPLE D03-057 ===
+SOURCE_RECORD_REF=16752d86e62ff58cafacdfb7d302f62bdb3769c035015d12ec2fdcbe30318cb1
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Kapolri Listyo Sigit Prabowo menginstruksikan seluruh jajaran Polri untuk memperketat pengamanan di Ibu Kota Nusantara menjelang peringatan HUT RI ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Kapolri"	B-NOR	B-NOR
+2	"Listyo"	B-PER	B-PER
+3	"Sigit"	I-PER	I-PER
+4	"Prabowo"	I-PER	I-PER
+5	"menginstruksikan"	O	O
+6	"seluruh"	O	O
+7	"jajaran"	O	O
+8	"Polri"	B-NOR	B-NOR
+9	"untuk"	O	O
+10	"memperketat"	O	O
+11	"pengamanan"	O	O
+12	"di"	O	O
+13	"Ibu"	B-GPE	B-GPE
+14	"Kota"	I-GPE	I-GPE
+15	"Nusantara"	I-GPE	I-GPE
+16	"menjelang"	O	O
+17	"peringatan"	O	O
+18	"HUT"	B-EVT	B-EVT
+19	"RI"	I-EVT	I-EVT
+20	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Kapolri"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:2-4
+TEXT="Listyo Sigit Prabowo"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=NOR:8-8
+TEXT="Polri"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:13-15
+TEXT="Ibu Kota Nusantara"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=EVT:18-19
+TEXT="HUT RI"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-057 ===
+
+=== SAMPLE D03-058 ===
+SOURCE_RECORD_REF=9cc29fb80073c8999bc4068eedf8031ce3b4c23db373365eb1d5a05b8469fbc3
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Indeks Harga Saham Gabungan ( IHSG ) menguat ke level 7 . 300 setelah investor asing mengucurkan FDI sebesar Rp 10 triliun ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Indeks"	B-PRD	B-PRD
+2	"Harga"	I-PRD	I-PRD
+3	"Saham"	I-PRD	I-PRD
+4	"Gabungan"	I-PRD	I-PRD
+5	"("	O	O
+6	"IHSG"	B-PRD	B-PRD
+7	")"	O	O
+8	"menguat"	O	O
+9	"ke"	O	O
+10	"level"	O	O
+11	"7"	B-CRD	B-CRD
+12	"."	I-CRD	I-CRD
+13	"300"	I-CRD	I-CRD
+14	"setelah"	O	O
+15	"investor"	O	O
+16	"asing"	O	O
+17	"mengucurkan"	O	O
+18	"FDI"	O	O
+19	"sebesar"	O	O
+20	"Rp"	B-MON	B-MON
+21	"10"	I-MON	I-MON
+22	"triliun"	I-MON	I-MON
+23	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PRD:1-4
+TEXT="Indeks Harga Saham Gabungan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PRD:6-6
+TEXT="IHSG"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=CRD:11-13
+TEXT="7 . 300"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=MON:20-22
+TEXT="Rp 10 triliun"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-058 ===
+
+=== SAMPLE D03-059 ===
+SOURCE_RECORD_REF=adca16a1e0533f11fa689738ae747952d4506a443f39db6af5a07e0b05e336fc
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Proyek Palapa Ring yang membentang sepanjang 12 . 000 km telah menghubungkan jaringan serat optik hingga ke pelosok Papua dan Maluku ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Proyek"	O	O
+2	"Palapa"	B-FAC	B-FAC
+3	"Ring"	I-FAC	I-FAC
+4	"yang"	O	O
+5	"membentang"	O	O
+6	"sepanjang"	O	O
+7	"12"	B-QTY	B-QTY
+8	"."	I-QTY	I-QTY
+9	"000"	I-QTY	I-QTY
+10	"km"	I-QTY	I-QTY
+11	"telah"	O	O
+12	"menghubungkan"	O	O
+13	"jaringan"	O	O
+14	"serat"	O	O
+15	"optik"	O	O
+16	"hingga"	O	O
+17	"ke"	O	O
+18	"pelosok"	O	O
+19	"Papua"	B-GPE	B-GPE
+20	"dan"	O	O
+21	"Maluku"	B-GPE	B-GPE
+22	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=FAC:2-3
+TEXT="Palapa Ring"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=QTY:7-10
+TEXT="12 . 000 km"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=GPE:19-19
+TEXT="Papua"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:21-21
+TEXT="Maluku"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-059 ===
+
+=== SAMPLE D03-060 ===
+SOURCE_RECORD_REF=6698c9dd1b54cfb8510fd0b4d22822270957d6707a803b8d9f1cd464bfb4df38
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="KKP mengalokasikan dana sebesar 500 miliar rupiah untuk program perlindungan nelayan tradisional di wilayah pesisir Maluku ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"KKP"	B-NOR	B-NOR
+2	"mengalokasikan"	O	O
+3	"dana"	O	O
+4	"sebesar"	O	O
+5	"500"	B-MON	B-MON
+6	"miliar"	I-MON	I-MON
+7	"rupiah"	I-MON	I-MON
+8	"untuk"	O	O
+9	"program"	O	O
+10	"perlindungan"	O	O
+11	"nelayan"	O	O
+12	"tradisional"	O	O
+13	"di"	O	O
+14	"wilayah"	O	O
+15	"pesisir"	O	O
+16	"Maluku"	B-GPE	B-GPE
+17	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="KKP"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=MON:5-7
+TEXT="500 miliar rupiah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=GPE:16-16
+TEXT="Maluku"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-060 ===
+
+=== SAMPLE D03-061 ===
+SOURCE_RECORD_REF=a95413ea8a3d7e7831bde759c657c6124783614978e20f580517363db7ca33b0
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="PVMBG mengeluarkan peringatan dini setelah Gunung Merapi di Yogyakarta mengalami erupsi dengan kolom abu setinggi 1 . 500 meter ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"PVMBG"	B-NOR	B-NOR
+2	"mengeluarkan"	O	O
+3	"peringatan"	O	O
+4	"dini"	O	O
+5	"setelah"	O	O
+6	"Gunung"	B-LOC	B-LOC
+7	"Merapi"	I-LOC	I-LOC
+8	"di"	O	O
+9	"Yogyakarta"	B-GPE	B-GPE
+10	"mengalami"	O	O
+11	"erupsi"	O	O
+12	"dengan"	O	O
+13	"kolom"	O	O
+14	"abu"	O	O
+15	"setinggi"	O	O
+16	"1"	B-QTY	B-QTY
+17	"."	I-QTY	I-QTY
+18	"500"	I-QTY	I-QTY
+19	"meter"	I-QTY	I-QTY
+20	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="PVMBG"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=LOC:6-7
+TEXT="Gunung Merapi"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=GPE:9-9
+TEXT="Yogyakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=QTY:16-19
+TEXT="1 . 500 meter"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-061 ===
+
+=== SAMPLE D03-062 ===
+SOURCE_RECORD_REF=a625507d0e8ed5481ad031e9a9d69c8f0db0fcfdd35d2c9cf2bd401ad031653e
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Gubernur Bali menekankan pentingnya arsitektur vernakular Bali dalam pembangunan hotel di kawasan Mandalika agar tetap menjaga kearifan lokal ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Gubernur"	B-NOR	B-NOR
+2	"Bali"	B-GPE	B-GPE
+3	"menekankan"	O	O
+4	"pentingnya"	O	O
+5	"arsitektur"	O	O
+6	"vernakular"	O	O
+7	"Bali"	B-GPE	B-GPE
+8	"dalam"	O	O
+9	"pembangunan"	O	O
+10	"hotel"	O	O
+11	"di"	O	O
+12	"kawasan"	O	O
+13	"Mandalika"	B-LOC	B-LOC
+14	"agar"	O	O
+15	"tetap"	O	O
+16	"menjaga"	O	O
+17	"kearifan"	O	O
+18	"lokal"	O	O
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Gubernur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:2-2
+TEXT="Bali"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=GPE:7-7
+TEXT="Bali"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=LOC:13-13
+TEXT="Mandalika"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-062 ===
+
+=== SAMPLE D03-063 ===
+SOURCE_RECORD_REF=6cc1ae5f3c355374a1781e97cd1ec58bfa186c9b30fa793578fdf64002154c5f
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Dewan Pers mengeluarkan teguran keras terkait pelanggaran kode etik jurnalistik dalam laporan investigasi Tempo pada Senin lalu ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Dewan"	B-NOR	B-NOR
+2	"Pers"	I-NOR	I-NOR
+3	"mengeluarkan"	O	O
+4	"teguran"	O	O
+5	"keras"	O	O
+6	"terkait"	O	O
+7	"pelanggaran"	O	O
+8	"kode"	O	O
+9	"etik"	O	O
+10	"jurnalistik"	O	O
+11	"dalam"	O	O
+12	"laporan"	O	O
+13	"investigasi"	O	O
+14	"Tempo"	B-ORG	B-ORG
+15	"pada"	O	O
+16	"Senin"	B-DAT	B-DAT
+17	"lalu"	O	O
+18	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Dewan Pers"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=ORG:14-14
+TEXT="Tempo"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=DAT:16-16
+TEXT="Senin"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-063 ===
+
+=== SAMPLE D03-064 ===
+SOURCE_RECORD_REF=71e851810ebb14b6bbfc951de656ed80b54764089b9c350cc280d76d8ba95769
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Konferensi Ekonomi Asia Pasifik yang diadakan di Bali membahas penggunaan bahasa Inggris sebagai lingua franca dalam perdagangan internasional ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Konferensi"	B-EVT	B-EVT
+2	"Ekonomi"	I-EVT	I-EVT
+3	"Asia"	I-EVT	I-EVT
+4	"Pasifik"	I-EVT	I-EVT
+5	"yang"	O	O
+6	"diadakan"	O	O
+7	"di"	O	O
+8	"Bali"	B-GPE	B-GPE
+9	"membahas"	O	O
+10	"penggunaan"	O	O
+11	"bahasa"	B-LAN	B-LAN
+12	"Inggris"	I-LAN	I-LAN
+13	"sebagai"	O	O
+14	"lingua"	O	O
+15	"franca"	O	O
+16	"dalam"	O	O
+17	"perdagangan"	O	O
+18	"internasional"	O	O
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=EVT:1-4
+TEXT="Konferensi Ekonomi Asia Pasifik"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:8-8
+TEXT="Bali"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LAN:11-12
+TEXT="bahasa Inggris"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-064 ===
+
+=== SAMPLE D03-065 ===
+SOURCE_RECORD_REF=af2e8abe3e02fd5eb2d888978057e65cc7f09ca268afc2421d943bfe1af76f63
+SOURCE_SPLIT=verified_18class
+STRATUM=E1_SHORT
+SENTENCE="Pengrajin tenun ikat di Nusa Tenggara Timur menggunakan motif tradisional yang terinspirasi dari ajaran agama Katolik ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pengrajin"	O	O
+2	"tenun"	O	O
+3	"ikat"	O	O
+4	"di"	O	O
+5	"Nusa"	B-GPE	B-GPE
+6	"Tenggara"	I-GPE	I-GPE
+7	"Timur"	I-GPE	I-GPE
+8	"menggunakan"	O	O
+9	"motif"	O	O
+10	"tradisional"	O	O
+11	"yang"	O	O
+12	"terinspirasi"	O	O
+13	"dari"	O	O
+14	"ajaran"	O	O
+15	"agama"	O	O
+16	"Katolik"	O	O
+17	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=GPE:5-7
+TEXT="Nusa Tenggara Timur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-065 ===
+
+=== SAMPLE D03-066 ===
+SOURCE_RECORD_REF=2597c64082bf1ddfd1cb838c23d7d5d9ee0ab704cd82e624d4337363b501815e
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Panglima TNI Jenderal Agus Subiyanto menegaskan pengamanan ketat di perbatasan Kalimantan dengan Malaysia selama tahun 2024 ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Panglima"	B-NOR	B-NOR
+2	"TNI"	I-NOR	I-NOR
+3	"Jenderal"	B-PER	B-PER
+4	"Agus"	I-PER	I-PER
+5	"Subiyanto"	I-PER	I-PER
+6	"menegaskan"	O	O
+7	"pengamanan"	O	O
+8	"ketat"	O	O
+9	"di"	O	O
+10	"perbatasan"	O	O
+11	"Kalimantan"	B-GPE	B-GPE
+12	"dengan"	O	O
+13	"Malaysia"	B-GPE	B-GPE
+14	"selama"	O	O
+15	"tahun"	O	O
+16	"2024"	B-DAT	B-DAT
+17	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Panglima TNI"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:3-5
+TEXT="Jenderal Agus Subiyanto"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=GPE:11-11
+TEXT="Kalimantan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:13-13
+TEXT="Malaysia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=DAT:16-16
+TEXT="2024"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-066 ===
+
+=== SAMPLE D03-067 ===
+SOURCE_RECORD_REF=8124aa092ba74d3a65d20da25bce8c7ef069b4c651880c068aa2164aa6ed569d
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Presiden Prabowo Subianto menghadiri KTT G20 di Brasil untuk memperkuat kerja sama bilateral dan membahas stabilitas ekonomi global ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Presiden"	B-NOR	B-NOR
+2	"Prabowo"	B-PER	B-PER
+3	"Subianto"	I-PER	I-PER
+4	"menghadiri"	O	O
+5	"KTT"	B-EVT	B-EVT
+6	"G20"	I-EVT	I-EVT
+7	"di"	O	O
+8	"Brasil"	B-GPE	B-GPE
+9	"untuk"	O	O
+10	"memperkuat"	O	O
+11	"kerja"	O	O
+12	"sama"	O	O
+13	"bilateral"	O	O
+14	"dan"	O	O
+15	"membahas"	O	O
+16	"stabilitas"	O	O
+17	"ekonomi"	O	O
+18	"global"	O	O
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Presiden"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:2-3
+TEXT="Prabowo Subianto"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=EVT:5-6
+TEXT="KTT G20"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:8-8
+TEXT="Brasil"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-067 ===
+
+=== SAMPLE D03-068 ===
+SOURCE_RECORD_REF=dea4e94462830f464fa2f0f4151efefd356878de824938bb0b80164cbb564d2e
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Berdasarkan UU No . 17 Tahun 2011 tentang Intelijen Negara , koordinasi antarlembaga harus diperkuat untuk menjaga stabilitas keamanan di wilayah Asia Tenggara ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Berdasarkan"	O	O
+2	"UU"	B-LAW	B-LAW
+3	"No"	I-LAW	I-LAW
+4	"."	I-LAW	I-LAW
+5	"17"	I-LAW	I-LAW
+6	"Tahun"	I-LAW	I-LAW
+7	"2011"	I-LAW	I-LAW
+8	"tentang"	I-LAW	I-LAW
+9	"Intelijen"	I-LAW	I-LAW
+10	"Negara"	I-LAW	I-LAW
+11	","	O	O
+12	"koordinasi"	O	O
+13	"antarlembaga"	O	O
+14	"harus"	O	O
+15	"diperkuat"	O	O
+16	"untuk"	O	O
+17	"menjaga"	O	O
+18	"stabilitas"	O	O
+19	"keamanan"	O	O
+20	"di"	O	O
+21	"wilayah"	O	O
+22	"Asia"	B-LOC	B-LOC
+23	"Tenggara"	I-LOC	I-LOC
+24	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=LAW:2-10
+TEXT="UU No . 17 Tahun 2011 tentang Intelijen Negara"
+DECISION=INCORRECT
+ACTION=REPLACE:LAW:2-7
+NOTE=Keluarkan preposisi tentang dan frasa Intelijen Negara dari rentang LAW.
+END_ENTITY
+ENTITY E002
+ORIGINAL=LOC:22-23
+TEXT="Asia Tenggara"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-068 ===
+
+=== SAMPLE D03-069 ===
+SOURCE_RECORD_REF=d2fcad713a12c71925b3dc8a41a1b806af9aa1d944a237c4586626b5e6714eae
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Gubernur Kalimantan Timur menekankan pentingnya sertifikasi RSPO bagi perkebunan sawit di wilayah tersebut sesuai dengan UU No . 39 Tahun 2014 ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Gubernur"	B-NOR	B-NOR
+2	"Kalimantan"	B-GPE	B-GPE
+3	"Timur"	I-GPE	I-GPE
+4	"menekankan"	O	O
+5	"pentingnya"	O	O
+6	"sertifikasi"	O	O
+7	"RSPO"	O	O
+8	"bagi"	O	O
+9	"perkebunan"	O	O
+10	"sawit"	O	O
+11	"di"	O	O
+12	"wilayah"	O	O
+13	"tersebut"	O	O
+14	"sesuai"	O	O
+15	"dengan"	O	O
+16	"UU"	B-LAW	B-LAW
+17	"No"	I-LAW	I-LAW
+18	"."	I-LAW	I-LAW
+19	"39"	I-LAW	I-LAW
+20	"Tahun"	I-LAW	I-LAW
+21	"2014"	I-LAW	I-LAW
+22	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Gubernur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:2-3
+TEXT="Kalimantan Timur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LAW:16-21
+TEXT="UU No . 39 Tahun 2014"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-069 ===
+
+=== SAMPLE D03-070 ===
+SOURCE_RECORD_REF=e25a77b30ef9523a617157146bc4002efa59f97cc4c633dd3a7890512317170c
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="MRT Jakarta dan LRT Jabodebek menjadi solusi utama mobilitas warga di Jakarta untuk mengurangi kemacetan yang mencapai 40 persen pada jam sibuk ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"MRT"	B-PRD	B-PRD
+2	"Jakarta"	I-PRD	I-PRD
+3	"dan"	O	O
+4	"LRT"	B-PRD	B-PRD
+5	"Jabodebek"	I-PRD	I-PRD
+6	"menjadi"	O	O
+7	"solusi"	O	O
+8	"utama"	O	O
+9	"mobilitas"	O	O
+10	"warga"	O	O
+11	"di"	O	O
+12	"Jakarta"	B-GPE	B-GPE
+13	"untuk"	O	O
+14	"mengurangi"	O	O
+15	"kemacetan"	O	O
+16	"yang"	O	O
+17	"mencapai"	O	O
+18	"40"	B-PRC	B-PRC
+19	"persen"	I-PRC	I-PRC
+20	"pada"	O	O
+21	"jam"	O	O
+22	"sibuk"	O	O
+23	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PRD:1-2
+TEXT="MRT Jakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PRD:4-5
+TEXT="LRT Jabodebek"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=GPE:12-12
+TEXT="Jakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=PRC:18-19
+TEXT="40 persen"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-070 ===
+
+=== SAMPLE D03-071 ===
+SOURCE_RECORD_REF=deabf0e4286edc2f663ac4f5b13b7309bf6a0c85f1011eede44bdf4221d831c7
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Prof . Sri Mulyani menghadiri KTT G20 untuk membahas dampak krisis ekonomi global terhadap perkebunan sawit di wilayah Sumatera ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Prof"	B-PER	B-PER
+2	"."	I-PER	I-PER
+3	"Sri"	I-PER	I-PER
+4	"Mulyani"	I-PER	I-PER
+5	"menghadiri"	O	O
+6	"KTT"	B-EVT	B-EVT
+7	"G20"	I-EVT	I-EVT
+8	"untuk"	O	O
+9	"membahas"	O	O
+10	"dampak"	O	O
+11	"krisis"	O	O
+12	"ekonomi"	O	O
+13	"global"	O	O
+14	"terhadap"	O	O
+15	"perkebunan"	O	O
+16	"sawit"	B-PRD	B-PRD
+17	"di"	O	O
+18	"wilayah"	O	O
+19	"Sumatera"	B-LOC	B-LOC
+20	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PER:1-4
+TEXT="Prof . Sri Mulyani"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=EVT:6-7
+TEXT="KTT G20"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PRD:16-16
+TEXT="sawit"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=LOC:19-19
+TEXT="Sumatera"
+DECISION=CORRECT
+ACTION=REPLACE:LOC:19-19
+NOTE=Sumatera adalah bentang geografis non-administratif, sehingga berlabel LOC
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-071 ===
+
+=== SAMPLE D03-072 ===
+SOURCE_RECORD_REF=cc9a7b0d9bae1ae81de0db40d9c07c3bbaf5b07e9d028e47e8b1ffd15f56d12e
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Menteri Keuangan Sri Mulyani mengalokasikan dana sebesar Rp 10 triliun untuk mendukung program pemulihan ekonomi nasional tahun 2024 ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Menteri"	B-NOR	B-NOR
+2	"Keuangan"	I-NOR	I-NOR
+3	"Sri"	B-PER	B-PER
+4	"Mulyani"	I-PER	I-PER
+5	"mengalokasikan"	O	O
+6	"dana"	O	O
+7	"sebesar"	O	O
+8	"Rp"	B-MON	B-MON
+9	"10"	I-MON	I-MON
+10	"triliun"	I-MON	I-MON
+11	"untuk"	O	O
+12	"mendukung"	O	O
+13	"program"	O	O
+14	"pemulihan"	O	O
+15	"ekonomi"	O	O
+16	"nasional"	O	O
+17	"tahun"	O	O
+18	"2024"	B-DAT	B-DAT
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Menteri Keuangan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:3-4
+TEXT="Sri Mulyani"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=MON:8-10
+TEXT="Rp 10 triliun"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=DAT:18-18
+TEXT="2024"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-072 ===
+
+=== SAMPLE D03-073 ===
+SOURCE_RECORD_REF=356e96fff85cd565aed6b3aa745be8af605e35dca8f34b01611f5b1758e22e79
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Kepala BSSN H . Muhammad Ridwan memperingatkan ancaman serangan siber terhadap infrastruktur digital perbankan nasional pada pukul 10 . 00 WIB ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Kepala"	O	O
+2	"BSSN"	B-NOR	B-NOR
+3	"H"	B-PER	B-PER
+4	"."	I-PER	I-PER
+5	"Muhammad"	I-PER	I-PER
+6	"Ridwan"	I-PER	I-PER
+7	"memperingatkan"	O	O
+8	"ancaman"	O	O
+9	"serangan"	O	O
+10	"siber"	O	O
+11	"terhadap"	O	O
+12	"infrastruktur"	O	O
+13	"digital"	O	O
+14	"perbankan"	O	O
+15	"nasional"	O	O
+16	"pada"	O	O
+17	"pukul"	O	O
+18	"10"	B-TIM	B-TIM
+19	"."	I-TIM	I-TIM
+20	"00"	I-TIM	I-TIM
+21	"WIB"	I-TIM	I-TIM
+22	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:2-2
+TEXT="BSSN"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:3-6
+TEXT="H . Muhammad Ridwan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=TIM:18-21
+TEXT="10 . 00 WIB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-073 ===
+
+=== SAMPLE D03-074 ===
+SOURCE_RECORD_REF=08834fb6bc258209503ea019e7e34748bc039734daee8b914354a3cd5586badb
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Suku Dayak di pedalaman Kalimantan berkolaborasi dengan LSM Greenpeace untuk menjaga kelestarian hutan hujan tropis ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Suku"	B-NOR	B-NOR
+2	"Dayak"	I-NOR	I-NOR
+3	"di"	O	O
+4	"pedalaman"	O	O
+5	"Kalimantan"	B-GPE	B-GPE
+6	"berkolaborasi"	O	O
+7	"dengan"	O	O
+8	"LSM"	B-ORG	B-ORG
+9	"Greenpeace"	I-ORG	I-ORG
+10	"untuk"	O	O
+11	"menjaga"	O	O
+12	"kelestarian"	O	O
+13	"hutan"	O	O
+14	"hujan"	O	O
+15	"tropis"	O	O
+16	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Suku Dayak"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:5-5
+TEXT="Kalimantan"
+DECISION=INCORRECT
+ACTION=REPLACE:LOC:5-5
+NOTE=Kalimantan adalah bentang geografis non-administratif, sehingga berlabel LOC
+END_ENTITY
+ENTITY E003
+ORIGINAL=ORG:8-9
+TEXT="LSM Greenpeace"
+DECISION=INCORRECT
+ACTION=REPLACE:ORG:9-9
+NOTE=LSM merupakan deskripsi jenis organisasi; nama organisasinya adalah Greenpeace
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-074 ===
+
+=== SAMPLE D03-075 ===
+SOURCE_RECORD_REF=829938d1f0e49044b64a298d4848e709d53817813fac029d27697c0c147982a7
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Lelang spektrum 5G tahap pertama oleh Kominfo akan dilaksanakan pada Senin depan berdasarkan regulasi UU No . 36 Tahun 1999 tentang Telekomunikasi ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Lelang"	O	O
+2	"spektrum"	O	O
+3	"5G"	O	O
+4	"tahap"	O	O
+5	"pertama"	B-ORD	B-ORD
+6	"oleh"	O	O
+7	"Kominfo"	B-NOR	B-NOR
+8	"akan"	O	O
+9	"dilaksanakan"	O	O
+10	"pada"	O	O
+11	"Senin"	B-DAT	B-DAT
+12	"depan"	O	O
+13	"berdasarkan"	O	O
+14	"regulasi"	O	O
+15	"UU"	B-LAW	B-LAW
+16	"No"	I-LAW	I-LAW
+17	"."	I-LAW	I-LAW
+18	"36"	I-LAW	I-LAW
+19	"Tahun"	I-LAW	I-LAW
+20	"1999"	I-LAW	I-LAW
+21	"tentang"	O	O
+22	"Telekomunikasi"	O	O
+23	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=ORD:5-5
+TEXT="pertama"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=NOR:7-7
+TEXT="Kominfo"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=DAT:11-11
+TEXT="Senin"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=LAW:15-20
+TEXT="UU No . 36 Tahun 1999"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=LAW:22-22
+SENTENCE_REVIEWED=YES
+NOTES=Telekomunikasi merupakan judul undang-undang setelah preposisi tentang, yang tetap di luar span
+=== END SAMPLE D03-075 ===
+
+=== SAMPLE D03-076 ===
+SOURCE_RECORD_REF=eb0e71ac2ddb726cd41f582bc85a0cf3581e82d297f179287948de1b981c2df9
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Gubernur Jawa Tengah Ganjar Pranowo mendorong gastrodiplomasi melalui promosi Lumpia Semarang kepada warga asing di Amerika Serikat ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Gubernur"	B-NOR	B-NOR
+2	"Jawa"	B-GPE	B-GPE
+3	"Tengah"	I-GPE	I-GPE
+4	"Ganjar"	B-PER	B-PER
+5	"Pranowo"	I-PER	I-PER
+6	"mendorong"	O	O
+7	"gastrodiplomasi"	O	O
+8	"melalui"	O	O
+9	"promosi"	O	O
+10	"Lumpia"	B-PRD	B-PRD
+11	"Semarang"	I-PRD	I-PRD
+12	"kepada"	O	O
+13	"warga"	O	O
+14	"asing"	O	O
+15	"di"	O	O
+16	"Amerika"	B-GPE	B-GPE
+17	"Serikat"	I-GPE	I-GPE
+18	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Gubernur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:2-3
+TEXT="Jawa Tengah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PER:4-5
+TEXT="Ganjar Pranowo"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=PRD:10-11
+TEXT="Lumpia Semarang"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=GPE:16-17
+TEXT="Amerika Serikat"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-076 ===
+
+=== SAMPLE D03-077 ===
+SOURCE_RECORD_REF=ae60bd5f2da20c77c0bb4f8d1c13e2c4941e74459ec61030921da05676825bc7
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Bakamla mengerahkan dua kapal patroli ke Laut Natuna Utara guna mengusir kapal asing pada pukul 05 . 00 WIB ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Bakamla"	B-NOR	B-NOR
+2	"mengerahkan"	O	O
+3	"dua"	B-CRD	B-CRD
+4	"kapal"	B-PRD	B-PRD
+5	"patroli"	I-PRD	I-PRD
+6	"ke"	O	O
+7	"Laut"	B-LOC	B-LOC
+8	"Natuna"	I-LOC	I-LOC
+9	"Utara"	I-LOC	I-LOC
+10	"guna"	O	O
+11	"mengusir"	O	O
+12	"kapal"	B-PRD	B-PRD
+13	"asing"	I-PRD	I-PRD
+14	"pada"	O	O
+15	"pukul"	O	O
+16	"05"	B-TIM	B-TIM
+17	"."	I-TIM	I-TIM
+18	"00"	I-TIM	I-TIM
+19	"WIB"	I-TIM	I-TIM
+20	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Bakamla"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=CRD:3-3
+TEXT="dua"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PRD:4-5
+TEXT="kapal patroli"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=LOC:7-9
+TEXT="Laut Natuna Utara"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=PRD:12-13
+TEXT="kapal asing"
+DECISION=INCORRECT
+ACTION=REPLACE:PRD:12-12
+NOTE=Kata 'asing' bukan bagian dari entitas produk kapal
+END_ENTITY
+ENTITY E006
+ORIGINAL=TIM:16-19
+TEXT="05 . 00 WIB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-077 ===
+
+=== SAMPLE D03-078 ===
+SOURCE_RECORD_REF=7b96cfb518d9be2b455d2b18f14a9671ceac2732f58f5a1547b0db62fa66e0af
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Migrasi penyiaran televisi digital di Jawa Barat telah mencapai 90 persen setelah pemerintah mematikan pemancar analog pada pukul 23 . 59 WIB ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Migrasi"	O	O
+2	"penyiaran"	O	O
+3	"televisi"	O	O
+4	"digital"	O	O
+5	"di"	O	O
+6	"Jawa"	B-GPE	B-GPE
+7	"Barat"	I-GPE	I-GPE
+8	"telah"	O	O
+9	"mencapai"	O	O
+10	"90"	B-PRC	B-PRC
+11	"persen"	I-PRC	I-PRC
+12	"setelah"	O	O
+13	"pemerintah"	B-NOR	B-NOR
+14	"mematikan"	O	O
+15	"pemancar"	O	O
+16	"analog"	O	O
+17	"pada"	O	O
+18	"pukul"	O	O
+19	"23"	B-TIM	B-TIM
+20	"."	I-TIM	I-TIM
+21	"59"	I-TIM	I-TIM
+22	"WIB"	I-TIM	I-TIM
+23	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=GPE:6-7
+TEXT="Jawa Barat"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PRC:10-11
+TEXT="90 persen"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=NOR:13-13
+TEXT="pemerintah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=TIM:19-22
+TEXT="23 . 59 WIB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-078 ===
+
+=== SAMPLE D03-079 ===
+SOURCE_RECORD_REF=bedc7f388c9a456461312968871ba3c66670d7d0443f13ddc4b7c0a08286b5b4
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Prof . Budi Santoso dari BRIN memimpin riset genetika padi di lahan seluas 50 hektar di Kalimantan Timur ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Prof"	B-PER	B-PER
+2	"."	I-PER	I-PER
+3	"Budi"	I-PER	I-PER
+4	"Santoso"	I-PER	I-PER
+5	"dari"	O	O
+6	"BRIN"	B-NOR	B-NOR
+7	"memimpin"	O	O
+8	"riset"	O	O
+9	"genetika"	O	O
+10	"padi"	O	O
+11	"di"	O	O
+12	"lahan"	O	O
+13	"seluas"	O	O
+14	"50"	B-QTY	B-QTY
+15	"hektar"	I-QTY	I-QTY
+16	"di"	O	O
+17	"Kalimantan"	B-GPE	B-GPE
+18	"Timur"	I-GPE	I-GPE
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PER:1-4
+TEXT="Prof . Budi Santoso"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=NOR:6-6
+TEXT="BRIN"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=QTY:14-15
+TEXT="50 hektar"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:17-18
+TEXT="Kalimantan Timur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-079 ===
+
+=== SAMPLE D03-080 ===
+SOURCE_RECORD_REF=f2c844405bbb3ed8d09ee9f4b0956cc9c2e0e03bb5729aa589c1f876ededfb47
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Berdasarkan UU No . 24 Tahun 2007 , pemerintah wajib meningkatkan kesiapsiagaan bencana alam dengan membangun shelter di pesisir Pantai Selatan ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Berdasarkan"	O	O
+2	"UU"	B-LAW	B-LAW
+3	"No"	I-LAW	I-LAW
+4	"."	I-LAW	I-LAW
+5	"24"	I-LAW	I-LAW
+6	"Tahun"	I-LAW	I-LAW
+7	"2007"	I-LAW	I-LAW
+8	","	O	O
+9	"pemerintah"	B-NOR	B-NOR
+10	"wajib"	O	O
+11	"meningkatkan"	O	O
+12	"kesiapsiagaan"	O	O
+13	"bencana"	O	O
+14	"alam"	O	O
+15	"dengan"	O	O
+16	"membangun"	O	O
+17	"shelter"	O	O
+18	"di"	O	O
+19	"pesisir"	O	O
+20	"Pantai"	B-LOC	B-LOC
+21	"Selatan"	I-LOC	I-LOC
+22	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=LAW:2-7
+TEXT="UU No . 24 Tahun 2007"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=NOR:9-9
+TEXT="pemerintah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LOC:20-21
+TEXT="Pantai Selatan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=FAC:17-17
+SENTENCE_REVIEWED=YES
+NOTES=Shelter yang dibangun merupakan fasilitas fisik buatan manusia
+=== END SAMPLE D03-080 ===
+
+=== SAMPLE D03-081 ===
+SOURCE_RECORD_REF=f60f21b0e84f4aea5e5cf033fbcf0502757dd415eb20438fa435ecda8437910d
+SOURCE_SPLIT=verified_18class
+STRATUM=E0_LONG
+SENTENCE="Pemerintah menerapkan UU No . 13 Tahun 2003 tentang Ketenagakerjaan untuk melindungi hak - hak buruh WNI di berbagai sektor industri ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pemerintah"	O	O
+2	"menerapkan"	O	O
+3	"UU"	O	O
+4	"No"	O	O
+5	"."	O	O
+6	"13"	O	O
+7	"Tahun"	O	O
+8	"2003"	O	O
+9	"tentang"	O	O
+10	"Ketenagakerjaan"	O	O
+11	"untuk"	O	O
+12	"melindungi"	O	O
+13	"hak"	O	O
+14	"-"	O	O
+15	"hak"	O	O
+16	"buruh"	O	O
+17	"WNI"	O	O
+18	"di"	O	O
+19	"berbagai"	O	O
+20	"sektor"	O	O
+21	"industri"	O	O
+22	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITIES_END
+MISSING_ENTITIES=NOR:1-1; LAW:3-8; LAW:10-10; NOR:17-17
+SENTENCE_REVIEWED=YES
+NOTES=WNI adalah kelompok kewarganegaraan; preposisi tentang tidak dimasukkan ke rentang LAW.
+=== END SAMPLE D03-081 ===
+
+=== SAMPLE D03-082 ===
+SOURCE_RECORD_REF=38a16b15bc3b499cdd68d127d93a57efcebc6fbc73b2f913bc969357c096eacf
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Gubernur Sumatera Selatan memerintahkan penghentian pembakaran lahan di wilayah rawa Sumatera untuk mencegah bencana kabut asap ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Gubernur"	B-NOR	B-NOR
+2	"Sumatera"	B-GPE	B-GPE
+3	"Selatan"	I-GPE	I-GPE
+4	"memerintahkan"	O	O
+5	"penghentian"	O	O
+6	"pembakaran"	O	O
+7	"lahan"	O	O
+8	"di"	O	O
+9	"wilayah"	O	O
+10	"rawa"	O	O
+11	"Sumatera"	B-LOC	B-LOC
+12	"untuk"	O	O
+13	"mencegah"	O	O
+14	"bencana"	O	O
+15	"kabut"	O	O
+16	"asap"	O	O
+17	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Gubernur"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:2-3
+TEXT="Sumatera Selatan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LOC:11-11
+TEXT="Sumatera"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-082 ===
+
+=== SAMPLE D03-083 ===
+SOURCE_RECORD_REF=c95cbfc4c948ba1543d999777148b8d538b72fb37bb5dc4800c85d9968c41cb2
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Nelayan tradisional suku Bajo di Sulawesi Utara mendapatkan bantuan alat tangkap senilai 500 juta rupiah pada hari Senin ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Nelayan"	O	O
+2	"tradisional"	O	O
+3	"suku"	B-NOR	B-NOR
+4	"Bajo"	I-NOR	I-NOR
+5	"di"	O	O
+6	"Sulawesi"	B-GPE	B-GPE
+7	"Utara"	I-GPE	I-GPE
+8	"mendapatkan"	O	O
+9	"bantuan"	O	O
+10	"alat"	O	O
+11	"tangkap"	O	O
+12	"senilai"	O	O
+13	"500"	B-MON	B-MON
+14	"juta"	I-MON	I-MON
+15	"rupiah"	I-MON	I-MON
+16	"pada"	O	O
+17	"hari"	O	O
+18	"Senin"	B-DAT	B-DAT
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:3-4
+TEXT="suku Bajo"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:6-7
+TEXT="Sulawesi Utara"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=MON:13-15
+TEXT="500 juta rupiah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=DAT:18-18
+TEXT="Senin"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-083 ===
+
+=== SAMPLE D03-084 ===
+SOURCE_RECORD_REF=e724768e47d677c5405c248fa848237f9082d15f7761031e9d18d5d1a3ed35f6
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Pemerintah Indonesia berkomitmen mencapai net - zero emission pada tahun 2060 melalui pengembangan energi surya berkapasitas 10 gigawatt ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pemerintah"	B-NOR	B-NOR
+2	"Indonesia"	I-NOR	I-NOR
+3	"berkomitmen"	O	O
+4	"mencapai"	O	O
+5	"net"	O	O
+6	"-"	O	O
+7	"zero"	O	O
+8	"emission"	O	O
+9	"pada"	O	O
+10	"tahun"	B-DAT	B-DAT
+11	"2060"	I-DAT	I-DAT
+12	"melalui"	O	O
+13	"pengembangan"	O	O
+14	"energi"	O	O
+15	"surya"	O	O
+16	"berkapasitas"	O	O
+17	"10"	B-QTY	B-QTY
+18	"gigawatt"	I-QTY	I-QTY
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Pemerintah Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=DAT:10-11
+TEXT="tahun 2060"
+DECISION=INCORRECT
+ACTION=REPLACE:DAT:11-11
+NOTE=Tahun adalah penanda waktu di luar rentang; 2060 merupakan angka tahun.
+END_ENTITY
+ENTITY E003
+ORIGINAL=QTY:17-18
+TEXT="10 gigawatt"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-084 ===
+
+=== SAMPLE D03-085 ===
+SOURCE_RECORD_REF=3536cb1220c49db9497c6b3675b503b85200dc4ac9c2300f8951bdd6ed61e704
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Prof . Budi Santoso menerbitkan buku berjudul ' Sains untuk Bangsa ' yang ditulis dalam bahasa Indonesia dan bahasa Inggris untuk mahasiswa tingkat sarjana ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Prof"	B-PER	B-PER
+2	"."	I-PER	I-PER
+3	"Budi"	I-PER	I-PER
+4	"Santoso"	I-PER	I-PER
+5	"menerbitkan"	O	O
+6	"buku"	O	O
+7	"berjudul"	O	O
+8	"'"	O	O
+9	"Sains"	B-WOA	B-WOA
+10	"untuk"	I-WOA	I-WOA
+11	"Bangsa"	I-WOA	I-WOA
+12	"'"	O	O
+13	"yang"	O	O
+14	"ditulis"	O	O
+15	"dalam"	O	O
+16	"bahasa"	B-LAN	B-LAN
+17	"Indonesia"	I-LAN	I-LAN
+18	"dan"	O	O
+19	"bahasa"	B-LAN	B-LAN
+20	"Inggris"	I-LAN	I-LAN
+21	"untuk"	O	O
+22	"mahasiswa"	O	O
+23	"tingkat"	O	O
+24	"sarjana"	O	O
+25	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PER:1-4
+TEXT="Prof . Budi Santoso"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=WOA:9-11
+TEXT="Sains untuk Bangsa"
+DECISION=INCORRECT
+ACTION=REPLACE:WOA:9-9; WOA:11-11
+NOTE=Preposisi untuk dan tanda petik dikecualikan dari rentang entitas.
+END_ENTITY
+ENTITY E003
+ORIGINAL=LAN:16-17
+TEXT="bahasa Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=LAN:19-20
+TEXT="bahasa Inggris"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-085 ===
+
+=== SAMPLE D03-086 ===
+SOURCE_RECORD_REF=095b9566b2abca840a1445fbaf2622fd9321d3eaf6a66635cc57a556bb2af136
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Kementerian Lingkungan Hidup dan Kehutanan membangun kawasan konservasi laut seluas 500 hektar di wilayah Kepulauan Raja Ampat ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Kementerian"	B-NOR	B-NOR
+2	"Lingkungan"	I-NOR	I-NOR
+3	"Hidup"	I-NOR	I-NOR
+4	"dan"	I-NOR	I-NOR
+5	"Kehutanan"	I-NOR	I-NOR
+6	"membangun"	O	O
+7	"kawasan"	O	O
+8	"konservasi"	O	O
+9	"laut"	O	O
+10	"seluas"	O	O
+11	"500"	B-QTY	B-QTY
+12	"hektar"	I-QTY	I-QTY
+13	"di"	O	O
+14	"wilayah"	O	O
+15	"Kepulauan"	B-LOC	B-LOC
+16	"Raja"	I-LOC	I-LOC
+17	"Ampat"	I-LOC	I-LOC
+18	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-5
+TEXT="Kementerian Lingkungan Hidup dan Kehutanan"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=QTY:11-12
+TEXT="500 hektar"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LOC:15-17
+TEXT="Kepulauan Raja Ampat"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-086 ===
+
+=== SAMPLE D03-087 ===
+SOURCE_RECORD_REF=39b391da17d614f259a7416196a5da56849bfcf9f829fc768ba730be7b781481
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Kontingen Misi Perdamaian Garuda yang terdiri dari WNI telah tiba di Lebanon pada pukul 08 . 00 WIB untuk menjalankan mandat PBB ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Kontingen"	O	O
+2	"Misi"	B-NOR	B-NOR
+3	"Perdamaian"	I-NOR	I-NOR
+4	"Garuda"	I-NOR	I-NOR
+5	"yang"	O	O
+6	"terdiri"	O	O
+7	"dari"	O	O
+8	"WNI"	B-NOR	B-NOR
+9	"telah"	O	O
+10	"tiba"	O	O
+11	"di"	O	O
+12	"Lebanon"	B-GPE	B-GPE
+13	"pada"	O	O
+14	"pukul"	O	O
+15	"08"	B-TIM	B-TIM
+16	"."	I-TIM	I-TIM
+17	"00"	I-TIM	I-TIM
+18	"WIB"	I-TIM	I-TIM
+19	"untuk"	O	O
+20	"menjalankan"	O	O
+21	"mandat"	O	O
+22	"PBB"	B-NOR	B-NOR
+23	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:2-4
+TEXT="Misi Perdamaian Garuda"
+DECISION=INCORRECT
+ACTION=REPLACE:NOR:1-4
+NOTE=Sertakan kata Kontingen dalam rentang kelompok misi perdamaian
+END_ENTITY
+ENTITY E002
+ORIGINAL=NOR:8-8
+TEXT="WNI"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=GPE:12-12
+TEXT="Lebanon"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=TIM:15-18
+TEXT="08 . 00 WIB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=NOR:22-22
+TEXT="PBB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-087 ===
+
+=== SAMPLE D03-088 ===
+SOURCE_RECORD_REF=8e28ca74c4ffd8bba31bf7fb5a0756a5857b6cc2523a5f40a2fe49959be7751a
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Pertamina melakukan eksplorasi migas di Blok Rokan dengan investasi mencapai Rp 2 triliun guna meningkatkan produksi minyak bumi ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pertamina"	B-ORG	B-ORG
+2	"melakukan"	O	O
+3	"eksplorasi"	O	O
+4	"migas"	O	O
+5	"di"	O	O
+6	"Blok"	O	O
+7	"Rokan"	O	O
+8	"dengan"	O	O
+9	"investasi"	O	O
+10	"mencapai"	O	O
+11	"Rp"	B-MON	B-MON
+12	"2"	I-MON	I-MON
+13	"triliun"	I-MON	I-MON
+14	"guna"	O	O
+15	"meningkatkan"	O	O
+16	"produksi"	O	O
+17	"minyak"	B-PRD	B-PRD
+18	"bumi"	I-PRD	I-PRD
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=ORG:1-1
+TEXT="Pertamina"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=MON:11-13
+TEXT="Rp 2 triliun"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PRD:17-18
+TEXT="minyak bumi"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=PRD:4-4; LOC:6-7
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-088 ===
+
+=== SAMPLE D03-089 ===
+SOURCE_RECORD_REF=6d0936104fcb3df9430cee86712e5c738881c3643fd9cc00aff2eed65b9e79eb
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Menteri Basuki Hadimuljono meninjau pembangunan perumahan subsidi FLPP di Kabupaten Bogor yang mengalokasikan dana sebesar Rp 2 triliun pada tahun 2023 ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Menteri"	B-NOR	B-NOR
+2	"Basuki"	B-PER	B-PER
+3	"Hadimuljono"	I-PER	I-PER
+4	"meninjau"	O	O
+5	"pembangunan"	O	O
+6	"perumahan"	O	O
+7	"subsidi"	O	O
+8	"FLPP"	B-PRD	B-PRD
+9	"di"	O	O
+10	"Kabupaten"	B-GPE	B-GPE
+11	"Bogor"	I-GPE	I-GPE
+12	"yang"	O	O
+13	"mengalokasikan"	O	O
+14	"dana"	O	O
+15	"sebesar"	O	O
+16	"Rp"	B-MON	B-MON
+17	"2"	I-MON	I-MON
+18	"triliun"	I-MON	I-MON
+19	"pada"	O	O
+20	"tahun"	B-DAT	B-DAT
+21	"2023"	I-DAT	I-DAT
+22	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Menteri"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:2-3
+TEXT="Basuki Hadimuljono"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PRD:8-8
+TEXT="FLPP"
+DECISION=INCORRECT
+ACTION=REMOVE
+NOTE=FLPP adalah skema/fasilitas pembiayaan, bukan produk sesuai taksonomi
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:10-11
+TEXT="Kabupaten Bogor"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=MON:16-18
+TEXT="Rp 2 triliun"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E006
+ORIGINAL=DAT:20-21
+TEXT="tahun 2023"
+DECISION=INCORRECT
+ACTION=REPLACE:DAT:21-21
+NOTE=Tahun 2023 dilabeli DAT; kata tahun berada di luar span
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-089 ===
+
+=== SAMPLE D03-090 ===
+SOURCE_RECORD_REF=b87edbe1ec628ee3e17945cada62f2bcc5841606ed06ef904c016e67252e7a14
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Suku Dayak di Kalimantan Tengah menggelar Gawai Dayak pada bulan Juni untuk merayakan panen raya dengan tarian tradisional ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Suku"	B-NOR	B-NOR
+2	"Dayak"	I-NOR	I-NOR
+3	"di"	O	O
+4	"Kalimantan"	B-GPE	B-GPE
+5	"Tengah"	I-GPE	I-GPE
+6	"menggelar"	O	O
+7	"Gawai"	B-EVT	B-EVT
+8	"Dayak"	I-EVT	I-EVT
+9	"pada"	O	O
+10	"bulan"	B-DAT	B-DAT
+11	"Juni"	I-DAT	I-DAT
+12	"untuk"	O	O
+13	"merayakan"	O	O
+14	"panen"	O	O
+15	"raya"	O	O
+16	"dengan"	O	O
+17	"tarian"	O	O
+18	"tradisional"	O	O
+19	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Suku Dayak"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:4-5
+TEXT="Kalimantan Tengah"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=EVT:7-8
+TEXT="Gawai Dayak"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=DAT:10-11
+TEXT="bulan Juni"
+DECISION=INCORRECT
+ACTION=REPLACE:DAT:11-11
+NOTE=Nama bulan Juni adalah DAT; kata bulan berada di luar span
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-090 ===
+
+=== SAMPLE D03-091 ===
+SOURCE_RECORD_REF=3397955197ccf8ff49aee7ab82bcd09aef17656a9216988634697c7a3473a7fe
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Badan Penyelenggara Jaminan Produk Halal ( BPJPH ) mewajibkan seluruh pelaku industri kuliner modern memiliki sertifikat halal sesuai UU No . 33 Tahun 2014 ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Badan"	B-NOR	B-NOR
+2	"Penyelenggara"	I-NOR	I-NOR
+3	"Jaminan"	I-NOR	I-NOR
+4	"Produk"	I-NOR	I-NOR
+5	"Halal"	I-NOR	I-NOR
+6	"("	O	O
+7	"BPJPH"	B-NOR	B-NOR
+8	")"	O	O
+9	"mewajibkan"	O	O
+10	"seluruh"	O	O
+11	"pelaku"	O	O
+12	"industri"	O	O
+13	"kuliner"	O	O
+14	"modern"	O	O
+15	"memiliki"	O	O
+16	"sertifikat"	O	O
+17	"halal"	O	O
+18	"sesuai"	O	O
+19	"UU"	B-LAW	B-LAW
+20	"No"	I-LAW	I-LAW
+21	"."	I-LAW	I-LAW
+22	"33"	I-LAW	I-LAW
+23	"Tahun"	I-LAW	I-LAW
+24	"2014"	I-LAW	I-LAW
+25	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-5
+TEXT="Badan Penyelenggara Jaminan Produk Halal"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=NOR:7-7
+TEXT="BPJPH"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LAW:19-24
+TEXT="UU No . 33 Tahun 2014"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-091 ===
+
+=== SAMPLE D03-092 ===
+SOURCE_RECORD_REF=89effad89c1d1799890637350395016d3209075a1b922916841e2fb68f7ffdaf
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Persija Jakarta akan menghadapi pertandingan pertama Liga 1 musim ini melawan Persebaya Surabaya di Jakarta ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Persija"	B-ORG	B-ORG
+2	"Jakarta"	I-ORG	I-ORG
+3	"akan"	O	O
+4	"menghadapi"	O	O
+5	"pertandingan"	O	O
+6	"pertama"	B-ORD	B-ORD
+7	"Liga"	B-EVT	B-EVT
+8	"1"	I-EVT	I-EVT
+9	"musim"	O	O
+10	"ini"	O	O
+11	"melawan"	O	O
+12	"Persebaya"	B-ORG	B-ORG
+13	"Surabaya"	I-ORG	I-ORG
+14	"di"	O	O
+15	"Jakarta"	B-GPE	B-GPE
+16	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=ORG:1-2
+TEXT="Persija Jakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=ORD:6-6
+TEXT="pertama"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=EVT:7-8
+TEXT="Liga 1"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=ORG:12-13
+TEXT="Persebaya Surabaya"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=GPE:15-15
+TEXT="Jakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-092 ===
+
+=== SAMPLE D03-093 ===
+SOURCE_RECORD_REF=7ccd6b23d78e6a8fa0f44419c75b0a20a785d2d673ecb94fc6c5fe3016963eb9
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Pada pukul 10 . 00 WIB , Presiden terpilih bertemu dengan pimpinan partai politik di Istana Negara untuk membahas susunan kabinet pertama ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pada"	O	O
+2	"pukul"	O	O
+3	"10"	B-TIM	B-TIM
+4	"."	I-TIM	I-TIM
+5	"00"	I-TIM	I-TIM
+6	"WIB"	I-TIM	I-TIM
+7	","	O	O
+8	"Presiden"	B-NOR	B-NOR
+9	"terpilih"	O	O
+10	"bertemu"	O	O
+11	"dengan"	O	O
+12	"pimpinan"	O	O
+13	"partai"	O	O
+14	"politik"	O	O
+15	"di"	O	O
+16	"Istana"	B-FAC	B-FAC
+17	"Negara"	I-FAC	I-FAC
+18	"untuk"	O	O
+19	"membahas"	O	O
+20	"susunan"	O	O
+21	"kabinet"	O	O
+22	"pertama"	B-ORD	B-ORD
+23	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=TIM:3-6
+TEXT="10 . 00 WIB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=NOR:8-8
+TEXT="Presiden"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=FAC:16-17
+TEXT="Istana Negara"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=ORD:22-22
+TEXT="pertama"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-093 ===
+
+=== SAMPLE D03-094 ===
+SOURCE_RECORD_REF=cfaee4f136d22f948f7fd90fe764b2b83dbc1701170957ba5d07fb6439d4f1d3
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Bakamla mengerahkan dua kapal patroli untuk mengawasi nelayan asing di perairan Kepulauan Riau mulai pukul 06 . 00 WIB ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Bakamla"	B-NOR	B-NOR
+2	"mengerahkan"	O	O
+3	"dua"	B-CRD	B-CRD
+4	"kapal"	B-PRD	B-PRD
+5	"patroli"	I-PRD	I-PRD
+6	"untuk"	O	O
+7	"mengawasi"	O	O
+8	"nelayan"	O	O
+9	"asing"	O	O
+10	"di"	O	O
+11	"perairan"	O	O
+12	"Kepulauan"	B-GPE	B-GPE
+13	"Riau"	I-GPE	I-GPE
+14	"mulai"	O	O
+15	"pukul"	O	O
+16	"06"	B-TIM	B-TIM
+17	"."	I-TIM	I-TIM
+18	"00"	I-TIM	I-TIM
+19	"WIB"	I-TIM	I-TIM
+20	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Bakamla"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=CRD:3-3
+TEXT="dua"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=PRD:4-5
+TEXT="kapal patroli"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:12-13
+TEXT="Kepulauan Riau"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=TIM:16-19
+TEXT="06 . 00 WIB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-094 ===
+
+=== SAMPLE D03-095 ===
+SOURCE_RECORD_REF=46f202569f130c55c7838be7bc4ef628e966e690a3385ea4b7deca48e68806db
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Kepala BNPB Suharyanto menginstruksikan evakuasi warga di sekitar Gunung Merapi setelah terjadi erupsi besar pada pukul 03 . 00 WIB ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Kepala"	B-NOR	B-NOR
+2	"BNPB"	I-NOR	I-NOR
+3	"Suharyanto"	B-PER	B-PER
+4	"menginstruksikan"	O	O
+5	"evakuasi"	O	O
+6	"warga"	O	O
+7	"di"	O	O
+8	"sekitar"	O	O
+9	"Gunung"	B-LOC	B-LOC
+10	"Merapi"	I-LOC	I-LOC
+11	"setelah"	O	O
+12	"terjadi"	O	O
+13	"erupsi"	O	O
+14	"besar"	O	O
+15	"pada"	O	O
+16	"pukul"	O	O
+17	"03"	B-TIM	B-TIM
+18	"."	I-TIM	I-TIM
+19	"00"	I-TIM	I-TIM
+20	"WIB"	I-TIM	I-TIM
+21	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-2
+TEXT="Kepala BNPB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=PER:3-3
+TEXT="Suharyanto"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=LOC:9-10
+TEXT="Gunung Merapi"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=TIM:17-20
+TEXT="03 . 00 WIB"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-095 ===
+
+=== SAMPLE D03-096 ===
+SOURCE_RECORD_REF=cc6817ee81a1551ec11155b772c0f7dd6f0139946e052ed6de10a28e8a70d018
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Prof . Adi Permana dari BRIN berhasil memenangkan hibah riset sebesar Rp 2 miliar untuk mengembangkan teknologi sensor berbasis graphene di Jakarta ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Prof"	B-PER	B-PER
+2	"."	I-PER	I-PER
+3	"Adi"	I-PER	I-PER
+4	"Permana"	I-PER	I-PER
+5	"dari"	O	O
+6	"BRIN"	B-NOR	B-NOR
+7	"berhasil"	O	O
+8	"memenangkan"	O	O
+9	"hibah"	O	O
+10	"riset"	O	O
+11	"sebesar"	O	O
+12	"Rp"	B-MON	B-MON
+13	"2"	I-MON	I-MON
+14	"miliar"	I-MON	I-MON
+15	"untuk"	O	O
+16	"mengembangkan"	O	O
+17	"teknologi"	O	O
+18	"sensor"	O	O
+19	"berbasis"	O	O
+20	"graphene"	O	O
+21	"di"	O	O
+22	"Jakarta"	B-GPE	B-GPE
+23	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PER:1-4
+TEXT="Prof . Adi Permana"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=NOR:6-6
+TEXT="BRIN"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=MON:12-14
+TEXT="Rp 2 miliar"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:22-22
+TEXT="Jakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-096 ===
+
+=== SAMPLE D03-097 ===
+SOURCE_RECORD_REF=f3287ab6a6842e0923db9ceb2143a2f86659f10255c8f2afa0d3b3c321be78b9
+SOURCE_SPLIT=verified_18class
+STRATUM=E1_LONG
+SENTENCE="Jenderal Sudirman memimpin perang gerilya melawan pasukan sekutu selama revolusi fisik meskipun beliau sedang menderita penyakit paru - paru yang parah ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Jenderal"	B-PER	B-PER
+2	"Sudirman"	I-PER	I-PER
+3	"memimpin"	O	O
+4	"perang"	O	O
+5	"gerilya"	O	O
+6	"melawan"	O	O
+7	"pasukan"	O	O
+8	"sekutu"	O	O
+9	"selama"	O	O
+10	"revolusi"	O	O
+11	"fisik"	O	O
+12	"meskipun"	O	O
+13	"beliau"	O	O
+14	"sedang"	O	O
+15	"menderita"	O	O
+16	"penyakit"	O	O
+17	"paru"	O	O
+18	"-"	O	O
+19	"paru"	O	O
+20	"yang"	O	O
+21	"parah"	O	O
+22	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PER:1-2
+TEXT="Jenderal Sudirman"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=EVT:10-11
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-097 ===
+
+=== SAMPLE D03-098 ===
+SOURCE_RECORD_REF=be49d6e83f469a363b8a3af278eb7f7a0809103d3b65113c50904f1449586475
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="Kemenhub membangun jembatan pertama di Likupang untuk memudahkan akses wisatawan asing yang menggunakan bahasa Inggris ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Kemenhub"	B-NOR	B-NOR
+2	"membangun"	O	O
+3	"jembatan"	B-FAC	B-FAC
+4	"pertama"	B-ORD	B-ORD
+5	"di"	O	O
+6	"Likupang"	B-GPE	B-GPE
+7	"untuk"	O	O
+8	"memudahkan"	O	O
+9	"akses"	O	O
+10	"wisatawan"	O	O
+11	"asing"	O	O
+12	"yang"	O	O
+13	"menggunakan"	O	O
+14	"bahasa"	B-LAN	B-LAN
+15	"Inggris"	I-LAN	I-LAN
+16	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="Kemenhub"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=FAC:3-3
+TEXT="jembatan"
+DECISION=INCORRECT
+ACTION=REMOVE
+NOTE=Kata umum "jembatan" bukan nama fasilitas spesifik
+END_ENTITY
+ENTITY E003
+ORIGINAL=ORD:4-4
+TEXT="pertama"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:6-6
+TEXT="Likupang"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=LAN:14-15
+TEXT="bahasa Inggris"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-098 ===
+
+=== SAMPLE D03-099 ===
+SOURCE_RECORD_REF=011a0340bda342441720ddb9bde369a821e6fbdf97890ae00ade496b517d55bb
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_LONG
+SENTENCE="Pengrajin tenun ikat di NTT berhasil mengekspor 500 meter kain tradisional ke Jepang dengan nilai transaksi mencapai US $ 100 . 000 ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"Pengrajin"	O	O
+2	"tenun"	B-PRD	B-PRD
+3	"ikat"	I-PRD	I-PRD
+4	"di"	O	O
+5	"NTT"	B-GPE	B-GPE
+6	"berhasil"	O	O
+7	"mengekspor"	O	O
+8	"500"	B-QTY	B-QTY
+9	"meter"	I-QTY	I-QTY
+10	"kain"	O	O
+11	"tradisional"	O	O
+12	"ke"	O	O
+13	"Jepang"	B-GPE	B-GPE
+14	"dengan"	O	O
+15	"nilai"	O	O
+16	"transaksi"	O	O
+17	"mencapai"	O	O
+18	"US"	B-MON	B-MON
+19	"$"	I-MON	I-MON
+20	"100"	I-MON	I-MON
+21	"."	I-MON	I-MON
+22	"000"	I-MON	I-MON
+23	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=PRD:2-3
+TEXT="tenun ikat"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=GPE:5-5
+TEXT="NTT"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=QTY:8-9
+TEXT="500 meter"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:13-13
+TEXT="Jepang"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E005
+ORIGINAL=MON:18-22
+TEXT="US $ 100 . 000"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-099 ===
+
+=== SAMPLE D03-100 ===
+SOURCE_RECORD_REF=63cbd00f4c09283bc877b51b8e51274434440dde5644c9e45a1f47b518df44aa
+SOURCE_SPLIT=verified_18class
+STRATUM=E2PLUS_SHORT
+SENTENCE="BRIN bekerja sama dengan Universitas Indonesia untuk mengembangkan riset energi terbarukan senilai Rp 10 miliar di Jakarta ."
+TOKENS_BEGIN
+INDEX	TOKEN_JSON	ORIGINAL_BIO	ACTIVE_BIO
+1	"BRIN"	B-NOR	B-NOR
+2	"bekerja"	O	O
+3	"sama"	O	O
+4	"dengan"	O	O
+5	"Universitas"	B-ORG	B-ORG
+6	"Indonesia"	I-ORG	I-ORG
+7	"untuk"	O	O
+8	"mengembangkan"	O	O
+9	"riset"	O	O
+10	"energi"	O	O
+11	"terbarukan"	O	O
+12	"senilai"	O	O
+13	"Rp"	B-MON	B-MON
+14	"10"	I-MON	I-MON
+15	"miliar"	I-MON	I-MON
+16	"di"	O	O
+17	"Jakarta"	B-GPE	B-GPE
+18	"."	O	O
+TOKENS_END
+ENTITIES_BEGIN
+ENTITY E001
+ORIGINAL=NOR:1-1
+TEXT="BRIN"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E002
+ORIGINAL=ORG:5-6
+TEXT="Universitas Indonesia"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E003
+ORIGINAL=MON:13-15
+TEXT="Rp 10 miliar"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITY E004
+ORIGINAL=GPE:17-17
+TEXT="Jakarta"
+DECISION=CORRECT
+ACTION=KEEP
+NOTE=
+END_ENTITY
+ENTITIES_END
+MISSING_ENTITIES=NONE
+SENTENCE_REVIEWED=YES
+NOTES=
+=== END SAMPLE D03-100 ===
