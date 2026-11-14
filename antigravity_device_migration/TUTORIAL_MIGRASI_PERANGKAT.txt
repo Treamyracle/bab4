@@ -1,62 +1,54 @@
 ================================================================================
-PANDUAN LENGKAP: MENAUTKAN SESI KE PROYEK SKRIPSI
-(C:\Users\tream\OneDrive\Documents\SKRIPSI\skripsi)
+PANDUAN LENGKAP: TRANSFER & MEMULIHKAN SESI ANTIGRAVITY KE LAPTOP BARU
 ================================================================================
 
-Folder ini memuat seluruh data cadangan (backup) percakapan, pemikiran, kode,
-dan artefak untuk Sesi ID: 81089962-53ae-4754-ac53-0a755e441870.
+Folder ini memuat cadangan lengkap percakapan, pemikiran, kode, dan artefak
+untuk Sesi ID: 81089962-53ae-4754-ac53-0a755e441870 (Judul: SKRIPSI).
 
-Dengan panduan ini, Anda dapat:
-1. Menautkan sesi obrolan ini langsung ke folder:
-   C:\Users\tream\OneDrive\Documents\SKRIPSI\skripsi
-   sehingga saat folder tersebut dibuka di Antigravity, percakapan ini langsung
-   muncul di dalam proyek tersebut.
-2. Memulihkan sesi di perangkat/komputer lain secara utuh.
+Untuk versi Markdown terformat lengkap, lihat:
+  antigravity_device_migration/README.md
 
 --------------------------------------------------------------------------------
 ISI BERKAS DI DALAM FOLDER INI:
 --------------------------------------------------------------------------------
-1. link_to_workspace.py
-   -> Skrip 1-klik untuk menautkan sesi obrolan saat ini ke folder skripsi baru.
-2. restore_session.py
-   -> Skrip pemulihan lengkap jika dipindahkan ke komputer/laptop lain.
-3. session_metadata.json
-   -> Metadata sesi dan daftar workspace URIs yang terdaftar.
-4. conversation_db_81089962-53ae-4754-ac53-0a755e441870.zip
-   -> Database riwayat chat SQLite (.db).
-5. brain_81089962-53ae-4754-ac53-0a755e441870.zip
-   -> Folder artefak & log sesi.
+1. README.md
+   -> Panduan transfer sesi lengkap dalam format Markdown (.md) untuk GitHub.
+2. TUTORIAL_MIGRASI_PERANGKAT.txt
+   -> Panduan teks ringkas ini.
+3. restore_session.py
+   -> Skrip pemulihan 1-klik lintas OS (Windows, macOS, Linux).
+4. link_to_workspace.py
+   -> Skrip untuk menautkan sesi ke folder proyek hasil clone lain jika perlu.
+5. session_metadata.json
+   -> Metadata sesi terbaru untuk conversation_summaries.db.
+6. conversation_db_81089962-53ae-4754-ac53-0a755e441870.zip
+   -> Database riwayat chat SQLite (.db) yang sudah WAL-merged & disanitasi.
+7. brain_81089962-53ae-4754-ac53-0a755e441870.zip
+   -> Folder artefak, gambar, laporan, dan log transkrip sesi.
 
 ================================================================================
-CARA 1: MENAUTKAN SESI KE FOLDER "SKRIPSI\skripsi" DI LAPTOP SAAT INI
+LANGKAH TRANSFER KE LAPTOP BARU:
 ================================================================================
+1. Install dan buka aplikasi Antigravity minimal 1x di laptop baru agar folder
+   ~/.gemini/antigravity terbentuk, lalu TUTUP aplikasi Antigravity sepenuhnya.
 
-Jika Anda memindahkan repositori ke `C:\Users\tream\OneDrive\Documents\SKRIPSI\skripsi`
-dan ingin percakapan ini otomatis muncul di proyek tersebut:
+2. Clone salah satu repositori GitHub Anda di laptop:
+   - Repo skripsi lengkap (private):
+     git clone https://github.com/Treamyracle/skripsi.git
+     cd skripsi
+   - Atau repo bab4 & dataset 18-kelas (public):
+     git clone https://github.com/Treamyracle/bab4.git
+     cd bab4
 
-1. TUTUP terlebih dahulu aplikasi Antigravity.
-2. Buka PowerShell atau Terminal di laptop Anda, lalu jalankan:
-   python "C:\Users\tream\OneDrive\Documents\SKRIPSI\skripsi\antigravity_device_migration\link_to_workspace.py"
-
-3. Buka kembali aplikasi Antigravity.
-4. Pilih "Open Folder" / "Add Project" lalu arahkan ke:
-   C:\Users\tream\OneDrive\Documents\SKRIPSI\skripsi
-
-5. Selesai! Percakapan "IndoBERT NER Thesis Progress Review" akan langsung
-   terbuka dan terikat di dalam proyek folder tersebut.
-
-================================================================================
-CARA 2: MEMULIHKAN DI LAPTOP/KOMPUTER BARU
-================================================================================
-
-1. Clone repositori ini di perangkat baru:
-   git clone https://github.com/Treamyracle/skripsi.git
-   cd skripsi
-
-2. Pastikan Antigravity tertutup.
-3. Jalankan:
+3. Jalankan skrip pemulihan dari root folder repositori:
    python antigravity_device_migration/restore_session.py
 
-4. Buka aplikasi Antigravity dan buka folder repo skripsi. Sesi akan langsung
-   aktif dan terhubung.
+4. Buka kembali Antigravity, lalu pilih Open Folder ke folder repo hasil clone.
+   Percakapan 'SKRIPSI' (ID: 81089962-53ae-4754-ac53-0a755e441870) akan langsung
+   muncul di sidebar obrolan dan siap dilanjutkan!
+
+5. (Opsional) Jika nanti ingin menjalankan skrip OpenRouter di laptop,
+   set environment variable OPENROUTER_API_KEY secara lokal (kunci asli sengaja
+   tidak disimpan di GitHub demi keamanan):
+   [Environment]::SetEnvironmentVariable("OPENROUTER_API_KEY", "sk-or-v1-...", "User")
 ================================================================================

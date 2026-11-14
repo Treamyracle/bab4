@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-Skrip untuk Menautkan Sesi Antigravity ke Folder Proyek Baru
+Skrip untuk Menautkan Sesi Antigravity ke Folder Proyek Lokal
 =============================================================================
-Skrip ini memperbarui metadata Antigravity agar percakapan skripsi ini
-langsung muncul dan terikat sebagai proyek di folder:
-C:\\Users\\tream\\OneDrive\\Documents\\SKRIPSI\\skripsi
+Skrip ini memperbarui metadata Antigravity di conversation_summaries.db agar
+percakapan skripsi ini (81089962-53ae-4754-ac53-0a755e441870) muncul dan terikat
+ke folder repositori hasil clone di perangkat Anda (baik Treamyracle/skripsi
+maupun Treamyracle/bab4, di path mana pun).
 =============================================================================
 """
 
@@ -14,15 +15,33 @@ import sys
 from pathlib import Path
 
 CONVERSATION_ID = "81089962-53ae-4754-ac53-0a755e441870"
-DEFAULT_TARGET_FOLDER = r"C:\Users\tream\OneDrive\Documents\SKRIPSI\skripsi"
+MIGRATION_DIR = Path(__file__).parent.resolve()
+DEFAULT_TARGET_FOLDER = str(MIGRATION_DIR.parent)
 
 
 def path_to_uri(path_str: str) -> str:
     p = Path(path_str).resolve()
-    # Format Antigravity: file:///c%3A/Users/...
-    drive = p.drive.lower().replace(":", "%3A")
-    posix_tail = p.as_posix().split(":", 1)[-1]
-    return f"file:///{drive}{posix_tail}"
+    if p.drive:
+        # Format Antigravity Windows: file:///c%3A/Users/...
+        drive = p.drive.lower().replace(":", "%3A")
+        posix_tail = p.as_posix().split(":", 1)[-1]
+        return f"file:///{drive}{posix_tail}"
+    return p.as_uri()
+
+
+def load_session_defaults() -> tuple[str, str, int]:
+    meta_path = MIGRATION_DIR / "session_metadata.json"
+    if meta_path.exists():
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            return (
+                meta.get("title", "SKRIPSI"),
+                meta.get("preview", "SKRIPSI"),
+                int(meta.get("step_count", 5142)),
+            )
+        except Exception:
+            pass
+    return ("SKRIPSI", "SKRIPSI", 5142)
 
 
 def main():
@@ -39,6 +58,7 @@ def main():
     db_path = Path.home() / ".gemini" / "antigravity" / "conversation_summaries.db"
     if not db_path.exists():
         print(f"❌ Error: Database Antigravity tidak ditemukan di {db_path}")
+        print("   Jalankan 'python antigravity_device_migration/restore_session.py' terlebih dahulu.")
         return
 
     try:
@@ -51,6 +71,7 @@ def main():
         ).fetchone()
 
         if not row:
+            default_title, default_preview, default_steps = load_session_defaults()
             print(f"⚠️ Sesi {CONVERSATION_ID} belum ada di conversation_summaries.db.")
             print("   Membuat entri baru untuk sesi ini...")
             c.execute(
@@ -65,9 +86,9 @@ def main():
             """,
                 (
                     CONVERSATION_ID,
-                    "IndoBERT NER Thesis Progress Review",
-                    "IndoBERT NER Thesis Progress Review",
-                    2300,
+                    default_title,
+                    default_preview,
+                    default_steps,
                     json.dumps([target_uri]),
                 ),
             )
@@ -96,10 +117,10 @@ def main():
         print(f"   Open Folder -> {target_dir}")
         print("Sesi percakapan ini akan langsung aktif di dalam proyek tersebut!")
         print("=" * 70)
-    except sqlite3.OperationalError as e:
+    except sqlite3.OperationalError:
         print("\n⚠️ Perhatian: Database Antigravity sedang dikunci oleh aplikasi.")
         print("   Silakan TUTUP terlebih dahulu aplikasi Antigravity, lalu jalankan:")
-        print("   python antigravity_device_migration/link_to_workspace.py")
+        print(f'   python "{Path(__file__).resolve()}" "{target_dir}"')
         print("=" * 70)
 
 

@@ -78,11 +78,14 @@ def restore_summary_db(target_root: Path):
         if "raw_summary_b64" in meta and meta["raw_summary_b64"]:
             raw_summary_bytes = base64.b64decode(meta["raw_summary_b64"])
 
-        # Deteksi URI folder lokal saat ini
+        # Deteksi URI folder lokal saat ini (lintas platform Windows/macOS/Linux)
         repo_dir = MIGRATION_DIR.parent.resolve()
-        drive = repo_dir.drive.lower().replace(":", "%3A")
-        posix_tail = repo_dir.as_posix().split(":", 1)[-1]
-        detected_uri = f"file:///{drive}{posix_tail}"
+        if repo_dir.drive:
+            drive = repo_dir.drive.lower().replace(":", "%3A")
+            posix_tail = repo_dir.as_posix().split(":", 1)[-1]
+            detected_uri = f"file:///{drive}{posix_tail}"
+        else:
+            detected_uri = repo_dir.as_uri()
 
         try:
             uris = json.loads(meta.get("workspace_uris", "[]"))
@@ -104,10 +107,10 @@ def restore_summary_db(target_root: Path):
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             meta.get("conversation_id", CONVERSATION_ID),
-            meta.get("title", "IndoBERT NER Thesis Progress Review"),
-            meta.get("preview", "IndoBERT NER Thesis Progress Review"),
-            meta.get("step_count", 2350),
-            meta.get("last_modified_time", "2026-10-23 09:55:00.0000000+00:00"),
+            meta.get("title", "SKRIPSI"),
+            meta.get("preview", "SKRIPSI"),
+            meta.get("step_count", 5142),
+            meta.get("last_modified_time", "2026-11-14 00:00:00.0000000+00:00"),
             uris_json,
             meta.get("status", "CASCADE_RUN_STATUS_RUNNING"),
             meta.get("source", ""),
@@ -184,8 +187,8 @@ def main():
     print("Langkah selanjutnya:")
     print("1. Buka kembali aplikasi Antigravity di perangkat Anda.")
     print(f"2. Buka folder repositori skripsi ({MIGRATION_DIR.parent}) di Antigravity.")
-    print("3. Percakapan ini ('IndoBERT NER Thesis Progress Review') akan langsung")
-    print("   muncul di sidebar kiri dan siap Anda lanjutkan!")
+    print("3. Percakapan ini ('SKRIPSI' / ID 81089962-53ae-4754-ac53-0a755e441870)")
+    print("   akan langsung muncul di sidebar proyek dan siap Anda lanjutkan!")
     print("=" * 70)
 
 
